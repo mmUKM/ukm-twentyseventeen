@@ -1,0 +1,355 @@
+@import "grid";
+@import "menus";
+@import "core";
+
+$font-13px: 13px;
+
+em {
+  color: #444444;
+}
+
+.pad-right {
+  padding-right: 20px;
+}
+.pad-left {
+  padding-left: 20px;
+}
+.pad-top {
+  padding-top: 20px;
+}
+.pad-bottom {
+  padding-bottom: 20px;
+}
+.pad-global {
+  padding: 20px 20px 20px 20px;
+}
+
+.bottom-divider {
+  border-bottom: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.header-wrap {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e41e26+0,e41e26+50,a7a9ac+50,a7a9ac+100 */
+  background: #e41e26; /* Old browsers */
+  background: -moz-linear-gradient(left,  #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#a7a9ac 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#a7a9ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 ); /* IE6-9 */
+}
+
+.logo {
+  position: relative;
+}
+
+.logo-triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #e41e26;
+  border-right: 100px solid transparent;
+  background: #a7a9ac;
+  position: absolute;
+  right: -3px;
+  top: 0;
+}
+
+.header {
+  background: transparent;
+}
+
+.top-nav {
+  float: right;
+  list-style-type: none;
+  margin-top: 10px;
+  padding-left: 0;
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 5px 0 0 10px;
+      font-size: $font-13px;
+    }
+    a:link,
+    a:visited {
+      color: #fff;
+    }
+    a:hover {
+      color: #ccc;
+      text-decoration: none;
+    }
+  }
+}
+
+.top-nav-search {
+  text-align: center;
+  color: #fff;
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+h1.site-name {
+  margin: 0;
+  font-family: "bebas_neueregular",Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  color: #fff;
+  text-align: right;
+  padding-right: 6.3325%;
+  line-height: normal;
+}
+
+.main-nav {
+  position: relative;
+  z-index: 500;
+  background: #292929;
+  color: #fff;
+  height: 44px;
+}
+
+.main-nav-menu-icon {
+  font-size: 18px;
+  display: block;
+  padding-top: 12px;
+  text-align: center;
+}
+.main-nav-menu-icon,
+.main-nav-menu-icon:visited {
+  color: #fff;
+}
+
+.main-nav-menu-icon:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+// tabber
+
+.ut-tabber-wrap {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ut-tabber-button {
+  display: table;
+  margin: 0 auto;
+}
+
+.ut-tabber-content {
+
+}
+
+// widget
+
+.widget-box {
+  padding: 10px 5px;
+}
+
+// footer
+
+.footer {
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  background: #292929;
+  color: #fff;
+}
+
+.footer-copyright {
+  background: rgba(0, 0, 0, 0.07);
+  margin-top: 40px;
+  padding: 20px 0 20px 0;
+  p {
+    margin: 0 0 0 0;
+    text-align: center;
+  }
+}
+
+.footer-nav {
+  display: table;
+  margin: 0 auto;
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 0 5px 0 5px;
+    }
+    a:link,
+    a:visited {
+      color: #fff;
+    }
+    a:hover {
+      color: #ccc;
+      text-decoration: none;
+    }
+  }
+}
+
+.footer-social-icon {
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    display: inline-block;
+    a {
+      color: #fff;
+      font-size: 24px;
+      padding: 3px;
+    }
+  }
+}
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .page-wrap:after {
+  min-height: 142px; 
+}
+
+// ARTICLE, PAGES, POSTS
+
+.article {
+  padding: 20px 20px 10px 0;
+}
+
+.aside {
+  padding: 20px 10px 20px 10px;
+}
+
+
+// staff
+
+.staff-detail {
+  h3 {
+    margin: 0 0 5px 0;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+  }
+}
+
+// press release
+
+.press-release {
+  li {
+    padding-bottom: 20px;
+  }
+}
+
+// gallery
+
+.gallery-image {
+  display: block;
+  padding: 5px 10px 5px 0;
+  float: left;
+}
+
+//slideshow
+
+.slideshow {
+  h2, p {
+    text-shadow: 0 1px 2px #000;
+  }
+}
+
+// widget: facebook
+.widget-facebook {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+// widget: event
+.widget-event {
+  list-style-type: none;
+  padding-left: 0;
+  .widget-event-detail {
+    padding-bottom: 20px;
+  }
+}
+
+// offcanvas
+
+.offcanvas-tools {
+  padding: 10px 20px;
+  h3, h4 {
+    color: #fff;
+  }
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      a, a:visited {
+        color: #fff;
+      }
+      a:hover {
+        color: #444;
+      }
+    }
+  }
+}
+
+.theme-switcher {
+  list-style-type: none;
+  li {
+    float: left;
+    a {
+      display: block;
+      margin: 10px 10px 10px 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+// Mobile config
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 640px) {
+  .sm-hidden {
+    display: none;
+  }
+
+  .top-nav {
+    display: table;
+    margin: 0 auto;
+    float: none;
+    li {
+      a {
+        padding: 10px 10px;
+      }
+    }
+  }
+  h1.site-name {
+    padding: 0 0 20px 0;
+    text-align: center;
+  }
+  .mobile-pad {
+    padding: 5px 20px;
+  }
+}

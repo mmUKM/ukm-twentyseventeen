@@ -29,10 +29,7 @@ function ukmtheme_login_logo() { ?>
     display: block;
   }
   body.login {
-    background: #d10000; /* Old browsers */
-  }
-  body.login {
-    background: <?php echo get_theme_mod( 'primary_color' ); ?>;
+    background: #292929; /* Old browsers */
   }
   .login form {
     -webkit-border-radius: 3px;

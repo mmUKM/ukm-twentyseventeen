@@ -1,7 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Fifteen
+ * @subpackage UKM Twenty Seventeen
  * @since 1.0
  */
 require_once get_template_directory() . '/lib/tgmpa/class-tgm-plugin-activation.php';
@@ -86,15 +86,6 @@ function ukmtheme_register_required_plugins() {
       
   );
 
-  /*
-   * Array of configuration settings. Amend each line as needed.
-   *
-   * TGMPA will start providing localized text strings soon. If you already have translations of our standard
-   * strings available, please help us make TGMPA even better by giving us access to these translations or by
-   * sending in a pull-request with .po file(s) with the translations.
-   *
-   * Only uncomment the strings in the config array if you want to customize the strings.
-   */
   $config = array(
       'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
       'default_path' => '',                      // Default absolute path to bundled plugins.

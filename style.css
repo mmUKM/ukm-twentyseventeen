@@ -799,6 +799,7 @@ h1.site-name {
 }
 
 .footer {
+  position: relative;
   margin-top: 40px;
   padding-top: 40px;
   padding-bottom: 0;
@@ -806,14 +807,14 @@ h1.site-name {
   color: #fff;
 }
 
-.footer-copyright {
-  position: relative;
+.copyright-with-navigation {
   background: rgba(0, 0, 0, 0.07);
   height: 60px;
+  width: 100%;
   margin-top: 40px;
   padding: 20px 0 0 0;
 }
-.footer-copyright p {
+.copyright-with-navigation p {
   margin: 0 0 0 0;
   text-align: center;
 }
@@ -904,11 +905,6 @@ html, body {
 
 .slideshow h2, .slideshow p {
   text-shadow: 0 1px 2px #000;
-}
-
-.widget-facebook {
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .widget-event {

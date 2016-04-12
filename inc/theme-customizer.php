@@ -102,7 +102,7 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_basic', array(
-      'label'     => __( 'Basic frontpage (News with right sidebar)', 'ukmtheme' ),
+      'label'     => __( 'Latest News', 'ukmtheme' ),
       'section'   => 'ukmtheme_frontpage_layout',
       'priority'  => 10,
       'type'      => 'checkbox'
@@ -182,11 +182,11 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
     
     // News
     $wp_customize->add_setting( 'ukmtheme_frontpage_news', array( 
-      'default' => 4 
+      'default' => 3 
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_news', array(
-      'label'     => __( 'Number of news to show', 'ukmtheme' ),
+      'label'     => __( 'Number of news to show. Enter only 3 or 6', 'ukmtheme' ),
       'section'   => 'ukmtheme_frontpage_layout',
       'priority'  => 10,
       'type'      => 'text'

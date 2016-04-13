@@ -2,7 +2,7 @@
 /**
  * @package UKMTheme
  * @subpackage UKM Twenty Seventeen
- * @version 1.0
+ * @since 1.0
  */
 ?>
 </div><!-- stickyfooter -->

@@ -55,7 +55,7 @@
 </header>
 <nav class="main-nav" role="navigation">
   <div class="wrap column">
-    <div class="col-11-12">
+    <div class="col-11-12 col-small-11-12">
       <?php
         wp_nav_menu(array(
           'theme_location'    => 'main',
@@ -66,7 +66,7 @@
         ));
       ?>
     </div>
-    <div class="col-1-12 sm-hidden">
+    <div class="col-1-12 col-small-1-12">
     <?php get_template_part( 'templates/off', 'canvas-tools' );?>
     </div>
   </div>

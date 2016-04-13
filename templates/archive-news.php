@@ -24,7 +24,7 @@ get_header();
           <div class="col-3-12 pad-right">
             <?php
               if ( has_post_thumbnail() ) {
-                the_post_thumbnail();
+                the_post_thumbnail( 'latest_news_thumbnail' );
               }
               else {
                 echo '<img src="' . get_template_directory_uri() . '/img/placeholder_thumbnail.svg" />';

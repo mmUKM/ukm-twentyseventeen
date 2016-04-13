@@ -74,70 +74,70 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 @media only screen and (min-width: 320px) and (max-width: 640px) {
-  [class*="col-"] {
+  [class*="small-"] {
     width: 99.99%;
     display: block;
     float: none;
   }
 
-  .column-sm {
+  .column-small {
     padding: 10px;
   }
-}
-[class*="sm-col-"] {
-  box-sizing: border-box;
-  display: block;
-  float: left;
-}
 
-.sm-col-1-12 {
-  width: 8.3325%;
-}
+  [class*="col-small-"] {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+  }
 
-.sm-col-2-12 {
-  width: 16.665%;
-}
+  .col-small-1-12 {
+    width: 8.3325%;
+  }
 
-.sm-col-3-12 {
-  width: 24.9975%;
-}
+  .col-small-2-12 {
+    width: 16.665%;
+  }
 
-.sm-col-4-12 {
-  width: 33.33%;
-}
+  .col-small-3-12 {
+    width: 24.9975%;
+  }
 
-.sm-col-5-12 {
-  width: 41.6625%;
-}
+  .col-small-4-12 {
+    width: 33.33%;
+  }
 
-.sm-col-6-12 {
-  width: 49.995%;
-}
+  .col-small-5-12 {
+    width: 41.6625%;
+  }
 
-.sm-col-7-12 {
-  width: 58.3275%;
-}
+  .col-small-6-12 {
+    width: 49.995%;
+  }
 
-.sm-col-8-12 {
-  width: 66.66%;
-}
+  .col-small-7-12 {
+    width: 58.3275%;
+  }
 
-.sm-col-9-12 {
-  width: 74.9925%;
-}
+  .col-small-8-12 {
+    width: 66.66%;
+  }
 
-.sm-col-10-12 {
-  width: 83.325%;
-}
+  .col-small-9-12 {
+    width: 74.9925%;
+  }
 
-.sm-col-11-12 {
-  width: 91.6575%;
-}
+  .col-small-10-12 {
+    width: 83.325%;
+  }
 
-.sm-col-12-12 {
-  width: 99.99%;
-}
+  .col-small-11-12 {
+    width: 91.6575%;
+  }
 
+  .col-small-12-12 {
+    width: 99.99%;
+  }
+}
 #cssmenu {
   position: relative;
   height: 44px;
@@ -646,6 +646,10 @@ a img.aligncenter {
   /* Above WP toolbar. */
 }
 
+h2.title {
+  font-family: bebas_neueregular;
+}
+
 em {
   color: #444444;
 }
@@ -949,6 +953,20 @@ html, body {
 @media only screen and (min-width: 320px) and (max-width: 640px) {
   .sm-hidden {
     display: none;
+  }
+
+  .header-wrap {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e41e26+0,e41e26+50,a7a9ac+50,e41e26+50,a7a9ac+51,a7a9ac+100 */
+    background: #e41e26;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
   }
 
   .top-nav {

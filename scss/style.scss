@@ -3,11 +3,18 @@
 @import "core";
 
 $font-13px: 13px;
+$bebas: bebas_neueregular;
+
+// TYPOGRAPHY
+h2.title {
+  font-family: $bebas;
+}
 
 em {
   color: #444444;
 }
 
+// PADDING
 .pad-right {
   padding-right: 20px;
 }
@@ -212,6 +219,8 @@ h1.site-name {
   }
 }
 
+// STICKY FOOTER
+
 * {
   margin: 0;
 }
@@ -332,7 +341,14 @@ and (max-width : 640px) {
   .sm-hidden {
     display: none;
   }
-
+  .header-wrap {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e41e26+0,e41e26+50,a7a9ac+50,e41e26+50,a7a9ac+51,a7a9ac+100 */
+    background: #e41e26; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#e41e26 50%,#a7a9ac 51%,#a7a9ac 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#e41e26 50%,#a7a9ac 51%,#a7a9ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
   .top-nav {
     display: table;
     margin: 0 auto;

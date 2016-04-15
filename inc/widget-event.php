@@ -44,7 +44,7 @@ class Event_Widget extends WP_Widget {
 
 
         <div class="column">
-          <ul class="col-12-12 widget-event">
+          <ul class="large-12-12 widget-event">
           <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
             <li class="widget-event-detail">
               <a href="<?php echo get_permalink(); ?>"><h4><?php the_title(); ?></h4></a>

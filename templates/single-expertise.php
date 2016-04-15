@@ -6,10 +6,10 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="col-12-12 article"></article>
+  <article class="large-12-12 article"></article>
     <?php while ( have_posts() ) : the_post(); ?>
       <div class="column bottom-divider">
-        <div class="col-3-12 pad-right">
+        <div class="large-3-12 padding-right">
           <?php
             $expertPhoto = get_post_meta( get_the_ID(),'ut_expertise_photo',true );
             if ( $expertPhoto ) {
@@ -21,7 +21,7 @@ get_header(); ?>
           ?>
         </div>
 
-        <div class="col-9-12 pad-left">
+        <div class="large-9-12 padding-left">
           <h2><?php the_title(); ?></h2>
           <p><strong><?php _e('Email','ukmtheme'); ?>:</strong>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_expertise_email', true ); ?>&nbsp;<strong><?php _e('Phone','ukmtheme'); ?>:</strong>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_expertise_contact', true ); ?></p>
           <p><strong><?php _e( 'Current Position', 'ukmtheme' ) ?>:</strong>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_expertise_position', true ); ?></p>

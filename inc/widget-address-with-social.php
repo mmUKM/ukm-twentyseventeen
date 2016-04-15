@@ -31,12 +31,12 @@ class UKMtheme_Social_Widget extends WP_Widget {
     }
     ?>
     <div class="column">
-      <div class="col-12-12">
+      <div class="large-12-12">
         <p><?php echo $instance['textarea_address']; ?></p>
       </div>
     </div>
     <div class="column">
-      <div class="col-12-12 footer-social-link-wrap">
+      <div class="large-12-12 footer-social-link-wrap">
         <ul class="footer-social-icon">
           <li><a class="uk-icon-rss-square" href="<?php bloginfo('rss_url'); ?>" title="RSS"></a></li>
           <li><a class="uk-icon-facebook-square" href="<?php echo get_theme_mod( 'ukmtheme_social_media_facebook' ); ?>" title="Facebook"></a></li>

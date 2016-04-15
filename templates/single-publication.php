@@ -6,11 +6,11 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-12-12">
+  <article class="article large-12-12">
     <h2><?php the_title(); ?></h2>
       <?php while ( have_posts() ) : the_post(); ?>
         <div class="column">
-          <div class="col-3-12 pad-right">
+          <div class="large-3-12 padding-right">
             <?php
               $pub_cover = get_post_meta($post->ID,'ut_publication_cover',true);
               if ( $pub_cover ) { ?>
@@ -22,7 +22,7 @@ get_header(); ?>
               <?php }
             ?>
           </div>
-          <div class="col-9-12 pad-left">
+          <div class="large-9-12 padding-left">
             <h4><?php _e('Detail','ukmtheme') ?></h4>
             <table>
               <tr><td><?php _e('Author','ukmtheme'); ?></td><td>:&nbsp;<?php echo get_post_meta($post->ID, 'ut_publication_author', true); ?></td></tr>

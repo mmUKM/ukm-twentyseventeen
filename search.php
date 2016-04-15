@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-12-12">
+  <article class="article large-12-12">
     <h2><?php _e( 'Search', 'ukmtheme' ); ?></h2>
     <?php get_search_form(); ?>
     <?php while ( have_posts() ) : the_post(); ?>

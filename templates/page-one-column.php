@@ -8,7 +8,7 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-12-12">
+  <article class="article large-12-12">
     <?php while ( have_posts() ) : the_post(); ?>
     <h2><?php the_title(); ?></h2>
     <?php the_content(); ?>

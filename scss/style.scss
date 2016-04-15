@@ -15,19 +15,23 @@ em {
 }
 
 // PADDING
-.pad-right {
+.padding-right {
   padding-right: 20px;
 }
-.pad-left {
+
+.padding-left {
   padding-left: 20px;
 }
-.pad-top {
+
+.padding-top {
   padding-top: 20px;
 }
-.pad-bottom {
+
+.padding-bottom {
   padding-bottom: 20px;
 }
-.pad-global {
+
+.padding-global {
   padding: 20px 20px 20px 20px;
 }
 
@@ -335,10 +339,14 @@ html, body {
 
 // Mobile config
 
-@media only screen 
-and (min-width : 320px) 
-and (max-width : 640px) {
-  .sm-hidden {
+@media only screen and (min-width: 641px) and (max-width: 960px) {
+  .device-padding {
+    padding: 5px 20px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .small-hidden {
     display: none;
   }
   .header-wrap {
@@ -363,7 +371,7 @@ and (max-width : 640px) {
     padding: 0 0 20px 0;
     text-align: center;
   }
-  .mobile-pad {
+  .device-padding {
     padding: 5px 20px;
   }
 }

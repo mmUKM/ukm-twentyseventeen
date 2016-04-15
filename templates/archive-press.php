@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-8-12">
+  <article class="article large-8-12">
     <h2><?php _e( 'News Clipping', 'ukmtheme' ); ?></h2>
     <ul>
       <?php
@@ -30,7 +30,7 @@ get_header(); ?>
     </ul>
     <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
   </article>
-  <aside class="aside col-4-12">
+  <aside class="aside large-4-12">
     <div class="uk-panel uk-panel-box">
       <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
     </div>

@@ -29,7 +29,7 @@ get_header(); ?>
      */
     /** 00. */ if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) : get_template_part( 'templates/widget', 'box-slideset' );  endif;
   ?>
-  <div class="wrap mobile-pad">
+  <div class="wrap device-padding">
     <?php
     /** 01. */ if ( get_theme_mod( 'ukmtheme_frontpage_tabber' ) == 1 ) : get_template_part( 'templates/widget', 'box-tabber' );  endif;
     /** 02. */ if ( get_theme_mod( 'ukmtheme_frontpage_basic' ) == 1 ) : get_template_part( 'templates/widget', 'box-basic' );  endif;
@@ -49,15 +49,15 @@ get_header(); ?>
   <?php
 
 } else { ?>
-  <div class="wrap column mobile-pad">
-    <article class="article col-8-12">
+  <div class="wrap column device-padding">
+    <article class="article large-8-12">
       <?php while ( have_posts() ) : the_post(); ?>
       <h2><?php the_title(); ?></h2>
       <?php the_content(); ?>
       <?php endwhile;?>
       <?php get_template_part('templates/content','edit' ); ?>
     </article>
-    <aside class="aside col-4-12">
+    <aside class="aside large-4-12">
       <div class="uk-panel uk-panel-box">
         <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
       </div>

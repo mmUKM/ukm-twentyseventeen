@@ -17,7 +17,7 @@ get_header();
 
 ?>
 <div class="wrap column">
-  <article class="col-8-12 article">
+  <article class="large-8-12 article">
   <h2><?php echo __( 'Events', 'ukmtheme' ); ?></h2>
     <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
       <div class="bottom-divider">
@@ -34,7 +34,7 @@ get_header();
     <?php endif; ?>
     <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
   </article>
-  <aside class="aside col-4-12">
+  <aside class="aside large-4-12">
     <div class="uk-panel uk-panel-box">
       <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
     </div>

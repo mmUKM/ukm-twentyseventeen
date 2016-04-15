@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="col-12-12 article">
+  <article class="large-12-12 article">
     <?php while ( have_posts() ) : the_post(); ?>
       <h1 style="margin:0;"><?php the_title(); ?></h1>
       <h3 style="margin:0 0 20px 0;">

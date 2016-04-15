@@ -5,8 +5,8 @@
  * @since 1.0
  */
 get_header(); ?>
-<div id="primary" class="content-area wrap column mobile-pad">
-  <div id="main" class="site-main col-8-12" role="main">
+<div id="primary" class="content-area wrap column device-padding">
+  <div id="main" class="site-main large-8-12" role="main">
     <?php while ( have_posts() ) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?>>
     <?php the_title( '<h2>', '</h2>' ); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
     <?php endwhile;?>
     <?php get_template_part('templates/content','edit' ); ?>
   </div>
-  <aside class="aside col-4-12">
+  <aside class="aside large-4-12">
     <div class="uk-panel uk-panel-box">
       <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
     </div>

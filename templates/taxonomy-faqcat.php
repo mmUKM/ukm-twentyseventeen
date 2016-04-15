@@ -16,7 +16,7 @@ get_header();
   
 ?>
 <div class="wrap column">
-  <article class="article col-8-12">
+  <article class="article large-8-12">
   <h2><?php echo __( 'Frequently Asked Questions', 'ukmtheme' ) ?>&nbsp;:&nbsp;<?php single_cat_title(); ?></h2>
     <ol class="ut-faq">
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -29,7 +29,7 @@ get_header();
       <?php endwhile; ?>
     </ol>
   </article>
-  <aside class="aside col-4-12">
+  <aside class="aside large-4-12">
     <div class="uk-panel uk-panel-box">
       <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
     </div>

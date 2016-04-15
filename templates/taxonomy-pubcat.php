@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-12-12">
+  <article class="article large-12-12">
     <h2><?php single_cat_title(); ?></h2>
       <?php
       $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -20,7 +20,7 @@ get_header(); ?>
       
       if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="column bottom-divider">
-          <div class="col-2-12 pad-right">
+          <div class="large-2-12 padding-right">
             <?php
               $pub_cover = get_post_meta( $post->ID,'ut_publication_cover',true );
               if ( $pub_cover ) { ?>
@@ -32,7 +32,7 @@ get_header(); ?>
               <?php }
             ?>
           </div>
-          <div class="col-10-12 pad-left">
+          <div class="large-10-12 padding-left">
             <h3><?php the_title(); ?></h3>
             <table>
               <tr><td><?php _e( 'Author','ukmtheme' ); ?></td><td>:&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_author', true ); ?></td></tr>

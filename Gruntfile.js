@@ -51,8 +51,9 @@ module.exports = function(grunt) {
     sass: {
       dist: { 
         options: {
-          style: 'expanded',
-          sourcemap: 'none'
+          style: 'nested',
+          sourcemap: 'none',
+          noCache: true
         },
         files: {
           'style.css': 'scss/style.scss',
@@ -128,6 +129,14 @@ module.exports = function(grunt) {
           }
       }
     },
+    
+    stripCssComments: {
+      dist: {
+        files: {
+          'style.css': 'style.css'
+        }
+      }
+	},
 
     // grunt-contrib-clean
 
@@ -168,22 +177,20 @@ module.exports = function(grunt) {
               '!lib/uikit/css/*.almost-flat.min.css',
               'lib/uikit/css/components/*.css',
               '!lib/uikit/css/components/*.almost-flat.min.css'
-              ],
-      sass:   [
-              '.sass-cache'
               ]
     }
     
   }); // end Project configuration
 
   // load grunt task
-  
+ 
   grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  
 
   // execute grunt task
   

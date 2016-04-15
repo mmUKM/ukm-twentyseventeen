@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-8-12">
+  <article class="article large-8-12">
     <h2><?php _e('Directory', 'ukmtheme'); ?></h2>
 
     <?php 
@@ -20,8 +20,8 @@ get_header(); ?>
       if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
     ?>
     <div class="column">
-      <div class="col-small-3-12">
-          <div class="staff-photo pad-right">
+      <div class="small-3-12">
+          <div class="staff-photo padding-right">
             <?php
               $photo = get_post_meta( $post->ID,'ut_staff_photo',true );
               if ( $photo ) { ?>
@@ -35,8 +35,8 @@ get_header(); ?>
           </div>
       </div>
 
-      <div class="col-small-9-12">
-        <div class="staff-detail pad-left">
+      <div class="small-9-12">
+        <div class="staff-detail padding-left">
           <?php the_title( '<h3>', '</h3>' ); ?>
           <ul>
             <li><?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?></li>
@@ -73,7 +73,7 @@ get_header(); ?>
     <?php get_search_form(); ?>
     <?php endif; ?>
   </article>
-  <aside class="aside col-4-12">
+  <aside class="aside large-4-12">
     <div class="uk-panel uk-panel-box">
       <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
     </div>

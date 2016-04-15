@@ -56,14 +56,14 @@ class Latest_News_Widget_Thumbnail extends WP_Widget {
 
     if ( $news_query->have_posts() ) : while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 
-      <div class="column pad-bottom bottom-divider">
-        <div class="sm-col-2-12 pad-right">
+      <div class="column padding-bottom bottom-divider">
+        <div class="sm-large-2-12 padding-right">
           <?php 
             if ( has_post_thumbnail() ) { the_post_thumbnail( 'news_thumb' ); }
             else { echo '<img src="' . get_template_directory_uri() . '/img/placeholder_news.svg" height="auto" width="auto"/>'; }
           ?>
         </div>
-          <div class="sm-col-10-12 pad-left">
+          <div class="sm-large-10-12 padding-left">
             <h3 class="ut-news-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
                 <?php the_excerpt(); ?>
           </div>
@@ -71,7 +71,7 @@ class Latest_News_Widget_Thumbnail extends WP_Widget {
 
     <?php endwhile; endif; ?>
 
-    <div class="uk-panel pad-top">
+    <div class="uk-panel padding-top">
       <a href="<?php echo get_post_type_archive_link('news'); ?>"><button class="uk-button uk-button-small uk-button-primary"><?php _e('News Archive','ukmtheme'); ?></button></a>
     </div>
 

@@ -6,12 +6,12 @@
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article col-8-12">
+  <article class="article large-8-12">
     <?php while ( have_posts() ) : the_post(); ?>
      <h2><?php the_title(); ?></h2>
     <div class="column">
-      <div class="sm-col-3-12">
-          <div class="staff-photo pad-right">
+      <div class="sm-large-3-12">
+          <div class="staff-photo padding-right">
             <?php
               $staff_photo = get_post_meta($post->ID,'ut_staff_photo',true);
               if ( $staff_photo ) { ?>
@@ -25,8 +25,8 @@ get_header(); ?>
           </div>
       </div>
 
-      <div class="sm-col-9-12">
-        <div class="staff-detail pad-left">
+      <div class="sm-large-9-12">
+        <div class="staff-detail padding-left">
           <ul>
             <li><?php echo get_the_term_list( $post->ID, 'position', '', ', ', '' ); ?></li>
             <li><i class="uk-icon-phone-square"></i> <?php echo get_post_meta($post->ID, 'ut_staff_phone', true); ?></li>
@@ -59,7 +59,7 @@ get_header(); ?>
     <hr>
     <?php endwhile; ?>
   </article>
-  <aside class="aside col-4-12">
+  <aside class="aside large-4-12">
     <div class="uk-panel uk-panel-box">
       <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
     </div>

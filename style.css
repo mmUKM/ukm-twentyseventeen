@@ -1,7 +1,7 @@
 /*
 Theme Name: UKM Twenty Seventeen
 Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.0.2
+Version: 2017.0.0
 Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
@@ -74,7 +74,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 @media only screen and (min-width: 320px) and (max-width: 640px) {
-  [class*="small-"] {
+  [class*="col-"] {
     width: 99.99%;
     display: block;
     float: none;
@@ -83,61 +83,61 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   .column-small {
     padding: 10px;
   }
-
-  [class*="col-small-"] {
-    box-sizing: border-box;
-    display: block;
-    float: left;
-  }
-
-  .col-small-1-12 {
-    width: 8.3325%;
-  }
-
-  .col-small-2-12 {
-    width: 16.665%;
-  }
-
-  .col-small-3-12 {
-    width: 24.9975%;
-  }
-
-  .col-small-4-12 {
-    width: 33.33%;
-  }
-
-  .col-small-5-12 {
-    width: 41.6625%;
-  }
-
-  .col-small-6-12 {
-    width: 49.995%;
-  }
-
-  .col-small-7-12 {
-    width: 58.3275%;
-  }
-
-  .col-small-8-12 {
-    width: 66.66%;
-  }
-
-  .col-small-9-12 {
-    width: 74.9925%;
-  }
-
-  .col-small-10-12 {
-    width: 83.325%;
-  }
-
-  .col-small-11-12 {
-    width: 91.6575%;
-  }
-
-  .col-small-12-12 {
-    width: 99.99%;
-  }
 }
+[class*="col-small-"] {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+}
+
+.col-small-1-12 {
+  width: 8.3325%;
+}
+
+.col-small-2-12 {
+  width: 16.665%;
+}
+
+.col-small-3-12 {
+  width: 24.9975%;
+}
+
+.col-small-4-12 {
+  width: 33.33%;
+}
+
+.col-small-5-12 {
+  width: 41.6625%;
+}
+
+.col-small-6-12 {
+  width: 49.995%;
+}
+
+.col-small-7-12 {
+  width: 58.3275%;
+}
+
+.col-small-8-12 {
+  width: 66.66%;
+}
+
+.col-small-9-12 {
+  width: 74.9925%;
+}
+
+.col-small-10-12 {
+  width: 83.325%;
+}
+
+.col-small-11-12 {
+  width: 91.6575%;
+}
+
+.col-small-12-12 {
+  width: 99.99%;
+}
+
 #cssmenu {
   position: relative;
   height: 44px;

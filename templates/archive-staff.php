@@ -20,7 +20,7 @@ get_header(); ?>
       if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
     ?>
     <div class="column">
-      <div class="sm-col-3-12">
+      <div class="col-small-3-12">
           <div class="staff-photo pad-right">
             <?php
               $photo = get_post_meta( $post->ID,'ut_staff_photo',true );
@@ -35,7 +35,7 @@ get_header(); ?>
           </div>
       </div>
 
-      <div class="sm-col-9-12">
+      <div class="col-small-9-12">
         <div class="staff-detail pad-left">
           <?php the_title( '<h3>', '</h3>' ); ?>
           <ul>

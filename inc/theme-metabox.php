@@ -1,11 +1,8 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Fifteen
+ * @subpackage UKM Twenty Seventeen
  * @since 1.0
- * @author Jamaludin Rajalu
- *
- * Custom Metabox for Post Type
  */
 
 
@@ -309,7 +306,7 @@ add_action( 'cmb2_init', 'ukmtheme_gallery_metaboxes' );
 
     $gallery->add_field( array(
       'name'    => __( 'Gallery Cover Image', 'ukmtheme' ),
-      'desc'    => __( 'Upload an image or enter a URL. Dimensions of the image should be 300x300 pixels.', 'ukmtheme' ),
+      'desc'    => __( 'Upload an image or enter a URL. Dimensions of the image should be 300x240 pixels.', 'ukmtheme' ),
       'id'      => $prefix . 'gallery_cover',
       'type'    => 'file',
       'allow'   => array('url'),

@@ -25,7 +25,7 @@
     <div class="column bottom-divider">
       <div class="col-3-12 pad-right">
         <?php
-          $gal_cover = get_post_meta($post->ID,'ut_gallery_cover',true);
+          $gal_cover = get_post_meta( get_the_ID(),'ut_gallery_cover',true);
           if ( $gal_cover ) { ?>
         <img src="<?php echo $gal_cover; ?>" width="300" height="300" alt="Gallery Cover">
           <?php }
@@ -37,8 +37,8 @@
       </div>
       <div class="col-9-12 pad-left">
         <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-        <p><?php _e('Date:&nbsp;','ukmtheme'); ?><?php echo get_post_meta($post->ID, 'ut_gallery_date', true); ?><br/>
-        <?php _e('Photo by:&nbsp;','ukmtheme'); ?><?php echo get_post_meta($post->ID, 'ut_gallery_photographer', true); ?></p>
+        <p><?php _e('Date:&nbsp;','ukmtheme'); ?><?php echo get_post_meta( get_the_ID(), 'ut_gallery_date', true ); ?><br/>
+        <?php _e('Photo by:&nbsp;','ukmtheme'); ?><?php echo get_post_meta( get_the_ID(), 'ut_gallery_photographer', true); ?></p>
       </div>
     </div>
     <?php endwhile; else: ?>

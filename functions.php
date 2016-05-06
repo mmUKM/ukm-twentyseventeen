@@ -141,6 +141,8 @@ add_action( 'after_setup_theme', 'ukmtheme_module' );
     }
   }
 
+remove_filter( 'term_description','wpautop' );
+  
 /**
  * Excerpt
  * Replaces the excerpt "more" text by a link

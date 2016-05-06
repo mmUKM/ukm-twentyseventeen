@@ -8,6 +8,11 @@ get_header(); ?>
 <div class="wrap column">
   <article class="article large-12-12">
     <h2><?php _e( 'Journal', 'ukmtheme' ); ?>&nbsp;&#58;&nbsp;<?php single_cat_title(); ?></h2>
+    <div class="large-3-12 padding-right">
+      <img src="<?php echo term_description( '', get_query_var( 'jourcat' ) ) ?>">
+    </div>
+    <div class="large-9-12">
+    
       <?php
       $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
@@ -17,7 +22,7 @@ get_header(); ?>
         'posts_per_page'  => 10,
         'paged'           => $paged,
       ));
-      
+
       if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
       <div class="column">
         <div class="large-10-12">
@@ -34,6 +39,7 @@ get_header(); ?>
         <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ukmtheme' ); ?></p>
         <?php get_search_form(); ?>
       <?php endif; ?>
+    </div>
       <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
   </article>
 </div>

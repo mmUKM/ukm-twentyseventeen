@@ -620,7 +620,7 @@ function ut_journal() {
     'labels'              => $labels,
     'supports'            => array( 'title', 'editor' ),
     'taxonomies'          => array( 'jourcat', 'jourkey' ),
-    'hierarchical'        => false,
+    'hierarchical'        => true,
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,

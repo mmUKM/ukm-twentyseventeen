@@ -21,12 +21,6 @@ module.exports = function(grunt) {
         },
         {
           expand: true,
-          cwd: 'bower_components/Tax-Meta-Class/Tax-meta-class',
-          src: '**',
-          dest: 'lib/Tax-meta-class'
-        },
-        {
-          expand: true,
           cwd: 'bower_components/fitvids',
           src: 'jquery.fitvids.js',
           dest: 'lib/fitvids'
@@ -169,7 +163,11 @@ module.exports = function(grunt) {
               '!lib/cmb2/languages/cmb2-ms_MY.mo',
               '!lib/cmb2/languages/cmb2-ms_MY.po',
               '!lib/cmb2/*.php',
-              'lib/cmb2/coverage.clover'
+              'lib/cmb2/coverage.clover',
+              'lib/cmb2/*.md',
+              'lib/cmb2/*.txt',
+              'lib/cmb2/phpunit.xml.dist',
+              
               ],
       uikit:  [
               'lib/uikit/less',

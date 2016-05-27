@@ -137,7 +137,7 @@ add_action( 'after_setup_theme', 'ukmtheme_module' );
       require( get_template_directory() . '/inc/widget-news-thumbnail.php' );
       require( get_template_directory() . '/inc/widget-operating-hour.php' );
       require( get_template_directory() . '/inc/widget-youtube.php' );
-      //require( get_template_directory() . '/inc/widget-visitor-counter.php' );
+      require( get_template_directory() . '/inc/widget-visitor-counter.php' );
     }
   }
 

@@ -19,7 +19,6 @@
     "CMB2": "https://github.com/WebDevStudios/CMB2.git#~2.2.1",
     "TGM-Plugin-Activation": "https://github.com/TGMPA/TGM-Plugin-Activation.git#~2.5.2",
     "jqnewsTicker": "https://github.com/jayeshmagare/jqnewsTicker.git#~1.0.2",
-    "uikit": "^2.26.2",
-    "Tax-Meta-Class": "https://github.com/bainternet/Tax-Meta-Class.git"
+    "uikit": "^2.26.3"
   }
 }

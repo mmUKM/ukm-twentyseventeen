@@ -2,7 +2,7 @@
 Contributors: Jamaludin Rajalu
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.5-RC1
-Version: 2017.0.2
+Version: 2017.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: red, two column, three column, four column, responsive design

@@ -23,16 +23,7 @@ class Visitor_Counter_Widget extends WP_Widget {
     
 ?>
     <p style="margin-top: 0;"><?php _e( 'This site can be accessed using smart devices. Best viewed using the latest versions of web browsers on a minimum resolution of 1024x768.', 'ukmtheme' ); ?></p>
-    <!-- BEGIN: Powered by Supercounters.com -->
-    <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
-    <script type="text/javascript">
-      var sc_texthit_var = sc_texthit_var || [];sc_text_hit(<?php echo get_theme_mod( 'ukmtheme_supercounter' ); ?>,
-      "<?php _e( 'Visitors','ukmtheme' ); ?>&nbsp;.&nbsp;<?php _e( 'View Full Statistic','ukmtheme' ); ?>",
-      "ffffff"
-      );
-    </script><br>
-    <?php _e( 'Last Update:&nbsp;', 'ukmtheme' ); ?><?php echo get_theme_mod( 'ukmtheme_date_of_update' ); ?><br/>
-    <!-- END: Powered by Supercounters.com -->  
+    <p><?php _e( 'Last Update:&nbsp;', 'ukmtheme' ); ?><?php echo get_theme_mod( 'ukmtheme_date_of_update' ); ?></p>
   <?php
     echo $args['after_widget'];
   }

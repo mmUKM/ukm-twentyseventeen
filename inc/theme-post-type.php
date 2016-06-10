@@ -726,8 +726,8 @@ function ut_add_new_journal_columns( $columns ){
   $columns = array(
     'cb'                => '<input type="checkbox">',
     'ut_journal_cover'  => __( 'Cover', 'ukmtheme' ),
-    'title'             => __( 'Title', 'ukmtheme' ),
-    'jourcat'           => __( 'Category', 'ukmtheme' ),
+    'title'             => __( 'Article', 'ukmtheme' ),
+    'jourcat'           => __( 'Journal', 'ukmtheme' ),
     'jourkey'           => __( 'Keyword', 'ukmtheme' ),
     'ut_journal_author' => __( 'Author', 'ukmtheme' )
   );

@@ -166,7 +166,7 @@ module.exports = function(grunt) {
               'lib/cmb2/coverage.clover',
               'lib/cmb2/*.md',
               'lib/cmb2/*.txt',
-              'lib/cmb2/phpunit.xml.dist',
+              'lib/cmb2/phpunit.xml.dist'
               
               ],
       uikit:  [

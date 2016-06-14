@@ -7,7 +7,7 @@
 ?>
 <div class="column padding-top padding-bottom">
     <h2 class="title"><?php _e( 'Latest News', 'ukmtheme' ) ?> | <a href="<?php echo get_post_type_archive_link('news'); ?>"><?php _e( 'More News', 'ukmtheme' ); ?></a></h2>
-    <ul class="uk-grid">
+    <ul class="uk-grid uk-grid-match" data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}">
     <?php
     
     $news = get_theme_mod( 'ukmtheme_frontpage_news' );
@@ -20,15 +20,17 @@
     
     while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <li class="uk-width-medium-1-3">
-        <div class="padding-bottom">
-          <?php
-            if ( has_post_thumbnail() ) { the_post_thumbnail( 'latest_news_thumbnail' ); }
-            else { echo '<img src="' . get_template_directory_uri() . '/img/placeholder_thumbnail.svg" height="auto" width="auto"/>'; }
-          ?>
-        </div>
-        <div class="latest-news-excerpt">
-          <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <?php the_excerpt(); ?>
+        <div class="uk-panel uk-panel-box">
+          <div class="padding-bottom">
+            <?php
+              if ( has_post_thumbnail() ) { the_post_thumbnail( 'latest_news_thumbnail' ); }
+              else { echo '<img src="' . get_template_directory_uri() . '/img/placeholder_thumbnail.svg" height="auto" width="auto"/>'; }
+            ?>
+          </div>
+          <div class="latest-news-excerpt">
+            <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <?php the_excerpt(); ?>
+          </div>
         </div>
       </li>
     <?php endwhile; ?>

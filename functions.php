@@ -64,6 +64,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
     wp_enqueue_style( 'uikit-slidenav', get_template_directory_uri() . '/lib/uikit/css/components/slidenav.almost-flat.min.css', false, '2.26.2' );
     wp_enqueue_style( 'uikit-search', get_template_directory_uri() . '/lib/uikit/css/components/search.almost-flat.min.css', false, '2.26.2' );
     wp_enqueue_style( 'bebas-font', get_template_directory_uri() . '/fonts/bebas-neue/stylesheet.css', false, '2017.0' );
+    wp_enqueue_style( 'merriweather-font', get_template_directory_uri() . '/fonts/merriweather/stylesheet.css', false, '2017.0' );
     wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.0' );
   }
 

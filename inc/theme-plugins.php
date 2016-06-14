@@ -84,6 +84,12 @@ function ukmtheme_register_required_plugins() {
       'required'  => false,
     ),
       
+    array(
+      'name'      => 'Regenerate Thumbnails',
+      'slug'      => 'regenerate-thumbnails',
+      'required'  => false,
+    ),
+      
   );
 
   $config = array(

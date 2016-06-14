@@ -3,11 +3,19 @@
 @import "core";
 
 $font-13px: 13px;
-$bebas: bebas_neueregular;
 
 // TYPOGRAPHY
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 15px 0;
+  font-family: 'Merriweather Light', serif;
+  font-weight: 300;
+  color: #444;
+  text-transform: none;
+}
+
 h2.title {
-  font-family: $bebas;
+  font-family: 'Merriweather Light', serif;
 }
 
 em {
@@ -111,8 +119,8 @@ em {
 
 h1.site-name {
   margin: 0;
-  font-family: "bebas_neueregular",Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-size: 24px;
+  font-family: 'Merriweather Light', serif;
+  font-size: 21px;
   color: #fff;
   text-align: right;
   padding-right: 6.3325%;

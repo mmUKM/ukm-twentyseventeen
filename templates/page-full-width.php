@@ -8,13 +8,12 @@
  * Template Name: Page: Full Width 
  */
 get_header(); ?>
-<div class="column">
+<div class="padding-global column">
   <article class="large-12-12 full-width-article">
     <?php while ( have_posts() ) : the_post(); ?>
       <?php the_post_thumbnail( 'full') ?>
         <div class="column">
           <div class="">
-           <h2 class="wrap padding-top padding-bottom"><?php the_title() ?></h2>
             <?php the_content(); ?>
           </div>
         </div>

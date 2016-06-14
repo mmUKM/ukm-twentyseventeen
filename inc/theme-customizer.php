@@ -289,32 +289,13 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
       'type'      => 'checkbox'
     ) );
     
-    /**
-     * Visitor Counter with Statistic
-     * Plugin from http://www.supercounters.com
-     * Copy only id no.
-     */
-    
     $wp_customize->add_section( 'ukmtheme_visitor_counter' , array(
-    'title'      => __( 'Visitor Stat and Last Update', 'ukmtheme' ),
+    'title'      => __( 'Last Update', 'ukmtheme' ),
     'priority'   => 100,
     ) );
     
-    // Facebook
-    $wp_customize->add_setting( 'ukmtheme_supercounter', array( 
-      'default' => 'PASTE HERE, NUMBER ONLY!'
-    ) );
-
-    $wp_customize->add_control( 'ukmtheme_supercounter', array(
-      'label'     => __( 'Hit Counter ID', 'ukmtheme' ),
-      'description' => __( 'Visit <a href="http://www.supercounters.com/hitcounter" target="_blank">www.supercounters.com</a>. Choose text then hit submit button. Copy and paste generated code into notepad. Copy number after --sc_text_hit(COPY_THIS_NUMBER_ONLY,"Visits"--', 'ukmtheme' ),
-      'section'   => 'ukmtheme_visitor_counter',
-      'priority'  => 10,
-      'type'      => 'text'
-    ) );
-    
     $wp_customize->add_setting( 'ukmtheme_date_of_update', array( 
-      'default' => '01/01/2016'
+      'default' => '01/06/2016'
     ) );
 
     $wp_customize->add_control( 'ukmtheme_date_of_update', array(

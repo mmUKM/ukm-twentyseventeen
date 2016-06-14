@@ -16,7 +16,7 @@ $slideset = new WP_Query( $args ); ?>
 
 <div class="uk-slidenav-position" data-uk-slider>
   <div class="uk-slider-container">
-    <div class="uk-slider uk-grid-width-small-1-4">
+    <div class="uk-slider uk-grid-width-1-4">
     <?php if ( $slideset->have_posts() ) : while ( $slideset->have_posts() ) : $slideset->the_post(); ?>
       <a href="<?php echo get_post_meta(get_the_ID(),'ut_slideset_link',true); ?>" title="<?php the_title(); ?>">
         <img src="<?php echo get_post_meta(get_the_ID(),'ut_slideset_image',true); ?>" alt="<?php the_title(); ?>">

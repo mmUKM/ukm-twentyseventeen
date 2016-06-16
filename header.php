@@ -26,10 +26,9 @@
           </a>
         <?php else : ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <img src="<?php echo get_template_directory_uri() . '/img/logo-white-text.svg'; ?>" alt="<?php echo get_bloginfo('name'); ?>">
+            <img src="<?php echo get_template_directory_uri() . '/img/logo-black-text.svg'; ?>" alt="<?php echo get_bloginfo('name'); ?>">
           </a>
         <?php endif; ?>
-        <div class="logo-triangle"></div>
       </div>
       <div class="large-6-12">
         <div class="column">
@@ -52,7 +51,7 @@
       </div>
   </div>
 </header>
-<nav class="main-nav" role="navigation">
+<nav class="main-nav" role="navigation" data-uk-sticky>
   <div class="wrap column">
     <div class="large-11-12 small-11-12">
       <?php

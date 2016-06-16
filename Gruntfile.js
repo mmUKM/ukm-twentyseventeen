@@ -198,7 +198,8 @@ module.exports = function(grunt) {
 
   // execute grunt task
   
-  grunt.registerTask('default', ['copy', 'sass', 'uglify', 'usebanner', 'clean']);
-  grunt.registerTask('dev', ['watch']);
+  grunt.registerTask('build', ['copy', 'sass', 'uglify', 'usebanner', 'clean']);
+  grunt.registerTask('default', ['sass', 'uglify', 'usebanner', 'clean']);
+  grunt.registerTask('develop', ['watch']);
 
 };

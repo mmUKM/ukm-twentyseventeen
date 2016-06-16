@@ -59,7 +59,13 @@ em {
 }
 
 .header-wrap {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e41e26+0,e41e26+50,a7a9ac+50,a7a9ac+100 */
+  background: #c7c7c7;
+}
+
+.header-wrap:after {
+  display: block;
+  content: "";
+  height: 4px;
   background: #e41e26; /* Old browsers */
   background: -moz-linear-gradient(left,  #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#a7a9ac 100%); /* Chrome10-25,Safari5.1-6 */
@@ -100,7 +106,7 @@ em {
     }
     a:link,
     a:visited {
-      color: #fff;
+      color: #292929;
     }
     a:hover {
       color: #ccc;
@@ -111,7 +117,7 @@ em {
 
 .top-nav-search {
   text-align: center;
-  color: #fff;
+  color: #292929;
   display: block;
   margin-top: 15px;
   font-size: 18px;
@@ -121,7 +127,7 @@ h1.site-name {
   margin: 0;
   font-family: 'Merriweather Light', serif;
   font-size: 21px;
-  color: #fff;
+  color: #292929;
   text-align: right;
   padding-right: 6.3325%;
   line-height: normal;

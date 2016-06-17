@@ -200,6 +200,6 @@ module.exports = function(grunt) {
   
   grunt.registerTask('build', ['copy', 'sass', 'uglify', 'usebanner', 'clean']);
   grunt.registerTask('default', ['sass', 'uglify', 'usebanner', 'clean']);
-  grunt.registerTask('develop', ['watch']);
-
+  grunt.registerTask('dev', ['watch']);
+  
 };

@@ -453,7 +453,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     cursor: pointer; }
 
   #cssmenu #menu-button > a {
-    padding: 16px 20px; }
+    padding: 12px 20px; }
 
   #cssmenu ul.open li,
   #cssmenu > ul.open > li {
@@ -624,21 +624,6 @@ em {
 .header-wrap {
   background: #c7c7c7; }
 
-.header-wrap:after {
-  display: block;
-  content: "";
-  height: 4px;
-  background: #e41e26;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 );
-  /* IE6-9 */ }
-
 .logo {
   position: relative; }
 
@@ -694,7 +679,22 @@ h1.site-name {
   z-index: 500;
   background: #292929;
   color: #fff;
-  height: 44px; }
+  height: 48px; }
+
+.main-nav:before {
+  display: block;
+  content: "";
+  height: 4px;
+  background: #e41e26;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 );
+  /* IE6-9 */ }
 
 .main-nav-menu-icon {
   font-size: 18px;
@@ -844,17 +844,7 @@ html, body {
     display: none; }
 
   .header-wrap {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e41e26+0,e41e26+50,a7a9ac+50,e41e26+50,a7a9ac+51,a7a9ac+100 */
-    background: #e41e26;
-    /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #e41e26 50%, #a7a9ac 51%, #a7a9ac 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 );
-    /* IE6-9 fallback on horizontal gradient */ }
+    background: #c7c7c7; }
 
   .top-nav {
     display: table;

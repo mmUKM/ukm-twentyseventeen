@@ -1,24 +1,11 @@
 {
   "name": "ukm-twentyseventeen",
   "description": "WordPress Theme for Official Site of Universiti Kebangsaan Malaysia",
-  "main": "index.php",
-  "authors": [
-    "Jamaludin Rajalu"
-  ],
-  "license": "GPL-2.0",
-  "keywords": [
-    "ukmtheme",
-    "ukm-twentyseventeen"
-  ],
-  "homepage": "https://github.com/mmUKM/ukm-twentyseventeen",
-  "moduleType": [
-    "globals"
-  ],
-  "devDependencies": {
-    "fitvids": "~1.1.0",
-    "CMB2": "https://github.com/WebDevStudios/CMB2.git#~2.2.1",
-    "TGM-Plugin-Activation": "https://github.com/TGMPA/TGM-Plugin-Activation.git#~2.5.2",
-    "jqnewsTicker": "https://github.com/jayeshmagare/jqnewsTicker.git#~1.0.2",
-    "uikit": "^2.26.3"
+  "dependencies": {
+    "fitvids": "v1.1.0",
+    "CMB2": "https://github.com/WebDevStudios/CMB2.git#v2.2.1",
+    "TGM-Plugin-Activation": "https://github.com/TGMPA/TGM-Plugin-Activation.git#v2.6.1",
+    "jqnewsTicker": "https://github.com/jayeshmagare/jqnewsTicker.git#v1.0.2",
+    "uikit": "v2.26.4"
   }
 }

@@ -28,12 +28,12 @@ get_header(); ?>
      * Widget yang boleh disusun ada yang bernombor berikut:
      */
     /** 00. */ if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) : get_template_part( 'templates/widget', 'box-slideset' );  endif;
+    /** 01. */ if ( get_theme_mod( 'ukmtheme_frontpage_one_box' ) == 1 ) : get_template_part( 'templates/widget', 'box-one' );  endif;
   ?>
   <div class="wrap device-padding">
     <?php
-    /** 01. */ if ( get_theme_mod( 'ukmtheme_frontpage_tabber' ) == 1 ) : get_template_part( 'templates/widget', 'box-tabber' );  endif;
-    /** 02. */ if ( get_theme_mod( 'ukmtheme_frontpage_basic' ) == 1 ) : get_template_part( 'templates/widget', 'box-basic' );  endif;
-    /** 03. */ if ( get_theme_mod( 'ukmtheme_frontpage_one_box' ) == 1 ) : get_template_part( 'templates/widget', 'box-one' );  endif;
+    /** 02. */ if ( get_theme_mod( 'ukmtheme_frontpage_tabber' ) == 1 ) : get_template_part( 'templates/widget', 'box-tabber' );  endif;
+    /** 03. */ if ( get_theme_mod( 'ukmtheme_frontpage_basic' ) == 1 ) : get_template_part( 'templates/widget', 'box-basic' );  endif;
     /** 04. */ if ( get_theme_mod( 'ukmtheme_frontpage_two_box' ) == 1 ) : get_template_part( 'templates/widget', 'box-two' );  endif;
     /** 05. */ if ( get_theme_mod( 'ukmtheme_frontpage_three_box' ) == 1 ) : get_template_part( 'templates/widget', 'box-three' );  endif;
     /** 06. */ if ( get_theme_mod( 'ukmtheme_frontpage_four_box' ) == 1 ) : get_template_part( 'templates/widget', 'box-four' );  endif;

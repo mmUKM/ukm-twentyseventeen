@@ -193,13 +193,79 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
     ) );
     
     /**
-     * Social Media Links
-     * 01. Facebook
-     * 02. Instagram
-     * 03. Twitter
-     * 04. Youtube
+     * Footer Widgets
+     * 20160726
      */
 
+    $wp_customize->add_section( 'ukmtheme_footer_widgets' , array(
+    'title'      => __( 'Footer Widgets Layout', 'ukmtheme' ),
+    'priority'   => 100,
+    ) );
+
+    // Footer widgets: one column
+    $wp_customize->add_setting( 'ukmtheme_footer_widget_one', array(
+      'default' => 0
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_footer_widget_one', array(
+      'label'     => __( 'One Column', 'ukmtheme' ),
+      'section'   => 'ukmtheme_footer_widgets',
+      'priority'  => 10,
+      'type'      => 'checkbox'
+    ) );
+
+    // Footer widgets: two column
+    $wp_customize->add_setting( 'ukmtheme_footer_widget_two', array(
+      'default' => 0
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_footer_widget_two', array(
+      'label'     => __( 'Two Column', 'ukmtheme' ),
+      'section'   => 'ukmtheme_footer_widgets',
+      'priority'  => 10,
+      'type'      => 'checkbox'
+    ) );
+
+    // Footer widgets: three column
+    $wp_customize->add_setting( 'ukmtheme_footer_widget_three', array(
+      'default' => 0
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_footer_widget_three', array(
+      'label'     => __( 'Three Column', 'ukmtheme' ),
+      'section'   => 'ukmtheme_footer_widgets',
+      'priority'  => 10,
+      'type'      => 'checkbox'
+    ) );
+
+    // Footer widgets: four column
+    $wp_customize->add_setting( 'ukmtheme_footer_widget_four', array(
+      'default' => 0
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_footer_widget_four', array(
+      'label'     => __( 'Four Column', 'ukmtheme' ),
+      'section'   => 'ukmtheme_footer_widgets',
+      'priority'  => 10,
+      'type'      => 'checkbox'
+    ) );
+
+    // Footer widgets: five column
+    $wp_customize->add_setting( 'ukmtheme_footer_widget_five', array(
+      'default' => 0
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_footer_widget_five', array(
+      'label'     => __( 'Five Column', 'ukmtheme' ),
+      'section'   => 'ukmtheme_footer_widgets',
+      'priority'  => 10,
+      'type'      => 'checkbox'
+    ) );
+
+    /**
+     * Social media links
+     * link in widgets with sidebar icon
+     */
     $wp_customize->add_section( 'ukmtheme_social_media_links' , array(
     'title'      => __( 'Social Media Links', 'ukmtheme' ),
     'priority'   => 100,

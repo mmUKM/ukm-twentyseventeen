@@ -264,10 +264,50 @@ if (!function_exists('ukmtheme_widgets_init')) {
     ) );
 
     register_sidebar( array(
-      'name'            => __( 'Footer Three Column', 'ukmtheme' ),
+      'name'            => __( 'Footer: Five Column', 'ukmtheme' ),
       'id'              => 'sidebar-5',
+      'description'     => __( 'Five Column footer widgets. Dont put more than five widget.', 'ukmtheme' ),
+      'before_widget'   => '<div class="uk-width-medium-1-5" style="min-height: 100px;">',
+      'after_widget'    => '</div>',
+      'before_title'    => '<h3 class="widget-title uk-hidden">',
+      'after_title'     => '</h3>',
+    ) );
+
+    register_sidebar( array(
+      'name'            => __( 'Footer: Four Column', 'ukmtheme' ),
+      'id'              => 'sidebar-6',
+      'description'     => __( 'Four Column footer widgets. Dont put more than four widget.', 'ukmtheme' ),
+      'before_widget'   => '<div class="uk-width-medium-1-4" style="min-height: 100px;">',
+      'after_widget'    => '</div>',
+      'before_title'    => '<h3 class="widget-title uk-hidden">',
+      'after_title'     => '</h3>',
+    ) );
+
+    register_sidebar( array(
+      'name'            => __( 'Footer: Three Column', 'ukmtheme' ),
+      'id'              => 'sidebar-7',
       'description'     => __( 'Three Column footer widgets. Dont put more than three widget.', 'ukmtheme' ),
       'before_widget'   => '<div class="uk-width-medium-1-3" style="min-height: 100px;">',
+      'after_widget'    => '</div>',
+      'before_title'    => '<h3 class="widget-title uk-hidden">',
+      'after_title'     => '</h3>',
+    ) );
+
+    register_sidebar( array(
+      'name'            => __( 'Footer: Two Column', 'ukmtheme' ),
+      'id'              => 'sidebar-8',
+      'description'     => __( 'Two Column footer widgets. Dont put more than two widget.', 'ukmtheme' ),
+      'before_widget'   => '<div class="uk-width-medium-1-2" style="min-height: 100px;">',
+      'after_widget'    => '</div>',
+      'before_title'    => '<h3 class="widget-title uk-hidden">',
+      'after_title'     => '</h3>',
+    ) );
+
+    register_sidebar( array(
+      'name'            => __( 'Footer: One Column', 'ukmtheme' ),
+      'id'              => 'sidebar-9',
+      'description'     => __( 'One Column footer widgets. Customise using siteorigin widgets', 'ukmtheme' ),
+      'before_widget'   => '<div class="uk-width-medium-1-1" style="min-height: 100px;">',
       'after_widget'    => '</div>',
       'before_title'    => '<h3 class="widget-title uk-hidden">',
       'after_title'     => '</h3>',

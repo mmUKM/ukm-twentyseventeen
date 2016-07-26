@@ -7,11 +7,7 @@
 ?>
 </div><!-- stickyfooter -->
 <footer class="footer">
-  <div class="wrap device-padding">
-    <div class="uk-grid uk-grid-divider" data-uk-grid-match="">
-      <?php if (dynamic_sidebar( 'sidebar-5' )) : else : ?><?php endif; ?>
-    </div>  
-  </div>
+<?php get_template_part( 'templates/widget', 'footer' ); ?>
   <div class="copyright-with-navigation">
     <div class="wrap column">
       <div class="large-12-12">

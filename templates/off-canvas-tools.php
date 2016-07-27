@@ -17,8 +17,30 @@
        </ul>
     </div>
     <?php
-      if ( get_theme_mod( 'ukmtheme_polylang_switcher' ) == 1 ) : get_template_part( 'templates/widget', 'lang-polylang' );  endif;
-      if ( get_theme_mod( 'ukmtheme_google_switcher' ) == 1 ) : get_template_part( 'templates/widget', 'lang-google' );  endif;
+      /**
+       * Plugin: Polylang
+       * Widget language switcher
+       */
+      if ( get_theme_mod( 'ukmtheme_polylang_switcher' ) == 1 ) { ?>
+        <h4><?php _e( 'Language', 'ukmtheme' ); ?></h4>
+        <ul>
+          <li>
+            <ul>
+              <?php pll_the_languages();?>
+            </ul>
+          </li>
+        </ul>
+      <?php }
+      /**
+       * Plugin: Google language switcher
+       * Widget language switcher
+       */
+      if ( get_theme_mod( 'ukmtheme_google_switcher' ) == 1 ) { ?>
+        <h4>
+          <?php _e( 'Google Translator', 'ukmtheme' ); ?>
+        </h4>
+        <?php echo do_shortcode('[google-translator]'); ?>
+      <?php }
     ?>
   </div>
 </div>

@@ -1,4 +1,4 @@
-UKM Twenty Fifteen WordPress Theme
+UKM Twenty Seventeen WordPress Theme
 Copyright (C) 2016  Jamaludin Rajalu
 
 This program is free software: you can redistribute it and/or modify

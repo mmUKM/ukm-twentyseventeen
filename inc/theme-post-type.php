@@ -1,7 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Fifteen
+ * @subpackage UKM Twenty Seventeen
  * @since 1.0
  * 
  * Post type
@@ -176,7 +176,7 @@ function ut_conference() {
   );
   $args = array(
     'label'                 => __( 'Conference', 'ukmtheme' ),
-    'description'           => __( 'Conference plugin for UKM Twenty Fifteen Theme', 'ukmtheme' ),
+    'description'           => __( 'Conference plugin for UKM Twenty Seventeen Theme', 'ukmtheme' ),
     'labels'                => $labels,
     'supports'              => array( 'title', ),
     //'taxonomies'            => array( 'category', 'post_tag' ),
@@ -852,7 +852,7 @@ add_action( 'init', 'ukmtheme_news_category_taxonomy', 0 );
   
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Fifteen
+ * @subpackage UKM Twenty Seventeen
  * @version 2.0
  * @author Jamaludin Rajalu
  *

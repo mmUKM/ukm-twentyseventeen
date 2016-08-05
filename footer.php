@@ -26,4 +26,4 @@
 </footer>
 <?php wp_footer(); ?>
 </body>
-</html><?php echo '<!-- UKM Twenty Seventeen v-' . wp_get_theme()->get( 'Version' ) . ' @http://www.ukm.my/templates -->'; ?>
+</html>

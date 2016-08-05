@@ -5,17 +5,10 @@
  * @since 1.0
  */
  ?>
-<a href="#main-tools" class="main-nav-menu-icon" data-uk-offcanvas ><i class="uk-icon-cog"></i></a>
+<a href="#main-tools" class="top-nav-tool" data-uk-offcanvas ><?php _e( 'Languages', 'ukmtheme' ); ?></a>
 <div id="main-tools" class="uk-offcanvas">
   <div class="uk-offcanvas-bar offcanvas-tools">
-    <div class="column">
-      <h4><?php _e( 'Theme', 'ukmtheme' ); ?></h4>
-       <ul class="theme-switcher">
-         <li><a role="button" style="background:<?php echo get_theme_mod( 'primary_color' ); ?>;" class="button-reset-color"></a></li>
-         <li><a role="button" style="background:<?php echo get_theme_mod( 'secondary_color' ); ?>;" class="button-option-2"></a></li>
-         <li><a role="button" style="background:<?php echo get_theme_mod( 'tertiary_color' ); ?>;" class="button-option-3"></a></li>
-       </ul>
-    </div>
+    
     <?php
       /**
        * Plugin: Polylang
@@ -42,5 +35,17 @@
         <?php echo do_shortcode('[google-translator]'); ?>
       <?php }
     ?>
+    <?php
+    /**
+     * Sidebar widget offcanvas
+     */ 
+    if (dynamic_sidebar( 'sidebar-3' )) : else : ?><?php endif; ?>
+    
+    <div class="padding-top">
+    <h4><?php _e( 'Disclaimer Third Language Translation', 'ukmtheme' ); ?></h4>
+    <p>
+      <?php _e( 'Please note that the page which will be displayed later after translations have been made is an automatic computer translation. The odds that the content will differ from the original cannot be avoided. We are not responsible on any damage or wrong information which might occur from the contents which has been translated. Official content is only at the original page which is in English or Malay.', 'ukmtheme'); ?>
+    </p>
+    </div>
   </div>
 </div>

@@ -2,10 +2,10 @@
 /**
  * @package UKMTheme
  * @subpackage UKM Twenty Seventeen
- * @version 1.0
+ * @since 1.0
  */
-?>
-<a class="top-nav-search" data-uk-offcanvas="{target:'#ut-search'}"><i class="uk-icon-search"></i></a>
+ ?>
+<a href="#ut-search" class="main-nav-menu-icon" data-uk-offcanvas ><i class="uk-icon-search"></i></a>
 <div id="ut-search" class="uk-offcanvas">
   <div class="uk-offcanvas-bar">
     <form role="search" method="get" id="searchform" class="uk-search searchform" action="<?php echo home_url( '/' ); ?>">

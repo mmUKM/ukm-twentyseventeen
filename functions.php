@@ -312,6 +312,16 @@ if (!function_exists('ukmtheme_widgets_init')) {
       'before_title'    => '<h3 class="widget-title uk-hidden">',
       'after_title'     => '</h3>',
     ) );
+    
+    register_sidebar( array(
+      'name'            => __( 'Off-canvas Widget', 'ukmtheme' ),
+      'id'              => 'sidebar-11',
+      'description'     => __( 'Off-canvas sidebar widget', 'ukmtheme' ),
+      'before_widget'   => '<div>',
+      'after_widget'    => '</div>',
+      'before_title'    => '<h4>',
+      'after_title'     => '</h4>',
+    ) );
   }
 }
 

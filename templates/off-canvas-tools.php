@@ -5,7 +5,7 @@
  * @since 1.0
  */
  ?>
-<a href="#main-tools" class="top-nav-tool" data-uk-offcanvas ><?php _e( 'Languages', 'ukmtheme' ); ?></a>
+<a href="#main-tools" class="top-nav-tool" data-uk-offcanvas ><?php _e( '<i class="uk-icon-globe"></i> Language', 'ukmtheme' ); ?></a>
 <div id="main-tools" class="uk-offcanvas">
   <div class="uk-offcanvas-bar offcanvas-tools">
     
@@ -39,7 +39,7 @@
     /**
      * Sidebar widget offcanvas
      */ 
-    if (dynamic_sidebar( 'sidebar-3' )) : else : ?><?php endif; ?>
+    if (dynamic_sidebar( 'sidebar-11' )) : else : ?><?php endif; ?>
     
     <div class="padding-top">
     <h4><?php _e( 'Disclaimer Third Language Translation', 'ukmtheme' ); ?></h4>

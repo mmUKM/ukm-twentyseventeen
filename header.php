@@ -6,8 +6,9 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>><?php echo '<!-- ukm-twentyseventeen-master v-' . wp_get_theme()->get( 'Version' ) . ' by Jamaludin Rajalu -->'; ?>
+<?php echo '<!-- WP UKMTheme v-' . wp_get_theme()->get( 'Version' ) . ' by Jamaludin Rajalu -->'; ?>
 
+<html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -34,7 +35,7 @@
       </div>
       <div class="large-6-12">
         <div class="column top-nav-wrap">
-          <div class="large-10-12 small-8-12">
+          <div class="large-9-12 small-7-12">
             <?php
               wp_nav_menu(array(
                 'theme_location'  => 'top',
@@ -43,7 +44,7 @@
               ));
             ?>
           </div>
-          <div class="large-2-12 small-4-12">
+          <div class="large-3-12 small-5-12">
             <?php get_template_part( 'templates/off', 'canvas-tools' ); ?>
           </div>
         </div>

@@ -18,7 +18,7 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
      * Logo
      */
     $wp_customize->add_section( 'ukmtheme_theme_logo', array(
-      'title' => __( 'Site Logo', 'ukmtheme' ),
+      'title' => __( 'Site Logo & Title', 'ukmtheme' ),
       'priority' => 100,
     ) );
     
@@ -33,53 +33,31 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
       'settings'	=> 'ukmtheme_logo_image',
       'priority'	=> 20
     ) ) );
-
+    
     /**
-     * Theme colour switcher
-     * Three colour options
+     * Title size
      */
-
-    $wp_customize->add_section( 'ukmtheme_theme_colors', array(
-      'title' => __( 'Site Colors', 'ukmtheme' ),
-      'priority' => 100,
+    $wp_customize->add_setting( 'ukmtheme_title_size', array( 
+      'default' => null 
     ) );
 
-    // Primary colour
-
-    $wp_customize->add_setting( 'primary_color', array(
-      'default' => '#d10000'
+    $wp_customize->add_control( 'ukmtheme_title_size', array(
+      'label'       => __( 'Title Size', 'ukmtheme' ),
+      'description' => __( 'Choose this value to suite your needs', 'ukmtheme'),
+      'section'     => 'ukmtheme_theme_logo',
+      'priority'    => 30,
+      'type'        => 'select',
+      'choices'     => array(
+                  null => __( 'Default', 'ukmtheme'),
+                  '15px'  => '15px',
+                  '16px'  => '16px',
+                  '17px'  => '17px',
+                  '18px'  => '18px',
+                  '19px'  => '19px',
+                  '20px'  => '20px'
+                  )
     ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
-      'label' => 'Primary',
-      'section' => 'ukmtheme_theme_colors',
-      'settings' => 'primary_color',
-    ) ) );
-
-    // Secondary colour
-
-    $wp_customize->add_setting( 'secondary_color', array(
-      'default' => '#0095d9'
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
-      'label' => 'Secondary',
-      'section' => 'ukmtheme_theme_colors',
-      'settings' => 'secondary_color',
-    ) ) );
-
-    // Tertiary colour
-
-    $wp_customize->add_setting( 'tertiary_color', array(
-      'default' => '#494949'
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tertiary_color', array(
-      'label' => 'Tertiary',
-      'section' => 'ukmtheme_theme_colors',
-      'settings' => 'tertiary_color',
-    ) ) );
-
+    
     /**
      * Frontpage Layout
      * 01. Basic Layout (News with Right Sidbar)

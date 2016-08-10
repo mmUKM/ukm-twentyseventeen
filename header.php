@@ -49,12 +49,12 @@
           </div>
         </div>
         <div class="column">
-          <h1 class="site-name"><?php echo bloginfo( 'name' ); ?></h1>
+          <h1 class="site-name" style="font-size:<?php echo get_theme_mod( 'ukmtheme_title_size' ); ?>"><?php echo bloginfo( 'name' ); ?></h1>
         </div>
       </div>
   </div>
 </header>
-<nav class="main-nav" role="navigation" data-uk-sticky>
+<nav class="main-nav" role="navigation" data-uk-sticky="{media:'(min-width: 959px)'}">
   <div class="wrap column">
     <div class="large-11-12 small-11-12">
       <?php

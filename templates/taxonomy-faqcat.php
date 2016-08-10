@@ -16,23 +16,16 @@ get_header();
   
 ?>
 <div class="wrap column">
-  <article class="article large-8-12">
-  <h2><?php echo __( 'Frequently Asked Questions', 'ukmtheme' ) ?>&nbsp;:&nbsp;<?php single_cat_title(); ?></h2>
-    <ol class="ut-faq">
-      <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-        <li>
-          <a data-uk-toggle="{target:'#ut-faq-<?php echo get_the_ID(); ?>'}"><?php the_title(); ?></a>
-          <div id="ut-faq-<?php echo get_the_ID(); ?>" class="uk-panel uk-panel-box uk-hidden">
-            <?php the_content(); ?>
-          </div>
-        </li>
-      <?php endwhile; ?>
-    </ol>
-  </article>
-  <aside class="aside large-4-12">
-    <div class="uk-panel uk-panel-box">
-      <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
+  <article class="article large-12-12">
+  <h2><?php single_cat_title(); ?></h2>
+    <div class="uk-accordion" data-uk-accordion="{showfirst: false}">
+      <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+      <h3 class="uk-accordion-title"><?php the_title(); ?><i class="uk-icon-chevron-circle-down uk-float-right"></i></h3>
+        <div class="uk-accordion-content"><?php the_content(); ?></div>
+      <?php endwhile; else: ?>
     </div>
-  </aside>
+      <p><?php _e( 'Sorry, no page matched your criteria.', 'ukmtheme' ); ?></p>
+      <?php endif; ?>
+  </article>
 </div>
 <?php get_footer(); ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UKM Twenty Seventeen\n"
-"POT-Creation-Date: 2016-03-27 11:01+0800\n"
-"PO-Revision-Date: 2016-03-27 11:03+0800\n"
+"POT-Creation-Date: 2016-08-10 13:33+0800\n"
+"PO-Revision-Date: 2016-08-10 13:35+0800\n"
 "Last-Translator: Jamaludin Rajalu <jrajalu@ukm.edu.my>\n"
 "Language-Team: ukmtheme <jrajalu@ukm.edu.my>\n"
 "Language: ms_MY\n"
@@ -26,82 +26,130 @@ msgstr ""
 msgid "Nothing Found"
 msgstr "Tidak Dijumpai"
 
-#: 404.php:11 archive.php:33 templates/archive-conference.php:25
-#: templates/archive-gallery.php:45 templates/archive-journal.php:32
-#: templates/archive-news.php:42 templates/archive-press.php:27
+#: 404.php:11 archive.php:32 templates/archive-conference.php:21
+#: templates/archive-gallery.php:45 templates/archive-journal.php:33
+#: templates/archive-news.php:40 templates/archive-press.php:27
 #: templates/archive-publication.php:46 templates/archive-staff.php:72
 #: templates/archive-video.php:46 templates/taxonomy-galcat.php:45
-#: templates/taxonomy-jourcat.php:34 templates/taxonomy-jourkey.php:34
-#: templates/taxonomy-newscat.php:45 templates/taxonomy-pubcat.php:47
+#: templates/taxonomy-jourcat.php:39 templates/taxonomy-jourkey.php:34
+#: templates/taxonomy-newscat.php:41 templates/taxonomy-pubcat.php:47
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 "Seperti tidak dijumpai apa yang anda cari. Mungkin carian boleh membantu."
 
-#: footer.php:21
+#: footer.php:14
 msgid "Copyright &copy;&nbsp;"
 msgstr "Hakcipta &copy;&nbsp;"
 
-#: footer.php:21
+#: footer.php:14
 msgid "The National University of Malaysia"
 msgstr "Universiti Kebangsaan Malaysia"
 
-#: functions.php:100
+#: functions.php:104
 msgid "Top Navigation"
 msgstr "Navigasi Atas"
 
-#: functions.php:101
+#: functions.php:105
 msgid "Main Navigation"
 msgstr "Navigasi Utama"
 
-#: functions.php:102
+#: functions.php:106
 msgid "Footer Navigation"
 msgstr "Navigasi Pembawah"
 
-#: functions.php:110
+#: functions.php:114
 msgid "Home"
 msgstr "Utama"
 
-#: functions.php:153
+#: functions.php:159
 msgid " ..."
 msgstr "…"
 
-#: functions.php:211
+#: functions.php:217
 msgid "Page Sidebar"
 msgstr "Barsisi Halaman"
 
-#: functions.php:213
+#: functions.php:219
 msgid "Appears in frontpage, pages, posts and post type."
 msgstr "Paparan pada muka hadapan, pages, posts dan post type"
 
-#: functions.php:221
+#: functions.php:227
 msgid "Frontpage: One Column"
 msgstr "Muka Hadapan: Satu Ruangan"
 
-#: functions.php:223 functions.php:233 functions.php:243 functions.php:253
-msgid "Appears when using the optional Front Page"
-msgstr "Muncul apabila menggunakan Halaman Depan pilhan"
+#: functions.php:229
+msgid "Advanced use with SiteOrigin page builder/widget bundle"
+msgstr ""
 
-#: functions.php:231
-msgid "Frontpage: Three Column"
-msgstr "Muka Hadapan: Tiga Ruangan"
-
-#: functions.php:241
+#: functions.php:237
 msgid "Frontpage: Two Column"
 msgstr "Muka Depan: Dua Lajur"
 
-#: functions.php:251
+#: functions.php:239 functions.php:249 functions.php:259
+msgid "Appears when using the optional Front Page"
+msgstr "Muncul apabila menggunakan Halaman Depan pilhan"
+
+#: functions.php:247
+msgid "Frontpage: Three Column"
+msgstr "Muka Hadapan: Tiga Ruangan"
+
+#: functions.php:257
 msgid "Frontpage: Four Column"
 msgstr "Muka Hadapan: Empat Ruangan"
 
-#: functions.php:261
-msgid "Footer Three Column"
-msgstr "Tiga Lajur Footer"
+#: functions.php:267
+msgid "Footer: Five Column"
+msgstr ""
 
-#: functions.php:263
+#: functions.php:269
+msgid "Five Column footer widgets. Dont put more than five widget."
+msgstr ""
+
+#: functions.php:277
+msgid "Footer: Four Column"
+msgstr ""
+
+#: functions.php:279
+msgid "Four Column footer widgets. Dont put more than four widget."
+msgstr ""
+
+#: functions.php:287
+msgid "Footer: Three Column"
+msgstr ""
+
+#: functions.php:289
 msgid "Three Column footer widgets. Dont put more than three widget."
 msgstr "Three Column footer widgets. Dont put more than three widget."
+
+#: functions.php:297
+msgid "Footer: Two Column"
+msgstr ""
+
+#: functions.php:299
+msgid "Two Column footer widgets. Dont put more than two widget."
+msgstr ""
+
+#: functions.php:307
+msgid "Footer: One Column"
+msgstr ""
+
+#: functions.php:309
+msgid "One Column footer widgets. Customise using siteorigin widgets"
+msgstr ""
+
+#: functions.php:317
+msgid "Off-canvas Widget"
+msgstr ""
+
+#: functions.php:319
+msgid "Off-canvas sidebar widget"
+msgstr ""
+
+#: functions.php:339
+msgid "Search for:"
+msgstr "Cari untuk:"
 
 #: inc/theme-archive-links.php:44
 msgid "View All"
@@ -120,8 +168,8 @@ msgid "Archives"
 msgstr "Arkib"
 
 #: inc/theme-customizer.php:21
-msgid "Site Logo"
-msgstr "Logo Laman"
+msgid "Site Logo & Title"
+msgstr ""
 
 #: inc/theme-customizer.php:30
 msgid "Custom Site Logo"
@@ -132,681 +180,710 @@ msgid "Image or vector file size 399x100 pixel. Use PNG or SVG file only"
 msgstr ""
 "Imej atau fail vektor bersaiz 399x100 piksel. Guna fiail PNG atau SVG sahaja"
 
-#: inc/theme-customizer.php:43
-msgid "Site Colors"
-msgstr "Warna Halaman"
+#: inc/theme-customizer.php:45
+msgid "Title Size"
+msgstr ""
 
-#: inc/theme-customizer.php:95
+#: inc/theme-customizer.php:46
+msgid "Choose this value to suite your needs"
+msgstr ""
+
+#: inc/theme-customizer.php:51
+msgid "Default"
+msgstr "Lalai"
+
+#: inc/theme-customizer.php:73
 msgid "Frontpage Layout"
 msgstr "Susun Atur Muka Hadapan"
 
-#: inc/theme-customizer.php:105
-msgid "Basic frontpage (News with right sidebar)"
-msgstr "Muka Hadapan Ringkas (Berita dengan bar sisi kanan)"
+#: inc/theme-customizer.php:83 inc/theme-post-type.php:787
+#: templates/widget-home.php:55
+msgid "Latest News"
+msgstr "Berita Terkini"
 
-#: inc/theme-customizer.php:117
+#: inc/theme-customizer.php:95
 msgid "One column box"
 msgstr "Kotak Satu Lajur"
 
-#: inc/theme-customizer.php:129
+#: inc/theme-customizer.php:107
 msgid "Two column box"
 msgstr "Kotak Dua Lajur"
 
-#: inc/theme-customizer.php:141
+#: inc/theme-customizer.php:119
 msgid "Three column box"
 msgstr "Kotak Tiga Lajur"
 
-#: inc/theme-customizer.php:153
+#: inc/theme-customizer.php:131
 msgid "Four column box"
 msgstr "Kotak Empat Lajur"
 
-#: inc/theme-customizer.php:165 inc/theme-post-type.php:1145
-#: inc/theme-post-type.php:1158
+#: inc/theme-customizer.php:143 inc/theme-post-type.php:1065
+#: inc/theme-post-type.php:1078
 msgid "Slideset"
 msgstr "Slideset"
 
-#: inc/theme-customizer.php:177 inc/theme-post-type.php:1537
+#: inc/theme-customizer.php:155 inc/theme-post-type.php:1457
 msgid "Tabber"
 msgstr "Tabber"
 
-#: inc/theme-customizer.php:189
-msgid "Number of news to show"
-msgstr "Jumlah berita untuk dipaparkan"
+#: inc/theme-customizer.php:167
+msgid "Number of news to show. Enter only 3 or 6"
+msgstr ""
 
-#: inc/theme-customizer.php:204
+#: inc/theme-customizer.php:179
+msgid "Footer Widgets Layout"
+msgstr ""
+
+#: inc/theme-customizer.php:189
+msgid "One Column"
+msgstr ""
+
+#: inc/theme-customizer.php:201
+msgid "Two Column"
+msgstr ""
+
+#: inc/theme-customizer.php:213
+msgid "Three Column"
+msgstr ""
+
+#: inc/theme-customizer.php:225
+msgid "Four Column"
+msgstr ""
+
+#: inc/theme-customizer.php:237
+msgid "Five Column"
+msgstr ""
+
+#: inc/theme-customizer.php:248
 msgid "Social Media Links"
 msgstr "Pautan Media Sosial"
 
-#: inc/theme-customizer.php:214
+#: inc/theme-customizer.php:258
 msgid "Facebook"
 msgstr "Facebook"
 
-#: inc/theme-customizer.php:226
+#: inc/theme-customizer.php:270
 msgid "Instagram"
 msgstr "Instagram"
 
-#: inc/theme-customizer.php:238
+#: inc/theme-customizer.php:282
 msgid "Twitter"
 msgstr "Twitter"
 
-#: inc/theme-customizer.php:250
+#: inc/theme-customizer.php:294
 msgid "Youtube"
 msgstr "Youtube"
 
-#: inc/theme-customizer.php:264
+#: inc/theme-customizer.php:308
 msgid "Language Switcher"
 msgstr "Pengalih Bahasa"
 
-#: inc/theme-customizer.php:274
+#: inc/theme-customizer.php:318
 msgid "Polylang Language Switcher"
 msgstr "Pengalih Bahasa Polylang"
 
-#: inc/theme-customizer.php:286
+#: inc/theme-customizer.php:330
 msgid "Google Language Switcher"
 msgstr "Pengalih Bahasa Google"
 
-#: inc/theme-customizer.php:299
-msgid "Visitor Stat and Last Update"
+#: inc/theme-customizer.php:337
+msgid "Last Update"
 msgstr ""
 
-#: inc/theme-customizer.php:309
-msgid "Supercounter ID"
-msgstr "ID Supercounter"
-
-#: inc/theme-customizer.php:310
-msgid "Copy only id no. Please refer developer."
-msgstr "Salin nombor id sahaja. Rujuk pembangun"
-
-#: inc/theme-customizer.php:321
+#: inc/theme-customizer.php:346
 msgid "Date of Update"
 msgstr ""
 
-#: inc/theme-customizer.php:322
+#: inc/theme-customizer.php:347
 msgid "Date of update format dd/mm/yyyy"
 msgstr ""
 
-#: inc/theme-metabox.php:28
+#: inc/theme-metabox.php:25
 msgid "Conference Details"
 msgstr ""
 
-#: inc/theme-metabox.php:36
+#: inc/theme-metabox.php:33
 msgid "Slides"
 msgstr ""
 
-#: inc/theme-metabox.php:37
+#: inc/theme-metabox.php:34
 msgid ""
 "Upload or add multiple images. Dimensions of the image should be 960x380 "
 "pixels"
 msgstr ""
 
-#: inc/theme-metabox.php:44 templates/single-conference.php:28
+#: inc/theme-metabox.php:41 templates/single-conference.php:28
 msgid "Keynote Speaker"
 msgstr "Pengucap Utama"
 
-#: inc/theme-metabox.php:45
+#: inc/theme-metabox.php:42
 msgid ""
 "Upload or add multiple images. Dimensions of the image should be 380x300 "
 "pixels. Go into Media edit image, enter image title for speaker name, "
 "caption for title/position and alternate text for additional content."
 msgstr ""
 
-#: inc/theme-metabox.php:52 templates/single-conference.php:25
+#: inc/theme-metabox.php:49 templates/single-conference.php:25
 msgid "Introduction"
 msgstr "Pengenalan"
 
-#: inc/theme-metabox.php:53 inc/theme-metabox.php:305
+#: inc/theme-metabox.php:50 inc/theme-metabox.php:302
 msgid "Some description."
 msgstr "Sedikit keterangan."
 
-#: inc/theme-metabox.php:60
+#: inc/theme-metabox.php:57
 msgid "Start Date"
 msgstr ""
 
-#: inc/theme-metabox.php:61
+#: inc/theme-metabox.php:58
 msgid "Conference Start Date"
 msgstr ""
 
-#: inc/theme-metabox.php:64 inc/theme-metabox.php:73 inc/theme-metabox.php:323
-#: inc/theme-metabox.php:459 inc/theme-metabox.php:494
-#: inc/theme-metabox.php:580
+#: inc/theme-metabox.php:61 inc/theme-metabox.php:70 inc/theme-metabox.php:320
+#: inc/theme-metabox.php:456 inc/theme-metabox.php:491
+#: inc/theme-metabox.php:577
 msgid "d/m/Y"
 msgstr ""
 
-#: inc/theme-metabox.php:69
+#: inc/theme-metabox.php:66
 msgid "End Date"
 msgstr ""
 
-#: inc/theme-metabox.php:70
+#: inc/theme-metabox.php:67
 msgid "Conference End Date"
 msgstr ""
 
-#: inc/theme-metabox.php:77 inc/theme-metabox.php:512
+#: inc/theme-metabox.php:74 inc/theme-metabox.php:509
 #: inc/theme-post-type.php:260
 msgid "Venue"
 msgstr "Lokasi"
 
-#: inc/theme-metabox.php:78
+#: inc/theme-metabox.php:75
 msgid "Conference Venue"
 msgstr ""
 
-#: inc/theme-metabox.php:84 templates/single-conference.php:41
+#: inc/theme-metabox.php:81 templates/single-conference.php:41
 msgid "Organizer"
 msgstr "Penganjur"
 
-#: inc/theme-metabox.php:85
+#: inc/theme-metabox.php:82
 msgid "organizer detail"
 msgstr ""
 
-#: inc/theme-metabox.php:94
+#: inc/theme-metabox.php:91
 msgid "Additional Details (Display in Tab Style)"
 msgstr ""
 
-#: inc/theme-metabox.php:102
+#: inc/theme-metabox.php:99
 msgid "Title #1"
 msgstr ""
 
-#: inc/theme-metabox.php:103 inc/theme-metabox.php:118
-#: inc/theme-metabox.php:133 inc/theme-metabox.php:148
-#: inc/theme-metabox.php:163 inc/theme-metabox.php:178
+#: inc/theme-metabox.php:100 inc/theme-metabox.php:115
+#: inc/theme-metabox.php:130 inc/theme-metabox.php:145
+#: inc/theme-metabox.php:160 inc/theme-metabox.php:175
 msgid "Edit this title (use short term)"
 msgstr ""
 
-#: inc/theme-metabox.php:109
+#: inc/theme-metabox.php:106
 msgid "Title #1 Content"
 msgstr ""
 
-#: inc/theme-metabox.php:110
+#: inc/theme-metabox.php:107
 msgid "Some content for title #1."
 msgstr ""
 
-#: inc/theme-metabox.php:117
+#: inc/theme-metabox.php:114
 msgid "Title #2"
 msgstr ""
 
-#: inc/theme-metabox.php:124
+#: inc/theme-metabox.php:121
 msgid "Title #2 Content"
 msgstr ""
 
-#: inc/theme-metabox.php:125
+#: inc/theme-metabox.php:122
 msgid "Some content for title #2."
 msgstr ""
 
-#: inc/theme-metabox.php:132
+#: inc/theme-metabox.php:129
 msgid "Title #3"
 msgstr ""
 
-#: inc/theme-metabox.php:139
+#: inc/theme-metabox.php:136
 msgid "Title #3 Content"
 msgstr ""
 
-#: inc/theme-metabox.php:140
+#: inc/theme-metabox.php:137
 msgid "Some content for title #3."
 msgstr ""
 
-#: inc/theme-metabox.php:147
+#: inc/theme-metabox.php:144
 msgid "Title #4"
 msgstr ""
 
-#: inc/theme-metabox.php:154
+#: inc/theme-metabox.php:151
 msgid "Title #4 Content"
 msgstr ""
 
-#: inc/theme-metabox.php:155
+#: inc/theme-metabox.php:152
 msgid "Some content for title #4."
 msgstr ""
 
-#: inc/theme-metabox.php:162
+#: inc/theme-metabox.php:159
 msgid "Title #5"
 msgstr ""
 
-#: inc/theme-metabox.php:169
+#: inc/theme-metabox.php:166
 msgid "Title #5 Content"
 msgstr ""
 
-#: inc/theme-metabox.php:170
+#: inc/theme-metabox.php:167
 msgid "Some content for title #5."
 msgstr ""
 
-#: inc/theme-metabox.php:177
+#: inc/theme-metabox.php:174
 msgid "Title #6"
 msgstr ""
 
-#: inc/theme-metabox.php:184
+#: inc/theme-metabox.php:181
 msgid "Title #6 Content"
 msgstr ""
 
-#: inc/theme-metabox.php:185
+#: inc/theme-metabox.php:182
 msgid "Some content for title #6."
 msgstr ""
 
-#: inc/theme-metabox.php:195
+#: inc/theme-metabox.php:192
 msgid "Show Additional Content"
 msgstr ""
 
-#: inc/theme-metabox.php:203 inc/theme-metabox.php:204
+#: inc/theme-metabox.php:200 inc/theme-metabox.php:201
 msgid "Show Title and Content #1"
 msgstr ""
 
-#: inc/theme-metabox.php:210 inc/theme-metabox.php:211
+#: inc/theme-metabox.php:207 inc/theme-metabox.php:208
 msgid "Show Title and Content #2"
 msgstr ""
 
-#: inc/theme-metabox.php:217 inc/theme-metabox.php:218
+#: inc/theme-metabox.php:214 inc/theme-metabox.php:215
 msgid "Show Title and Content #3"
 msgstr ""
 
-#: inc/theme-metabox.php:224 inc/theme-metabox.php:225
+#: inc/theme-metabox.php:221 inc/theme-metabox.php:222
 msgid "Show Title and Content #4"
 msgstr ""
 
-#: inc/theme-metabox.php:231 inc/theme-metabox.php:232
+#: inc/theme-metabox.php:228 inc/theme-metabox.php:229
 msgid "Show Title and Content #5"
 msgstr ""
 
-#: inc/theme-metabox.php:238 inc/theme-metabox.php:239
+#: inc/theme-metabox.php:235 inc/theme-metabox.php:236
 msgid "Show Title and Content #6"
 msgstr ""
 
-#: inc/theme-metabox.php:256
+#: inc/theme-metabox.php:253
 msgid "Video Detail"
 msgstr "Butiran Video"
 
-#: inc/theme-metabox.php:264
+#: inc/theme-metabox.php:261
 msgid "Video Link"
 msgstr "Pautan Video"
 
-#: inc/theme-metabox.php:265
+#: inc/theme-metabox.php:262
 msgid "Right click at youtube video then copy video url."
 msgstr "Klik kanan pada video youtube kemudia salin url."
 
-#: inc/theme-metabox.php:271
+#: inc/theme-metabox.php:268
 msgid "Video ID"
 msgstr "ID Video"
 
-#: inc/theme-metabox.php:272
+#: inc/theme-metabox.php:269
 msgid "Example: https://youtu.be/AkoOCm1Oug4. Copy only AkoOCm1Oug4"
 msgstr "Contoh: https://youtu.be/AkoOCm1Oug4. Salin AkoOCm1Oug4 sahaja"
 
-#: inc/theme-metabox.php:278 inc/theme-metabox.php:279
+#: inc/theme-metabox.php:275 inc/theme-metabox.php:276
 msgid "Video Description"
 msgstr "Keterangan Video"
 
-#: inc/theme-metabox.php:296
+#: inc/theme-metabox.php:293
 msgid "Gallery Detail"
 msgstr "Butiran Galeri"
 
-#: inc/theme-metabox.php:304
+#: inc/theme-metabox.php:301
 msgid "Description"
 msgstr "Keterangan"
 
-#: inc/theme-metabox.php:311
+#: inc/theme-metabox.php:308
 msgid "Gallery Cover Image"
 msgstr "Imej Kulit Galeri"
 
-#: inc/theme-metabox.php:312
+#: inc/theme-metabox.php:309
 msgid ""
-"Upload an image or enter a URL. Dimensions of the image should be 300x300 "
+"Upload an image or enter a URL. Dimensions of the image should be 300x240 "
 "pixels."
 msgstr ""
-"Muat naik gambar atau masukkan URL. Dimensi imej hendaklah 300x300 piksel."
 
-#: inc/theme-metabox.php:319 inc/theme-metabox.php:455
-#: inc/theme-metabox.php:490 inc/theme-metabox.php:576
+#: inc/theme-metabox.php:316 inc/theme-metabox.php:452
+#: inc/theme-metabox.php:487 inc/theme-metabox.php:573
 #: inc/theme-post-type.php:88 inc/theme-post-type.php:257
-#: inc/theme-post-type.php:994 inc/theme-post-type.php:1189
-#: inc/theme-post-type.php:1267
+#: inc/theme-post-type.php:914 inc/theme-post-type.php:1109
+#: inc/theme-post-type.php:1187
 msgid "Date"
 msgstr "Tarikh"
 
-#: inc/theme-metabox.php:320
+#: inc/theme-metabox.php:317
 msgid "Gallery Date"
 msgstr "Tarikh Galeri"
 
-#: inc/theme-metabox.php:327
+#: inc/theme-metabox.php:324
 msgid "Photographer"
 msgstr "Jurufoto"
 
-#: inc/theme-metabox.php:328
+#: inc/theme-metabox.php:325
 msgid "Photo by"
 msgstr "Foto oleh"
 
-#: inc/theme-metabox.php:334 inc/theme-metabox.php:360
-#: inc/theme-post-type.php:1187 inc/theme-post-type.php:1265
+#: inc/theme-metabox.php:331 inc/theme-metabox.php:357
+#: inc/theme-post-type.php:1107 inc/theme-post-type.php:1185
 msgid "Image"
 msgstr "Imej"
 
-#: inc/theme-metabox.php:335
+#: inc/theme-metabox.php:332
 msgid "Upload or add multiple images/attachments."
 msgstr "Muat naik atau menambah berbilang imej/lampiran."
 
-#: inc/theme-metabox.php:352
+#: inc/theme-metabox.php:349
 msgid "Slideshow Detail"
 msgstr "Butiran Tayangan Slaid"
 
-#: inc/theme-metabox.php:361
+#: inc/theme-metabox.php:358
 msgid ""
 "Upload an image or enter a URL. Dimensions of the image should be 1440x560 "
 "pixels."
 msgstr ""
 "Muat naik gambar atau masukkan URL. Dimensi imej hendaklah 1440x560 piksel."
 
-#: inc/theme-metabox.php:368
+#: inc/theme-metabox.php:365
 msgid "Caption"
 msgstr "Kapsyen"
 
-#: inc/theme-metabox.php:369
+#: inc/theme-metabox.php:366
 msgid "Some caption for the image."
 msgstr "Sedikit kapsyen gambar."
 
-#: inc/theme-metabox.php:375
+#: inc/theme-metabox.php:372
 msgid "Link"
 msgstr "Pautan"
 
-#: inc/theme-metabox.php:376 inc/theme-metabox.php:416
+#: inc/theme-metabox.php:373 inc/theme-metabox.php:413
 msgid "links to posts, pages or external web."
 msgstr "pautan ke catatan, laman atau web luar."
 
-#: inc/theme-metabox.php:382
+#: inc/theme-metabox.php:379
 msgid "Hide Caption"
 msgstr "Sorok Kapsyen"
 
-#: inc/theme-metabox.php:383
+#: inc/theme-metabox.php:380
 msgid "Hide slideshow caption"
 msgstr "Sorok kapsyen slideshow"
 
-#: inc/theme-metabox.php:399
+#: inc/theme-metabox.php:396
 msgid "Slideset Detail"
 msgstr "Perincian Slideset"
 
-#: inc/theme-metabox.php:407
+#: inc/theme-metabox.php:404
 msgid "Slideset Image"
 msgstr "Imej Slideset"
 
-#: inc/theme-metabox.php:408
+#: inc/theme-metabox.php:405
 msgid ""
 "Upload an image or enter a URL. Dimensions of the image should be 600x340 "
 "pixels."
 msgstr ""
 
-#: inc/theme-metabox.php:415
+#: inc/theme-metabox.php:412
 msgid "Slideset Link"
 msgstr "Pautan Slideset"
 
-#: inc/theme-metabox.php:433
+#: inc/theme-metabox.php:430
 msgid "Appreciation Detail"
 msgstr "Perincian Penghargaan"
 
-#: inc/theme-metabox.php:441 inc/theme-post-type.php:86
+#: inc/theme-metabox.php:438 inc/theme-post-type.php:86
 msgid "By"
 msgstr "Oleh"
 
-#: inc/theme-metabox.php:442 inc/theme-metabox.php:546
-#: inc/theme-metabox.php:618
+#: inc/theme-metabox.php:439 inc/theme-metabox.php:615
 msgid "e.g. Jamaludin Rajalu"
 msgstr "cth: Jamaludin Rajalu"
 
-#: inc/theme-metabox.php:448 inc/theme-post-type.php:87
+#: inc/theme-metabox.php:445 inc/theme-post-type.php:87
 msgid "PTJ"
 msgstr "PTJ"
 
-#: inc/theme-metabox.php:449 inc/theme-metabox.php:625
+#: inc/theme-metabox.php:446 inc/theme-metabox.php:622
 msgid "e.g. Pusat Teknologi Maklumat"
 msgstr "cth: Pusat Teknologi Maklumat"
 
-#: inc/theme-metabox.php:456
+#: inc/theme-metabox.php:453
 msgid "Date of appreciation"
 msgstr "Tarikh Penghargaan"
 
-#: inc/theme-metabox.php:463 inc/theme-post-type.php:43
+#: inc/theme-metabox.php:460 inc/theme-post-type.php:43
 #: inc/theme-post-type.php:56 inc/widget-appreciation.php:68
-#: templates/archive-appreciation.php:11
+#: templates/archive-appreciation.php:10
 msgid "Appreciation"
 msgstr "Penghargaan"
 
-#: inc/theme-metabox.php:464
+#: inc/theme-metabox.php:461
 msgid "e.g. Terima kasih atas sumbangan sebagai urusetia majlis"
 msgstr "cth. Terima kasih atas sumbangan sebagai urusetia majlis"
 
-#: inc/theme-metabox.php:482
+#: inc/theme-metabox.php:479
 msgid "Event Detail"
 msgstr "Butiran Acara"
 
-#: inc/theme-metabox.php:491
+#: inc/theme-metabox.php:488
 msgid "Date of event"
 msgstr "Tarikh Acara"
 
-#: inc/theme-metabox.php:498
+#: inc/theme-metabox.php:495
 msgid "Time: Start"
 msgstr "Masa:Mula"
 
-#: inc/theme-metabox.php:499
+#: inc/theme-metabox.php:496
 msgid "Start time of the event"
 msgstr "Masa mula acara"
 
-#: inc/theme-metabox.php:505
+#: inc/theme-metabox.php:502
 msgid "Time: End"
 msgstr "Masa: Tamat"
 
-#: inc/theme-metabox.php:506
+#: inc/theme-metabox.php:503
 msgid "End time of the event"
 msgstr "Masa tamat acara"
 
-#: inc/theme-metabox.php:513
+#: inc/theme-metabox.php:510
 msgid "Venue of the event"
 msgstr "Lokasi acara"
 
-#: inc/theme-metabox.php:519 templates/single-publication.php:35
+#: inc/theme-metabox.php:516 templates/single-publication.php:34
 msgid "Summary"
 msgstr "Ringkasan"
 
-#: inc/theme-metabox.php:520
+#: inc/theme-metabox.php:517
 msgid "Event Summary"
 msgstr "Ringkasan Acara"
 
-#: inc/theme-metabox.php:537
+#: inc/theme-metabox.php:534
 msgid "Journal Detail"
 msgstr "Perincian Jurnal"
 
-#: inc/theme-metabox.php:545 inc/theme-metabox.php:617
-#: inc/theme-post-type.php:732 inc/theme-post-type.php:1106
-#: templates/archive-publication.php:37 templates/single-journal.php:12
-#: templates/single-publication.php:29 templates/taxonomy-pubcat.php:38
+#: inc/theme-metabox.php:542 inc/theme-metabox.php:614
+#: inc/theme-post-type.php:732 inc/theme-post-type.php:1026
+#: templates/archive-publication.php:37 templates/single-journal.php:11
+#: templates/single-publication.php:28 templates/taxonomy-pubcat.php:38
 msgid "Author"
 msgstr "Pengarang"
 
-#: inc/theme-metabox.php:552 templates/archive-journal.php:27
-#: templates/taxonomy-jourcat.php:29 templates/taxonomy-jourkey.php:29
+#: inc/theme-metabox.php:543
+msgid ""
+"e.g. Jamaludin Rajalu, Meor Sony Hermi, Faril Izaldi, Muhammad Zaidi. "
+"Separate names with commas"
+msgstr ""
+
+#: inc/theme-metabox.php:549 templates/archive-journal.php:28
+#: templates/taxonomy-jourcat.php:34 templates/taxonomy-jourkey.php:29
 msgid "Download"
 msgstr "Muat Turun"
 
-#: inc/theme-metabox.php:553
+#: inc/theme-metabox.php:550
 msgid "e.g. http://www.ukm.my/files.pdf"
 msgstr "cth. http://www.ukm.my/files.pdf"
 
-#: inc/theme-metabox.php:569
+#: inc/theme-metabox.php:566
 msgid "Press Release Detail"
 msgstr "Perincian Kenyataan Akhbar"
 
-#: inc/theme-metabox.php:577
+#: inc/theme-metabox.php:574
 msgid "Press Release Date"
 msgstr "Tarikh Kenyataan Akhbar"
 
-#: inc/theme-metabox.php:583
+#: inc/theme-metabox.php:580
 msgid "File"
 msgstr ""
 
-#: inc/theme-metabox.php:584
+#: inc/theme-metabox.php:581
 msgid "Upload document file."
 msgstr "Muat naik fail dokumen."
 
-#: inc/theme-metabox.php:601
+#: inc/theme-metabox.php:598
 msgid "Publication Detail"
 msgstr "Butiran Penerbitan"
 
-#: inc/theme-metabox.php:609
+#: inc/theme-metabox.php:606
 msgid "Cover Image"
 msgstr "Imej Kulit"
 
-#: inc/theme-metabox.php:610 inc/theme-metabox.php:671
-#: inc/theme-metabox.php:741
+#: inc/theme-metabox.php:607 inc/theme-metabox.php:668
+#: inc/theme-metabox.php:738
 msgid ""
 "Upload an image or enter a URL. Dimensions of the image should be 300x380 "
 "pixels."
 msgstr ""
 "Muat naik gambar atau masukkan URL. Dimensi imej hendaklah 300x380 piksel."
 
-#: inc/theme-metabox.php:624 inc/theme-post-type.php:1107
-#: templates/archive-publication.php:38 templates/single-publication.php:30
+#: inc/theme-metabox.php:621 inc/theme-post-type.php:1027
+#: templates/archive-publication.php:38 templates/single-publication.php:29
 #: templates/taxonomy-pubcat.php:39
 msgid "Publisher"
 msgstr "Penerbit"
 
-#: inc/theme-metabox.php:631 inc/theme-post-type.php:1108
-#: templates/archive-publication.php:39 templates/single-publication.php:31
+#: inc/theme-metabox.php:628 inc/theme-post-type.php:1028
+#: templates/archive-publication.php:39 templates/single-publication.php:30
 #: templates/taxonomy-pubcat.php:40
 msgid "Year"
 msgstr "Tahun"
 
-#: inc/theme-metabox.php:632
+#: inc/theme-metabox.php:629
 msgid "e.g. 2014"
 msgstr "cth: 2014"
 
-#: inc/theme-metabox.php:638 templates/archive-publication.php:40
-#: templates/single-publication.php:32 templates/taxonomy-pubcat.php:41
+#: inc/theme-metabox.php:635 templates/archive-publication.php:40
+#: templates/single-publication.php:31 templates/taxonomy-pubcat.php:41
 msgid "Number of Pages"
 msgstr "Jumlah Halaman"
 
-#: inc/theme-metabox.php:639
+#: inc/theme-metabox.php:636
 msgid "e.g. 199"
 msgstr "cth: 199"
 
-#: inc/theme-metabox.php:645 templates/archive-publication.php:41
-#: templates/single-publication.php:33 templates/taxonomy-pubcat.php:42
+#: inc/theme-metabox.php:642 templates/archive-publication.php:41
+#: templates/single-publication.php:32 templates/taxonomy-pubcat.php:42
 msgid "Reference/Download"
 msgstr "Rujukan/Muat Turun"
 
-#: inc/theme-metabox.php:646
+#: inc/theme-metabox.php:643
 msgid "e.g. http://www.ukm.my"
 msgstr "cth. http://www.ukm.my"
 
-#: inc/theme-metabox.php:662
+#: inc/theme-metabox.php:659
 msgid "Staff Detail"
 msgstr "Butiran Staf"
 
-#: inc/theme-metabox.php:670
+#: inc/theme-metabox.php:667
 msgid "Staff Photo"
 msgstr "Foto Staf"
 
-#: inc/theme-metabox.php:678
+#: inc/theme-metabox.php:675
 msgid "Phone No."
 msgstr "No. Telefon"
 
-#: inc/theme-metabox.php:679 inc/theme-metabox.php:757
+#: inc/theme-metabox.php:676 inc/theme-metabox.php:754
 msgid "e.g. 03-8921-7070"
 msgstr "cth: 03-8921-7070"
 
-#: inc/theme-metabox.php:685 inc/theme-metabox.php:763
+#: inc/theme-metabox.php:682 inc/theme-metabox.php:760
 #: inc/theme-post-type.php:340 templates/single-expertise.php:26
 msgid "Email"
 msgstr "Emel"
 
-#: inc/theme-metabox.php:686 inc/theme-metabox.php:764
+#: inc/theme-metabox.php:683 inc/theme-metabox.php:761
 msgid "e.g. user@ukm.edu.my"
 msgstr "cth: namapengguna@ukm.my"
 
-#: inc/theme-metabox.php:692
+#: inc/theme-metabox.php:689
 msgid "Display Job Scope"
 msgstr "Papar Skop Kerja"
 
-#: inc/theme-metabox.php:693
+#: inc/theme-metabox.php:690
 msgid "Please check if want to display Scope of Work"
 msgstr "Sila tandakan sekiranya mahu memaparkan Bidang Tugas"
 
-#: inc/theme-metabox.php:699
+#: inc/theme-metabox.php:696
 msgid "Show Title"
 msgstr ""
 
-#: inc/theme-metabox.php:700
+#: inc/theme-metabox.php:697
 msgid "Please check if want to hide Scope of Work title \"Scope of Work\""
 msgstr ""
 "Sila tandakan sekiranya tidak mahu memaparkan tajuk Bidang Tugas \"Bidang "
 "Tugas\""
 
-#: inc/theme-metabox.php:706
+#: inc/theme-metabox.php:703
 msgid "New Title"
 msgstr "Tajuk Baru"
 
-#: inc/theme-metabox.php:707
+#: inc/theme-metabox.php:704
 msgid "e.g. \"Expertise\". Please leave it blank if do not want to display"
 msgstr "cth. \"Kepakaran\". Kosongkan sekiranya tidak mahu dipaparkan"
 
-#: inc/theme-metabox.php:713
+#: inc/theme-metabox.php:710
 msgid "Job Scope Detail"
 msgstr "Butiran Skop Kerja"
 
-#: inc/theme-metabox.php:714
+#: inc/theme-metabox.php:711
 msgid "e.g. Do Multimedia Work"
 msgstr "cth. Melakukan Kerja Multimedia"
 
-#: inc/theme-metabox.php:732
+#: inc/theme-metabox.php:729
 msgid "Expertise Detail"
 msgstr "Butiran Kepakaran"
 
-#: inc/theme-metabox.php:740
+#: inc/theme-metabox.php:737
 msgid "Expert Photo"
 msgstr "Foto Pakar"
 
-#: inc/theme-metabox.php:748 templates/single-expertise.php:30
+#: inc/theme-metabox.php:745 templates/single-expertise.php:30
 msgid "Biography"
 msgstr "Biografi"
 
-#: inc/theme-metabox.php:749
+#: inc/theme-metabox.php:746
 msgid "A brief biography"
 msgstr "Biografi ringkas"
 
-#: inc/theme-metabox.php:756 inc/theme-post-type.php:341
+#: inc/theme-metabox.php:753 inc/theme-post-type.php:341
 msgid "Contact"
 msgstr "Hubungi"
 
-#: inc/theme-metabox.php:770 inc/theme-post-type.php:339
+#: inc/theme-metabox.php:767 inc/theme-post-type.php:339
 #: templates/single-expertise.php:27
 msgid "Current Position"
 msgstr "Jawatan Semasa"
 
-#: inc/theme-metabox.php:771
+#: inc/theme-metabox.php:768
 msgid "e.g. Professor"
 msgstr "cth: Profesor"
 
-#: inc/theme-metabox.php:777 templates/archive-expertise.php:43
+#: inc/theme-metabox.php:774 templates/archive-expertise.php:42
 #: templates/single-expertise.php:28
 msgid "Specialisation"
 msgstr "Pengkhususan"
 
-#: inc/theme-metabox.php:778
+#: inc/theme-metabox.php:775
 msgid "Tourism and Hospitality Marketing, &amp; Services Marketing"
 msgstr "Tourism and Hospitality Marketing, &amp; Services Marketing"
 
-#: inc/theme-metabox.php:784 templates/single-expertise.php:35
+#: inc/theme-metabox.php:781 templates/single-expertise.php:35
 msgid "Qualifications"
 msgstr "Kelayakan"
 
-#: inc/theme-metabox.php:785
+#: inc/theme-metabox.php:782
 msgid "e.g. Doctor of Philosophy (University of Malaya) [2002-2005]"
 msgstr "cth. Doctor of Philosophy (University of Malaya) [2002-2005]"
 
-#: inc/theme-metabox.php:792 templates/single-expertise.php:39
+#: inc/theme-metabox.php:789 templates/single-expertise.php:39
 msgid "Areas of Research"
 msgstr "Bidang Penyelidikan"
 
-#: inc/theme-metabox.php:793
+#: inc/theme-metabox.php:790
 msgid "e.g. Services Marketing and Consumer Behavior Analysis"
 msgstr "cth. Services Marketing and Consumer Behavior Analysis"
 
-#: inc/theme-metabox.php:800
+#: inc/theme-metabox.php:797
 msgid "Research/<br/>Consultation/<br/>Expansion"
 msgstr "Penyelidikan/<br/>Perundingan<br/>/Pengembangan"
 
-#: inc/theme-metabox.php:801
+#: inc/theme-metabox.php:798
 msgid ""
 "e.g. Developing A Higher Education Brand Index for Malaysia. Jan1, 2009-June "
 "30,2010. GSB-001-2009 (External Grant). Ongoing."
@@ -814,11 +891,11 @@ msgstr ""
 "cth. Developing A Higher Education Brand Index for Malaysia. Jan1, 2009-June "
 "30,2010. GSB-001-2009 (External Grant). Ongoing."
 
-#: inc/theme-metabox.php:808 templates/single-expertise.php:67
+#: inc/theme-metabox.php:805 templates/single-expertise.php:67
 msgid "Publications Journals"
 msgstr "Penerbitan Jurnal"
 
-#: inc/theme-metabox.php:809
+#: inc/theme-metabox.php:806
 msgid ""
 "e.g. Ahmad Azmi M. Ariffin & Mohd Safar Hashim. 2009. Marketing Malaysia to "
 "the Middle East Tourists: Towards a Prime Inter-Regional Destination. "
@@ -828,11 +905,11 @@ msgstr ""
 "the Middle East Tourists: Towards a Prime Inter-Regional Destination. "
 "International Journal of West Asian Studies. 1(1): 43-58. ISSN 1394-0902."
 
-#: inc/theme-metabox.php:816 templates/single-expertise.php:71
+#: inc/theme-metabox.php:813 templates/single-expertise.php:71
 msgid "Proceedings"
 msgstr "Prosiding"
 
-#: inc/theme-metabox.php:817
+#: inc/theme-metabox.php:814
 msgid ""
 "e.g. Ahmad Azmi M.Ariffin, Aliah Hanim M.Salleh, Norzalita A.Aziz & Astuti A."
 "Asbudin. 2009. Determining Passengers’ Expectation, Service Quality and "
@@ -846,12 +923,12 @@ msgstr ""
 "International Business Research Conference. Sydney Australia. Dec 2-4, 2009. "
 "ISBN: 978-0-980-4557-0-7 (Presenter)."
 
-#: inc/theme-metabox.php:824 templates/single-expertise.php:75
+#: inc/theme-metabox.php:821 templates/single-expertise.php:75
 msgid "Book"
 msgstr "Buku"
 
-#: inc/theme-metabox.php:825 inc/theme-metabox.php:833
-#: inc/theme-metabox.php:849 inc/theme-metabox.php:889
+#: inc/theme-metabox.php:822 inc/theme-metabox.php:830
+#: inc/theme-metabox.php:846 inc/theme-metabox.php:886
 msgid ""
 "e.g. Ahmad Azmi Mohd. Ariffin, Norzalita Abd. Aziz. 2009. Chapter 5: Service "
 "Quality and Zone of Tolerance in Malaysian Banking Services. In Services "
@@ -865,16 +942,16 @@ msgstr ""
 "Salleh, Ahmad Azmi Mohd. Ariffin, June M. L. Poon & Aini Aman. GSB-UKM. "
 "Bangi."
 
-#: inc/theme-metabox.php:832
+#: inc/theme-metabox.php:829
 msgid "Articles in Antologi/<br/>Chapters in Book"
 msgstr "Artikel dalam Antologi/<br/>Bab dalam Buku"
 
-#: inc/theme-metabox.php:840
+#: inc/theme-metabox.php:837
 msgid ""
 "Monograph,<br/> Working Papers<br/> and Non-Periodical<br/> Publications"
 msgstr "Monograf,<br/> Kertas Kerja dan<br/> Penerbitan <br/>Bukan berkala"
 
-#: inc/theme-metabox.php:841
+#: inc/theme-metabox.php:838
 msgid ""
 "e.g. Module ”Tourism Marketing” (Code: BBAS 3103).  Open University "
 "Malaysia. 2007/2008"
@@ -882,15 +959,15 @@ msgstr ""
 "cth. Module ”Tourism Marketing” (Code: BBAS 3103).  Open University "
 "Malaysia. 2007/2008"
 
-#: inc/theme-metabox.php:848 templates/single-expertise.php:87
+#: inc/theme-metabox.php:845 templates/single-expertise.php:87
 msgid "Seminar"
 msgstr "Seminar"
 
-#: inc/theme-metabox.php:856 templates/single-expertise.php:91
+#: inc/theme-metabox.php:853 templates/single-expertise.php:91
 msgid "Award"
 msgstr "Anugerah"
 
-#: inc/theme-metabox.php:857
+#: inc/theme-metabox.php:854
 msgid ""
 "e.g. EXCELLENT SERVICE AWARD 2007. Faculty of Economics and "
 "BusinessUniversiti Kebangsaan Malaysia"
@@ -898,11 +975,11 @@ msgstr ""
 "cth. EXCELLENT SERVICE AWARD 2007. Faculty of Economics and "
 "BusinessUniversiti Kebangsaan Malaysia"
 
-#: inc/theme-metabox.php:864 templates/single-expertise.php:95
+#: inc/theme-metabox.php:861 templates/single-expertise.php:95
 msgid "Supervision"
 msgstr "Penyeliaan"
 
-#: inc/theme-metabox.php:865
+#: inc/theme-metabox.php:862
 msgid ""
 "e.g. Lim Chui Seong (DBA. Disertasi) The Influence of e-Hospitality on "
 "Websites Satisfaction and Loyalty (Ongoing)"
@@ -910,11 +987,11 @@ msgstr ""
 "cth. Lim Chui Seong (DBA. Disertasi) The Influence of e-Hospitality on "
 "Websites Satisfaction and Loyalty (Ongoing)"
 
-#: inc/theme-metabox.php:872
+#: inc/theme-metabox.php:869
 msgid "Administrative<br/> Services/Committee"
 msgstr "Khidmat<br/> Pentadbiran/Jawatankuasa"
 
-#: inc/theme-metabox.php:873
+#: inc/theme-metabox.php:870
 msgid ""
 "e.g. MANAGING EDITOR OF JURNAL PENGURUSAN 1 April 2007 – Present Graduate "
 "School of Business, Universiti Kebangsaan Malaysia"
@@ -922,11 +999,11 @@ msgstr ""
 "cth. MANAGING EDITOR OF JURNAL PENGURUSAN 1 April 2007 – Present Graduate "
 "School of Business, Universiti Kebangsaan Malaysia"
 
-#: inc/theme-metabox.php:880
+#: inc/theme-metabox.php:877
 msgid "Reports: Technical/<br/>Research/<br/>Consultation"
 msgstr "Laporan: Teknikal<br/>/Penyelidikan/<br/>Perundingan"
 
-#: inc/theme-metabox.php:881
+#: inc/theme-metabox.php:878
 msgid ""
 "e.g. Mohd Fauzi Mohd Jani, Zaimah Derawi, Tih Sio Hong, Rozita Amirudin, "
 "Ahmad Azmi Ariffin, Zafir Makhbul, Aini Aman, Mohd Radzuan Rahid, Ahmad "
@@ -940,15 +1017,15 @@ msgstr ""
 "Keusahawanan: Kerjasama Pelajar Universiti dan Entepris Kecil dan Sederhana "
 "(EKS)”. SMIDEC."
 
-#: inc/theme-metabox.php:888 templates/single-expertise.php:107
+#: inc/theme-metabox.php:885 templates/single-expertise.php:107
 msgid "Research Grant"
 msgstr "Geran Penyelidikan"
 
-#: inc/theme-metabox.php:896 templates/single-expertise.php:111
+#: inc/theme-metabox.php:893 templates/single-expertise.php:111
 msgid "Teaching"
 msgstr "Mengajar"
 
-#: inc/theme-metabox.php:897
+#: inc/theme-metabox.php:894
 msgid ""
 "e.g. Courses Taught at Ph.D./DBA Level Hospitality Marketing: Theory and "
 "Research"
@@ -956,59 +1033,59 @@ msgstr ""
 "cth. Courses Taught at Ph.D./DBA Level Hospitality Marketing: Theory and "
 "Research"
 
-#: inc/theme-metabox.php:915
+#: inc/theme-metabox.php:912
 msgid "Hide Option (Please check if want to hide)"
 msgstr "Opsey Sembunyi (Sila tandakan sekiranya mahu di sorok)"
 
-#: inc/theme-metabox.php:923 inc/theme-metabox.php:924
+#: inc/theme-metabox.php:920 inc/theme-metabox.php:921
 msgid "Hide Research/Consultation/Expansion"
 msgstr "Sorok Penyelidikan/Perundingan/Pengembangan"
 
-#: inc/theme-metabox.php:930 inc/theme-metabox.php:931
+#: inc/theme-metabox.php:927 inc/theme-metabox.php:928
 msgid "Hide Publications Journals"
 msgstr "Sorok Penerbitan Jurnal"
 
-#: inc/theme-metabox.php:937 inc/theme-metabox.php:938
+#: inc/theme-metabox.php:934 inc/theme-metabox.php:935
 msgid "Hide Proceedings"
 msgstr "Sorok Prosiding"
 
-#: inc/theme-metabox.php:944 inc/theme-metabox.php:945
+#: inc/theme-metabox.php:941 inc/theme-metabox.php:942
 msgid "Hide Book"
 msgstr "Sorok Buku"
 
-#: inc/theme-metabox.php:951 inc/theme-metabox.php:952
+#: inc/theme-metabox.php:948 inc/theme-metabox.php:949
 msgid "Hide Articles in Antologi/Chapters in Book"
 msgstr "Sorok Artikel dalam Antologi/Bab dalam Buku"
 
-#: inc/theme-metabox.php:958 inc/theme-metabox.php:959
+#: inc/theme-metabox.php:955 inc/theme-metabox.php:956
 msgid "Hide Monograph, Working Papers and Non-Periodical Publications"
 msgstr "Sorok Monograf, Kertas Kerja dan Penerbitan Bukan berkala"
 
-#: inc/theme-metabox.php:965 inc/theme-metabox.php:966
+#: inc/theme-metabox.php:962 inc/theme-metabox.php:963
 msgid "Hide Seminar"
 msgstr "Sorok Seminar"
 
-#: inc/theme-metabox.php:972 inc/theme-metabox.php:973
+#: inc/theme-metabox.php:969 inc/theme-metabox.php:970
 msgid "Hide Award"
 msgstr "Sorok Anugerah"
 
-#: inc/theme-metabox.php:979 inc/theme-metabox.php:980
+#: inc/theme-metabox.php:976 inc/theme-metabox.php:977
 msgid "Hide Supervision"
 msgstr "Sorok Penyeliaan"
 
-#: inc/theme-metabox.php:986 inc/theme-metabox.php:987
+#: inc/theme-metabox.php:983 inc/theme-metabox.php:984
 msgid "Hide Administrative Services/Committee"
 msgstr "Sorok Khidmat<br/> Pentadbiran/Jawatankuasa"
 
-#: inc/theme-metabox.php:993 inc/theme-metabox.php:994
+#: inc/theme-metabox.php:990 inc/theme-metabox.php:991
 msgid "Hide Reports: Technical/Research/Consultation"
 msgstr "Sorok Laporan: Teknikal/Penyelidikan/Perundingan"
 
-#: inc/theme-metabox.php:1000 inc/theme-metabox.php:1001
+#: inc/theme-metabox.php:997 inc/theme-metabox.php:998
 msgid "Hide Research Grant"
 msgstr "Sorok Geran Penyelidikan"
 
-#: inc/theme-metabox.php:1007 inc/theme-metabox.php:1008
+#: inc/theme-metabox.php:1004 inc/theme-metabox.php:1005
 msgid "Hide Teaching"
 msgstr "Sorok Mengajar"
 
@@ -1065,7 +1142,7 @@ msgid "Enter Conference Name"
 msgstr ""
 
 #: inc/theme-post-type.php:153 inc/theme-post-type.php:154
-#: inc/theme-post-type.php:178 templates/archive-conference.php:14
+#: inc/theme-post-type.php:178 templates/archive-conference.php:10
 msgid "Conference"
 msgstr "Persidangan"
 
@@ -1086,8 +1163,8 @@ msgid "Add New Conference"
 msgstr ""
 
 #: inc/theme-post-type.php:159 inc/theme-post-type.php:511
-#: inc/theme-post-type.php:772 inc/theme-post-type.php:952
-#: inc/theme-post-type.php:953 inc/theme-post-type.php:1306
+#: inc/theme-post-type.php:772 inc/theme-post-type.php:872
+#: inc/theme-post-type.php:873 inc/theme-post-type.php:1226
 msgid "Add New"
 msgstr "Tambah Baru"
 
@@ -1112,12 +1189,12 @@ msgid "Search Conference"
 msgstr ""
 
 #: inc/theme-post-type.php:165 inc/theme-post-type.php:776
-#: inc/theme-post-type.php:1310
+#: inc/theme-post-type.php:1230
 msgid "Not found"
 msgstr "Tidak dijumpai"
 
 #: inc/theme-post-type.php:166 inc/theme-post-type.php:777
-#: inc/theme-post-type.php:1311
+#: inc/theme-post-type.php:1231
 msgid "Not found in Trash"
 msgstr "Tiada dijumpai dalam Buangan"
 
@@ -1225,7 +1302,7 @@ msgstr "Tamat"
 msgid "Expert Name"
 msgstr "Nama Pakar"
 
-#: inc/theme-post-type.php:295 templates/archive-expertise.php:11
+#: inc/theme-post-type.php:295 templates/archive-expertise.php:10
 msgid "Expertise"
 msgstr "Kepakaran"
 
@@ -1277,11 +1354,11 @@ msgstr "kepakaran"
 msgid "Expertise manager for UKM"
 msgstr "Pengurus kepakaran untuk UKM"
 
-#: inc/theme-post-type.php:337 inc/theme-post-type.php:1498
+#: inc/theme-post-type.php:337 inc/theme-post-type.php:1418
 msgid "Photo"
 msgstr "Foto"
 
-#: inc/theme-post-type.php:338 inc/theme-post-type.php:1499
+#: inc/theme-post-type.php:338 inc/theme-post-type.php:1419
 msgid "Name"
 msgstr "Nama"
 
@@ -1341,74 +1418,63 @@ msgstr "soalan"
 msgid "FAQ manager for UKM"
 msgstr "Pengurus Soalan Lazim untuk UKM"
 
-#: inc/theme-post-type.php:426 inc/theme-post-type.php:647
-#: inc/theme-post-type.php:817 inc/theme-post-type.php:1062
+#: inc/theme-post-type.php:426 inc/theme-post-type.php:817
+#: inc/theme-post-type.php:982
 msgid "Categories"
 msgstr ""
 
 #: inc/theme-post-type.php:427 inc/theme-post-type.php:648
-#: inc/theme-post-type.php:868 inc/theme-post-type.php:1063
-#: inc/theme-post-type.php:1629
+#: inc/theme-post-type.php:983 inc/theme-post-type.php:1549
 msgid "All Categories"
 msgstr "Semua Kategori"
 
 #: inc/theme-post-type.php:428 inc/theme-post-type.php:649
-#: inc/theme-post-type.php:869 inc/theme-post-type.php:1064
-#: inc/theme-post-type.php:1630
+#: inc/theme-post-type.php:984 inc/theme-post-type.php:1550
 msgid "Parent Category"
 msgstr "Induk Kategori"
 
 #: inc/theme-post-type.php:429 inc/theme-post-type.php:650
-#: inc/theme-post-type.php:870 inc/theme-post-type.php:1065
-#: inc/theme-post-type.php:1631
+#: inc/theme-post-type.php:985 inc/theme-post-type.php:1551
 msgid "Parent Category:"
 msgstr "Induk Kategori:"
 
 #: inc/theme-post-type.php:430 inc/theme-post-type.php:651
-#: inc/theme-post-type.php:871 inc/theme-post-type.php:1066
-#: inc/theme-post-type.php:1632
+#: inc/theme-post-type.php:986 inc/theme-post-type.php:1552
 msgid "New Category Name"
 msgstr "Nama Kategori Baru"
 
 #: inc/theme-post-type.php:431 inc/theme-post-type.php:652
-#: inc/theme-post-type.php:872 inc/theme-post-type.php:1067
-#: inc/theme-post-type.php:1633
+#: inc/theme-post-type.php:987 inc/theme-post-type.php:1553
 msgid "Add New Category"
 msgstr "Tambah Kategori Baru"
 
 #: inc/theme-post-type.php:432 inc/theme-post-type.php:653
-#: inc/theme-post-type.php:873 inc/theme-post-type.php:1068
-#: inc/theme-post-type.php:1634
+#: inc/theme-post-type.php:988 inc/theme-post-type.php:1554
 msgid "Edit Category"
 msgstr "Sunting Kategori"
 
 #: inc/theme-post-type.php:433 inc/theme-post-type.php:654
-#: inc/theme-post-type.php:874 inc/theme-post-type.php:1069
-#: inc/theme-post-type.php:1635
+#: inc/theme-post-type.php:989 inc/theme-post-type.php:1555
 msgid "Update Category"
 msgstr "Kemaskini Kategori"
 
 #: inc/theme-post-type.php:434 inc/theme-post-type.php:655
-#: inc/theme-post-type.php:875 inc/theme-post-type.php:1070
-#: inc/theme-post-type.php:1636
+#: inc/theme-post-type.php:990 inc/theme-post-type.php:1556
 msgid "Separate Categories with commas"
 msgstr "Asingkan Kategori dengan koma"
 
 #: inc/theme-post-type.php:435 inc/theme-post-type.php:656
-#: inc/theme-post-type.php:876 inc/theme-post-type.php:1071
-#: inc/theme-post-type.php:1637
+#: inc/theme-post-type.php:991 inc/theme-post-type.php:1557
 msgid "Search Categories"
 msgstr "Cari Kategori"
 
 #: inc/theme-post-type.php:436 inc/theme-post-type.php:657
-#: inc/theme-post-type.php:877 inc/theme-post-type.php:1072
-#: inc/theme-post-type.php:1638
+#: inc/theme-post-type.php:992 inc/theme-post-type.php:1558
 msgid "Add or remove Categories"
 msgstr "Tambah atau hapus kategori"
 
 #: inc/theme-post-type.php:437 inc/theme-post-type.php:658
-#: inc/theme-post-type.php:878 inc/theme-post-type.php:1073
-#: inc/theme-post-type.php:1639
+#: inc/theme-post-type.php:993 inc/theme-post-type.php:1559
 msgid "Choose from the most used Categories"
 msgstr "Pilih daripada Kategori yang paling digunakan"
 
@@ -1416,9 +1482,8 @@ msgstr "Pilih daripada Kategori yang paling digunakan"
 msgid "Question"
 msgstr "Soalan"
 
-#: inc/theme-post-type.php:468 inc/theme-post-type.php:730
-#: inc/theme-post-type.php:867 inc/theme-post-type.php:1105
-#: inc/theme-post-type.php:1663
+#: inc/theme-post-type.php:468 inc/theme-post-type.php:1025
+#: inc/theme-post-type.php:1583
 msgid "Category"
 msgstr "Kategori"
 
@@ -1472,7 +1537,7 @@ msgid "Album"
 msgstr ""
 
 #: inc/theme-post-type.php:550 inc/theme-post-type.php:818
-#: inc/theme-post-type.php:1352
+#: inc/theme-post-type.php:1272
 msgid "All Items"
 msgstr "Semua Item"
 
@@ -1517,8 +1582,7 @@ msgid "Choose from the most used Gallery Albums"
 msgstr ""
 
 #: inc/theme-post-type.php:561 inc/theme-post-type.php:829
-#: inc/theme-post-type.php:879 inc/theme-post-type.php:1363
-#: inc/theme-post-type.php:1404
+#: inc/theme-post-type.php:1283 inc/theme-post-type.php:1324
 msgid "Not Found"
 msgstr "Tiada Galeri Dijumpai"
 
@@ -1527,7 +1591,8 @@ msgid "Enter journal name here"
 msgstr "Masukkan nama jurnal di sini"
 
 #: inc/theme-post-type.php:605 inc/theme-post-type.php:618
-#: templates/archive-journal.php:10 templates/taxonomy-jourcat.php:10
+#: inc/theme-post-type.php:730 templates/archive-journal.php:10
+#: templates/taxonomy-jourcat.php:10
 msgid "Journal"
 msgstr "Jurnal"
 
@@ -1536,8 +1601,8 @@ msgid "Parent Journal:"
 msgstr "Jurnal Induk:"
 
 #: inc/theme-post-type.php:607
-msgid "All Journals"
-msgstr "Semua Jurnal"
+msgid "All Articles"
+msgstr ""
 
 #: inc/theme-post-type.php:608
 msgid "View Journal"
@@ -1548,8 +1613,8 @@ msgid "Add New Journal"
 msgstr "Tambah Jurnal Baru"
 
 #: inc/theme-post-type.php:610
-msgid "New Journal"
-msgstr "Jurnal Baru"
+msgid "New Article"
+msgstr ""
 
 #: inc/theme-post-type.php:611
 msgid "Edit Journal"
@@ -1574,6 +1639,10 @@ msgstr "Tiada Jurnal dijumpai dalam Buangan"
 #: inc/theme-post-type.php:619
 msgid "Journal information pages"
 msgstr "Halaman informasi jurnal"
+
+#: inc/theme-post-type.php:647
+msgid "Journals"
+msgstr "Jurnal"
 
 #: inc/theme-post-type.php:687
 msgid "Keywords"
@@ -1623,15 +1692,13 @@ msgstr ""
 msgid "Choose from the most used Keywords"
 msgstr ""
 
-#: inc/theme-post-type.php:728 inc/theme-post-type.php:1103
+#: inc/theme-post-type.php:728 inc/theme-post-type.php:1023
 msgid "Cover"
 msgstr "Kulit"
 
-#: inc/theme-post-type.php:729 inc/theme-post-type.php:995
-#: inc/theme-post-type.php:1104 inc/theme-post-type.php:1188
-#: inc/theme-post-type.php:1266 inc/theme-post-type.php:1662
-msgid "Title"
-msgstr "Tajuk"
+#: inc/theme-post-type.php:729
+msgid "Article"
+msgstr ""
 
 #: inc/theme-post-type.php:731 templates/taxonomy-jourkey.php:10
 msgid "Keyword"
@@ -1673,10 +1740,6 @@ msgstr "Cari Berita"
 msgid "ukmnews"
 msgstr "ukmnews"
 
-#: inc/theme-post-type.php:787 templates/widget-box-basic.php:10
-msgid "Latest News"
-msgstr "Berita Terkini"
-
 #: inc/theme-post-type.php:819
 msgid "Parent News Category"
 msgstr "Induk Kategori Berita"
@@ -1717,449 +1780,451 @@ msgstr "Tambah atau hapus Kategori Berita"
 msgid "Choose from the most used News Categories"
 msgstr "Pilih daripada Kategori Berita yang paling digunakan"
 
-#: inc/theme-post-type.php:910
-msgid "All Category"
-msgstr "Semua Kategori"
-
-#: inc/theme-post-type.php:948 inc/theme-post-type.php:961
+#: inc/theme-post-type.php:868 inc/theme-post-type.php:881
 #: templates/archive-press.php:10
 msgid "News Clipping"
 msgstr "Keratan Berita"
 
-#: inc/theme-post-type.php:949
+#: inc/theme-post-type.php:869
 msgid "Parent Press Release:"
 msgstr "Induk Kenyataan Akhbar:"
 
-#: inc/theme-post-type.php:950
+#: inc/theme-post-type.php:870
 msgid "All"
 msgstr ""
 
-#: inc/theme-post-type.php:951
+#: inc/theme-post-type.php:871
 msgid "View News Clipping"
 msgstr ""
 
-#: inc/theme-post-type.php:954
+#: inc/theme-post-type.php:874
 msgid "Edit News Clipping"
 msgstr ""
 
-#: inc/theme-post-type.php:955
+#: inc/theme-post-type.php:875
 msgid "Update News Clipping"
 msgstr ""
 
-#: inc/theme-post-type.php:956
+#: inc/theme-post-type.php:876
 msgid "Search News Clipping"
 msgstr ""
 
-#: inc/theme-post-type.php:957
+#: inc/theme-post-type.php:877
 msgid "No News Clipping found"
 msgstr ""
 
-#: inc/theme-post-type.php:958
+#: inc/theme-post-type.php:878
 msgid "No News Clipping found in Trash"
 msgstr ""
 
-#: inc/theme-post-type.php:962
+#: inc/theme-post-type.php:882
 msgid "News Clipping manager for UKM"
 msgstr ""
 
-#: inc/theme-post-type.php:1010
+#: inc/theme-post-type.php:915 inc/theme-post-type.php:1024
+#: inc/theme-post-type.php:1108 inc/theme-post-type.php:1186
+#: inc/theme-post-type.php:1582
+msgid "Title"
+msgstr "Tajuk"
+
+#: inc/theme-post-type.php:930
 msgid "Enter publication name here"
 msgstr "Masukkan nama penerbitan di sini"
 
-#: inc/theme-post-type.php:1020 templates/archive-publication.php:10
+#: inc/theme-post-type.php:940 templates/archive-publication.php:10
 msgid "Publication"
 msgstr "Penerbitan"
 
-#: inc/theme-post-type.php:1021
+#: inc/theme-post-type.php:941
 msgid "Parent Publication:"
 msgstr "Induk Penerbitan:"
 
-#: inc/theme-post-type.php:1022
+#: inc/theme-post-type.php:942
 msgid "All Publications"
 msgstr "Semua Penerbitan"
 
-#: inc/theme-post-type.php:1023
+#: inc/theme-post-type.php:943
 msgid "View Publication"
 msgstr "Papar Penerbitan"
 
-#: inc/theme-post-type.php:1024
+#: inc/theme-post-type.php:944
 msgid "Add New Publication"
 msgstr "Tambah Penerbitan Baru"
 
-#: inc/theme-post-type.php:1025
+#: inc/theme-post-type.php:945
 msgid "New Publication"
 msgstr "Penerbitan Baru"
 
-#: inc/theme-post-type.php:1026
+#: inc/theme-post-type.php:946
 msgid "Edit Publication"
 msgstr "Sunting Penerbitan"
 
-#: inc/theme-post-type.php:1027
+#: inc/theme-post-type.php:947
 msgid "Update Publication"
 msgstr "Kemaskini Penerbitan"
 
-#: inc/theme-post-type.php:1028
+#: inc/theme-post-type.php:948
 msgid "Search Publications"
 msgstr "Cari Penerbitan"
 
-#: inc/theme-post-type.php:1029
+#: inc/theme-post-type.php:949
 msgid "No Publications found"
 msgstr "Tiada Penerbitan dijumpai."
 
-#: inc/theme-post-type.php:1030
+#: inc/theme-post-type.php:950
 msgid "No Publications found in Trash"
 msgstr "Tiada Penerbitan dijumpai di Buangan"
 
-#: inc/theme-post-type.php:1033
+#: inc/theme-post-type.php:953
 msgid "publication"
 msgstr "penerbitan"
 
-#: inc/theme-post-type.php:1034
+#: inc/theme-post-type.php:954
 msgid "Publication information pages"
 msgstr "Halaman informasi Penerbitan"
 
-#: inc/theme-post-type.php:1146
+#: inc/theme-post-type.php:1066
 msgid "Parent Slideset:"
 msgstr "Induk Slideset:"
 
-#: inc/theme-post-type.php:1147
+#: inc/theme-post-type.php:1067
 msgid "All Slideset"
 msgstr "Semua Slideset"
 
-#: inc/theme-post-type.php:1148
+#: inc/theme-post-type.php:1068
 msgid "View Slideset"
 msgstr "Papar Slideset"
 
-#: inc/theme-post-type.php:1149
+#: inc/theme-post-type.php:1069
 msgid "Add New Slideset"
 msgstr "Tambah Slideset Baru"
 
-#: inc/theme-post-type.php:1150
+#: inc/theme-post-type.php:1070
 msgid "New Slideset"
 msgstr "Slidset Baru"
 
-#: inc/theme-post-type.php:1151
+#: inc/theme-post-type.php:1071
 msgid "Edit Slideset"
 msgstr "Sunting Slideset"
 
-#: inc/theme-post-type.php:1152
+#: inc/theme-post-type.php:1072
 msgid "Update Slideset"
 msgstr "Kemaskini Slideset"
 
-#: inc/theme-post-type.php:1153
+#: inc/theme-post-type.php:1073
 msgid "Search Slideset"
 msgstr "Cari Slideset"
 
-#: inc/theme-post-type.php:1154
+#: inc/theme-post-type.php:1074
 msgid "No Slideset found"
 msgstr "Tiada Slideset dijumpai"
 
-#: inc/theme-post-type.php:1155
+#: inc/theme-post-type.php:1075
 msgid "No Slideset found in Trash"
 msgstr "Tiada Slideset di jumpai di dalam Tong Sampah"
 
-#: inc/theme-post-type.php:1159
+#: inc/theme-post-type.php:1079
 msgid "Slideset manager for UKM"
 msgstr "Pengurusan Slideset untuk UKM"
 
-#: inc/theme-post-type.php:1213
+#: inc/theme-post-type.php:1133
 msgid "Enter slide title here"
 msgstr "Masukkan tajuk slide di sini"
 
-#: inc/theme-post-type.php:1223
+#: inc/theme-post-type.php:1143
 msgid "Slideshow"
 msgstr "Slideshow"
 
-#: inc/theme-post-type.php:1224
+#: inc/theme-post-type.php:1144
 msgid "Parent Slideshow:"
 msgstr "Induk Slideshow"
 
-#: inc/theme-post-type.php:1225
+#: inc/theme-post-type.php:1145
 msgid "All Slideshows"
 msgstr "Semua Slideshows"
 
-#: inc/theme-post-type.php:1226
+#: inc/theme-post-type.php:1146
 msgid "View Slideshow"
 msgstr "Papar Slideshow"
 
-#: inc/theme-post-type.php:1227
+#: inc/theme-post-type.php:1147
 msgid "Add New Slideshow"
 msgstr "Tambah Slideshow Baru"
 
-#: inc/theme-post-type.php:1228
+#: inc/theme-post-type.php:1148
 msgid "New Slideshow"
 msgstr "Slideshows Baru"
 
-#: inc/theme-post-type.php:1229
+#: inc/theme-post-type.php:1149
 msgid "Edit Slideshow"
 msgstr "Sunting Slideshows"
 
-#: inc/theme-post-type.php:1230
+#: inc/theme-post-type.php:1150
 msgid "Update Slideshow"
 msgstr "Kemaskini Slideshow"
 
-#: inc/theme-post-type.php:1231
+#: inc/theme-post-type.php:1151
 msgid "Search Slideshows"
 msgstr "Cari Slideshow"
 
-#: inc/theme-post-type.php:1232
+#: inc/theme-post-type.php:1152
 msgid "No Slideshows found"
 msgstr "Tiada Slideshows dijumpai."
 
-#: inc/theme-post-type.php:1233
+#: inc/theme-post-type.php:1153
 msgid "No Slideshows found in Trash"
 msgstr "Tiada Slideshow dijumpai di Buangan"
 
-#: inc/theme-post-type.php:1236
+#: inc/theme-post-type.php:1156
 msgid "slideshow"
 msgstr "slideshows"
 
-#: inc/theme-post-type.php:1237
+#: inc/theme-post-type.php:1157
 msgid "Frontpage image slideshow"
 msgstr "Imej Slideshows Muka Hadapan"
 
-#: inc/theme-post-type.php:1291
+#: inc/theme-post-type.php:1211
 msgid "Enter staff name here"
 msgstr "Masuukan nama staf di sini"
 
-#: inc/theme-post-type.php:1301
+#: inc/theme-post-type.php:1221
 msgid "Staff Directory"
 msgstr "Direktori Staf"
 
-#: inc/theme-post-type.php:1302
+#: inc/theme-post-type.php:1222
 msgid "Parent Staff:"
 msgstr "Induk Staf:"
 
-#: inc/theme-post-type.php:1303
+#: inc/theme-post-type.php:1223
 msgid "All Staffs"
 msgstr "Semua Staf"
 
-#: inc/theme-post-type.php:1304
+#: inc/theme-post-type.php:1224
 msgid "View Staff"
 msgstr "Papar Staf"
 
-#: inc/theme-post-type.php:1305
+#: inc/theme-post-type.php:1225
 msgid "Add New Staff"
 msgstr "Tambah Satf Baru"
 
-#: inc/theme-post-type.php:1307
+#: inc/theme-post-type.php:1227
 msgid "Edit Staff"
 msgstr "Sunting Staf"
 
-#: inc/theme-post-type.php:1308
+#: inc/theme-post-type.php:1228
 msgid "Update Staff"
 msgstr "Kemaskni Staf"
 
-#: inc/theme-post-type.php:1309
+#: inc/theme-post-type.php:1229
 msgid "Search Staffs"
 msgstr "Cari Staf"
 
-#: inc/theme-post-type.php:1320
+#: inc/theme-post-type.php:1240
 msgid "staff"
 msgstr "staf"
 
-#: inc/theme-post-type.php:1321
+#: inc/theme-post-type.php:1241
 msgid "Latest Staffs"
 msgstr "Staf Terkini"
 
-#: inc/theme-post-type.php:1351 inc/theme-post-type.php:1500
+#: inc/theme-post-type.php:1271 inc/theme-post-type.php:1420
 msgid "Position"
 msgstr "Jawatan"
 
-#: inc/theme-post-type.php:1353
+#: inc/theme-post-type.php:1273
 msgid "Parent Position"
 msgstr "Induk Jawatan"
 
-#: inc/theme-post-type.php:1354
+#: inc/theme-post-type.php:1274
 msgid "Parent Position:"
 msgstr "Induk Jawatan:"
 
-#: inc/theme-post-type.php:1355
+#: inc/theme-post-type.php:1275
 msgid "New Position Name"
 msgstr "Nama Jawatan Baru"
 
-#: inc/theme-post-type.php:1356
+#: inc/theme-post-type.php:1276
 msgid "Add New Position"
 msgstr "Tambah Jawatan Baru"
 
-#: inc/theme-post-type.php:1357
+#: inc/theme-post-type.php:1277
 msgid "Edit Position"
 msgstr "Sunting Jawatan"
 
-#: inc/theme-post-type.php:1358
+#: inc/theme-post-type.php:1278
 msgid "Update Position"
 msgstr "Kemaskini Jawatan"
 
-#: inc/theme-post-type.php:1359
+#: inc/theme-post-type.php:1279
 msgid "Separate Positions with commas"
 msgstr "Asingkan Jawatan dengan koma"
 
-#: inc/theme-post-type.php:1360
+#: inc/theme-post-type.php:1280
 msgid "Search Positions"
 msgstr "Cari Jawatan"
 
-#: inc/theme-post-type.php:1361
+#: inc/theme-post-type.php:1281
 msgid "Add or remove Positions"
 msgstr "Tambah atau hapus Jawatan"
 
-#: inc/theme-post-type.php:1362
+#: inc/theme-post-type.php:1282
 msgid "Choose from the most used Positions"
 msgstr "Pilih daripada Jawatan yang paling digunakan"
 
-#: inc/theme-post-type.php:1392 inc/theme-post-type.php:1501
+#: inc/theme-post-type.php:1312 inc/theme-post-type.php:1421
 msgid "Department"
 msgstr "Jabatan"
 
-#: inc/theme-post-type.php:1393
+#: inc/theme-post-type.php:1313
 msgid "All Departments"
 msgstr "Semua Jabatan"
 
-#: inc/theme-post-type.php:1394
+#: inc/theme-post-type.php:1314
 msgid "Parent Department"
 msgstr "Induk Jabatan"
 
-#: inc/theme-post-type.php:1395
+#: inc/theme-post-type.php:1315
 msgid "Parent Department:"
 msgstr "Induk Jabatan:"
 
-#: inc/theme-post-type.php:1396
+#: inc/theme-post-type.php:1316
 msgid "New Department Name"
 msgstr "Nama Jabatan Baru"
 
-#: inc/theme-post-type.php:1397
+#: inc/theme-post-type.php:1317
 msgid "Add New Department"
 msgstr "Tambah Jabatan Baru"
 
-#: inc/theme-post-type.php:1398
+#: inc/theme-post-type.php:1318
 msgid "Edit Department"
 msgstr "Sunting Jabatan"
 
-#: inc/theme-post-type.php:1399
+#: inc/theme-post-type.php:1319
 msgid "Update Department"
 msgstr "Kemaskini Jabatan"
 
-#: inc/theme-post-type.php:1400
+#: inc/theme-post-type.php:1320
 msgid "Separate departments with commas"
 msgstr "Asingkan jabatan dengan koma"
 
-#: inc/theme-post-type.php:1401
+#: inc/theme-post-type.php:1321
 msgid "Search Departments"
 msgstr "Cari Jabatan"
 
-#: inc/theme-post-type.php:1402
+#: inc/theme-post-type.php:1322
 msgid "Add or remove departments"
 msgstr "Tambah atau hapus jabatan"
 
-#: inc/theme-post-type.php:1403
+#: inc/theme-post-type.php:1323
 msgid "Choose from the most used departments"
 msgstr "Pilih daripada jabatan yang paling digunakan"
 
-#: inc/theme-post-type.php:1437
+#: inc/theme-post-type.php:1357
 msgid "All Department"
 msgstr "Semua Jabatan"
 
-#: inc/theme-post-type.php:1469
+#: inc/theme-post-type.php:1389
 msgid "All Position"
 msgstr "Semua Jawatan"
 
-#: inc/theme-post-type.php:1538
+#: inc/theme-post-type.php:1458
 msgid "Parent Tab:"
 msgstr "Tab induk:"
 
-#: inc/theme-post-type.php:1539
+#: inc/theme-post-type.php:1459
 msgid "All Tab"
 msgstr "Semua Tab"
 
-#: inc/theme-post-type.php:1540
+#: inc/theme-post-type.php:1460
 msgid "View Tab"
 msgstr "Papar Tab"
 
-#: inc/theme-post-type.php:1541
+#: inc/theme-post-type.php:1461
 msgid "Add New Tab"
 msgstr "Tambah Tab Baru"
 
-#: inc/theme-post-type.php:1542
+#: inc/theme-post-type.php:1462
 msgid "New Tab"
 msgstr "Tab Baru"
 
-#: inc/theme-post-type.php:1543
+#: inc/theme-post-type.php:1463
 msgid "Edit Tab"
 msgstr "Sunting Tab"
 
-#: inc/theme-post-type.php:1544
+#: inc/theme-post-type.php:1464
 msgid "Update Tab"
 msgstr "Kemaskini Tab"
 
-#: inc/theme-post-type.php:1545
+#: inc/theme-post-type.php:1465
 msgid "Search Tab"
 msgstr "Cari Tab"
 
-#: inc/theme-post-type.php:1546
+#: inc/theme-post-type.php:1466
 msgid "No Tab found"
 msgstr "Tiada Tab dijumpai"
 
-#: inc/theme-post-type.php:1547
+#: inc/theme-post-type.php:1467
 msgid "No Tab found in Trash"
 msgstr "Tiada Tab dijumpai di Buangan"
 
-#: inc/theme-post-type.php:1550
+#: inc/theme-post-type.php:1470
 msgid "Tab"
 msgstr "Tab"
 
-#: inc/theme-post-type.php:1551
+#: inc/theme-post-type.php:1471
 msgid "Tab manager for UKM"
 msgstr "Pengurus Tab untuk UKM"
 
-#: inc/theme-post-type.php:1586 inc/theme-post-type.php:1599
+#: inc/theme-post-type.php:1506 inc/theme-post-type.php:1519
 #: templates/taxonomy-vidcat.php:10
 msgid "Video"
 msgstr "Video"
 
-#: inc/theme-post-type.php:1587
+#: inc/theme-post-type.php:1507
 msgid "Parent Video:"
 msgstr "Induk Video:"
 
-#: inc/theme-post-type.php:1588
+#: inc/theme-post-type.php:1508
 msgid "All Video"
 msgstr "Semua Video"
 
-#: inc/theme-post-type.php:1589
+#: inc/theme-post-type.php:1509
 msgid "View Video"
 msgstr "Papar Video"
 
-#: inc/theme-post-type.php:1590
+#: inc/theme-post-type.php:1510
 msgid "Add New Video"
 msgstr "Tambah Video Baru"
 
-#: inc/theme-post-type.php:1591
+#: inc/theme-post-type.php:1511
 msgid "New Video"
 msgstr "Video Baru"
 
-#: inc/theme-post-type.php:1592
+#: inc/theme-post-type.php:1512
 msgid "Edit Video"
 msgstr "Sunting Video"
 
-#: inc/theme-post-type.php:1593
+#: inc/theme-post-type.php:1513
 msgid "Update Video"
 msgstr "Kemaskini Video"
 
-#: inc/theme-post-type.php:1594
+#: inc/theme-post-type.php:1514
 msgid "Search Video"
 msgstr "Cari Video"
 
-#: inc/theme-post-type.php:1595
+#: inc/theme-post-type.php:1515
 msgid "No Video found"
 msgstr "Tiada Video dijumpai"
 
-#: inc/theme-post-type.php:1596
+#: inc/theme-post-type.php:1516
 msgid "No Video found in Trash"
 msgstr "Tiada Video dijumpai dalam Tong Sampah"
 
-#: inc/theme-post-type.php:1600
+#: inc/theme-post-type.php:1520
 msgid "Video manager for UKM"
 msgstr "Pengurus Video untuk UKM"
 
-#: inc/theme-post-type.php:1628
+#: inc/theme-post-type.php:1548
 msgid "Video Category"
 msgstr "Kategori Video"
 
@@ -2186,7 +2251,7 @@ msgstr "Awesome widget!"
 #: inc/widget-address-with-social.php:63 inc/widget-appreciation.php:72
 #: inc/widget-event.php:83 inc/widget-news-list.php:93
 #: inc/widget-news-thumbnail.php:106 inc/widget-operating-hour.php:60
-#: inc/widget-visitor-counter.php:44 inc/widget-youtube.php:79
+#: inc/widget-visitor-counter.php:35 inc/widget-youtube.php:79
 msgid "Title:"
 msgstr "Tajuk"
 
@@ -2227,7 +2292,7 @@ msgid "News list with category."
 msgstr "Senarai berita beserta kategori."
 
 #: inc/widget-news-list.php:63 inc/widget-news-thumbnail.php:75
-#: templates/archive-news.php:22
+#: templates/archive-news.php:20
 msgid "News Archive"
 msgstr "Arkib Berita"
 
@@ -2303,19 +2368,11 @@ msgstr ""
 "Laman web ini boleh diakses dengan menggunakan peranti pintar. Paparan "
 "terbaik dengan pelayar web versi terbaru pada resolusi minimum 1024x768."
 
-#: inc/widget-visitor-counter.php:30 templates/visitor-counter.php:15
-msgid "Visitors"
-msgstr "Pengunjung"
-
-#: inc/widget-visitor-counter.php:30 templates/visitor-counter.php:15
-msgid "View Full Statistic"
-msgstr "Papar Statistik Penuh"
-
-#: inc/widget-visitor-counter.php:34 templates/visitor-counter.php:19
+#: inc/widget-visitor-counter.php:26 templates/visitor-counter.php:19
 msgid "Last Update:&nbsp;"
 msgstr "Akhir Kemaskini:&nbsp;"
 
-#: inc/widget-visitor-counter.php:41
+#: inc/widget-visitor-counter.php:32
 msgid "Visitor Counter"
 msgstr "Pengira Pelawat"
 
@@ -2335,56 +2392,62 @@ msgstr "Video Youtube"
 msgid "Youtube video id:"
 msgstr "ID video Youtube:"
 
-#: search.php:11
+#: search.php:10
 msgid "Search"
 msgstr "Cari"
 
-#: templates/archive-appreciation.php:28
+#: templates/archive-appreciation.php:27 templates/archive-faq.php:26
+#: templates/taxonomy-faqcat.php:27
 msgid "Sorry, no page matched your criteria."
 msgstr "Maaf, tiada laman yang sepadan kriteria."
 
-#: templates/archive-conference.php:18 templates/archive-gallery.php:40
-#: templates/single-conference.php:13 templates/single-gallery.php:14
+#: templates/archive-conference.php:14 templates/archive-gallery.php:40
+#: templates/single-conference.php:13 templates/single-gallery.php:13
 #: templates/taxonomy-galcat.php:40
 msgid "Date:&nbsp;"
 msgstr "Tarikh:&nbsp;"
 
-#: templates/archive-conference.php:21 templates/single-conference.php:16
+#: templates/archive-conference.php:17 templates/single-conference.php:16
 msgid "Venue:&nbsp;"
 msgstr "Tempat:&nbsp;"
 
-#: templates/archive-event.php:22
+#: templates/archive-event.php:21
 msgid "Events"
 msgstr "Acara"
 
-#: templates/archive-event.php:34
+#: templates/archive-event.php:33
 msgid "Sorry, no post matched your criteria."
 msgstr "Maaf, tiada kiriman yang sepadan kriteria."
 
-#: templates/archive-expertise.php:49
+#: templates/archive-expertise.php:48
 msgid "Sorry, no posts matched your criteria."
 msgstr "Maaf, tiada kiriman yang sepadan kriteria."
 
-#: templates/archive-faq.php:19 templates/taxonomy-faqcat.php:20
+#: templates/archive-faq.php:19
 msgid "Frequently Asked Questions"
 msgstr "Soalan Lazim"
 
-#: templates/archive-gallery.php:41 templates/single-gallery.php:15
+#: templates/archive-gallery.php:41 templates/single-gallery.php:14
 #: templates/taxonomy-galcat.php:41
 msgid "Photo by:&nbsp;"
 msgstr "Foto oleh:&nbsp;"
 
-#: templates/archive-publication.php:41 templates/single-publication.php:33
+#: templates/archive-journal.php:25 templates/taxonomy-jourcat.php:31
+#: templates/taxonomy-jourkey.php:26
+msgid "Keywords: "
+msgstr "Kata Kunci:"
+
+#: templates/archive-publication.php:41 templates/single-publication.php:32
 #: templates/taxonomy-pubcat.php:42
 msgid "Click here"
 msgstr "Klik di sini"
 
-#: templates/archive-staff.php:11
+#: templates/archive-staff.php:10
 msgid "Directory"
 msgstr "Direktori"
 
-#: templates/archive-staff.php:58 templates/single-staff.php:47
-#: templates/taxonomy-department.php:61 templates/taxonomy-position.php:61
+#: templates/archive-staff.php:57 templates/single-staff.php:46
+#: templates/taxonomy-department.php:60 templates/taxonomy-position.php:60
 msgid "Scope of Work"
 msgstr "Bidang Tugas"
 
@@ -2400,15 +2463,44 @@ msgstr "Catatan Lama"
 msgid "Newer Entries"
 msgstr "Catatan Baru"
 
-#: templates/off-canvas-search.php:13
+#: templates/off-canvas-search.php:12
 msgid "Search..."
 msgstr "cari…"
 
-#: templates/off-canvas-tools.php:12
-msgid "Theme"
-msgstr "Tema:"
+#: templates/off-canvas-tools.php:8
+msgid "<i class=\"uk-icon-globe\"></i> Language"
+msgstr ""
 
-#: templates/single-appreciation.php:16
+#: templates/off-canvas-tools.php:18
+msgid "Language"
+msgstr "Bahasa"
+
+#: templates/off-canvas-tools.php:33
+msgid "Google Translator"
+msgstr "Penterjemah Google"
+
+#: templates/off-canvas-tools.php:45
+msgid "Disclaimer Third Language Translation"
+msgstr "Penafian Terjemahan Bahasa Ketiga"
+
+#: templates/off-canvas-tools.php:47
+msgid ""
+"Please note that the page which will be displayed later after translations "
+"have been made is an automatic computer translation. The odds that the "
+"content will differ from the original cannot be avoided. We are not "
+"responsible on any damage or wrong information which might occur from the "
+"contents which has been translated. Official content is only at the original "
+"page which is in English or Malay."
+msgstr ""
+"Sila ambil perhatian bahawa laman yang akan dipaparkan selepas "
+"pengalihbahasaan secara automatik oleh komputer . Kebarangkalian kandungan "
+"mungkin berbeza daripada maksud sebenar tidak dapat dielakkan. Universiti "
+"Kebangsaan Malaysia tidak bertanggungjawab atas sebarang kerosakan atau "
+"kesalahan maklumat yang mungkin terjadi dari kandungan yang telah dialih "
+"bahasa. Kandungan rasmi hanya pada laman yang asal di dalam Bahasa Inggeris "
+"dan Malaysia."
+
+#: templates/single-appreciation.php:15
 msgid "By:&nbsp;"
 msgstr "Oleh:&nbsp;"
 
@@ -2436,37 +2528,72 @@ msgstr "Khidmat Pentadbiran/Jawatankuasa"
 msgid "Reports: Technical/Research/Consultation"
 msgstr "Reports: Technical/Research/Consultation"
 
-#: templates/single-gallery.php:16 templates/single-video.php:21
+#: templates/single-gallery.php:15 templates/single-video.php:20
 msgid "Back to Index"
 msgstr "Kembali ke Indeks"
 
-#: templates/single-journal.php:16
+#: templates/single-journal.php:15
 msgid "Abstract"
 msgstr "Abstrak"
 
-#: templates/single-publication.php:27
+#: templates/single-publication.php:26
 msgid "Detail"
 msgstr "Butiran"
 
-#: templates/taxonomy-jourcat.php:26 templates/taxonomy-jourkey.php:26
-msgid "Keywords: "
-msgstr "Kata Kunci:"
-
-#: templates/taxonomy-newscat.php:25
+#: templates/taxonomy-newscat.php:21
 msgid "News:&nbsp;"
 msgstr "Berita:&nbsp;"
 
-#: templates/widget-box-basic.php:10
+#: templates/visitor-counter.php:15
+msgid "Visitors"
+msgstr "Pengunjung"
+
+#: templates/visitor-counter.php:15
+msgid "View Full Statistic"
+msgstr "Papar Statistik Penuh"
+
+#: templates/widget-home.php:55
 msgid "More News"
 msgstr "Lagi Berita"
 
-#: templates/widget-lang-google.php:9
-msgid "Google Translator"
-msgstr "Penterjemah Google"
+#~ msgid "Footer Three Column"
+#~ msgstr "Tiga Lajur Footer"
 
-#: templates/widget-lang-polylang.php:9
-msgid "Language"
-msgstr "Bahasa"
+#~ msgid "Site Logo"
+#~ msgstr "Logo Laman"
+
+#~ msgid "Site Colors"
+#~ msgstr "Warna Halaman"
+
+#~ msgid "Basic frontpage (News with right sidebar)"
+#~ msgstr "Muka Hadapan Ringkas (Berita dengan bar sisi kanan)"
+
+#~ msgid "Number of news to show"
+#~ msgstr "Jumlah berita untuk dipaparkan"
+
+#~ msgid "Supercounter ID"
+#~ msgstr "ID Supercounter"
+
+#~ msgid "Copy only id no. Please refer developer."
+#~ msgstr "Salin nombor id sahaja. Rujuk pembangun"
+
+#~ msgid ""
+#~ "Upload an image or enter a URL. Dimensions of the image should be 300x300 "
+#~ "pixels."
+#~ msgstr ""
+#~ "Muat naik gambar atau masukkan URL. Dimensi imej hendaklah 300x300 piksel."
+
+#~ msgid "All Journals"
+#~ msgstr "Semua Jurnal"
+
+#~ msgid "New Journal"
+#~ msgstr "Jurnal Baru"
+
+#~ msgid "All Category"
+#~ msgstr "Semua Kategori"
+
+#~ msgid "Theme"
+#~ msgstr "Tema:"
 
 #~ msgid "<h3>Pages</h3>"
 #~ msgstr "<h3>Halaman</h3>"
@@ -2509,9 +2636,6 @@ msgstr "Bahasa"
 
 #~ msgid "FAQ Category"
 #~ msgstr "Kategori Soalan Lazim"
-
-#~ msgid "Journals"
-#~ msgstr "Jurnal"
 
 #~ msgid "Journal Categories"
 #~ msgstr "Kategori Jurnal"
@@ -2810,9 +2934,6 @@ msgstr "Bahasa"
 
 #~ msgid "Clear"
 #~ msgstr "Bersihkan"
-
-#~ msgid "Default"
-#~ msgstr "Lalai"
 
 #~ msgid "Select Color"
 #~ msgstr "Pilih warna"
@@ -3397,9 +3518,6 @@ msgstr "Bahasa"
 
 #~ msgid "Enable Google Analytics"
 #~ msgstr "Dayakan Google Analytics"
-
-#~ msgid "Search for:"
-#~ msgstr "Cari untuk:"
 
 #~ msgid "Hide Scope of Work Title"
 #~ msgstr "Sembunyi Tajuk Bidang Tugas"

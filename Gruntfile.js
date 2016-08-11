@@ -103,6 +103,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    
+    // grunt-cssbeautifier
+    
+    cssbeautifier : {
+      files : ['style.css'],
+      options : {
+        indent: '  ',
+        openbrace: 'end-of-line',
+        autosemicolon: false
+      }
+    },
 
     // grunt-contrib-watch
 
@@ -129,14 +140,6 @@ module.exports = function(grunt) {
           }
       }
     },
-    
-    stripCssComments: {
-      dist: {
-        files: {
-          'style.css': 'style.css'
-        }
-      }
-	},
 
     // grunt-contrib-clean
 
@@ -194,12 +197,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-cssbeautifier');
   
 
   // execute grunt task
   
-  grunt.registerTask('build', ['copy', 'sass', 'uglify', 'usebanner', 'clean']);
-  grunt.registerTask('default', ['sass', 'uglify', 'usebanner', 'clean']);
+  grunt.registerTask('build', ['copy', 'sass', 'uglify', 'usebanner', 'clean', 'cssbeautifier']);
+  grunt.registerTask('default', ['sass', 'uglify', 'usebanner', 'clean', 'cssbeautifier']);
   grunt.registerTask('dev', ['watch']);
   
 };

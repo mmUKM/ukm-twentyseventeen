@@ -7,7 +7,7 @@
 
 get_header(); ?>
 <div class="wrap column">
-<article class="article large-8-12">
+<article class="article large-12-12">
   <h2><?php single_cat_title(); ?></h2>
 
   <?php
@@ -73,11 +73,5 @@ get_header(); ?>
   <hr>
   <?php endwhile; ?>
 </article>
-<aside class="aside large-4-12 ">
-  <div class="uk-panel uk-panel-box">
-    <?php echo term_description(); ?>
-    <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
-  </div>
-</aside>
 </div>
 <?php get_footer(); ?>

@@ -314,10 +314,20 @@ if (!function_exists('ukmtheme_widgets_init')) {
     ) );
     
     register_sidebar( array(
-      'name'            => __( 'Off-canvas Widget', 'ukmtheme' ),
+      'name'            => __( 'Off-canvas Widget: Language', 'ukmtheme' ),
       'id'              => 'sidebar-11',
-      'description'     => __( 'Off-canvas sidebar widget', 'ukmtheme' ),
-      'before_widget'   => '<div>',
+      'description'     => __( 'Off-canvas sidebar widget language', 'ukmtheme' ),
+      'before_widget'   => '<div class="off-canvas-widget">',
+      'after_widget'    => '</div>',
+      'before_title'    => '<h4>',
+      'after_title'     => '</h4>',
+    ) );
+    
+    register_sidebar( array(
+      'name'            => __( 'Off-canvas Widget: Search', 'ukmtheme' ),
+      'id'              => 'sidebar-12',
+      'description'     => __( 'Off-canvas sidebar widget search', 'ukmtheme' ),
+      'before_widget'   => '<div class="off-canvas-widget">',
       'after_widget'    => '</div>',
       'before_title'    => '<h4>',
       'after_title'     => '</h4>',

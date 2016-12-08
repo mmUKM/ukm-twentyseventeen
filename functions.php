@@ -37,37 +37,37 @@ add_action( 'wp_head', 'add_favicon' );
 
 add_action( 'admin_enqueue_scripts', 'ukmtheme_wp_admin_scripts' );
   function ukmtheme_wp_admin_scripts() {
-    wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin.min.js', array(), '2017.0', true );
-    wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin.css', false, '2017.0' );
+    wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin.css', false, '2017.2.x-20161208' );
   }
 
 add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
   function ukmtheme_scripts() {
     // CSS
     wp_deregister_script( 'jquery' );
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/lib/jquery/jquery.min.js', array(), '2.2.3', false );
-    wp_enqueue_script( 'uikit', get_template_directory_uri() . '/lib/uikit/js/uikit.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/js/components/accordion.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-slider', get_template_directory_uri() . '/lib/uikit/js/components/slider.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-slideshow', get_template_directory_uri() . '/lib/uikit/js/components/slideshow.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-slideset', get_template_directory_uri() . '/lib/uikit/js/components/slideset.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-lightbox', get_template_directory_uri() . '/lib/uikit/js/components/lightbox.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-search', get_template_directory_uri() . '/lib/uikit/js/components/search.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/js/components/sticky.min.js', array(), '2.26.2', true );
-    wp_enqueue_script( 'jqnewsticker', get_template_directory_uri() . '/lib/jqnewsticker/newsTicker.js', array(), '1.0.2', true );
-    wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/lib/fitvids/jquery.fitvids.js', array(), '1.1.0', true );
-    wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/scripts.min.js', array(), '2017.0', true );
+    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/lib/jquery/jquery.min.js', array(), '2017.2.x-20161208', false );
+    wp_enqueue_script( 'uikit', get_template_directory_uri() . '/lib/uikit/js/uikit.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/js/components/accordion.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-slider', get_template_directory_uri() . '/lib/uikit/js/components/slider.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-slideshow', get_template_directory_uri() . '/lib/uikit/js/components/slideshow.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-slideset', get_template_directory_uri() . '/lib/uikit/js/components/slideset.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-lightbox', get_template_directory_uri() . '/lib/uikit/js/components/lightbox.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-search', get_template_directory_uri() . '/lib/uikit/js/components/search.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/js/components/sticky.min.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'jqnewsticker', get_template_directory_uri() . '/lib/jqnewsticker/newsTicker.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/lib/fitvids/jquery.fitvids.js', array(), '2017.2.x-20161208', true );
+    wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/scripts.min.js', array(), '2017.2.x-20161208', true );
     // JS
-    wp_enqueue_style( 'uikit', get_template_directory_uri() . '/lib/uikit/css/uikit.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/css/components/accordion.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'uikit-slider', get_template_directory_uri() . '/lib/uikit/css/components/slider.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'uikit-slideshow', get_template_directory_uri() . '/lib/uikit/css/components/slideshow.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'uikit-slidenav', get_template_directory_uri() . '/lib/uikit/css/components/slidenav.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'uikit-search', get_template_directory_uri() . '/lib/uikit/css/components/search.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/css/components/sticky.almost-flat.min.css', false, '2.26.2' );
-    wp_enqueue_style( 'bebas-font', get_template_directory_uri() . '/fonts/bebas-neue/stylesheet.css', false, '2017.0' );
-    wp_enqueue_style( 'merriweather-font', get_template_directory_uri() . '/fonts/merriweather/stylesheet.css', false, '2017.0' );
-    wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.0' );
+    wp_enqueue_style( 'uikit', get_template_directory_uri() . '/lib/uikit/css/uikit.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/css/components/accordion.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'uikit-slider', get_template_directory_uri() . '/lib/uikit/css/components/slider.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'uikit-slideshow', get_template_directory_uri() . '/lib/uikit/css/components/slideshow.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'uikit-slidenav', get_template_directory_uri() . '/lib/uikit/css/components/slidenav.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'uikit-search', get_template_directory_uri() . '/lib/uikit/css/components/search.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/css/components/sticky.almost-flat.min.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'bebas-font', get_template_directory_uri() . '/fonts/bebas-neue/stylesheet.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'merriweather-font', get_template_directory_uri() . '/fonts/merriweather/stylesheet.css', false, '2017.2.x-20161208' );
+    wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.2.x-20161208' );
   }
 
 /**
@@ -90,7 +90,7 @@ require( get_template_directory() . '/lib/theme-updates/theme-update-checker.php
 
 add_action( 'after_setup_theme', 'ukmtheme_setup' );
   function ukmtheme_setup() {
-    
+
     add_theme_support( 'title-tag' );
     add_theme_support( 'html5', array( 'search-form' ) );
     add_theme_support( 'post-thumbnails' );
@@ -107,7 +107,7 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
     ) );
     add_filter( 'show_admin_bar', '__return_false' );
   }
-  
+
 add_filter( 'wp_nav_menu_items', 'ukmtheme_home_link', 10, 2 );
   function ukmtheme_home_link ( $items, $args ) {
       if (is_single() && $args->menu->main == 'main') {
@@ -145,7 +145,7 @@ add_action( 'after_setup_theme', 'ukmtheme_module' );
   }
 
 remove_filter( 'term_description','wpautop' );
-  
+
 /**
  * Excerpt
  * Replaces the excerpt "more" text by a link
@@ -189,17 +189,17 @@ add_filter( 'upload_mimes','add_custom_mime_types' );
       'svg' => 'image/svg+xml'
     ));
   }
-  
+
 /**
  * Filter Search
  * filter by post type
  */
-  
+
 function ukmtheme_filter_search($query) {
   if ($query->is_search) {
     $query->set('post_type', array( 'page', 'staff', 'gallery', 'publication', 'news', 'event', 'expertise', 'press', 'video' ));
   };
-  
+
   return $query;
 };
 add_filter('pre_get_posts', 'ukmtheme_filter_search');
@@ -312,7 +312,7 @@ if (!function_exists('ukmtheme_widgets_init')) {
       'before_title'    => '<h3 class="widget-title uk-hidden">',
       'after_title'     => '</h3>',
     ) );
-    
+
     register_sidebar( array(
       'name'            => __( 'Off-canvas Widget: Language', 'ukmtheme' ),
       'id'              => 'sidebar-11',
@@ -322,7 +322,7 @@ if (!function_exists('ukmtheme_widgets_init')) {
       'before_title'    => '<h4>',
       'after_title'     => '</h4>',
     ) );
-    
+
     register_sidebar( array(
       'name'            => __( 'Off-canvas Widget: Search', 'ukmtheme' ),
       'id'              => 'sidebar-12',
@@ -340,7 +340,7 @@ if (!function_exists('ukmtheme_widgets_init')) {
  *
  * @param string $form Form HTML.
  * @return string Modified form HTML.
- * 
+ *
  * @param string $form
  * @return string
  */
@@ -351,7 +351,7 @@ function ukmtheme_search_form( $form ) {
     <button class="uk-button uk-button-primary" type="submit" id="searchsubmit" >'. esc_attr__( 'Search' ) .'</button>
     </div>
     </form>';
- 
+
     return $form;
 }
 add_filter( 'get_search_form', 'ukmtheme_search_form' );
@@ -400,7 +400,7 @@ add_action( 'init', 'ukmtheme_posts_per_taxonomy', 0);
   function ukmtheme_posts_per_taxonomy() {
     add_filter( 'option_posts_per_page', 'ukmtheme_option_posts_per_taxonomy' );
   }
-  
+
   function ukmtheme_option_posts_per_taxonomy( $value ) {
     global $option_posts_per_page;
     if ( is_tax( array( 'pubcat', 'newscat', 'galcat', 'vidcat', 'jourcat' )) ) {
@@ -409,12 +409,12 @@ add_action( 'init', 'ukmtheme_posts_per_taxonomy', 0);
         return $option_posts_per_page;
     }
   }
-  
+
 add_action( 'init', 'ukmtheme_posts_per_archive', 0 );
   function ukmtheme_posts_per_archive() {
     add_filter( 'option_posts_per_page', 'ukmtheme_option_posts_per_archive' );
   }
-  
+
   function ukmtheme_option_posts_per_archive( $value ) {
     global $option_posts_per_page;
     if ( is_post_type_archive( array( 'news', 'gallery', 'video' )) ) {

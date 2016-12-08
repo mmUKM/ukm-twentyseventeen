@@ -12,12 +12,12 @@ get_header(); ?>
 
   <?php
 
-    $query = new WP_Query( array( 
+    $query = new WP_Query( array(
       'post_type'       => 'staff',
       'department'      => get_query_var( 'department' ),
-      'posts_per_page'  => -1, 
-      'orderby'         => 'menu_order', 
-      'order'           => 'ASC' 
+      'posts_per_page'  => -1,
+      'orderby'         => 'menu_order',
+      'order'           => 'ASC',
     ));
 
     while ( $query->have_posts() ) : $query->the_post();
@@ -52,17 +52,17 @@ get_header(); ?>
          $scope_title         = get_post_meta( get_the_ID(), 'ut_staff_work_scope_title', true );
          $scope_title_custom  = get_post_meta( get_the_ID(), 'ut_staff_work_scope_title_custom', true );
 
-          if($scope == on) { 
+          if($scope == on) {
             if($scope_title == on) { ?>
-              <h4><?php echo $scope_title_custom; ?></h4>            
-            <?php }          
+              <h4><?php echo $scope_title_custom; ?></h4>
+            <?php }
             else { ?>
               <h3><?php _e( 'Scope of Work','ukmtheme' ); ?></h3>
             <?php } ?>
           <span class="staff-scope">
             <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_staff_work_scope_desc', true ) ); ?>
           </span>
-          <?php }  
+          <?php }
           else {
             echo '';
           } ?>

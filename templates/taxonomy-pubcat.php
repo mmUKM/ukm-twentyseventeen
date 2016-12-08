@@ -11,13 +11,15 @@ get_header(); ?>
       <?php
       $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-      $query = new WP_Query( array( 
+      $query = new WP_Query( array(
         'post_type'       => 'publication',
         'pubcat'          => get_query_var( 'pubcat' ),
         'posts_per_page'  => 10,
         'paged'           => $paged,
+        'orderby'         => 'menu_order',
+        'order'           => 'ASC',
       ));
-      
+
       if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="column bottom-divider">
           <div class="large-2-12 padding-right">

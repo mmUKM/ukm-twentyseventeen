@@ -3,7 +3,7 @@
  * @package UKMTheme
  * @subpackage UKM Twenty Seventeen
  * @since 1.0
- * 
+ *
  * Post type
  * ===============================
  * 01. Appreciation
@@ -21,7 +21,7 @@
  * 13. Slideset
  * 14. Slideshow
  * 15. Tab
- * 
+ *
  * Custom Column Adjustment
  * ===============================
  * @link http://codex.wordpress.org/Plugin_API/Action_Reference/manage_posts_custom_column
@@ -92,7 +92,7 @@ function ut_add_new_appreciation_columns( $columns ){
 
 function ut_appreciation_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_appreciation_by' : echo get_post_meta($post->ID,'ut_appreciation_by',true); break;
     case 'ut_appreciation_ptj' : echo get_post_meta($post->ID,'ut_appreciation_ptj',true); break;
@@ -115,7 +115,7 @@ add_filter( 'enter_title_here', 'title_conference_input' );
     }
     return $title;
   }
-  
+
 function ut_conference_slideshow( $file_list_meta_key, $img_size = 'full' ) {
   $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
   echo '<ul class="uk-slideshow">';
@@ -144,7 +144,7 @@ function ut_conference_keynote( $file_list_meta_key, $img_size = 'full' ) {
   }
   echo '</ul';
 }
-  
+
 function ut_conference() {
 
   $labels = array(
@@ -188,7 +188,7 @@ function ut_conference() {
     'show_in_admin_bar'     => false,
     'show_in_nav_menus'     => true,
     'can_export'            => true,
-    'has_archive'           => true,		
+    'has_archive'           => true,
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => 'page',
@@ -233,7 +233,7 @@ function ut_event() {
     'show_ui'             => true,
     'show_in_menu'        => true,
     'show_in_nav_menus'   => false,
-    'show_in_admin_bar'   => false,  
+    'show_in_admin_bar'   => false,
     'menu_icon'           => get_template_directory_uri() . '/img/icon-event.svg',
     'can_export'          => true,
     'has_archive'         => true,
@@ -257,14 +257,14 @@ function ut_add_new_event_columns( $columns ){
     'ut_event_date'       => __( 'Date', 'ukmtheme' ),
     'ut_event_time_start' => __( 'Start', 'ukmtheme' ),
     'ut_event_time_end'   => __( 'End', 'ukmtheme' ),
-    'ut_event_venue'      => __( 'Venue', 'ukmtheme' )   
+    'ut_event_venue'      => __( 'Venue', 'ukmtheme' )
   );
   return $columns;
 }
 
 function ut_event_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_event_date' : echo get_post_meta($post->ID,'ut_event_date',true); break;
     case 'ut_event_time_start' : echo get_post_meta($post->ID,'ut_event_time_start',true); break;
@@ -345,9 +345,9 @@ function ut_add_new_expertise_columns( $columns ){
 
 function ut_expertise_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
-    case 'ut_expertise_photo' : 
+    case 'ut_expertise_photo' :
       $expertPhoto = get_post_meta($post->ID,'ut_expertise_photo',true);
        if ( $expertPhoto ) {
         echo '<img src="'.$expertPhoto.'" width="60">'; break;
@@ -357,7 +357,7 @@ function ut_expertise_custom_columns( $column ){
        }
     case 'ut_expertise_position' : echo get_post_meta($post->ID,'ut_expertise_position',true); break;
     case 'ut_expertise_email' : echo get_post_meta($post->ID,'ut_expertise_email',true); break;
-    case 'ut_expertise_contact' : echo get_post_meta($post->ID,'ut_expertise_contact',true); 
+    case 'ut_expertise_contact' : echo get_post_meta($post->ID,'ut_expertise_contact',true);
   }
 }
 /**
@@ -472,7 +472,7 @@ function ut_add_new_faq_columns( $columns ){
 
 function ukmtheme_faq_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'faqcat' : echo get_the_term_list( $post->ID, 'faqcat', '', ', ',''); break;
   }
@@ -736,7 +736,7 @@ function ut_add_new_journal_columns( $columns ){
 
 function ut_journal_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_journal_cover' :
       $pub_cover = get_post_meta($post->ID,'ut_journal_cover',true);
@@ -849,7 +849,7 @@ function ukmtheme_news_category_taxonomy() {
 }
 
 add_action( 'init', 'ukmtheme_news_category_taxonomy', 0 );
-  
+
 /**
  * @package UKMTheme
  * @subpackage UKM Twenty Seventeen
@@ -901,7 +901,7 @@ add_action( 'init', 'ut_press', 0 );
 add_action('manage_press_posts_custom_column', 'ut_press_custom_columns');
   function ut_press_custom_columns( $column ){
     global $post;
-    
+
     switch ($column) {
       case 'ut_press_date' : echo get_post_meta($post->ID,'ut_press_date',true); break;
     }
@@ -916,7 +916,7 @@ add_filter('manage_edit-press_columns', 'ut_add_new_press_columns');
     );
     return $columns;
   }
-  
+
 /**
  * @name Publication
  * @package UKMTheme
@@ -955,7 +955,7 @@ function ut_publication() {
     'labels'              => $labels,
     'supports'            => array( 'title' ),
     'taxonomies'          => array( 'pubcat' ),
-    'hierarchical'        => false,
+    'hierarchical'        => true,
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,
@@ -1032,7 +1032,7 @@ function ut_add_new_publication_columns( $columns ){
 
 function ut_publication_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_publication_cover' :
       $pub_cover = get_post_meta($post->ID,'ut_publication_cover',true);
@@ -1045,7 +1045,7 @@ function ut_publication_custom_columns( $column ){
     case 'pubcat' : echo get_the_term_list( $post->ID, 'pubcat', '', ', ',''); break;
     case 'ut_publication_author' : echo get_post_meta($post->ID,'ut_publication_author',true); break;
     case 'ut_publication_publisher' : echo get_post_meta($post->ID,'ut_publication_publisher',true); break;
-    case 'ut_publication_year' : echo get_post_meta($post->ID,'ut_publication_year',true); 
+    case 'ut_publication_year' : echo get_post_meta($post->ID,'ut_publication_year',true);
   }
 }
 
@@ -1113,7 +1113,7 @@ function ut_add_new_slideset_columns( $columns ){
 
 function ut_slideset_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_slideset_image' : echo '<img src="'. get_post_meta( get_the_ID(), 'ut_slideset_image', true ) .'" width="120">';break;
   }
@@ -1191,7 +1191,7 @@ function ut_add_new_slideshow_columns( $columns ){
 
 function ut_slideshow_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_slideshow_image' : $slideshowURL = get_post_meta($post->ID,'ut_slideshow_image',true); echo '<img src="'.$slideshowURL.'" width="120">';break;
   }
@@ -1366,7 +1366,7 @@ add_action('restrict_manage_posts','restrict_listings_by_department');
       ));
     }
   }
-  
+
 add_filter('parse_query','convert_department_id_to_taxonomy_term_in_query');
   function convert_department_id_to_taxonomy_term_in_query($query) {
     global $pagenow;
@@ -1398,7 +1398,7 @@ add_action('restrict_manage_posts','restrict_listings_by_position');
         ));
       }
   }
-  
+
 add_filter('parse_query','convert_position_id_to_taxonomy_term_in_query');
   function convert_position_id_to_taxonomy_term_in_query($query) {
       global $pagenow;
@@ -1418,14 +1418,14 @@ function ut_add_new_staff_columns( $columns ){
     'ut_staff_photo'      => __( 'Photo', 'ukmtheme' ),
     'title'               => __( 'Name', 'ukmtheme' ),
     'ut_staff_position'   => __( 'Position', 'ukmtheme' ),
-    'ut_staff_department' => __( 'Department', 'ukmtheme' )   
+    'ut_staff_department' => __( 'Department', 'ukmtheme' )
   );
   return $columns;
 }
 
 function ut_staff_custom_columns( $column ){
   global $post;
-  
+
   switch ($column) {
     case 'ut_staff_photo' :
       $staff_photo = get_post_meta($post->ID,'ut_staff_photo',true);
@@ -1608,7 +1608,7 @@ add_filter( 'single_template', 'get_appreciation_post_type_template' );
     global $post;
       if ($post->post_type == 'appreciation') {
         $single_appreciation_template = get_template_directory() . '/templates/single-appreciation.php';
-      }      
+      }
       return $single_appreciation_template;
   }
 
@@ -1636,7 +1636,7 @@ add_filter( 'single_template', 'get_conference_post_type_template' );
       }
       return $single_conference_template;
   }
-  
+
 add_filter( 'template_include', 'archive_conference_page_template', 99 );
   function archive_conference_page_template( $template_conference ) {
     if ( is_post_type_archive( 'conference' )  ) {
@@ -1647,7 +1647,7 @@ add_filter( 'template_include', 'archive_conference_page_template', 99 );
     }
     return $template_conference;
   }
-  
+
 /**
  * @name Events
  * @package Events Plugin
@@ -1840,7 +1840,7 @@ add_filter( 'template_include', 'taxonomy_jourcat_page_template', 99 );
     }
     return $template_journalcat;
   }
-  
+
   add_filter( 'template_include', 'taxonomy_jourkey_page_template', 99 );
   function taxonomy_jourkey_page_template( $template_journalcat ) {
     if ( is_tax( 'jourkey' )  ) {
@@ -1851,11 +1851,11 @@ add_filter( 'template_include', 'taxonomy_jourcat_page_template', 99 );
     }
     return $template_journalcat;
   }
-  
+
 /**
  * @name Press Release
  * @package Press Release Plugin
- */ 
+ */
 
 add_filter( 'template_include', 'archive_press_page_template', 99 );
   function archive_press_page_template( $template_press ) {
@@ -1867,11 +1867,11 @@ add_filter( 'template_include', 'archive_press_page_template', 99 );
     }
     return $template_press;
   }
-  
+
 /**
  * @name Publication
  * @package Publication Plugin
- */ 
+ */
 
 add_filter( 'single_template', 'get_publication_post_type_template' );
   function get_publication_post_type_template($single_publication_template) {
@@ -1881,7 +1881,7 @@ add_filter( 'single_template', 'get_publication_post_type_template' );
       }
       return $single_publication_template;
   }
- 
+
 add_filter( 'template_include', 'archive_publication_page_template', 99 );
   function archive_publication_page_template( $template_publication ) {
     if ( is_post_type_archive( 'publication' )  ) {
@@ -1907,7 +1907,7 @@ add_filter( 'template_include', 'taxonomy_pubcat_page_template', 99 );
 /**
  * @name Staff Directory
  * @package Staff Directory Plugin
- */ 
+ */
 
 add_filter( 'single_template', 'get_staff_post_type_template' );
   function get_staff_post_type_template($single_staff_template) {

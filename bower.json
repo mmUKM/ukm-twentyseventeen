@@ -5,9 +5,9 @@
   "license": "GPL-2.0",
   "dependencies": {
     "fitvids": "v1.1.0",
-    "CMB2": "https://github.com/WebDevStudios/CMB2.git#v2.2.1",
+    "CMB2": "https://github.com/WebDevStudios/CMB2.git#v2.2.3.1",
     "TGM-Plugin-Activation": "https://github.com/TGMPA/TGM-Plugin-Activation.git#v2.5.2",
     "jqnewsTicker": "https://github.com/jayeshmagare/jqnewsTicker.git#v1.0.2",
-    "uikit": "v2.26.4"
+    "uikit": "v2.27.2"
   }
 }

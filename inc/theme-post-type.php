@@ -955,7 +955,7 @@ function ut_publication() {
     'labels'              => $labels,
     'supports'            => array( 'title' ),
     'taxonomies'          => array( 'pubcat' ),
-    'hierarchical'        => true,
+    'hierarchical'        => false,
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,
@@ -1104,7 +1104,7 @@ add_filter('manage_edit-slideset_columns', 'ut_add_new_slideset_columns');
 function ut_add_new_slideset_columns( $columns ){
   $columns = array(
     'cb'                    => '<input type="checkbox">',
-    'ut_slideset_image'    => __( 'Image', 'ukmtheme' ),
+    'ut_slideset_image'     => __( 'Image', 'ukmtheme' ),
     'title'                 => __( 'Title', 'ukmtheme' ),
     'date'                  => __( 'Date', 'ukmtheme' )
   );

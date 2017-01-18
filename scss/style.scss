@@ -370,6 +370,38 @@ html, body {
   }
 }
 
+// Menu Conference
+
+#ConferenceMenu {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    li {
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      a {
+        font: 400 18px/20px "Bebas Neue Regular",Helvetica Neue,Helvetica,Arial,sans-serif;
+        display: block;
+        padding: 22px 7px 22px 7px;
+        line-height: 0;
+        margin-top: 0;
+        color: #fff;
+      }
+      a:hover {
+        color: #444;
+        text-decoration: none;
+      }
+      a:visited {
+        color: #fff;
+      }
+    }
+  }
+}
+
 // Mobile config
 
 @media only screen and (min-width: 641px) and (max-width: 960px) {

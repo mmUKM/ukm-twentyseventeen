@@ -24,32 +24,18 @@
     <div class="wrap column">
       <div class="large-6-12 small-hidden logo">
         <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <img src="<?php echo get_theme_mod( 'ukmtheme_logo_image' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+          <a href="<?php echo get_permalink( $post->ID ); ?>" rel="home">
+            <img src="<?php echo get_post_meta( get_the_ID(), 'ut_conference_logo', true ); ?>" alt="<?php echo the_title(); ?>">
           </a>
         <?php else : ?>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+          <a href="<?php echo get_permalink( $post->ID ); ?>" rel="home">
             <img src="<?php echo get_template_directory_uri() . '/img/logo-black-text.svg'; ?>" alt="<?php echo get_bloginfo('name'); ?>">
           </a>
         <?php endif; ?>
       </div>
       <div class="large-6-12">
-        <div class="column top-nav-wrap">
-          <div class="large-9-12 small-7-12">
-            <?php
-              wp_nav_menu(array(
-                'theme_location'  => 'top',
-                'menu'            => 'Top Navigation',
-                'menu_class'      => 'top-nav',
-              ));
-            ?>
-          </div>
-          <div class="large-3-12 small-5-12">
-            <?php get_template_part( 'templates/off', 'canvas-tools' ); ?>
-          </div>
-        </div>
         <div class="column">
-          <h1 class="site-name" style="font-size:<?php echo get_theme_mod( 'ukmtheme_title_size' ); ?>"><?php the_title(); ?></h1>
+          <h1 class="conference-site-name"><?php the_title(); ?></h1>
         </div>
       </div>
   </div>
@@ -65,6 +51,10 @@
           $content_4 = get_post_meta( get_the_ID(), 'ut_conference_title_4_hide', true );
           $content_5 = get_post_meta( get_the_ID(), 'ut_conference_title_5_hide', true );
           $content_6 = get_post_meta( get_the_ID(), 'ut_conference_title_6_hide', true );
+          $content_7 = get_post_meta( get_the_ID(), 'ut_conference_title_7_hide', true );
+          $content_8 = get_post_meta( get_the_ID(), 'ut_conference_title_8_hide', true );
+          $content_9 = get_post_meta( get_the_ID(), 'ut_conference_title_9_hide', true );
+          $content_10 = get_post_meta( get_the_ID(), 'ut_conference_title_10_hide', true );
         ?>
           <ul class data-uk-switcher="{connect:'#extd-content'}">
             <li><a href=""><?php _e( 'Home', 'ukmtheme' ); ?></a></li>
@@ -117,6 +107,38 @@
                 </li>
                 <?php
               }
+              // Title #7
+              if ( $content_7 == on ) {
+                ?>
+                <li>
+                  <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_7', true ); ?></a>
+                </li>
+                <?php
+              }
+              // Title #8
+              if ( $content_8 == on ) {
+                ?>
+                <li>
+                  <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_8', true ); ?></a>
+                </li>
+                <?php
+              }
+              // Title #9
+              if ( $content_9 == on ) {
+                ?>
+                <li>
+                  <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_9', true ); ?></a>
+                </li>
+                <?php
+              }
+              // Title #10
+              if ( $content_10 == on ) {
+                ?>
+                <li>
+                  <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_10', true ); ?></a>
+                </li>
+                <?php
+              }
               ?>
           </ul>
       </div>
@@ -148,7 +170,7 @@
         <h2><?php _e( 'Introduction', 'ukmtheme' ); ?></h2>
         <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_introduction', true ) ); ?>
         <hr><!--Keynote Speaker-->
-        <h2><?php _e( 'Keynote Speaker', 'ukmtheme' ); ?></h2>
+        <h2><?php _e( 'Speaker', 'ukmtheme' ); ?></h2>
         <div data-uk-slideset="{default: 4}">
           <div class="uk-slidenav-position">
             <?php ut_conference_keynote( 'ut_conference_keynote_image', 'full' ); ?>
@@ -167,7 +189,10 @@
         ?>
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_1', true ); ?></h1>
-          <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) ); ?>
+          <?php
+            $wysiwyg_1 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_1;
+          ?>
         </li>
         <?php
       }
@@ -176,7 +201,10 @@
         ?>
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_2', true ); ?></h1>
-          <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_ext_content_2', true ) ); ?>
+          <?php
+            $wysiwyg_2 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_2;
+          ?>
         </li>
         <?php
       }
@@ -185,7 +213,10 @@
         ?>
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_3', true ); ?></h1>
-          <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_ext_content_3', true ) ); ?>
+            <?php
+            $wysiwyg_3 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_3;
+          ?>
         </li>
         <?php
       }
@@ -194,7 +225,10 @@
         ?>
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_4', true ); ?></h1>
-          <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_ext_content_4', true ) ); ?>
+          <?php
+            $wysiwyg_4 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_4;
+          ?>
         </li>
         <?php
       }
@@ -203,7 +237,10 @@
         ?>
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_5', true ); ?></h1>
-          <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_ext_content_5', true ) ); ?>
+          <?php
+            $wysiwyg_5 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_5;
+          ?>
         </li>
         <?php
       }
@@ -212,7 +249,58 @@
         ?>
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_6', true ); ?></h1>
-          <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_ext_content_6', true ) ); ?>
+          <?php
+            $wysiwyg_6 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_6;
+          ?>
+        </li>
+        <?php
+      }
+      // Content #7
+      if ( $content_7 == on ) {
+        ?>
+        <li>
+          <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_7', true ); ?></h1>
+          <?php
+            $wysiwyg_7 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            echo $wysiwyg_7;
+          ?>
+        </li>
+        <?php
+      }
+      // Content #8
+      if ( $content_8 == on ) {
+        ?>
+        <li>
+          <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_8', true ); ?></h1>
+          <?php
+            $wysiwyg_8 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_8', true ) );
+            echo $wysiwyg_8;
+          ?>
+        </li>
+        <?php
+      }
+      // Content #9
+      if ( $content_9 == on ) {
+        ?>
+        <li>
+          <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_9', true ); ?></h1>
+          <?php
+            $wysiwyg_9 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_9', true ) );
+            echo $wysiwyg_9;
+          ?>
+        </li>
+        <?php
+      }
+      // Content #10
+      if ( $content_10 == on ) {
+        ?>
+        <li>
+          <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_10', true ); ?></h1>
+          <?php
+            $wysiwyg_10 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_10', true ) );
+            echo $wysiwyg_10;
+          ?>
         </li>
         <?php
       } ?>
@@ -221,4 +309,38 @@
     <?php get_template_part( 'templates/content', 'edit' ); ?>
   </article>
 </div>
-<?php get_footer(); ?>
+</div><!-- stickyfooter -->
+<footer class="footer">
+<div class="wrap padding-top padding-bottom device-padding">
+  <div class="uk-grid">
+  <div class="uk-width-medium-1-3">
+    <?php
+      $wysiwyg_footer_1 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_footer_1', true ) );
+      echo $wysiwyg_footer_1;
+    ?>
+  </div>
+  <div class="uk-width-medium-1-3">
+    <?php
+      $wysiwyg_footer_2 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_footer_2', true ) );
+      echo $wysiwyg_footer_2;
+    ?>
+  </div>
+  <div class="uk-width-medium-1-3">
+    <?php
+      $wysiwyg_footer_3 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_footer_3', true ) );
+      echo $wysiwyg_footer_3;
+    ?>
+  </div>
+  </div>
+</div>
+  <div class="copyright-with-navigation">
+    <div class="wrap column">
+      <div class="large-12-12">
+        <p class="ut-copyright"><?php _e( 'Copyright &copy;&nbsp;', 'ukmtheme' ); ?><?php echo date( 'Y' ); ?>&nbsp;<?php _e( 'The National University of Malaysia', 'ukmtheme' ); ?></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<?php wp_footer(); ?>
+</body>
+</html>

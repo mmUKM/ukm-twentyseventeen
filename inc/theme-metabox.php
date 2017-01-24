@@ -30,6 +30,13 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
     ) );
 
     $conference_basic->add_field( array(
+      'name'         => __( 'Header Logo', 'ukmtheme' ),
+      'desc'         => __( 'Upload images. Dimensions of the image should be 400x90 pixels', 'ukmtheme' ),
+      'id'           => $prefix . 'conference_logo',
+      'type'         => 'file',
+    ) );
+
+    $conference_basic->add_field( array(
       'name'         => __( 'Slides', 'ukmtheme' ),
       'desc'         => __( 'Upload or add multiple images. Dimensions of the image should be 960x380 pixels', 'ukmtheme' ),
       'id'           => $prefix . 'conference_slide_image',
@@ -38,7 +45,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
     ) );
 
     $conference_basic->add_field( array(
-      'name'         => __( 'Keynote Speaker', 'ukmtheme' ),
+      'name'         => __( 'Speaker', 'ukmtheme' ),
       'desc'         => __( 'Upload or add multiple images. Dimensions of the image should be 380x300 pixels. Go into Media edit image, enter image title for speaker name, caption for title/position and alternate text for additional content.', 'ukmtheme' ),
       'id'           => $prefix . 'conference_keynote_image',
       'type'         => 'file_list',
@@ -58,7 +65,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'desc'    => __( 'Conference Start Date', 'ukmtheme' ),
       'id'      => $prefix . 'conference_date_start',
       'type'    => 'text_date',
-      'date_format' => __( 'd/m/Y', 'cmb2' ),
+      'date_format' => __( 'd/m/Y' ),
         
     ) );
 
@@ -67,7 +74,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'desc'    => __( 'Conference End Date', 'ukmtheme' ),
       'id'      => $prefix . 'conference_date_end',
       'type'    => 'text_date',
-      'date_format' => __( 'd/m/Y', 'cmb2' ),
+      'date_format' => __( 'd/m/Y' ),
     ) );
     
     $conference_basic->add_field( array(
@@ -85,14 +92,44 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'options' => array( 'textarea_rows' => 5, ),
     ) );
 
+    $conference_basic->add_field( array(
+      'name'    => __( 'Footer #1', 'ukmtheme' ),
+      'desc'    => __( 'Footer content #1', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_footer_1',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ) );
+
+    $conference_basic->add_field( array(
+      'name'    => __( 'Footer #2', 'ukmtheme' ),
+      'desc'    => __( 'Footer content #2', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_footer_2',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ) );
+
+    $conference_basic->add_field( array(
+      'name'    => __( 'Footer #3', 'ukmtheme' ),
+      'desc'    => __( 'Footer content #3', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_footer_3',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ) );
 
     $conference_extd = new_cmb2_box( array(
       'id'            => 'conference_metabox_extd',
-      'title'         => __( 'Additional Details (Display in Tab Style)', 'ukmtheme' ),
+      'title'         => __( 'Additional Page', 'ukmtheme' ),
       'object_types'  => array( 'conference', ),
       'context'       => 'normal',
       'priority'      => 'high',
       'show_names'    => true,
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #1', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #1', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_1_hide',
+      'type'    => 'checkbox',
     ) );
 
     $conference_extd->add_field( array(
@@ -111,6 +148,13 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
     ) );
 
     $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #2', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #2', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_2_hide',
+      'type'    => 'checkbox',
+    ) );
+
+    $conference_extd->add_field( array(
       'name'    => __( 'Title #2', 'ukmtheme' ),
       'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
       'id'      => $prefix . 'conference_title_ext_2',
@@ -123,6 +167,13 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_2',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #3', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #3', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_3_hide',
+      'type'    => 'checkbox',
     ) );
 
     $conference_extd->add_field( array(
@@ -141,6 +192,13 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
     ) );
 
     $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #4', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #4', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_4_hide',
+      'type'    => 'checkbox',
+    ) );
+
+    $conference_extd->add_field( array(
       'name'    => __( 'Title #4', 'ukmtheme' ),
       'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
       'id'      => $prefix . 'conference_title_ext_4',
@@ -153,6 +211,13 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_4',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #5', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #5', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_5_hide',
+      'type'    => 'checkbox',
     ) );
 
     $conference_extd->add_field( array(
@@ -171,6 +236,13 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
     ) );
 
     $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #6', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #6', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_6_hide',
+      'type'    => 'checkbox',
+    ) );
+
+    $conference_extd->add_field( array(
       'name'    => __( 'Title #6', 'ukmtheme' ),
       'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
       'id'      => $prefix . 'conference_title_ext_6',
@@ -184,58 +256,93 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
     ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #7', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #7', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_7_hide',
+      'type'    => 'checkbox',
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #7', 'ukmtheme' ),
+      'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_ext_7',
+      'type'    => 'text',
+    ) );
     
-    // Hide extended content
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #7 Content', 'ukmtheme' ),
+      'desc'    => __( 'Some content for title #7.', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_ext_content_7',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #8', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #8', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_8_hide',
+      'type'    => 'checkbox',
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #8', 'ukmtheme' ),
+      'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_ext_8',
+      'type'    => 'text',
+    ) );
     
-    $conference_hide = new_cmb2_box(  array(
-      'id'            => 'conference_metabox_hide',
-      'title'         => __( 'Show Additional Content', 'ukmtheme' ),
-      'object_types'  => array( 'conference', ),
-      'context'       => 'normal',
-      'priority'      => 'high',
-      'show_names'    => false,
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #8 Content', 'ukmtheme' ),
+      'desc'    => __( 'Some content for title #8.', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_ext_content_8',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
     ) );
 
-    $conference_hide->add_field( array(
-      'name'    => __( 'Show Title and Content #1', 'ukmtheme' ),
-      'desc'    => __( 'Show Title and Content #1', 'ukmtheme' ),
-      'id'      => $prefix . 'conference_title_1_hide',
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #9', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #9', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_9_hide',
       'type'    => 'checkbox',
     ) );
 
-    $conference_hide->add_field( array(
-      'name'    => __( 'Show Title and Content #2', 'ukmtheme' ),
-      'desc'    => __( 'Show Title and Content #2', 'ukmtheme' ),
-      'id'      => $prefix . 'conference_title_2_hide',
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #9', 'ukmtheme' ),
+      'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_ext_9',
+      'type'    => 'text',
+    ) );
+    
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #9 Content', 'ukmtheme' ),
+      'desc'    => __( 'Some content for title #9.', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_ext_content_9',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ) );
+
+    $conference_extd->add_field( array(
+      'name'    => __( 'Show Title and Content #10', 'ukmtheme' ),
+      'desc'    => __( 'Show Title and Content #10', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_10_hide',
       'type'    => 'checkbox',
     ) );
 
-    $conference_hide->add_field( array(
-      'name'    => __( 'Show Title and Content #3', 'ukmtheme' ),
-      'desc'    => __( 'Show Title and Content #3', 'ukmtheme' ),
-      'id'      => $prefix . 'conference_title_3_hide',
-      'type'    => 'checkbox',
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #10', 'ukmtheme' ),
+      'desc'    => __( 'Edit this title (use short term)', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_title_ext_10',
+      'type'    => 'text',
     ) );
-
-    $conference_hide->add_field( array(
-      'name'    => __( 'Show Title and Content #4', 'ukmtheme' ),
-      'desc'    => __( 'Show Title and Content #4', 'ukmtheme' ),
-      'id'      => $prefix . 'conference_title_4_hide',
-      'type'    => 'checkbox',
-    ) );
-
-    $conference_hide->add_field( array(
-      'name'    => __( 'Show Title and Content #5', 'ukmtheme' ),
-      'desc'    => __( 'Show Title and Content #5', 'ukmtheme' ),
-      'id'      => $prefix . 'conference_title_5_hide',
-      'type'    => 'checkbox',
-    ) );
-
-    $conference_hide->add_field( array(
-      'name'    => __( 'Show Title and Content #6', 'ukmtheme' ),
-      'desc'    => __( 'Show Title and Content #6', 'ukmtheme' ),
-      'id'      => $prefix . 'conference_title_6_hide',
-      'type'    => 'checkbox',
+    
+    $conference_extd->add_field( array(
+      'name'    => __( 'Title #10 Content', 'ukmtheme' ),
+      'desc'    => __( 'Some content for title #10.', 'ukmtheme' ),
+      'id'      => $prefix . 'conference_ext_content_10',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
     ) );
 
   }

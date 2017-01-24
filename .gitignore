@@ -1,6 +1,7 @@
 .DS_Store
 .netbeans.xml
 .sass-cache/
+.vscode/
 npm-debug.log
 bower_components/
 node_modules/

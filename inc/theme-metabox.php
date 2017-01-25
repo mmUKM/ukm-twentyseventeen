@@ -58,6 +58,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_introduction',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_basic->add_field( array(
@@ -87,6 +88,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_organizer',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_basic->add_field( array(
@@ -95,6 +97,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_footer_1',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_basic->add_field( array(
@@ -103,6 +106,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_footer_2',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_basic->add_field( array(
@@ -111,6 +115,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_footer_3',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd = new_cmb2_box( array(
@@ -142,6 +147,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_1',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -164,6 +170,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_2',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -186,6 +193,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_3',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -208,6 +216,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_4',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -230,6 +239,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_5',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -252,6 +262,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_6',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -274,6 +285,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_7',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -296,6 +308,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_8',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -318,6 +331,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_9',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
     $conference_extd->add_field( array(
@@ -340,6 +354,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'id'      => $prefix . 'conference_ext_content_10',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
+      'sanitization_cb' => false,
     ) );
 
   }

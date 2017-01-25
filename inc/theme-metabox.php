@@ -65,8 +65,6 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'desc'    => __( 'Conference Start Date', 'ukmtheme' ),
       'id'      => $prefix . 'conference_date_start',
       'type'    => 'text_date',
-      'date_format' => __( 'd/m/Y' ),
-        
     ) );
 
     $conference_basic->add_field( array(
@@ -74,7 +72,6 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'desc'    => __( 'Conference End Date', 'ukmtheme' ),
       'id'      => $prefix . 'conference_date_end',
       'type'    => 'text_date',
-      'date_format' => __( 'd/m/Y' ),
     ) );
     
     $conference_basic->add_field( array(
@@ -1113,11 +1110,4 @@ add_action( 'cmb2_init', 'ukmtheme_expertise_hide_metaboxes' );
       'id'      => $prefix . 'expertise_teaching_hide',
       'type'    => 'checkbox',
     ) );
-  }
-  
-
-add_filter( 'cmb2_localized_data', 'ukmtheme_custom_cmb2_date_format' );
-  function ukmtheme_custom_cmb2_date_format( $data ) {
-    $data['defaults']['date_picker']['dateFormat'] = 'dd/mm/yy';
-    return $data;
   }

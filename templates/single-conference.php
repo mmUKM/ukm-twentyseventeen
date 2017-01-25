@@ -23,7 +23,7 @@
   <div class="header">
     <div class="wrap column">
       <div class="large-6-12 small-hidden logo">
-        <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
+        <?php if ( get_post_meta( get_the_ID(), 'ut_conference_logo', true ) ) : ?>
           <a href="<?php echo get_permalink( $post->ID ); ?>" rel="home">
             <img src="<?php echo get_post_meta( get_the_ID(), 'ut_conference_logo', true ); ?>" alt="<?php echo the_title(); ?>">
           </a>
@@ -202,7 +202,7 @@
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_2', true ); ?></h1>
           <?php
-            $wysiwyg_2 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            $wysiwyg_2 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_2', true ) );
             echo $wysiwyg_2;
           ?>
         </li>
@@ -214,7 +214,7 @@
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_3', true ); ?></h1>
             <?php
-            $wysiwyg_3 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            $wysiwyg_3 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_3', true ) );
             echo $wysiwyg_3;
           ?>
         </li>
@@ -226,7 +226,7 @@
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_4', true ); ?></h1>
           <?php
-            $wysiwyg_4 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            $wysiwyg_4 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_4', true ) );
             echo $wysiwyg_4;
           ?>
         </li>
@@ -238,7 +238,7 @@
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_5', true ); ?></h1>
           <?php
-            $wysiwyg_5 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            $wysiwyg_5 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_5', true ) );
             echo $wysiwyg_5;
           ?>
         </li>
@@ -250,7 +250,7 @@
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_6', true ); ?></h1>
           <?php
-            $wysiwyg_6 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            $wysiwyg_6 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_6', true ) );
             echo $wysiwyg_6;
           ?>
         </li>
@@ -262,7 +262,7 @@
         <li>
           <h1><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_7', true ); ?></h1>
           <?php
-            $wysiwyg_7 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_1', true ) );
+            $wysiwyg_7 = apply_filters( 'the_content', get_post_meta( get_the_ID(), 'ut_conference_ext_content_7', true ) );
             echo $wysiwyg_7;
           ?>
         </li>

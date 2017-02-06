@@ -170,7 +170,7 @@
         <h2><?php _e( 'Introduction', 'ukmtheme' ); ?></h2>
         <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_introduction', true ) ); ?>
         <hr><!--Keynote Speaker-->
-        <h2><?php _e( 'Speaker', 'ukmtheme' ); ?></h2>
+        <h2><?php _e( 'Speakers', 'ukmtheme' ); ?></h2>
         <div data-uk-slideset="{default: 4}">
           <div class="uk-slidenav-position">
             <?php ut_conference_keynote( 'ut_conference_keynote_image', 'full' ); ?>

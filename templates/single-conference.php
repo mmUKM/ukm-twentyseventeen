@@ -171,7 +171,7 @@
         <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_introduction', true ) ); ?>
         <hr><!--Keynote Speaker-->
         <h2><?php _e( 'Speakers', 'ukmtheme' ); ?></h2>
-        <div data-uk-slideset="{default: 4}">
+        <div data-uk-slideset="{default: 4, autoplay:true, autoplayInterval:6000}">
           <div class="uk-slidenav-position">
             <?php ut_conference_keynote( 'ut_conference_keynote_image', 'full' ); ?>
             <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>

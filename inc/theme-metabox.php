@@ -66,6 +66,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'desc'    => __( 'Conference Start Date', 'ukmtheme' ),
       'id'      => $prefix . 'conference_date_start',
       'type'    => 'text_date',
+      'date_format' => 'd/m/Y',
     ) );
 
     $conference_basic->add_field( array(
@@ -73,6 +74,7 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'desc'    => __( 'Conference End Date', 'ukmtheme' ),
       'id'      => $prefix . 'conference_date_end',
       'type'    => 'text_date',
+      'date_format' => 'd/m/Y',
     ) );
     
     $conference_basic->add_field( array(
@@ -83,8 +85,8 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
     ) );
     
     $conference_basic->add_field( array(
-      'name'    => __( 'Organizer', 'ukmtheme' ),
-      'desc'    => __( 'organizer detail', 'ukmtheme' ),
+      'name'    => __( 'Organiser', 'ukmtheme' ),
+      'desc'    => __( 'organiser detail', 'ukmtheme' ),
       'id'      => $prefix . 'conference_organizer',
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
@@ -116,6 +118,14 @@ add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );
       'type'    => 'wysiwyg',
       'options' => array( 'textarea_rows' => 5, ),
       'sanitization_cb' => false,
+    ) );
+
+    $conference_basic->add_field( array(
+      'name'         => __( 'Gallery', 'ukmtheme' ),
+      'desc'         => __( 'Upload or add multiple images.', 'ukmtheme' ),
+      'id'           => $prefix . 'conference_gallery',
+      'type'         => 'file_list',
+      'preview_size' => array( 100, 127 ), // Default: array( 50, 50 )
     ) );
 
     $conference_extd = new_cmb2_box( array(

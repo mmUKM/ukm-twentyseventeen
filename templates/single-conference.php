@@ -140,6 +140,7 @@
                 <?php
               }
               ?>
+              <li><a href=""><?php _e( 'Gallery', 'ukmtheme' ); ?></a></li>
           </ul>
       </div>
     </div>
@@ -179,7 +180,7 @@
           </div>
         </div>
         <hr><!--Organizer-->
-        <h2><?php _e( 'Organizer', 'ukmtheme' ); ?></h2>
+        <h2><?php _e( 'Organiser', 'ukmtheme' ); ?></h2>
         <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_conference_organizer', true ) ); ?>
       <?php endwhile; ?>
     </li>
@@ -304,6 +305,9 @@
         </li>
         <?php
       } ?>
+      <li>
+      <?php ut_lightbox_gallery( 'ut_conference_gallery', 'post-thumbnail' ); ?>
+      </li>
   </ul>
 <?php // END Tabeer Content ?>
     <?php get_template_part( 'templates/content', 'edit' ); ?>

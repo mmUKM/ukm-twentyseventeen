@@ -130,7 +130,9 @@
                   <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_9', true ); ?></a>
                 </li>
                 <?php
-              }
+              } ?>
+              <li><a href=""><?php _e( 'Gallery', 'ukmtheme' ); ?></a></li>
+              <?php
               // Title #10
               if ( $content_10 == on ) {
                 ?>
@@ -140,7 +142,6 @@
                 <?php
               }
               ?>
-              <li><a href=""><?php _e( 'Gallery', 'ukmtheme' ); ?></a></li>
           </ul>
       </div>
     </div>
@@ -292,7 +293,12 @@
           ?>
         </li>
         <?php
-      }
+      } ?>
+      <li>
+        <h1><?php _e( 'Gallery', 'ukmtheme' ); ?></h1>
+        <p><?php ut_lightbox_gallery( 'ut_conference_gallery', 'post-thumbnail' ); ?></p>
+      </li>
+      <?php
       // Content #10
       if ( $content_10 == on ) {
         ?>
@@ -305,9 +311,6 @@
         </li>
         <?php
       } ?>
-      <li>
-      <?php ut_lightbox_gallery( 'ut_conference_gallery', 'post-thumbnail' ); ?>
-      </li>
   </ul>
 <?php // END Tabeer Content ?>
     <?php get_template_part( 'templates/content', 'edit' ); ?>
@@ -340,7 +343,7 @@
   <div class="copyright-with-navigation">
     <div class="wrap column">
       <div class="large-12-12">
-        <p class="ut-copyright"><?php _e( 'Copyright &copy;&nbsp;', 'ukmtheme' ); ?><?php echo date( 'Y' ); ?>&nbsp;<?php _e( 'The National University of Malaysia', 'ukmtheme' ); ?></p>
+        <p class="ut-copyright"><?php _e( 'Copyright &copy;&nbsp;', 'ukmtheme' ); ?><?php echo date( 'Y' ); ?>&nbsp;<?php _e( 'Universiti Kebangsaan Malaysia', 'ukmtheme' ); ?></p>
       </div>
     </div>
   </div>

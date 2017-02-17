@@ -122,7 +122,9 @@
                   <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_8', true ); ?></a>
                 </li>
                 <?php
-              }
+              } ?>
+              <li><a href=""><?php _e( 'Gallery', 'ukmtheme' ); ?></a></li>
+              <?php
               // Title #9
               if ( $content_9 == on ) {
                 ?>
@@ -130,9 +132,7 @@
                   <a href=""><?php echo get_post_meta( get_the_ID(), 'ut_conference_title_ext_9', true ); ?></a>
                 </li>
                 <?php
-              } ?>
-              <li><a href=""><?php _e( 'Gallery', 'ukmtheme' ); ?></a></li>
-              <?php
+              }
               // Title #10
               if ( $content_10 == on ) {
                 ?>
@@ -281,7 +281,12 @@
           ?>
         </li>
         <?php
-      }
+      } ?>
+      <li>
+        <h1><?php _e( 'Gallery', 'ukmtheme' ); ?></h1>
+        <p><?php ut_lightbox_gallery( 'ut_conference_gallery', 'post-thumbnail' ); ?></p>
+      </li>
+      <?php
       // Content #9
       if ( $content_9 == on ) {
         ?>
@@ -293,12 +298,7 @@
           ?>
         </li>
         <?php
-      } ?>
-      <li>
-        <h1><?php _e( 'Gallery', 'ukmtheme' ); ?></h1>
-        <p><?php ut_lightbox_gallery( 'ut_conference_gallery', 'post-thumbnail' ); ?></p>
-      </li>
-      <?php
+      }
       // Content #10
       if ( $content_10 == on ) {
         ?>

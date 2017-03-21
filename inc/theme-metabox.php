@@ -491,25 +491,25 @@ add_action( 'cmb2_init', 'ukmtheme_slideshow_metaboxes' );
     ) );
 
     $slideshow->add_field( array(
+      'name'    => __( 'Link', 'ukmtheme' ),
+      'desc'    => __( 'link image to posts, pages or external web.', 'ukmtheme' ),
+      'id'      => $prefix . 'slideshow_link',
+      'type'    => 'text',
+    ) );
+
+    $slideshow->add_field( array(
+      'name'    => __( 'Display Caption', 'ukmtheme' ),
+      'desc'    => __( 'Display slideshow title and caption for this image', 'ukmtheme' ),
+      'id'      => $prefix . 'slideshow_caption_hide',
+      'type'    => 'checkbox'
+    ) );
+
+    $slideshow->add_field( array(
       'name'    => __( 'Caption', 'ukmtheme' ),
       'desc'    => __( 'Some caption for the image.', 'ukmtheme' ),
       'id'      => $prefix . 'slideshow_caption',
       'type'    => 'textarea',
-    ) );
-
-    $slideshow->add_field( array(
-      'name'    => __( 'Link', 'ukmtheme' ),
-      'desc'    => __( 'links to posts, pages or external web.', 'ukmtheme' ),
-      'id'      => $prefix . 'slideshow_link',
-      'type'    => 'text',
-    ) );
-    
-    $slideshow->add_field( array(
-      'name'    => __( 'Hide Caption', 'ukmtheme' ),
-      'desc'    => __( 'Hide slideshow caption', 'ukmtheme' ),
-      'id'      => $prefix . 'slideshow_caption_hide',
-      'type'    => 'checkbox'
-    ) );
+    ) );   
   }
 
 // Post Type: Slideset

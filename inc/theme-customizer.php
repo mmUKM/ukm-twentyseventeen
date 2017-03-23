@@ -34,9 +34,6 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
       'priority'	=> 20
     ) ) );
     
-    /**
-     * Title size
-     */
     $wp_customize->add_setting( 'ukmtheme_title_size', array( 
       'default' => null 
     ) );
@@ -56,6 +53,18 @@ add_action( 'customize_register', 'ukmtheme_customizer' );
                   '19px'  => '19px',
                   '20px'  => '20px'
                   )
+    ) );
+
+    $wp_customize->add_setting( 'ukmtheme_hide_title', array( 
+      'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_hide_title', array(
+      'label'       => __( 'Hide Site Title', 'ukmtheme' ),
+      'description' => __( 'Hide my site title', 'ukmtheme'),
+      'section'     => 'ukmtheme_theme_logo',
+      'priority'    => 40,
+      'type'        => 'checkbox'
     ) );
     
     /**

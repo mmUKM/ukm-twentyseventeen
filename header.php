@@ -48,9 +48,12 @@
             <?php get_template_part( 'templates/off', 'canvas-tools' ); ?>
           </div>
         </div>
+        <?php /** Header Title */
+        if ( get_theme_mod( 'ukmtheme_hide_title' ) == 0 ) { ?>
         <div class="column">
           <h1 class="site-name" style="font-size:<?php echo get_theme_mod( 'ukmtheme_title_size' ); ?>"><?php echo bloginfo( 'name' ); ?></h1>
         </div>
+        <?php } ?>
       </div>
   </div>
 </header>

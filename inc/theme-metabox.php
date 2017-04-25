@@ -801,6 +801,13 @@ add_action( 'cmb2_init', 'ukmtheme_staff_metaboxes' );
     ) );
 
     $staff->add_field( array(
+      'name'    => __( 'Display Phone No.', 'ukmtheme' ),
+      'desc'    => __( 'Check to display', 'ukmtheme' ),
+      'id'      => $prefix . 'staff_phone_display',
+      'type'    => 'checkbox',
+    ) );
+
+    $staff->add_field( array(
       'name'    => __( 'Phone No.', 'ukmtheme' ),
       'desc'    => __( 'e.g. 03-8921-7070', 'ukmtheme' ),
       'id'      => $prefix . 'staff_phone',
@@ -816,7 +823,7 @@ add_action( 'cmb2_init', 'ukmtheme_staff_metaboxes' );
 
     $staff->add_field( array(
       'name'    => __( 'Display Job Scope', 'ukmtheme' ),
-      'desc'    => __( 'Please check if want to display Scope of Work', 'ukmtheme' ),
+      'desc'    => __( 'Check to display', 'ukmtheme' ),
       'id'      => $prefix . 'staff_work_scope',
       'type'    => 'checkbox',
     ) );

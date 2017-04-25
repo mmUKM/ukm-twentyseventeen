@@ -20,7 +20,7 @@ get_header(); ?>
       if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
     ?>
     <div class="column">
-      <div class="large-3-12 small-3-12">
+      <div class="large-2-12 small-2-12">
           <div class="staff-photo padding-right">
             <?php
               $photo = get_post_meta( $post->ID,'ut_staff_photo',true );
@@ -35,13 +35,16 @@ get_header(); ?>
           </div>
       </div>
 
-      <div class="large-9-12 small-9-12">
+      <div class="large-8-12 small-8-12">
         <div class="staff-detail padding-left">
           <?php the_title( '<h3>', '</h3>' ); ?>
           <ul>
             <li><?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?></li>
-            <li><i class="uk-icon-phone-square"></i> <?php echo get_post_meta( $post->ID, 'ut_staff_phone', true ); ?></li>
-            <li><i class="uk-icon-envelope-square"></i> <?php echo get_post_meta( $post->ID, 'ut_staff_email', true ); ?></li>
+            <?php $phone = get_post_meta( get_the_ID(), 'ut_staff_phone_display', true ); ?>
+            <?php if ( $phone == on ) { ?>
+            <li><i class="uk-icon-phone-square"></i> <?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
+            <?php } ?>
+            <li><i class="uk-icon-envelope-square"></i> <?php echo get_post_meta( get_the_ID(), 'ut_staff_email', true ); ?></li>
           </ul>
           <?php
            $scope               = get_post_meta($post->ID, 'ut_staff_work_scope', true);

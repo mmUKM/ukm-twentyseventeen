@@ -17,13 +17,7 @@ function ukmtheme_register_required_plugins() {
       'slug'      => 'siteorigin-panels',
       'required'  => false,
     ),
-      
-    array(
-      'name'      => 'SiteOrigin CSS',
-      'slug'      => 'so-css',
-      'required'  => false,
-    ),
-      
+  
     array(
       'name'      => 'SiteOrigin Widgets Bundle',
       'slug'      => 'so-widgets-bundle',
@@ -33,12 +27,6 @@ function ukmtheme_register_required_plugins() {
     array(
       'name'      => 'ARYO Activity Log',
       'slug'      => 'aryo-activity-log',
-      'required'  => false,
-    ),
-
-    array(
-      'name'      => 'Contact Form 7',
-      'slug'      => 'contact-form-7',
       'required'  => false,
     ),
 
@@ -67,26 +55,14 @@ function ukmtheme_register_required_plugins() {
     ),
 
     array(
-      'name'      => 'All in One SEO Pack',
-      'slug'      => 'all-in-one-seo-pack',
-      'required'  => false,
-    ),
-
-    array(
-      'name'      => 'Widget Visibility',
-      'slug'      => 'widget-visibility',
+      'name'      => 'Yoast SEO',
+      'slug'      => 'wordpress-seo',
       'required'  => false,
     ),
 
     array(
       'name'      => 'Lockdown WP Admin',
       'slug'      => 'lockdown-wp-admin',
-      'required'  => false,
-    ),
-      
-    array(
-      'name'      => 'Regenerate Thumbnails',
-      'slug'      => 'regenerate-thumbnails',
       'required'  => false,
     ),
       

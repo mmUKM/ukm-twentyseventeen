@@ -2,7 +2,7 @@
 Contributors: Jamaludin Rajalu
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.5.2
-Version: 2017.2.15
+Version: 2017.2.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: red, two column, three column, four column, responsive design
@@ -28,19 +28,15 @@ For more information about UKM Twenty Seventeen please go to https://github.com/
 
 == Recommended Plugins ==
 
-* All in One SEO Pack
+* Yoast SEO
 * ARYO Activity Log
-* Contact Form 7
 * Google Language Translator
 * Lockdown WP Admin
 * Page Builder by SiteOrigin
 * Polylang
-* Regenerate Thumbnails
 * Simple Page Ordering
-* SiteOrigin CSS
 * SiteOrigin Widgets Bundle
 * TablePress
-* Widget Visibility
 
 == Copyright ==
 

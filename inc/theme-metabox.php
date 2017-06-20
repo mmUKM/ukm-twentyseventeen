@@ -1143,3 +1143,52 @@ add_action( 'cmb2_init', 'ukmtheme_expertise_hide_metaboxes' );
       'type'    => 'checkbox',
     ) );
   }
+  
+  // Post Type: Alumni Directory
+
+add_action( 'cmb2_init', 'ukmtheme_alumni_metaboxes' );
+
+  function ukmtheme_alumni_metaboxes() {
+
+    $prefix = 'ut_';
+
+    $alumni = new_cmb2_box(  array(
+      'id'            => 'alumni_metabox',
+      'title'         => __( 'Alumni Detail', 'ukmtheme' ),
+      'object_types'  => array( 'alumni_directory', ),
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true,
+    ) );
+
+    $alumni->add_field( array(
+      'name'    => __( 'Alumni Photo', 'ukmtheme' ),
+      'desc'    => __( 'Upload an image or enter a URL. Dimensions: 300x380 pixels.', 'ukmtheme' ),
+      'id'      => $prefix . 'alumni_photo',
+      'type'    => 'file',
+      'allow'   => array('url'),
+      'allow'   => array('url'),
+    ) );
+
+    $alumni->add_field( array(
+      'name'    => __( 'Graduation', 'ukmtheme' ),
+      'desc'    => __( '', 'ukmtheme' ),
+      'id'      => $prefix . 'alumni_graduation',
+      'type'    => 'text',
+    ) );
+
+    $alumni->add_field( array(
+      'name'    => __( 'Graduation Year', 'ukmtheme' ),
+      'desc'    => __( '', 'ukmtheme' ),
+      'id'      => $prefix . 'alumni_graduation',
+      'type'    => 'text_small',
+    ) );
+
+    $alumni->add_field( array(
+      'name'    => __( 'Career', 'ukmtheme' ),
+      'desc'    => __( '', 'ukmtheme' ),
+      'id'      => $prefix . 'alumni_career',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ) );
+  }

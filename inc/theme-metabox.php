@@ -705,6 +705,22 @@ add_action( 'cmb2_init', 'ukmtheme_press_metaboxes' );
       'type'    => 'text_date',
       'date_format' => __( 'd/m/Y', 'cmb2' ),
     ));
+    
+    $press->add_field( array(
+      'name'    => __( 'URL', 'ukmtheme' ),
+      'desc'    => __( '', 'ukmtheme' ),
+      'id'      => $prefix . 'press_content',
+      'type'    => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 5, ),
+    ));
+    
+    $press->add_field( array(
+      'name'    => __( 'URL', 'ukmtheme' ),
+      'desc'    => __( '', 'ukmtheme' ),
+      'id'      => $prefix . 'press_url',
+      'type'    => 'text_url',
+    ));
+        
     $press->add_field( array(
       'name'    => __( 'File', 'ukmtheme' ),
       'desc'    => __( 'Upload document file.', 'ukmtheme' ),

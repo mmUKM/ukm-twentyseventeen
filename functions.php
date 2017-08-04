@@ -6,16 +6,6 @@
  */
 
 /**
- * Google Chrome Fix
- */
-
-add_action('admin_enqueue_scripts', 'chrome_fix');
-function chrome_fix() {
-  if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Chrome' ) !== false )
-    wp_add_inline_style( 'wp-admin', '#adminmenu { transform: translateZ(0); }' );
-}
-
-/**
  * favicon.ico for all pages
  * wp-login, dashboard, frontpage
  */
@@ -137,9 +127,9 @@ add_action( 'after_setup_theme', 'ukmtheme_module' );
       require( get_template_directory() . '/inc/widget-appreciation.php' );
       require( get_template_directory() . '/inc/widget-event.php' );
       require( get_template_directory() . '/inc/widget-news-list.php' );
-      require( get_template_directory() . '/inc/widget-news-thumbnail.php' );
+      //require( get_template_directory() . '/inc/widget-news-thumbnail.php' );
       require( get_template_directory() . '/inc/widget-operating-hour.php' );
-      require( get_template_directory() . '/inc/widget-youtube.php' );
+      //require( get_template_directory() . '/inc/widget-youtube.php' );
       require( get_template_directory() . '/inc/widget-visitor-counter.php' );
     }
   }

@@ -25,6 +25,12 @@ function ukmtheme_register_required_plugins() {
     ),
       
     array(
+      'name'      => 'SiteOrigin CSS',
+      'slug'      => 'so-css',
+      'required'  => false,
+    ),
+      
+    array(
       'name'      => 'ARYO Activity Log',
       'slug'      => 'aryo-activity-log',
       'required'  => false,

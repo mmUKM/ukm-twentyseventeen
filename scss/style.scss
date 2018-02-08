@@ -6,16 +6,24 @@ $font-13px: 13px;
 
 // TYPOGRAPHY
 
+html {
+    font:400 16px/20px "Lato",Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    color:#444
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 15px 0;
-  font-family: 'Merriweather Light', serif;
-  font-weight: 300;
+  font-family: "Lato",Helvetica, Arial, sans-serif;
+  font-weight: 700;
   color: #444;
   text-transform: none;
 }
 
 h2.title {
-  font-family: 'Merriweather Light', serif;
+  font-family: "Lato",Helvetica, Arial, sans-serif;
 }
 
 em {
@@ -131,7 +139,7 @@ em {
 
 h1.site-name {
   margin: 0;
-  font-family: 'Merriweather Light', serif;
+  font-family: "Lato",Helvetica, Arial, sans-serif;
   font-size: 21px;
   color: #292929;
   text-align: right;

@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
   $content_1 = get_post_meta( get_the_ID(), 'ut_conference_title_1_hide', true );
   $content_2 = get_post_meta( get_the_ID(), 'ut_conference_title_2_hide', true );

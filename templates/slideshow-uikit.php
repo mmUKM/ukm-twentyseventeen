@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 ?> 
 <div id="ut-slideshow" class="uk-slidenav-position" data-uk-slideshow="{animation:'slice-up-down', autoplay:true, autoplayInterval:10000}">
@@ -23,7 +22,7 @@
         <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>" style="width: 100%;">
       </a>
       <?php $caption = get_post_meta( get_the_ID(), 'ut_slideshow_caption_hide', true ); ?>
-      <?php if ( $caption == on ) { ?>
+      <?php if ( $caption == true ) { ?>
       <div class="uk-overlay-panel uk-overlay-bottom uk-overlay-fade">
         <div class="wrap slideshow">
           <h2><?php the_title(); ?></h2>

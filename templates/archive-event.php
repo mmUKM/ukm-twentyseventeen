@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 get_header();
 
@@ -34,10 +33,5 @@ get_header();
     <?php endif; ?>
     <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
   </article>
-  <aside class="aside large-4-12">
-    <div class="uk-panel uk-panel-box">
-      <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
-    </div>
-  </aside>
 </div>
 <?php get_footer(); ?>

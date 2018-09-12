@@ -1,7 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
+ * @subpackage UKM_Twenty_Seventeen
  * @version 1.0
  * @author Jamaludin Rajalu
  * 

@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 ?>
 <?php if ( get_theme_mod( 'ukmtheme_footer_widget_five' ) == 1 ) { ?>

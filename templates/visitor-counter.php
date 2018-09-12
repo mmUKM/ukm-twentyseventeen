@@ -1,11 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
- * @author Jamaludin Rajalu
- * 
- * @link http://widget.supercounters.com
+ * @subpackage UKM_Twenty_Seventeen
  */
 ?>
 <!-- BEGIN: Powered by Supercounters.com -->

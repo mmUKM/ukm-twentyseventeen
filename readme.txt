@@ -26,19 +26,6 @@ For more information about UKM Twenty Seventeen please go to https://github.com/
 3. Click on the 'Activate' button to use your new theme right away.
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-== Recommended Plugins ==
-
-* Yoast SEO
-* ARYO Activity Log
-* Google Language Translator
-* Lockdown WP Admin
-* Page Builder by SiteOrigin
-* Polylang
-* Simple Page Ordering
-* SiteOrigin Widgets Bundle
-* SiteOrigin CSS
-* TablePress
-
 == Copyright ==
 
 UKM Twenty Seventeen WordPress Theme

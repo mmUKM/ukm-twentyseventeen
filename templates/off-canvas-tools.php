@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
  ?>
 <a href="#main-tools" class="top-nav-tool" data-uk-offcanvas ><?php _e( '<i class="uk-icon-globe"></i> Language', 'ukmtheme' ); ?></a>

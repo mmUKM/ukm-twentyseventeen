@@ -1,12 +1,11 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 get_header(); ?>
 <div class="wrap column">
-  <article class="article large-8-12">
+  <article class="article large-12-12">
     <?php while ( have_posts() ) : the_post(); ?>
      <h2><?php the_title(); ?></h2>
     <div class="column">
@@ -59,10 +58,5 @@ get_header(); ?>
     <hr>
     <?php endwhile; ?>
   </article>
-  <aside class="aside large-4-12">
-    <div class="uk-panel uk-panel-box">
-      <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
-    </div>
-  </aside>
 </div>
 <?php get_footer(); ?>

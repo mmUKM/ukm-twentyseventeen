@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  *
  * Post type
  * ===============================
@@ -31,9 +30,6 @@
 
 /**
  * @name Appreciation
- * @package UKMTheme Appreciation plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 function ut_appreciation() {
 
@@ -102,10 +98,6 @@ function ut_appreciation_custom_columns( $column ){
 
 /**
  * @name Conference
- * @package UKMTheme
- * @subpackage Conference Plugin
- * @since 2.0
- * @author Jamaludin Rajalu
  */
 
 add_filter( 'enter_title_here', 'title_conference_input' );
@@ -200,10 +192,6 @@ add_action( 'init', 'ut_conference', 0 );
 
 /**
  * @name Events
- * @package UKMTheme
- * @subpackage Events Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 
 function ut_event() {
@@ -274,10 +262,6 @@ function ut_event_custom_columns( $column ){
 }
 /**
  * @name Expertise
- * @package UKMTheme
- * @subpackage Expertise Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 add_filter( 'enter_title_here', 'title_expert_input' );
   function title_expert_input ( $title ) {
@@ -360,66 +344,9 @@ function ut_expertise_custom_columns( $column ){
     case 'ut_expertise_contact' : echo get_post_meta($post->ID,'ut_expertise_contact',true);
   }
 }
-/**
- * Alumni Directory
- * 20170620
- */
-
-add_filter( 'enter_title_here', 'title_alumni_input' );
-  function title_alumni_input ( $title ) {
-    if ( get_post_type() == 'alumni_directory' ) {
-      $title = __( 'Alumni Name', 'ukmtheme' );
-    }
-    return $title;
-  }
-
-function ut_alumni() {
-
-  $labels = array(
-    'name'                => _x( 'Alumni', 'Post Type General Name', 'ukmtheme' ),
-    'singular_name'       => _x( 'Alumni', 'Post Type Singular Name', 'ukmtheme' ),
-    'menu_name'           => __( 'Alumni Directory', 'ukmtheme' ),
-    'parent_item_colon'   => __( 'Parent Alumni:', 'ukmtheme' ),
-    'all_items'           => __( 'All', 'ukmtheme' ),
-    'view_item'           => __( 'View', 'ukmtheme' ),
-    'add_new_item'        => __( 'Add New', 'ukmtheme' ),
-    'add_new'             => __( 'Add New', 'ukmtheme' ),
-    'edit_item'           => __( 'Edit', 'ukmtheme' ),
-    'update_item'         => __( 'Update', 'ukmtheme' ),
-    'search_items'        => __( 'Search', 'ukmtheme' ),
-    'not_found'           => __( 'No Alumni found', 'ukmtheme' ),
-    'not_found_in_trash'  => __( 'No Alumni found in Trash', 'ukmtheme' ),
-  );
-  $args = array(
-    'label'               => __( 'Alumni', 'ukmtheme' ),
-    'description'         => __( 'Alumni manager for UKM', 'ukmtheme' ),
-    'labels'              => $labels,
-    'supports'            => array( 'title', 'revisions', ),
-    'hierarchical'        => true,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => false,
-    'show_in_admin_bar'   => false,
-    'menu_icon'           => get_template_directory_uri() . '/img/icon-staff.svg',
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => false,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-  );
-  register_post_type( 'alumni_directory', $args );
-
-}
-
-add_action( 'init', 'ut_alumni', 0 );
 
 /**
  * @name Frequently Ask Question
- * @package UKMTheme
- * @subpackage FAQ Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 add_filter( 'enter_title_here', 'title_faq_input' );
   function title_faq_input ( $title ) {
@@ -533,10 +460,6 @@ function ukmtheme_faq_custom_columns( $column ){
 }
 /**
  * @name Photo Gallery
- * @package UKMTheme
- * @subpackage Gallery Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 function ut_lightbox_gallery( $file_list_meta_key, $img_size = 'medium' ) {
 
@@ -638,10 +561,6 @@ add_action( 'init', 'ukmtheme_gallery_category_taxonomy', 0 );
 
 /**
  * @name Journal
- * @package UKMTheme
- * @subpackage Journal Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 add_filter( 'enter_title_here', 'title_journal_input' );
   function title_journal_input ( $title ) {
@@ -808,10 +727,6 @@ function ut_journal_custom_columns( $column ){
 
 /**
  * @name News
- * @package UKMTheme
- * @subpackage News Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 function ukmtheme_latest_news() {
 
@@ -905,12 +820,7 @@ function ukmtheme_news_category_taxonomy() {
 add_action( 'init', 'ukmtheme_news_category_taxonomy', 0 );
 
 /**
- * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 2.0
- * @author Jamaludin Rajalu
- *
- * Post Type: Press Release
+ * @name Press Release
  */
 
 add_action( 'init', 'ut_press', 0 );
@@ -973,10 +883,6 @@ add_filter('manage_edit-press_columns', 'ut_add_new_press_columns');
 
 /**
  * @name Publication
- * @package UKMTheme
- * @subpackage Publication Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 add_filter( 'enter_title_here', 'title_publication_input' );
   function title_publication_input ( $title ) {
@@ -1105,10 +1011,6 @@ function ut_publication_custom_columns( $column ){
 
 /**
  * @name Slideset
- * @package UKMTheme
- * @subpackage Slideset Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 
 function ut_slideset() {
@@ -1175,10 +1077,6 @@ function ut_slideset_custom_columns( $column ){
 
 /**
  * @name Slideshow
- * @package UKMTheme
- * @subpackage Slideshow Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 
 add_filter( 'enter_title_here', 'title_slideshow_input' );
@@ -1253,10 +1151,6 @@ function ut_slideshow_custom_columns( $column ){
 
 /**
  * @name Staff Directory
- * @package UKMTheme
- * @subpackage Staff Directory Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 
 add_filter( 'enter_title_here', 'title_staff_input' );
@@ -1497,10 +1391,6 @@ function ut_staff_custom_columns( $column ){
 
 /**
  * @name Tab Set
- * @package UKMTheme
- * @subpackage Tabber Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
  */
 
 function ut_tab() {
@@ -1655,7 +1545,6 @@ function ut_video_custom_columns( $column ){
 
 /**
  * @name Appreciation
- * @package Appreciation Plugin
  */
 add_filter( 'single_template', 'get_appreciation_post_type_template' );
   function get_appreciation_post_type_template($single_appreciation_template) {
@@ -1704,7 +1593,6 @@ add_filter( 'template_include', 'archive_conference_page_template', 99 );
 
 /**
  * @name Events
- * @package Events Plugin
  */
 
 add_filter( 'single_template', 'get_event_post_type_template' );
@@ -1729,7 +1617,6 @@ add_filter( 'template_include', 'archive_event_page_template', 99 );
 
 /**
  * @name Expertise
- * @package Expertise Plugin
  */
 
 add_filter( 'single_template', 'get_expertise_post_type_template' );
@@ -1753,7 +1640,6 @@ add_filter( 'template_include', 'archive_expertise_page_template', 99 );
 
 /**
  * @name Frequently Asked Question
- * @package FAQ Plugin
  */
 
 add_filter( 'template_include', 'archive_faq_page_template', 99 );
@@ -1825,7 +1711,6 @@ add_filter( 'template_include', 'taxonomy_galcat_page_template', 99 );
 
 /**
  * @name Latest News
- * @package News Plugin
  */
 
 add_filter( 'single_template', 'get_news_post_type_template' );
@@ -1861,7 +1746,6 @@ add_filter( 'template_include', 'taxonomy_news_page_template', 99 );
 
 /**
  * @name Journal
- * @package Journal Plugin
  */
 
 add_filter( 'single_template', 'get_journal_post_type_template' );
@@ -1908,7 +1792,6 @@ add_filter( 'template_include', 'taxonomy_jourcat_page_template', 99 );
 
 /**
  * @name Press Release
- * @package Press Release Plugin
  */
 
 add_filter( 'template_include', 'archive_press_page_template', 99 );
@@ -1924,7 +1807,6 @@ add_filter( 'template_include', 'archive_press_page_template', 99 );
 
 /**
  * @name Publication
- * @package Publication Plugin
  */
 
 add_filter( 'single_template', 'get_publication_post_type_template' );
@@ -1960,7 +1842,6 @@ add_filter( 'template_include', 'taxonomy_pubcat_page_template', 99 );
 
 /**
  * @name Staff Directory
- * @package Staff Directory Plugin
  */
 
 add_filter( 'single_template', 'get_staff_post_type_template' );
@@ -2007,7 +1888,6 @@ add_filter( 'template_include', 'taxonomy_position_page_template', 99 );
 
 /**
  * @name Video Collections
- * @package Video Plugin
  */
 
 add_filter( 'single_template', 'get_video_post_type_template' );

@@ -1,12 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
- *
- *
- * Frontpage widget: Slideset
- * Custom post type: slideset
+ * @subpackage UKM_Twenty_Seventeen
  */
 if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) { ?>
 <div class="uk-slidenav-position" data-uk-slider>

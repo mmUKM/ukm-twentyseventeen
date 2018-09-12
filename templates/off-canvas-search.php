@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
  ?>
 <a href="#ut-search" class="main-nav-menu-icon" data-uk-offcanvas ><i class="uk-icon-search"></i></a>

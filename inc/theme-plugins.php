@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 require_once get_template_directory() . '/lib/tgmpa/class-tgm-plugin-activation.php';
 
@@ -43,12 +42,6 @@ function ukmtheme_register_required_plugins() {
     ),
 
     array(
-      'name'      => 'Google Language Translator',
-      'slug'      => 'google-language-translator',
-      'required'  => false,
-    ),
-
-    array(
       'name'      => 'Simple Page Ordering',
       'slug'      => 'simple-page-ordering',
       'required'  => false,
@@ -61,8 +54,8 @@ function ukmtheme_register_required_plugins() {
     ),
 
     array(
-      'name'      => 'Yoast SEO',
-      'slug'      => 'wordpress-seo',
+      'name'      => 'GA Google Analytics',
+      'slug'      => 'ga-google-analytics',
       'required'  => false,
     ),
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
+ * @subpackage UKM_Twenty_Seventeen
  * @since 1.0
  */
 ?>

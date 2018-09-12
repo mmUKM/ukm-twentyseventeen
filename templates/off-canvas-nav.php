@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
  ?>
 <a href="#main-nav" class="main-nav-menu-icon" data-uk-offcanvas ><span class="sm-hidden">MENU</span> <i class="uk-icon-bars"></i></a>

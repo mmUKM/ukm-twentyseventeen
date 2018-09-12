@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 ?>
 <div class="navigation">

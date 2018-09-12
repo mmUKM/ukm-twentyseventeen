@@ -1,9 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
- * @author Jamaludin Rajalu
+ * @subpackage UKM_Twenty_Seventeen
  * 
  * Widget: Operating Hour
  */

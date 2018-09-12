@@ -1,7 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
+ * @subpackage UKM_Twenty_Seventeen
  * @version 1.0
  *
  * @link http://codex.wordpress.org/Function_Reference/get_post_type_archive_link

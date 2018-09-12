@@ -1,10 +1,8 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
-
 
 if ( file_exists(  get_template_directory() . '/lib/cmb2/init.php' ) ) {
   require_once  get_template_directory() . '/lib/cmb2/init.php';

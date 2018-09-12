@@ -1,9 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @version 1.0
- * @author Jamaludin Rajalu
+ * @subpackage UKM_Twenty_Seventeen
  * 
  * @link http://cssmenumaker.com/blog/wordpress-3-drop-down-menu-tutorial
  * @link http://cssmenumaker.com/menu/blue-drop-down-menu

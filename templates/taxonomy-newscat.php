@@ -1,8 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
+ * @subpackage UKM_Twenty_Seventeen
  */
 get_header();
 
@@ -17,7 +16,7 @@ get_header();
   
 ?>
 <div class="wrap column">
-  <article class="article large-8-12">
+  <article class="article large-12-12">
     <h2><?php _e( 'News:&nbsp;', 'ukmtheme' ); ?><?php single_cat_title(); ?></h2>
 
       <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -42,10 +41,5 @@ get_header();
       <?php endif; ?>
     <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
   </article>
-  <aside class="aside large-4-12">
-    <div class="uk-panel uk-panel-box">
-      <?php if (dynamic_sidebar( 'sidebar-1' )) : else : ?><?php endif; ?>
-    </div>
-  </aside>
 </div>
 <?php get_footer(); ?>

@@ -1,9 +1,7 @@
 <?php
 /**
  * @package UKMTheme
- * @subpackage UKM Twenty Seventeen
- * @since 1.0
- * @name Visitor Counter
+ * @subpackage UKM_Twenty_Seventeen
  */
 class Visitor_Counter_Widget extends WP_Widget {
 

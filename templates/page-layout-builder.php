@@ -1,11 +1,9 @@
 <?php
 /**
- *
  * @package UKMTheme
  * @subpackage UKM_Twenty_Seventeen
- * @version 1.0
  * 
- * Template Name: SiteOrigin
+ * Template Name: Layout Builder
  */
 get_header(); ?>
 <div class="column">

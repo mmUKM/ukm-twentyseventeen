@@ -213,7 +213,7 @@ if (!function_exists('ukmtheme_widgets_init')) {
     ) );
 
     register_sidebar( array(
-      'name'            => __( 'Frontpage: One Column', 'ukmtheme' ),
+      'name'            => __( 'Layout Builder', 'ukmtheme' ),
       'id'              => 'sidebar-2',
       'description'     => __( 'Advanced use with SiteOrigin page builder/widget bundle', 'ukmtheme' ),
       'before_widget'   => '<div class="column"><div class="large-12-12">',

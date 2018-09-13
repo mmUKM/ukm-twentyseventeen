@@ -2,10 +2,7 @@
 /**
  * @package UKMTheme
  * @subpackage UKM_Twenty_Seventeen
- * @since 1.0
- */
-
-/**
+ * 
  * favicon.ico for all pages
  * wp-login, dashboard, frontpage
  */

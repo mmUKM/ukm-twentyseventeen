@@ -54,8 +54,8 @@ function ukmtheme_register_required_plugins() {
     ),
 
     array(
-      'name'      => 'GA Google Analytics',
-      'slug'      => 'ga-google-analytics',
+      'name'      => 'Simple SEO',
+      'slug'      => 'cds-simple-seo',
       'required'  => false,
     ),
 

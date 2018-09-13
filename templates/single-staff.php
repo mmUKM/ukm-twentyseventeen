@@ -51,7 +51,6 @@ get_header(); ?>
             else {
               echo '';
             } ?>
-            <?php get_template_part('templates/content','edit' ); ?>
         </div>
       </div>
     </div>
@@ -59,4 +58,5 @@ get_header(); ?>
     <?php endwhile; ?>
   </article>
 </div>
+<?php get_template_part('templates/content','edit' ); ?>
 <?php get_footer(); ?>

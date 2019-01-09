@@ -409,3 +409,11 @@ add_action( 'init', 'ukmtheme_posts_per_archive', 0 );
         return $option_posts_per_page;
     }
   }
+
+/**
+ * Gutenberg breaks completely if site URL is not the same as wordpress URL
+*/
+add_filter('rest_url', function($url) {
+  $url = str_replace(home_url(), site_url(), $url);
+  return $url;
+});

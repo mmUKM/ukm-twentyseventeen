@@ -3,8 +3,8 @@
  * @package UKMTheme
  * @subpackage UKM_Twenty_Seventeen
  */
- ?>
-<a href="#main-tools" class="top-nav-tool" data-uk-offcanvas ><?php _e( '<i class="uk-icon-globe"></i> Language', 'ukmtheme' ); ?></a>
+  ?>
+<a href="#main-tools" class="top-nav-tool" data-uk-offcanvas ><?php _e( '<i class="fas fa-language fa-2x"></i>', 'ukmtheme' ); ?></a>
 <div id="main-tools" class="uk-offcanvas">
   <div class="uk-offcanvas-bar offcanvas-tools">
     

@@ -9,7 +9,8 @@
         $('#carousel').owlCarousel( {
             items:1,
             autoplay:true,
-            autoplayTimeout:5000
+            autoplayTimeout:5000,
+            loop:true
         }
 
         );
@@ -18,9 +19,9 @@
 <div id="carousel" class="owl-carousel owl-theme">
         <?php
             $args = array(
-                'post_type'       => 'slideshow',
-                'posts_per_page'   => 20,
-                'orderby'         => 'menu_order'
+                'post_type'         => 'slideshow',
+                'posts_per_page'    => 20,
+                'orderby'           => 'menu_order'
             );
 
             $slideshow = new WP_Query( $args );

@@ -7,20 +7,22 @@
 get_header(); ?>
 <div class="wrap column">
 <article class="article large-12-12">
-    <h2><?php single_term_title(); ?></h2>
 
     <?php
 
-        $query = new WP_Query( array(
-            'post_type'       => 'staff',
-            'department'      => get_query_var( 'department' ),
-            'posts_per_page'  => -1,
-            'orderby'         => 'menu_order',
-            'order'           => 'ASC',
-        ));
+    $query = new WP_Query( array(
+        'post_type'       => 'staff',
+        'department'      => get_query_var( 'department' ),
+        'posts_per_page'  => -1,
+        'orderby'         => 'menu_order',
+        'order'           => 'ASC',
+    ));
 
-        while ( $query->have_posts() ) : $query->the_post();
-    ?>
+    if ( $query->have_posts() ) : ?>
+
+    <h2><?php single_term_title(); ?></h2>
+
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
     <div class="column">
         <div class="large-2-12 small-2-12">
                 <div class="staff-photo padding-right">
@@ -73,7 +75,7 @@ get_header(); ?>
         </div>
     </div>
     <hr>
-    <?php endwhile; ?>
+    <?php endwhile; else: endif; ?>
 </article>
 </div>
 <?php get_footer(); ?>

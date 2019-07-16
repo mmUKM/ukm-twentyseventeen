@@ -37,6 +37,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
         wp_enqueue_script( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/js/components/accordion.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'uikit-slider', get_template_directory_uri() . '/lib/uikit/js/components/slider.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'uikit-slideshow', get_template_directory_uri() . '/lib/uikit/js/components/slideshow.min.js', array(), '2017.3', true );
+        wp_enqueue_script( 'uikit-slideshow-fx', get_template_directory_uri() . '/lib/uikit/js/components/slideshow-fx.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'uikit-slideset', get_template_directory_uri() . '/lib/uikit/js/components/slideset.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'uikit-lightbox', get_template_directory_uri() . '/lib/uikit/js/components/lightbox.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'uikit-search', get_template_directory_uri() . '/lib/uikit/js/components/search.min.js', array(), '2017.3', true );

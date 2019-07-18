@@ -345,6 +345,33 @@ html, body {
     bottom: 5%;
 }
 
+//slideshow bx-slider
+
+.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+.bx-wrapper {
+    margin-bottom: 0;
+}
+.bx-wrapper {
+    padding: 0 0 0 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    border: 0;
+}
+.bx-wrapper .bx-viewport {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+ul#bxslider {
+    margin: 0;
+    padding: 0;
+}
+
 
 // widget: event
 .widget-event {

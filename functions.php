@@ -44,7 +44,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
         wp_enqueue_script( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/js/components/sticky.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'jqnewsticker', get_template_directory_uri() . '/lib/jqnewsticker/newsTicker.js', array(), '2017.3', true );
         wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/lib/fitvids/jquery.fitvids.js', array(), '2017.3', true );
-        wp_enqueue_script( 'owl.carousel', get_template_directory_uri() . '/lib/owl.carousel/owl.carousel.min.js', array(), '2017.3', true );
+        wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/lib/bxslider/jquery.bxslider.min.js', array(), '2017.3', true );
         wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/scripts.min.js', array(), '2017.3', true );
         // JS
         wp_enqueue_style( 'uikit', get_template_directory_uri() . '/lib/uikit/css/uikit.almost-flat.min.css', false, '2017.3' );
@@ -55,8 +55,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
         wp_enqueue_style( 'uikit-slidenav', get_template_directory_uri() . '/lib/uikit/css/components/slidenav.almost-flat.min.css', false, '2017.3' );
         wp_enqueue_style( 'uikit-search', get_template_directory_uri() . '/lib/uikit/css/components/search.almost-flat.min.css', false, '2017.3' );
         wp_enqueue_style( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/css/components/sticky.almost-flat.min.css', false, '2017.3' );
-        wp_enqueue_style( 'owl.carousel', get_template_directory_uri() . '/lib/owl.carousel/assets/owl.carousel.min.css', false, '2017.3' );
-        wp_enqueue_style( 'owl.carousel-theme', get_template_directory_uri() . '/lib/owl.carousel/assets/owl.theme.default.min.css', false, '2017.3' );
+        wp_enqueue_style( 'bxslider', get_template_directory_uri() . '/lib/bxslider/jquery.bxslider.min.css', false, '2017.3' );
         wp_enqueue_style( 'lato-font', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i', false, '2017.3' );
         wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css', false, '2017.3' );
         wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.3' );

@@ -182,20 +182,6 @@ add_filter( 'upload_mimes','add_custom_mime_types' );
     }
 
 /**
- * Filter Search
- * filter by post type
- */
-
-function ukmtheme_filter_search($query) {
-    if ($query->is_search) {
-        $query->set( array( 'page', 'staff', 'gallery', 'publication', 'news', 'event', 'expertise', 'press', 'video' ));
-    };
-
-    return $query;
-};
-add_filter('pre_get_posts', 'ukmtheme_filter_search');
-
-/**
  * Register Sidebar
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */

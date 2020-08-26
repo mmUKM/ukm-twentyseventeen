@@ -99,14 +99,6 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
         add_filter( 'show_admin_bar', '__return_false' );
     }
 
-add_filter( 'wp_nav_menu_items', 'ukmtheme_home_link', 10, 2 );
-    function ukmtheme_home_link ( $items, $args ) {
-            if (is_single() && $args->menu->main == 'main') {
-                $items .= '<li>'. __( 'Home','ukmtheme' ).' </li>';
-            }
-            return $items;
-    }
-
 /**
  * Fuction luaran dari folder /inc/
  * Post type, metabox, widgets dll.

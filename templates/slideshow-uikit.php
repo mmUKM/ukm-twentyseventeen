@@ -4,7 +4,12 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 ?> 
-<div id="ut-slideshow" class="uk-slidenav-position" data-uk-slideshow="{animation:'slice-up-down', autoplay:true, autoplayInterval:6000}">
+<div
+    id="ut-slideshow"
+    class="uk-slidenav-position"
+    data-uk-slideshow="{animation:'slice-up-down', autoplay:true, autoplayInterval:6000}"
+    style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 960px; margin: 30px auto; <?php } ?>
+">
     <ul class="uk-slideshow">
         <?php
             $args = array(

@@ -9,9 +9,6 @@ get_header(); ?>
 
     get_template_part( 'templates/slideshow', 'uikit' );
 
-    if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) : get_template_part( 'templates/widget', 'box-slideset' );  endif;
-    if ( get_theme_mod( 'ukmtheme_frontpage_one_box' ) == 1 ) : get_template_part( 'templates/widget', 'box-one' );  endif;
-
     get_template_part( 'templates/widget', 'home' );
 
 } else { ?>

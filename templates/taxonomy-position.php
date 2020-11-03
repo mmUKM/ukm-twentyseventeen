@@ -45,7 +45,7 @@ get_header(); ?>
                                 <ul>
                                         <li><?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?></li>
                                         <?php $phone = get_post_meta( get_the_ID(), 'ut_staff_phone_display', true ); ?>
-                                        <?php if ( $phone == on ) { ?>
+                                        <?php if ( $phone == 1 ) { ?>
                                         <li><i class="uk-icon-phone-square"></i> <?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
                                         <?php } ?>
                                         <li><i class="uk-icon-envelope-square"></i> <?php echo get_post_meta( get_the_ID(), 'ut_staff_email', true ); ?></li>
@@ -56,8 +56,8 @@ get_header(); ?>
                                         $scope_title         = get_post_meta( get_the_ID(), 'ut_staff_work_scope_title', true );
                                         $scope_title_custom  = get_post_meta( get_the_ID(), 'ut_staff_work_scope_title_custom', true );
 
-                                        if($scope == on) {
-                                                if($scope_title == on) { ?>
+                                        if($scope == 1) {
+                                                if($scope_title == 1) { ?>
                                                         <h4><?php echo $scope_title_custom; ?></h4>
                                                 <?php }
                                                 else { ?>

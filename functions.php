@@ -57,6 +57,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
         wp_enqueue_style( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/css/components/sticky.almost-flat.min.css', false, '2017.3' );
         wp_enqueue_style( 'bxslider', get_template_directory_uri() . '/lib/bxslider/jquery.bxslider.min.css', false, '2017.3' );
         wp_enqueue_style( 'lato-font', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i', false, '2017.3' );
+        wp_enqueue_style( 'poppins-font', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap', false, '2017.3' );
         wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css', false, '2017.3' );
         wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.3' );
     }
@@ -86,7 +87,7 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
         add_theme_support( 'html5', array( 'search-form' ) );
         add_theme_support( 'post-thumbnails' );
         set_post_thumbnail_size( 145, 145, true );
-        add_image_size( 'latest_news_thumbnail', 600, 480, true );
+        add_image_size( 'latest_news_thumbnail', 800, 450, true );
         remove_action( 'wp_head', 'wp_generator' );
         remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
         remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -105,27 +106,25 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
  * Comment pautan yang tidak diperlukan sekiranya tidak perlu
  */
 
+function ukmtheme_module() {
+    require( get_template_directory() . '/inc/theme-archive-links.php' );
+    require( get_template_directory() . '/inc/theme-customizer.php' );
+    require( get_template_directory() . '/inc/theme-metabox.php' );
+    require( get_template_directory() . '/inc/theme-walker-menu.php' );
+    require( get_template_directory() . '/inc/theme-login.php' );
+    require( get_template_directory() . '/inc/theme-plugins.php' );
+    require( get_template_directory() . '/inc/theme-post-type.php' );
+    require( get_template_directory() . '/inc/theme-sitemap.php' );
+    require( get_template_directory() . '/inc/widget-address-with-social.php' );
+    require( get_template_directory() . '/inc/widget-appreciation.php' );
+    require( get_template_directory() . '/inc/widget-event.php' );
+    require( get_template_directory() . '/inc/widget-news-list.php' );
+    //require( get_template_directory() . '/inc/widget-news-thumbnail.php' );
+    require( get_template_directory() . '/inc/widget-operating-hour.php' );
+    //require( get_template_directory() . '/inc/widget-youtube.php' );
+    require( get_template_directory() . '/inc/widget-visitor-counter.php' );
+}
 add_action( 'after_setup_theme', 'ukmtheme_module' );
-    if (!function_exists('ukmtheme_module')) {
-        function ukmtheme_module() {
-            require( get_template_directory() . '/inc/theme-archive-links.php' );
-            require( get_template_directory() . '/inc/theme-customizer.php' );
-            require( get_template_directory() . '/inc/theme-metabox.php' );
-            require( get_template_directory() . '/inc/theme-walker-menu.php' );
-            require( get_template_directory() . '/inc/theme-login.php' );
-            require( get_template_directory() . '/inc/theme-plugins.php' );
-            require( get_template_directory() . '/inc/theme-post-type.php' );
-            require( get_template_directory() . '/inc/theme-sitemap.php' );
-            require( get_template_directory() . '/inc/widget-address-with-social.php' );
-            require( get_template_directory() . '/inc/widget-appreciation.php' );
-            require( get_template_directory() . '/inc/widget-event.php' );
-            require( get_template_directory() . '/inc/widget-news-list.php' );
-            //require( get_template_directory() . '/inc/widget-news-thumbnail.php' );
-            require( get_template_directory() . '/inc/widget-operating-hour.php' );
-            //require( get_template_directory() . '/inc/widget-youtube.php' );
-            require( get_template_directory() . '/inc/widget-visitor-counter.php' );
-        }
-    }
 
 remove_filter( 'term_description','wpautop' );
 
@@ -178,131 +177,49 @@ add_filter( 'upload_mimes','add_custom_mime_types' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 
-add_action( 'widgets_init', 'ukmtheme_widgets_init' );
-if (!function_exists('ukmtheme_widgets_init')) {
-    function ukmtheme_widgets_init() {
+function ukmtheme_widgets_init() {
 
-        register_sidebar( array(
-            'name'            => __( 'Page Sidebar', 'ukmtheme' ),
-            'id'              => 'sidebar-1',
-            'description'     => __( 'Appears in frontpage, pages, posts and post type.', 'ukmtheme' ),
-            'before_widget'   => '<aside class="widgets padding-bottom">',
-            'after_widget'    => '</aside>',
-            'before_title'    => '<h3 class="widget-title">',
-            'after_title'     => '</h3>',
-        ) );
+    register_sidebar( array(
+        'name'            => __( 'FRONTPAGE LAYOUT BUILDER', 'ukmtheme' ),
+        'id'              => 'sidebar-2',
+        'description'     => __( 'Gunakan widget Page Builder by SiteOrigin atau Elementor', 'ukmtheme' ),
+        'before_widget'   => '<div class="column"><div class="large-12-12">',
+        'after_widget'    => '</div></div>',
+        'before_title'    => '<h3 class="widget-title">',
+        'after_title'     => '</h3>',
+    ) );
 
-        register_sidebar( array(
-            'name'            => __( 'Layout Builder', 'ukmtheme' ),
-            'id'              => 'sidebar-2',
-            'description'     => __( 'Advanced use with SiteOrigin page builder/widget bundle', 'ukmtheme' ),
-            'before_widget'   => '<div class="column"><div class="large-12-12">',
-            'after_widget'    => '</div></div>',
-            'before_title'    => '<h3 class="widget-title">',
-            'after_title'     => '</h3>',
-        ) );
+    register_sidebar( array(
+        'name'            => __( 'CUSTOM FOOTER', 'ukmtheme' ),
+        'id'              => 'sidebar-10',
+        'description'     => __( 'Gunakan widget Page Builder by SiteOrigin atau Elementor', 'ukmtheme' ),
+        'before_widget'   => '<div class="uk-width-medium-1-1" style="min-height: 100px;">',
+        'after_widget'    => '</div>',
+        'before_title'    => '<h3 class="widget-title uk-hidden">',
+        'after_title'     => '</h3>',
+    ) );
 
-        register_sidebar( array(
-            'name'            => __( 'Frontpage: Two Column', 'ukmtheme' ),
-            'id'              => 'sidebar-3',
-            'description'     => __( 'Appears when using the optional Front Page', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-2" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title">',
-            'after_title'     => '</h3>',
-        ) );
+    register_sidebar( array(
+        'name'            => __( '3 BOX FOOTER', 'ukmtheme' ),
+        'id'              => 'sidebar-8',
+        'description'     => __( '3 Column footer widgets.', 'ukmtheme' ),
+        'before_widget'   => '<div class="uk-width-medium-1-3" style="min-height: 100px;">',
+        'after_widget'    => '</div>',
+        'before_title'    => '<h3 class="widget-title uk-hidden">',
+        'after_title'     => '</h3>',
+    ) );
 
-        register_sidebar( array(
-            'name'            => __( 'Frontpage: Three Column', 'ukmtheme' ),
-            'id'              => 'sidebar-4',
-            'description'     => __( 'Appears when using the optional Front Page', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-3" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Frontpage: Four Column', 'ukmtheme' ),
-            'id'              => 'sidebar-5',
-            'description'     => __( 'Appears when using the optional Front Page', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-4" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Footer: Five Column', 'ukmtheme' ),
-            'id'              => 'sidebar-6',
-            'description'     => __( 'Five Column footer widgets. Dont put more than five widget.', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-5" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title uk-hidden">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Footer: Four Column', 'ukmtheme' ),
-            'id'              => 'sidebar-7',
-            'description'     => __( 'Four Column footer widgets. Dont put more than four widget.', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-4" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title uk-hidden">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Footer: Three Column', 'ukmtheme' ),
-            'id'              => 'sidebar-8',
-            'description'     => __( 'Three Column footer widgets. Dont put more than three widget.', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-3" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title uk-hidden">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Footer: Two Column', 'ukmtheme' ),
-            'id'              => 'sidebar-9',
-            'description'     => __( 'Two Column footer widgets. Dont put more than two widget.', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-2" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title uk-hidden">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Footer: One Column', 'ukmtheme' ),
-            'id'              => 'sidebar-10',
-            'description'     => __( 'One Column footer widgets. Customise using siteorigin widgets', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-medium-1-1" style="min-height: 100px;">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h3 class="widget-title uk-hidden">',
-            'after_title'     => '</h3>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Off-canvas Widget: Language', 'ukmtheme' ),
-            'id'              => 'sidebar-11',
-            'description'     => __( 'Off-canvas sidebar widget language', 'ukmtheme' ),
-            'before_widget'   => '<div class="off-canvas-widget">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h4>',
-            'after_title'     => '</h4>',
-        ) );
-
-        register_sidebar( array(
-            'name'            => __( 'Off-canvas Widget: Search', 'ukmtheme' ),
-            'id'              => 'sidebar-12',
-            'description'     => __( 'Off-canvas sidebar widget search', 'ukmtheme' ),
-            'before_widget'   => '<div class="off-canvas-widget">',
-            'after_widget'    => '</div>',
-            'before_title'    => '<h4>',
-            'after_title'     => '</h4>',
-        ) );
-    }
+    register_sidebar( array(
+        'name'            => __( 'OFF CANVAS WIDGET', 'ukmtheme' ),
+        'id'              => 'sidebar-12',
+        'description'     => __( 'Off-canvas sidebar widget language', 'ukmtheme' ),
+        'before_widget'   => '<div class="off-canvas-widget">',
+        'after_widget'    => '</div>',
+        'before_title'    => '<h4>',
+        'after_title'     => '</h4>',
+    ) );
 }
+add_action( 'widgets_init', 'ukmtheme_widgets_init' );
 
 /**
  * Generate custom search form

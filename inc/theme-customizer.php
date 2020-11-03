@@ -84,7 +84,7 @@ function ukmtheme_customizer( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ukmtheme_custom_header_image', array(
         'label'		=> __( 'Custom Header Image', 'ukmtheme' ),
-        'description' => __( 'Image or vector file size 300x300 px. Use PNG or SVG file only', 'ukmtheme' ),
+        'description' => __( 'Image size 150 x 120px', 'ukmtheme' ),
         'section'	=> 'ukmtheme_theme_logo',
         'settings'	=> 'ukmtheme_custom_header_image',
         'priority'	=> 40

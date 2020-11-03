@@ -79,16 +79,16 @@
         </div>
     </div>
     <?php } // END PENGUMUMAN ?>
-    <div class="wrap frontpage-news-title">
-        <?php if ( get_theme_mod( 'ukmtheme_frontpage_news_title_edit' ) == 0 ) { ?>
-            <h2>BERITA TERKINI</h2>
-        <?php } else { ?>
-            <?php echo get_theme_mod( 'ukmtheme_frontpage_news_title' ); ?>
-        <?php } ?>
-    </div>
 <?php
 // LATEST NEWS START
 if ( get_theme_mod( 'ukmtheme_frontpage_basic' ) == 1 ) { ?>
+<div class="wrap frontpage-news-title">
+    <?php if ( get_theme_mod( 'ukmtheme_frontpage_news_title_edit' ) == 0 ) { ?>
+        <h2>BERITA TERKINI</h2>
+    <?php } else { ?>
+        <?php echo get_theme_mod( 'ukmtheme_frontpage_news_title' ); ?>
+    <?php } ?>
+</div>
 <div class="wrap padding-top padding-bottom device-padding column">
     <div class="uk-slidenav-position" data-uk-slider="{infinite: false}">
 

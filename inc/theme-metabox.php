@@ -17,6 +17,7 @@ function ukmtheme_slideshow_metaboxes() {
         'context'       => 'normal',
         'priority'      => 'high',
         'show_names'    => true,
+        'closed'        => false,
     ) );
 
     $cmb->add_field( array(

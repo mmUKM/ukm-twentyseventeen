@@ -107,11 +107,13 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_demo_metabox' );
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
 function yourprefix_register_demo_metabox() {
+	$prefix = 'yourprefix_demo_';
+
 	/**
 	 * Sample metabox to demonstrate each field type included
 	 */
 	$cmb_demo = new_cmb2_box( array(
-		'id'            => 'yourprefix_demo_metabox',
+		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( 'Test Metabox', 'cmb2' ),
 		'object_types'  => array( 'page' ), // Post type
 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
@@ -122,32 +124,12 @@ function yourprefix_register_demo_metabox() {
 		// 'closed'     => true, // true to keep the metabox closed by default
 		// 'classes'    => 'extra-class', // Extra cmb2-wrap classes
 		// 'classes_cb' => 'yourprefix_add_some_classes', // Add classes through a callback.
-
-		/*
-		 * The following parameter is any additional arguments passed as $callback_args
-		 * to add_meta_box, if/when applicable.
-		 *
-		 * CMB2 does not use these arguments in the add_meta_box callback, however, these args
-		 * are parsed for certain special properties, like determining Gutenberg/block-editor
-		 * compatibility.
-		 *
-		 * Examples:
-		 *
-		 * - Make sure default editor is used as metabox is not compatible with block editor
-		 *      [ '__block_editor_compatible_meta_box' => false/true ]
-		 *
-		 * - Or declare this box exists for backwards compatibility
-		 *      [ '__back_compat_meta_box' => false ]
-		 *
-		 * More: https://wordpress.org/gutenberg/handbook/extensibility/meta-box/
-		 */
-		// 'mb_callback_args' => array( '__block_editor_compatible_meta_box' => false ),
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'       => esc_html__( 'Test Text', 'cmb2' ),
 		'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'         => 'yourprefix_demo_text',
+		'id'         => $prefix . 'text',
 		'type'       => 'text',
 		'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
 		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
@@ -160,7 +142,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Text Small', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textsmall',
+		'id'   => $prefix . 'textsmall',
 		'type' => 'text_small',
 		// 'repeatable' => true,
 		// 'column' => array(
@@ -173,14 +155,14 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Text Medium', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textmedium',
+		'id'   => $prefix . 'textmedium',
 		'type' => 'text_medium',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'       => esc_html__( 'Read-only Disabled Field', 'cmb2' ),
 		'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'         => 'yourprefix_demo_readonly',
+		'id'         => $prefix . 'readonly',
 		'type'       => 'text_medium',
 		'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'cmb2' ),
 		'save_field' => false, // Disables the saving of this field.
@@ -193,7 +175,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Custom Rendered Field', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_render_row_cb',
+		'id'   => $prefix . 'render_row_cb',
 		'type' => 'text',
 		'render_row_cb' => 'yourprefix_render_row_cb',
 	) );
@@ -201,7 +183,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Website URL', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_url',
+		'id'   => $prefix . 'url',
 		'type' => 'text_url',
 		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
 		// 'repeatable' => true,
@@ -210,7 +192,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Text Email', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_email',
+		'id'   => $prefix . 'email',
 		'type' => 'text_email',
 		// 'repeatable' => true,
 	) );
@@ -218,7 +200,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Time', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_time',
+		'id'   => $prefix . 'time',
 		'type' => 'text_time',
 		// 'time_format' => 'H:i', // Set to 24hr format
 	) );
@@ -226,14 +208,14 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Time zone', 'cmb2' ),
 		'desc' => esc_html__( 'Time zone', 'cmb2' ),
-		'id'   => 'yourprefix_demo_timezone',
+		'id'   => $prefix . 'timezone',
 		'type' => 'select_timezone',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Date Picker', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textdate',
+		'id'   => $prefix . 'textdate',
 		'type' => 'text_date',
 		// 'date_format' => 'Y-m-d',
 	) );
@@ -241,15 +223,15 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Date Picker (UNIX timestamp)', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textdate_timestamp',
+		'id'   => $prefix . 'textdate_timestamp',
 		'type' => 'text_date_timestamp',
-		// 'timezone_meta_key' => 'yourprefix_demo_timezone', // Optionally make this field honor the timezone selected in the select_timezone specified above
+		// 'timezone_meta_key' => $prefix . 'timezone', // Optionally make this field honor the timezone selected in the select_timezone specified above
 	) );
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Date/Time Picker Combo (UNIX timestamp)', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_datetime_timestamp',
+		'id'   => $prefix . 'datetime_timestamp',
 		'type' => 'text_datetime_timestamp',
 	) );
 
@@ -259,14 +241,14 @@ function yourprefix_register_demo_metabox() {
 	// $cmb_demo->add_field( array(
 	// 	'name' => esc_html__( 'Test Date/Time Picker/Time zone Combo (serialized DateTime object)', 'cmb2' ),
 	// 	'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-	// 	'id'   => 'yourprefix_demo_datetime_timestamp_timezone',
+	// 	'id'   => $prefix . 'datetime_timestamp_timezone',
 	// 	'type' => 'text_datetime_timestamp_timezone',
 	// ) );
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Money', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textmoney',
+		'id'   => $prefix . 'textmoney',
 		'type' => 'text_money',
 		// 'before_field' => '£', // override '$' symbol if needed
 		// 'repeatable' => true,
@@ -275,7 +257,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name'    => esc_html__( 'Test Color Picker', 'cmb2' ),
 		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'      => 'yourprefix_demo_colorpicker',
+		'id'      => $prefix . 'colorpicker',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
 		// 'options' => array(
@@ -291,21 +273,21 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Text Area', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textarea',
+		'id'   => $prefix . 'textarea',
 		'type' => 'textarea',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Text Area Small', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textareasmall',
+		'id'   => $prefix . 'textareasmall',
 		'type' => 'textarea_small',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Text Area for Code', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_textarea_code',
+		'id'   => $prefix . 'textarea_code',
 		'type' => 'textarea_code',
 		// 'attributes' => array(
 		// 	// Optionally override the code editor defaults.
@@ -323,14 +305,14 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Title Weeeee', 'cmb2' ),
 		'desc' => esc_html__( 'This is a title description', 'cmb2' ),
-		'id'   => 'yourprefix_demo_title',
+		'id'   => $prefix . 'title',
 		'type' => 'title',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'             => esc_html__( 'Test Select', 'cmb2' ),
 		'desc'             => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'               => 'yourprefix_demo_select',
+		'id'               => $prefix . 'select',
 		'type'             => 'select',
 		'show_option_none' => true,
 		'options'          => array(
@@ -343,7 +325,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name'             => esc_html__( 'Test Radio inline', 'cmb2' ),
 		'desc'             => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'               => 'yourprefix_demo_radio_inline',
+		'id'               => $prefix . 'radio_inline',
 		'type'             => 'radio_inline',
 		'show_option_none' => 'No Selection',
 		'options'          => array(
@@ -356,7 +338,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name'    => esc_html__( 'Test Radio', 'cmb2' ),
 		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'      => 'yourprefix_demo_radio',
+		'id'      => $prefix . 'radio',
 		'type'    => 'radio',
 		'options' => array(
 			'option1' => esc_html__( 'Option One', 'cmb2' ),
@@ -368,29 +350,24 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name'     => esc_html__( 'Test Taxonomy Radio', 'cmb2' ),
 		'desc'     => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'       => 'yourprefix_demo_text_taxonomy_radio',
+		'id'       => $prefix . 'text_taxonomy_radio',
 		'type'     => 'taxonomy_radio', // Or `taxonomy_radio_inline`/`taxonomy_radio_hierarchical`
 		'taxonomy' => 'category', // Taxonomy Slug
 		// 'inline'  => true, // Toggles display to inline
-		// Optionally override the args sent to the WordPress get_terms function.
-		'query_args' => array(
-			// 'orderby' => 'slug',
-			// 'hide_empty' => true,
-		),
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'     => esc_html__( 'Test Taxonomy Select', 'cmb2' ),
 		'desc'     => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'       => 'yourprefix_demo_taxonomy_select',
-		'type'     => 'taxonomy_select', // Or `taxonomy_select_hierarchical`
+		'id'       => $prefix . 'taxonomy_select',
+		'type'     => 'taxonomy_select',
 		'taxonomy' => 'category', // Taxonomy Slug
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'     => esc_html__( 'Test Taxonomy Multi Checkbox', 'cmb2' ),
 		'desc'     => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'       => 'yourprefix_demo_multitaxonomy',
+		'id'       => $prefix . 'multitaxonomy',
 		'type'     => 'taxonomy_multicheck', // Or `taxonomy_multicheck_inline`/`taxonomy_multicheck_hierarchical`
 		'taxonomy' => 'post_tag', // Taxonomy Slug
 		// 'inline'  => true, // Toggles display to inline
@@ -399,14 +376,14 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Checkbox', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_demo_checkbox',
+		'id'   => $prefix . 'checkbox',
 		'type' => 'checkbox',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'    => esc_html__( 'Test Multi Checkbox', 'cmb2' ),
 		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'      => 'yourprefix_demo_multicheckbox',
+		'id'      => $prefix . 'multicheckbox',
 		'type'    => 'multicheck',
 		// 'multiple' => true, // Store values in individual rows
 		'options' => array(
@@ -420,7 +397,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name'    => esc_html__( 'Test wysiwyg', 'cmb2' ),
 		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'      => 'yourprefix_demo_wysiwyg',
+		'id'      => $prefix . 'wysiwyg',
 		'type'    => 'wysiwyg',
 		'options' => array(
 			'textarea_rows' => 5,
@@ -430,14 +407,14 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo->add_field( array(
 		'name' => esc_html__( 'Test Image', 'cmb2' ),
 		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
-		'id'   => 'yourprefix_demo_image',
+		'id'   => $prefix . 'image',
 		'type' => 'file',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'         => esc_html__( 'Multiple Files', 'cmb2' ),
 		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'cmb2' ),
-		'id'           => 'yourprefix_demo_file_list',
+		'id'           => $prefix . 'file_list',
 		'type'         => 'file_list',
 		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	) );
@@ -447,15 +424,15 @@ function yourprefix_register_demo_metabox() {
 		'desc' => sprintf(
 			/* translators: %s: link to codex.wordpress.org/Embeds */
 			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'cmb2' ),
-			'<a href="https://wordpress.org/support/article/embeds/">codex.wordpress.org/Embeds</a>'
+			'<a href="https://codex.wordpress.org/Embeds">codex.wordpress.org/Embeds</a>'
 		),
-		'id'   => 'yourprefix_demo_embed',
+		'id'   => $prefix . 'embed',
 		'type' => 'oembed',
 	) );
 
 	$cmb_demo->add_field( array(
 		'name'         => 'Testing Field Parameters',
-		'id'           => 'yourprefix_demo_parameters',
+		'id'           => $prefix . 'parameters',
 		'type'         => 'text',
 		'before_row'   => 'yourprefix_before_row_if_2', // callback.
 		'before'       => '<p>Testing <b>"before"</b> parameter</p>',
@@ -472,12 +449,13 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_about_page_metabox' );
  * Hook in and add a metabox that only appears on the 'About' page
  */
 function yourprefix_register_about_page_metabox() {
+	$prefix = 'yourprefix_about_';
 
 	/**
 	 * Metabox to be displayed on a single page ID
 	 */
 	$cmb_about_page = new_cmb2_box( array(
-		'id'           => 'yourprefix_about_metabox',
+		'id'           => $prefix . 'metabox',
 		'title'        => esc_html__( 'About Page Metabox', 'cmb2' ),
 		'object_types' => array( 'page' ), // Post type
 		'context'      => 'normal',
@@ -491,7 +469,7 @@ function yourprefix_register_about_page_metabox() {
 	$cmb_about_page->add_field( array(
 		'name' => esc_html__( 'Test Text', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_about_text',
+		'id'   => $prefix . 'text',
 		'type' => 'text',
 	) );
 
@@ -502,28 +480,28 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_repeatable_group_field_metab
  * Hook in and add a metabox to demonstrate repeatable grouped fields
  */
 function yourprefix_register_repeatable_group_field_metabox() {
+	$prefix = 'yourprefix_group_';
 
 	/**
 	 * Repeatable Field Groups
 	 */
 	$cmb_group = new_cmb2_box( array(
-		'id'           => 'yourprefix_group_metabox',
+		'id'           => $prefix . 'metabox',
 		'title'        => esc_html__( 'Repeating Field Group', 'cmb2' ),
 		'object_types' => array( 'page' ),
 	) );
 
-	// $group_field_id is the field id string, so in this case: 'yourprefix_group_demo'
+	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
 	$group_field_id = $cmb_group->add_field( array(
-		'id'          => 'yourprefix_group_demo',
+		'id'          => $prefix . 'demo',
 		'type'        => 'group',
 		'description' => esc_html__( 'Generates reusable form entries', 'cmb2' ),
 		'options'     => array(
-			'group_title'    => esc_html__( 'Entry {#}', 'cmb2' ), // {#} gets replaced by row number
-			'add_button'     => esc_html__( 'Add Another Entry', 'cmb2' ),
-			'remove_button'  => esc_html__( 'Remove Entry', 'cmb2' ),
-			'sortable'       => true,
-			// 'closed'      => true, // true to have the groups closed by default
-			// 'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'cmb2' ), // Performs confirmation before removing group.
+			'group_title'   => esc_html__( 'Entry {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => esc_html__( 'Add Another Entry', 'cmb2' ),
+			'remove_button' => esc_html__( 'Remove Entry', 'cmb2' ),
+			'sortable'      => true,
+			// 'closed'     => true, // true to have the groups closed by default
 		),
 	) );
 
@@ -566,12 +544,13 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_user_profile_metabox' );
  * Hook in and add a metabox to add fields to the user profile pages
  */
 function yourprefix_register_user_profile_metabox() {
+	$prefix = 'yourprefix_user_';
 
 	/**
 	 * Metabox for the user profile screen
 	 */
 	$cmb_user = new_cmb2_box( array(
-		'id'               => 'yourprefix_user_edit',
+		'id'               => $prefix . 'edit',
 		'title'            => esc_html__( 'User Profile Metabox', 'cmb2' ), // Doesn't output for user boxes
 		'object_types'     => array( 'user' ), // Tells CMB2 to use user_meta vs post_meta
 		'show_names'       => true,
@@ -581,7 +560,7 @@ function yourprefix_register_user_profile_metabox() {
 	$cmb_user->add_field( array(
 		'name'     => esc_html__( 'Extra Info', 'cmb2' ),
 		'desc'     => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'       => 'yourprefix_user_extra_info',
+		'id'       => $prefix . 'extra_info',
 		'type'     => 'title',
 		'on_front' => false,
 	) );
@@ -589,42 +568,42 @@ function yourprefix_register_user_profile_metabox() {
 	$cmb_user->add_field( array(
 		'name'    => esc_html__( 'Avatar', 'cmb2' ),
 		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'      => 'yourprefix_user_avatar',
+		'id'      => $prefix . 'avatar',
 		'type'    => 'file',
 	) );
 
 	$cmb_user->add_field( array(
 		'name' => esc_html__( 'Facebook URL', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_user_facebookurl',
+		'id'   => $prefix . 'facebookurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
 		'name' => esc_html__( 'Twitter URL', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_user_twitterurl',
+		'id'   => $prefix . 'twitterurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
 		'name' => esc_html__( 'Google+ URL', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_user_googleplusurl',
+		'id'   => $prefix . 'googleplusurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
 		'name' => esc_html__( 'Linkedin URL', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_user_linkedinurl',
+		'id'   => $prefix . 'linkedinurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
 		'name' => esc_html__( 'User Field', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_user_user_text_field',
+		'id'   => $prefix . 'user_text_field',
 		'type' => 'text',
 	) );
 
@@ -635,12 +614,13 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_taxonomy_metabox' );
  * Hook in and add a metabox to add fields to taxonomy terms
  */
 function yourprefix_register_taxonomy_metabox() {
+	$prefix = 'yourprefix_term_';
 
 	/**
 	 * Metabox to add fields to categories and tags
 	 */
 	$cmb_term = new_cmb2_box( array(
-		'id'               => 'yourprefix_term_edit',
+		'id'               => $prefix . 'edit',
 		'title'            => esc_html__( 'Category Metabox', 'cmb2' ), // Doesn't output for term boxes
 		'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta
 		'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields
@@ -650,7 +630,7 @@ function yourprefix_register_taxonomy_metabox() {
 	$cmb_term->add_field( array(
 		'name'     => esc_html__( 'Extra Info', 'cmb2' ),
 		'desc'     => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'       => 'yourprefix_term_extra_info',
+		'id'       => $prefix . 'extra_info',
 		'type'     => 'title',
 		'on_front' => false,
 	) );
@@ -658,14 +638,14 @@ function yourprefix_register_taxonomy_metabox() {
 	$cmb_term->add_field( array(
 		'name' => esc_html__( 'Term Image', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_term_avatar',
+		'id'   => $prefix . 'avatar',
 		'type' => 'file',
 	) );
 
 	$cmb_term->add_field( array(
 		'name' => esc_html__( 'Arbitrary Term Field', 'cmb2' ),
 		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_term_term_text_field',
+		'id'   => $prefix . 'term_text_field',
 		'type' => 'text',
 	) );
 
@@ -779,8 +759,10 @@ add_action( 'cmb2_init', 'yourprefix_register_rest_api_box' );
  * More info: https://github.com/CMB2/CMB2/wiki/REST-API
  */
 function yourprefix_register_rest_api_box() {
+	$prefix = 'yourprefix_rest_';
+
 	$cmb_rest = new_cmb2_box( array(
-		'id'            => 'yourprefix_rest_metabox',
+		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( 'REST Test Box', 'cmb2' ),
 		'object_types'  => array( 'page' ), // Post type
 		'show_in_rest' => WP_REST_Server::ALLMETHODS, // WP_REST_Server::READABLE|WP_REST_Server::EDITABLE, // Determines which HTTP methods the box is visible in.
@@ -792,14 +774,14 @@ function yourprefix_register_rest_api_box() {
 	$cmb_rest->add_field( array(
 		'name'       => esc_html__( 'REST Test Text', 'cmb2' ),
 		'desc'       => esc_html__( 'Will show in the REST API for this box and for pages.', 'cmb2' ),
-		'id'         => 'yourprefix_rest_text',
+		'id'         => $prefix . 'text',
 		'type'       => 'text',
 	) );
 
 	$cmb_rest->add_field( array(
 		'name'       => esc_html__( 'REST Editable Test Text', 'cmb2' ),
 		'desc'       => esc_html__( 'Will show in REST API "editable" contexts only (`POST` requests).', 'cmb2' ),
-		'id'         => 'yourprefix_rest_editable_text',
+		'id'         => $prefix . 'editable_text',
 		'type'       => 'text',
 		'show_in_rest' => WP_REST_Server::EDITABLE,// WP_REST_Server::ALLMETHODS|WP_REST_Server::READABLE, // Determines which HTTP methods the field is visible in. Will override the cmb2_box 'show_in_rest' param.
 	) );

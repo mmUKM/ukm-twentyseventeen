@@ -4,7 +4,7 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 ?>
-</div><!-- stickyfooter -->
+</div <?php // END STICKY FOOTER ?>>
 <footer class="footer">
 <?php get_template_part( 'templates/widget', 'footer' ); ?>
     <div class="copyright-with-navigation">

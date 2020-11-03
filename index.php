@@ -151,7 +151,7 @@ get_header(); ?>
 
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                         
-                        <li>
+                        <li class="frontpage-news-widget">
                             <div class="uk-panel uk-panel-box">
                                 <div class="uk-panel-teaser">
                                     <?php

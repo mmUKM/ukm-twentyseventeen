@@ -164,7 +164,7 @@ function ukmtheme_customizer( $wp_customize ) {
 
     // JUMLAH PAPARAN
     $wp_customize->add_setting( 'ukmtheme_frontpage_news', array( 
-        'default' => 3 
+        'default' => 9 
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_news', array(

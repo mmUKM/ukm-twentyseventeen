@@ -79,57 +79,57 @@ function ukmtheme_staff_metaboxes() {
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Staff Photo', 'ukmtheme' ),
-        'desc'    => __( 'Upload an image or enter a URL. Dimensions of the image should be 300x380 pixels.', 'ukmtheme' ),
+        'name'    => __( 'Foto', 'ukmtheme' ),
+        'desc'    => __( 'Pastikan telah disunting(crop) kepada saiz 300 x 380 pixel', 'ukmtheme' ),
         'id'      => 'ut_staff_photo',
         'type'    => 'file',
         'allow'   => array('url'),
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Display Phone No.', 'ukmtheme' ),
-        'desc'    => __( 'Check to display', 'ukmtheme' ),
+        'name'    => __( 'Papar No. Telefon', 'ukmtheme' ),
+        'desc'    => __( 'Tandakan sekiranya ingin dipaparkan', 'ukmtheme' ),
         'id'      => 'ut_staff_phone_display',
         'type'    => 'checkbox',
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Phone No.', 'ukmtheme' ),
+        'name'    => __( 'No. Telefon', 'ukmtheme' ),
         'desc'    => __( 'e.g. 03-8921-7070', 'ukmtheme' ),
         'id'      => 'ut_staff_phone',
         'type'    => 'text',
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Email', 'ukmtheme' ),
+        'name'    => __( 'E-mel', 'ukmtheme' ),
         'desc'    => __( 'e.g. user@ukm.edu.my', 'ukmtheme' ),
         'id'      => 'ut_staff_email',
         'type'    => 'text_email',
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Display Job Scope', 'ukmtheme' ),
-        'desc'    => __( 'Check to display', 'ukmtheme' ),
+        'name'    => __( 'Papar Skop Tugas', 'ukmtheme' ),
+        'desc'    => __( 'Tandakan sekiranya ingin dipaparkan', 'ukmtheme' ),
         'id'      => 'ut_staff_work_scope',
         'type'    => 'checkbox',
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Show Title', 'ukmtheme' ),
-        'desc'    => __( 'Please check if want to hide Scope of Work title "Scope of Work"', 'ukmtheme' ),
+        'name'    => __( 'Papar Tajuk', 'ukmtheme' ),
+        'desc'    => __( 'Tandakan sekiranya tidak ingin dipaparkan', 'ukmtheme' ),
         'id'      => 'ut_staff_work_scope_title',
         'type'    => 'checkbox',
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'New Title', 'ukmtheme' ),
-        'desc'    => __( 'e.g. "Expertise". Please leave it blank if do not want to display', 'ukmtheme' ),
+        'name'    => __( 'Tajuk Baru', 'ukmtheme' ),
+        'desc'    => __( 'Tandakan sekiranya ingin dipaparkan', 'ukmtheme' ),
         'id'      => 'ut_staff_work_scope_title_custom',
         'type'    => 'text',
     ) );
 
     $cmb->add_field( array(
-        'name'    => __( 'Job Scope Detail', 'ukmtheme' ),
+        'name'    => __( 'Perincian Skop Kerja', 'ukmtheme' ),
         'desc'    => __( 'e.g. Do Multimedia Work', 'ukmtheme' ),
         'id'      => 'ut_staff_work_scope_desc',
         'type'    => 'wysiwyg',

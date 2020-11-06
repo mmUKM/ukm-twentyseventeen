@@ -144,7 +144,7 @@ function ukmtheme_customizer( $wp_customize ) {
 
     $wp_customize->add_control( 'ukmtheme_frontpage_basic', array(
         'label'     => __( 'BERITA VERSI SLIDER', 'ukmtheme' ),
-        'description'   => 'Widget asas bagi paparan berita dalam bentuk thumbnail. Tandakan salah satu versi sahaja',
+        'description'   => 'Widget asas bagi paparan berita dalam bentuk slider. Tandakan salah satu versi sahaja',
         'section'   => 'ukmtheme_frontpage_layout',
         'priority'  => 10,
         'type'      => 'checkbox'

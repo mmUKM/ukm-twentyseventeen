@@ -1305,7 +1305,7 @@ function ut_tab() {
     $labels = array(
         'name'                => _x( 'Tab', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'Tab', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Tabber', 'ukmtheme' ),
+        'menu_name'           => __( 'Tab Widget', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Tab:', 'ukmtheme' ),
         'all_items'           => __( 'All Tab', 'ukmtheme' ),
         'view_item'           => __( 'View Tab', 'ukmtheme' ),

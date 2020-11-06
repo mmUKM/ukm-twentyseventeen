@@ -180,7 +180,7 @@ add_filter( 'upload_mimes','add_custom_mime_types' );
 function ukmtheme_widgets_init() {
 
     register_sidebar( array(
-        'name'            => __( 'FRONTPAGE LAYOUT BUILDER', 'ukmtheme' ),
+        'name'            => __( 'FRONTPAGE: LAYOUT BUILDER', 'ukmtheme' ),
         'id'              => 'sidebar-2',
         'description'     => __( 'Gunakan widget Page Builder by SiteOrigin atau Elementor', 'ukmtheme' ),
         'before_widget'   => '<div class="column"><div class="large-12-12">',
@@ -190,17 +190,7 @@ function ukmtheme_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'            => __( 'CUSTOM FOOTER', 'ukmtheme' ),
-        'id'              => 'sidebar-10',
-        'description'     => __( 'Gunakan widget Page Builder by SiteOrigin atau Elementor', 'ukmtheme' ),
-        'before_widget'   => '<div class="uk-width-medium-1-1" style="min-height: 100px;">',
-        'after_widget'    => '</div>',
-        'before_title'    => '<h3 class="widget-title uk-hidden">',
-        'after_title'     => '</h3>',
-    ) );
-
-    register_sidebar( array(
-        'name'            => __( '3 BOX FOOTER', 'ukmtheme' ),
+        'name'            => __( '3 BLOCK FOOTER', 'ukmtheme' ),
         'id'              => 'sidebar-8',
         'description'     => __( '3 Column footer widgets.', 'ukmtheme' ),
         'before_widget'   => '<div class="uk-width-medium-1-3" style="min-height: 100px;">',
@@ -220,6 +210,46 @@ function ukmtheme_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'ukmtheme_widgets_init' );
+
+function ukmtheme_extra_widgets_init() {
+
+    if ( get_theme_mod( 'ukmtheme_frontpage_two_box' ) == 1 ) {
+        register_sidebar( array(
+            'name'            => __( 'FRONTPAGE: 2 BLOCK', 'ukmtheme' ),
+            'id'              => 'sidebar-3',
+            'description'     => __( '2 blok widget di frontpage di bawah berita.', 'ukmtheme' ),
+            'before_widget'   => '<div class="uk-width-medium-1-2" style="min-height: 100px;">',
+            'after_widget'    => '</div>',
+            'before_title'    => '<h3 class="widget-title">',
+            'after_title'     => '</h3>',
+        ) );
+    }
+
+    if ( get_theme_mod( 'ukmtheme_frontpage_three_box' ) == 1 ) {
+        register_sidebar( array(
+            'name'            => __( 'FRONTPAGE: 3 BLOCK', 'ukmtheme' ),
+            'id'              => 'sidebar-4',
+            'description'     => __( '3 blok widget di frontpage di bawah berita.', 'ukmtheme' ),
+            'before_widget'   => '<div class="uk-width-medium-1-3" style="min-height: 100px;">',
+            'after_widget'    => '</div>',
+            'before_title'    => '<h3 class="widget-title">',
+            'after_title'     => '</h3>',
+        ) );
+    }
+
+    if ( get_theme_mod( 'ukmtheme_footer_widget_one' ) == 1 ) {
+        register_sidebar( array(
+            'name'            => __( 'CUSTOM FOOTER', 'ukmtheme' ),
+            'id'              => 'sidebar-10',
+            'description'     => __( 'Gunakan widget Page Builder by SiteOrigin atau Elementor', 'ukmtheme' ),
+            'before_widget'   => '<div class="uk-width-medium-1-1" style="min-height: 100px;">',
+            'after_widget'    => '</div>',
+            'before_title'    => '<h3 class="widget-title uk-hidden">',
+            'after_title'     => '</h3>',
+        ) );
+    }
+}
+add_action( 'widgets_init', 'ukmtheme_extra_widgets_init' );
 
 /**
  * Generate custom search form

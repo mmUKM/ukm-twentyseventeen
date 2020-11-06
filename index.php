@@ -172,11 +172,61 @@ get_header(); ?>
         </div>
     <?php } // END LATEST NEWS ?>
     <?php
+        // START FRONTPAGE TAB
+        if ( get_theme_mod( 'ukmtheme_frontpage_tabber' ) == 1 ) { ?>
+        <div class="wrap padding-top padding-bottom device-padding ut-tabber-wrap">
+
+            <div class="uk-button-group ut-tabber-button" data-uk-switcher="{connect:'#ut-tabber'}">
+                <?php
+
+                    $args = array(
+                    'post_type'       => 'tab',
+                    'posts_per_page'  => 10,
+                    'orderby'         => 'menu_order',
+                    'order'           => 'ASC'
+                    );
+
+                $tabber = new WP_Query( $args );
+
+                while ( $tabber->have_posts() ) : $tabber->the_post(); ?>
+                    <button class="uk-button uk-button-large" type="button"><?php the_title(); ?></button>
+                <?php endwhile; ?>
+            </div>
+
+            <ul id="ut-tabber" class="uk-switcher uk-margin">
+                <?php while ( $tabber->have_posts() ) : $tabber->the_post(); ?>
+                    <li class="ut-tabber-content">
+                    <h3><?php the_title(); ?></h3>
+                    <p><?php the_content(); ?></p>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+        </div>
+    <?php } //END TAB ?>
+    <?php
     // START LAYOUT BUILDER BY SITEORIGIN
     if ( get_theme_mod( 'ukmtheme_frontpage_one_box' ) == 1 ) {
         if ( dynamic_sidebar( 'sidebar-2' ) ) : else : endif;
     } // END LAYOUT BUILDER BY SITEORIGIN ?>
 
+    <?php
+    // START 2 BLOCK WIDGET
+    if ( get_theme_mod( 'ukmtheme_frontpage_two_box' ) == 1 ) { ?>
+    <div class="wrap padding-top padding-bottom device-padding">
+        <div class="uk-grid" data-uk-grid-match="">
+            <?php if (dynamic_sidebar( 'sidebar-3' )) : else : ?><?php endif; ?>
+        </div>
+    </div>
+    <?php } //END 2 BLOCK WIDGET?>
+    <?php
+    // START 3 BLOCK WIDGET
+    if ( get_theme_mod( 'ukmtheme_frontpage_three_box' ) == 1 ) { ?>
+    <div class="wrap padding-top padding-bottom device-padding">
+        <div class="uk-grid" data-uk-grid-match="">
+            <?php if (dynamic_sidebar( 'sidebar-4' )) : else : ?><?php endif; ?>
+        </div>
+    </div>
+    <?php } //END 3 BLOCK WIDGET?>
 <?php } else { // END IF IS_HOME ?>
     <div class="wrap column device-padding">
         <article class="article large-8-12">

@@ -90,7 +90,7 @@ function ukmtheme_customizer( $wp_customize ) {
         'priority'	=> 40
     ) ) );
 
-        // PENGUMUMAN
+    // PENGUMUMAN
     $wp_customize->add_setting( 'ukmtheme_frontpage_pengumuman', array( 
         'default' => 0 
     ) );
@@ -213,11 +213,46 @@ function ukmtheme_customizer( $wp_customize ) {
         'type'          => 'checkbox'
     ) );
 
-    /**
-     * Footer Widgets
-     * 20160726
-     */
+    // FRONTPAGE 2 BLOCK
+    $wp_customize->add_setting( 'ukmtheme_frontpage_two_box', array( 
+        'default' => 0 
+    ) );
 
+    $wp_customize->add_control( 'ukmtheme_frontpage_two_box', array(
+        'label'         => __( 'FRONTPAGE WIDGET 2 BLOCK', 'ukmtheme' ),
+        'description'   => '2 kotak widget frontpage',
+        'section'       => 'ukmtheme_frontpage_layout',
+        'priority'      => 10,
+        'type'          => 'checkbox'
+    ) );
+
+    // FRONTPAGE 3 BLOCK
+    $wp_customize->add_setting( 'ukmtheme_frontpage_three_box', array( 
+        'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_three_box', array(
+        'label'         => __( 'FRONTPAGE WIDGET 3 BLOCK', 'ukmtheme' ),
+        'description'   => '3 kotak widget frontpage',
+        'section'       => 'ukmtheme_frontpage_layout',
+        'priority'      => 10,
+        'type'          => 'checkbox'
+    ) );
+
+    // FRONTPAGE DISPLAY TAB
+    $wp_customize->add_setting( 'ukmtheme_frontpage_tabber', array( 
+        'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_tabber', array(
+        'label'         => __( 'FRONTPAGE TAB', 'ukmtheme' ),
+        'description'   => 'Paparan widget dalam bentuk tab. Isi kandungan di Dashbord Tab Widget',
+        'section'       => 'ukmtheme_frontpage_layout',
+        'priority'      => 10,
+        'type'          => 'checkbox'
+    ) );
+
+    // FOOTER SECTION
     $wp_customize->add_section( 'ukmtheme_footer_widgets' , array(
     'title'      => __( 'Footer', 'ukmtheme' ),
     'priority'   => 100,

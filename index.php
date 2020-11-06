@@ -135,7 +135,7 @@ get_header(); ?>
             <?php } ?>
         </div>
         <div class="wrap padding-top padding-bottom device-padding column">
-            <div class="uk-slidenav-position" data-uk-slider="{infinite: false}">
+            <div class="uk-slidenav-position" data-uk-slider="{ autoplay: true }">
 
                 <div class="uk-slider-container">
                     <ul class="uk-slider uk-grid uk-grid-width-medium-1-3" data-uk-grid-match="{target:'.uk-panel'}">

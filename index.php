@@ -129,9 +129,9 @@ get_header(); ?>
     if ( get_theme_mod( 'ukmtheme_frontpage_basic' ) == 1 ) { ?>
         <div class="wrap frontpage-news-title">
             <?php if ( get_theme_mod( 'ukmtheme_frontpage_news_title_edit' ) == 0 ) { ?>
-                <h2>BERITA TERKINI</h2>
+                <h3 class="uk-h3">BERITA TERKINI  <a href="<?php echo get_post_type_archive_link('news'); ?>" class="news-archive-link uk-float-right"><i class="uk-icon-archive"></i> ARKIB</a></h3>
             <?php } else { ?>
-                <?php echo get_theme_mod( 'ukmtheme_frontpage_news_title' ); ?>
+                <h3 class="uk-h3"><?php echo get_theme_mod( 'ukmtheme_frontpage_news_title' ); ?>  <a href="<?php echo get_post_type_archive_link('news'); ?>" class="news-archive-link uk-float-right"><i class="uk-icon-archive"></i> ARKIB</a></h3>
             <?php } ?>
         </div>
         <div class="wrap padding-top padding-bottom device-padding column">
@@ -171,6 +171,44 @@ get_header(); ?>
             </div>
         </div>
     <?php } // END LATEST NEWS ?>
+    <?php
+    // START THUMBNAIL LATEST NEWS
+    if ( get_theme_mod( 'ukmtheme_frontpage_news_thumbnail' ) == 1 ) { ?>
+    <div class="wrap padding-top padding-bottom device-padding column">
+            <?php if ( get_theme_mod( 'ukmtheme_frontpage_news_title_edit' ) == 0 ) { ?>
+                <h3 class="uk-h3">BERITA TERKINI  <a href="<?php echo get_post_type_archive_link('news'); ?>" class="news-archive-link uk-float-right"><i class="uk-icon-archive"></i> ARKIB</a></h3>
+            <?php } else { ?>
+                <h3 class="uk-h3"><?php echo get_theme_mod( 'ukmtheme_frontpage_news_title' ); ?>  <a href="<?php echo get_post_type_archive_link('news'); ?>" class="news-archive-link uk-float-right"><i class="uk-icon-archive"></i> ARKIB</a></h3>
+            <?php } ?>
+            <ul class="uk-grid uk-grid-match" data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}">
+            <?php
+
+            $news = get_theme_mod( 'ukmtheme_frontpage_news' );
+            $args = array(
+                'post_type' => 'news',
+                'posts_per_page' => $news
+            );
+            $loop = new WP_Query( $args );
+
+            while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <li class="uk-width-medium-1-3">
+                    <div class="uk-panel uk-panel-box">
+                        <div class="padding-bottom">
+                            <?php
+                                if ( has_post_thumbnail() ) { the_post_thumbnail( 'latest_news_thumbnail' ); }
+                                else { echo '<img src="' . get_template_directory_uri() . '/img/placeholder_thumbnail.svg" height="auto" width="auto"/>'; }
+                            ?>
+                        </div>
+                        <div class="latest-news-excerpt">
+                            <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <?php the_excerpt(); ?>
+                        </div>
+                    </div>
+                </li>
+            <?php endwhile; ?>
+        </ul>
+    </div>
+    <?php } //END LATEST NEWS THUMBNAIL ?>
     <?php
         // START FRONTPAGE TAB
         if ( get_theme_mod( 'ukmtheme_frontpage_tabber' ) == 1 ) { ?>

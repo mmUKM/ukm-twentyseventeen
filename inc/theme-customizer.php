@@ -124,14 +124,27 @@ function ukmtheme_customizer( $wp_customize ) {
         'type'        => 'checkbox'
     ) );
 
-    // BERITA
+    // BERITA VERSI THUMBNAIL
+    $wp_customize->add_setting( 'ukmtheme_frontpage_news_thumbnail', array( 
+        'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_news_thumbnail', array(
+        'label'     => __( 'BERITA VERSI THUMBNAIL', 'ukmtheme' ),
+        'description'   => 'Widget asas bagi paparan berita dalam bentuk thumbnail. Tandakan salah satu versi sahaja',
+        'section'   => 'ukmtheme_frontpage_layout',
+        'priority'  => 10,
+        'type'      => 'checkbox'
+    ) );
+
+    // BERITA VERSI SLIDER
     $wp_customize->add_setting( 'ukmtheme_frontpage_basic', array( 
         'default' => 1 
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_basic', array(
-        'label'     => __( 'BERITA', 'ukmtheme' ),
-        'description'   => 'Widget asas bagi paparan berita terkini',
+        'label'     => __( 'BERITA VERSI SLIDER', 'ukmtheme' ),
+        'description'   => 'Widget asas bagi paparan berita dalam bentuk thumbnail. Tandakan salah satu versi sahaja',
         'section'   => 'ukmtheme_frontpage_layout',
         'priority'  => 10,
         'type'      => 'checkbox'
@@ -152,11 +165,11 @@ function ukmtheme_customizer( $wp_customize ) {
 
     // NEWS TITLE
     $wp_customize->add_setting( 'ukmtheme_frontpage_news_title', array( 
-        'default' => '<h2>Berita Terkini</h2>' 
+        'default' => 'BERITA TERKINI' 
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_news_title', array(
-        'label'     => 'Jumlah untuk dipaparkan dalam gandaan 3',
+        'label'     => 'Tukar tajuk kepada yang lain.',
         'section'   => 'ukmtheme_frontpage_layout',
         'priority'  => 10,
         'type'      => 'text'
@@ -168,7 +181,7 @@ function ukmtheme_customizer( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_news', array(
-        'label'     => 'Jumlah untuk dipaparkan dalam gandaan 3',
+        'label'     => 'Jumlah untuk dipaparkan',
         'section'   => 'ukmtheme_frontpage_layout',
         'priority'  => 10,
         'type'      => 'text'

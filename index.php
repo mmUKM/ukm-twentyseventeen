@@ -247,7 +247,7 @@ get_header(); ?>
     <?php } //END TAB ?>
     <?php // YOUTUBE PLAYLIST
     if ( get_theme_mod( 'ukmtheme_frontpage_ytv' ) == 1 ) { ?>
-        <div class="wrap">
+        <div id="frontpage-video-playlist" class="wrap">
             <?php if ( get_theme_mod( 'ukmtheme_frontpage_ytv_title_edit' ) == 0 ) { ?>
                 <h3 class="uk-h3">PTMUKM-TV</h3>
             <?php } else { ?>

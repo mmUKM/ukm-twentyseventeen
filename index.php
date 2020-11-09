@@ -7,46 +7,48 @@ get_header(); ?>
 
 <?php if ( is_home() ) { ?>
     <?php // SLIDESHOW ?>
-    <div
-        id="ut-slideshow"
-        class="uk-slidenav-position"
-        data-uk-slideshow="{animation:'slice-up-down', autoplay:true, autoplayInterval:6000}"
-        style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 960px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>
-    ">
-        <ul class="uk-slideshow">
-            <?php
-                $args = array(
-                    'post_type'       => 'slideshow',
-                    'posts_per_page'   => 20,
-                    'orderby'         => 'menu_order'
-                );
+    <div id="slideshow-wrap">
+        <div
+            id="ut-slideshow"
+            class="uk-slidenav-position"
+            data-uk-slideshow="{animation:'slice-up-down', autoplay:true, autoplayInterval:6000}"
+            style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 960px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>
+        ">
+            <ul class="uk-slideshow">
+                <?php
+                    $args = array(
+                        'post_type'       => 'slideshow',
+                        'posts_per_page'   => 20,
+                        'orderby'         => 'menu_order'
+                    );
 
-                $slideshow = new WP_Query( $args );
+                    $slideshow = new WP_Query( $args );
 
-                if ( $slideshow->have_posts() ) : while ( $slideshow->have_posts() ) : $slideshow->the_post(); 
-            ?>
-            <li>
-                <a href="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_link', true ); ?>">
-                    <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>" style="width: 100%;">
-                </a>
-                <?php $caption = get_post_meta( get_the_ID(), 'ut_slideshow_caption_hide', true ); ?>
-                <?php if ( $caption == true ) { ?>
-                <div class="uk-overlay-panel uk-overlay-bottom uk-overlay-fade">
-                    <div class="wrap slideshow">
-                        <h2><?php the_title(); ?></h2>
-                        <p><?php echo get_post_meta( get_the_ID(), 'ut_slideshow_caption', true ); ?></p>
+                    if ( $slideshow->have_posts() ) : while ( $slideshow->have_posts() ) : $slideshow->the_post(); 
+                ?>
+                <li>
+                    <a href="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_link', true ); ?>">
+                        <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>" style="width: 100%;">
+                    </a>
+                    <?php $caption = get_post_meta( get_the_ID(), 'ut_slideshow_caption_hide', true ); ?>
+                    <?php if ( $caption == true ) { ?>
+                    <div class="uk-overlay-panel uk-overlay-bottom uk-overlay-fade">
+                        <div class="wrap slideshow">
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php echo get_post_meta( get_the_ID(), 'ut_slideshow_caption', true ); ?></p>
+                        </div>
                     </div>
-                </div>
-                <?php } ?>
-            </li>            
-            <?php endwhile; else: ?>
-            <li>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-slideshow.jpg" alt="Slideshow Placeholder" style="width: 100%;">
-            </li>
-            <?php endif; ?>
-        </ul>
-        <a href="#" class="uk-slidenav uk-slidenav-previous" data-uk-slideshow-item="previous" style="color: rgba(255,255,255,0.4)"></a>
-        <a href="#" class="uk-slidenav uk-slidenav-next" data-uk-slideshow-item="next" style="color: rgba(255,255,255,0.4)"></a>
+                    <?php } ?>
+                </li>            
+                <?php endwhile; else: ?>
+                <li>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-slideshow.jpg" alt="Slideshow Placeholder" style="width: 100%;">
+                </li>
+                <?php endif; ?>
+            </ul>
+            <a href="#" class="uk-slidenav uk-slidenav-previous" data-uk-slideshow-item="previous" style="color: rgba(255,255,255,0.4)"></a>
+            <a href="#" class="uk-slidenav uk-slidenav-next" data-uk-slideshow-item="next" style="color: rgba(255,255,255,0.4)"></a>
+        </div>
     </div>
 
     <?php
@@ -84,43 +86,45 @@ get_header(); ?>
     <?php
     // START PENGUMUMAN
     if ( get_theme_mod( 'ukmtheme_frontpage_pengumuman' ) == 1 ) { ?>
-    <div id="pengumuman" class="wrap">
-        <div id="pengumuman-title">
-            <h3 id="pengumuman-heading">PENGUMUMAN</h3>
-            <a class="pengumuman-lagi" href="<?php echo bloginfo('url'); ?>/news-category/pengumuman/">Lagi <i class="uk-icon-angle-double-right"></i></a>
-        </div>
-        <div class="uk-slidenav-position" data-uk-slider="{ autoplay: true }">
+    <div id="pengumuman-wrap">
+        <div id="pengumuman" class="wrap">
+            <div id="pengumuman-title">
+                <h3 id="pengumuman-heading">PENGUMUMAN</h3>
+                <a class="pengumuman-lagi" href="<?php echo bloginfo('url'); ?>/news-category/pengumuman/">Lagi <i class="uk-icon-angle-double-right"></i></a>
+            </div>
+            <div class="uk-slidenav-position" data-uk-slider="{ autoplay: true }">
 
-        <div class="uk-slider-container">
-            <ul id="pengumuman" class="uk-slider uk-grid uk-grid-width-medium-1-3 uk-grid-width-small-1-3 uk-grid-collapse" data-uk-grid-match="{target:'.pengumuman-list'}">
-                <?php
+            <div class="uk-slider-container">
+                <ul id="pengumuman" class="uk-slider uk-grid uk-grid-width-medium-1-3 uk-grid-width-small-1-3 uk-grid-collapse" data-uk-grid-match="{target:'.pengumuman-list'}">
+                    <?php
 
-                $umum = new WP_Query( 
-                    array (
-                        'post_type' => 'news',
-                        'newscat' => 'pengumuman'
-                    )
-                );
+                    $umum = new WP_Query( 
+                        array (
+                            'post_type' => 'news',
+                            'newscat' => 'pengumuman'
+                        )
+                    );
 
-                while ( $umum->have_posts() ) : $umum->the_post(); ?>
+                    while ( $umum->have_posts() ) : $umum->the_post(); ?>
 
-                <li class="pengumuman-list">
-                    <div class="pengumuman-item">
-                        <div class="large-3-12 small-3-12 pengumuman-item-image">
-                            <img src="<?php echo get_template_directory_uri() . '/img/icon-announcement.svg'; ?>">
+                    <li class="pengumuman-list">
+                        <div class="pengumuman-item">
+                            <div class="large-3-12 small-3-12 pengumuman-item-image">
+                                <img src="<?php echo get_template_directory_uri() . '/img/icon-announcement.svg'; ?>">
+                            </div>
+                            <div class="large-9-12 small-9-12 pengumuman-item-content">
+                                <a class="uk-clearfix" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                                <p class="pengumuman-date"><?php echo mysql2date('j M Y', $umum->posts[0]->post_modified); ?></small></p>
+                            </div>
                         </div>
-                        <div class="large-9-12 small-9-12 pengumuman-item-content">
-                            <a class="uk-clearfix" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-                            <p class="pengumuman-date"><?php echo mysql2date('j M Y', $umum->posts[0]->post_modified); ?></small></p>
-                        </div>
-                    </div>
-                </li>
-            <?php endwhile; ?>
-            </ul>
-        </div>
-        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
-        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
+                    </li>
+                <?php endwhile; ?>
+                </ul>
+            </div>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
+            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
 
+            </div>
         </div>
     </div>
     <?php } // END PENGUMUMAN ?>
@@ -241,6 +245,32 @@ get_header(); ?>
             </ul>
         </div>
     <?php } //END TAB ?>
+    <?php // YOUTUBE PLAYLIST
+    if ( get_theme_mod( 'ukmtheme_frontpage_ytv' ) == 1 ) { ?>
+        <div class="wrap">
+            <?php if ( get_theme_mod( 'ukmtheme_frontpage_ytv_title_edit' ) == 0 ) { ?>
+                <h3 class="uk-h3">PTMUKM-TV</h3>
+            <?php } else { ?>
+                <h3 class="uk-h3"><?php echo get_theme_mod( 'ukmtheme_frontpage_ytv_title' ); ?></h3>
+            <?php } ?>
+            <div id="ptmukm-tv-responsive"></div>
+            <script>
+                    window.onload = function(){
+                        
+                        window.controller = new YTV('ptmukm-tv-responsive', {
+                            <?php echo get_theme_mod( 'ukmtheme_frontpage_ytv_user' ); ?>,
+                            accent: '#ffa500',
+                            browsePlaylists: true,
+                            autoplay: true,
+                            playerTheme: 'light',
+                            listTheme: 'light',
+                            responsive: true
+                        });
+                
+                    };
+                </script>
+        </div>
+    <?php } //END YOUTUBE PLAYLIST ?>
     <?php
     // START LAYOUT BUILDER BY SITEORIGIN
     if ( get_theme_mod( 'ukmtheme_frontpage_one_box' ) == 1 ) {

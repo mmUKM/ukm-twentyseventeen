@@ -120,7 +120,7 @@ function ukmtheme_customizer( $wp_customize ) {
         'label'       => __( 'SMALL SIZE SLIDESHOW', 'ukmtheme' ),
         'description' => __( 'Papar slideshow dengan saiz 960px', 'ukmtheme'),
         'section'     => 'ukmtheme_frontpage_layout',
-        'priority'    => 40,
+        'priority'    => 10,
         'type'        => 'checkbox'
     ) );
 
@@ -264,6 +264,55 @@ function ukmtheme_customizer( $wp_customize ) {
         'priority'      => 10,
         'type'          => 'checkbox'
     ) );
+
+    // FRONTPAGE YOUTUBE PLAYLIST
+    $wp_customize->add_setting( 'ukmtheme_frontpage_ytv', array( 
+        'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_ytv', array(
+        'label'         => __( 'YOUTUBE PLAYLIST', 'ukmtheme' ),
+        'description'   => 'Paparan playlist YouTube (Ini adalah percubaan di laman web PTM)',
+        'section'       => 'ukmtheme_frontpage_layout',
+        'priority'      => 10,
+        'type'          => 'checkbox'
+    ) );
+
+    $wp_customize->add_setting( 'ukmtheme_frontpage_ytv_user', array( 
+        'default' => 'user&#58;&#39;ptmukm&#39;'
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_ytv_user', array(
+        'label'     => 'USERNAME ATAU ID',
+        'description'   => 'Semak sama ada channel anda menggunakan username atau ID. Ubah user&#58;&#39;namauser&#39; kepada channelId&#58;&#39;UCXXXXXXXXXXXXXXXXXXXXXX&#39; ',
+        'section'   => 'ukmtheme_frontpage_layout',
+        'priority'  => 10,
+        'type'      => 'text'
+    ) );
+
+    $wp_customize->add_setting( 'ukmtheme_frontpage_ytv_title_edit', array( 
+        'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_ytv_title_edit', array(
+        'label'         => __( 'TUKAR NAMA CHANNEL', 'ukmtheme' ),
+        'description'   => 'Paparan playlist YouTube (Ini adalah percubaan di laman web PTM)',
+        'section'       => 'ukmtheme_frontpage_layout',
+        'priority'      => 10,
+        'type'          => 'checkbox'
+    ) );
+
+    $wp_customize->add_setting( 'ukmtheme_frontpage_ytv_title', array( 
+        'default' => 'PTMUKM-TV'
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_frontpage_ytv_title', array(
+        'label'     => 'NAMA CHANNEL',
+        'section'   => 'ukmtheme_frontpage_layout',
+        'priority'  => 10,
+        'type'      => 'text'
+    ) );
+
 
     // FOOTER SECTION
     $wp_customize->add_section( 'ukmtheme_footer_widgets' , array(

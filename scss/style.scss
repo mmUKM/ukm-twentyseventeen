@@ -154,6 +154,7 @@ h1.site-name {
     background: #292929;
     color: #fff;
     height: 48px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 10px -6px;;
 }
 
 .main-nav:before {
@@ -328,6 +329,11 @@ html, body {
 
 //slideshow
 
+#slideshow-wrap {
+    background: #f9f9f9;
+    padding: 1px 0;
+}
+
 .slideshow {
     h2, p {
         text-shadow: 0 1px 2px #000;
@@ -468,6 +474,11 @@ h1.conference-site-name {
 	margin-top: 70px;
 }
 
+#pengumuman-wrap {
+    background: url('img/grey-pattern-1029577b.png') repeat;
+    padding: 20px 0 20px 0;
+}
+
 #pengumuman {
 	background: white;
 	color: #000;
@@ -512,7 +523,7 @@ h1.conference-site-name {
 
 .frontpage-news-title h2,
 .frontpage-news-title h3,
-.frontpage-news-title h4, {
+.frontpage-news-title h4 {
 	margin-top: 20px;
 	margin-bottom: 0;
 }

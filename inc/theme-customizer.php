@@ -279,12 +279,12 @@ function ukmtheme_customizer( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'ukmtheme_frontpage_ytv_user', array( 
-        'default' => 'user&#58;&#39;ptmukm&#39;'
+        'default' => 'user&#58;&nbsp;&#39;ptmukm&#39;'
     ) );
 
     $wp_customize->add_control( 'ukmtheme_frontpage_ytv_user', array(
         'label'     => 'USERNAME ATAU ID',
-        'description'   => 'Semak sama ada channel anda menggunakan username atau ID. Ubah user&#58;&#39;namauser&#39; kepada channelId&#58;&#39;UCXXXXXXXXXXXXXXXXXXXXXX&#39; ',
+        'description'   => 'Semak sama ada channel anda menggunakan username atau ID. Ubah user&#58;&nbsp;&#39;namauser&#39; kepada channelId&#58;&nbsp;&#39;UCXXXXXXXXXXXXXXXXXXXXXX&#39; ',
         'section'   => 'ukmtheme_frontpage_layout',
         'priority'  => 10,
         'type'      => 'text'

@@ -261,7 +261,7 @@ get_header(); ?>
                             <?php echo get_theme_mod( 'ukmtheme_frontpage_ytv_user' ); ?>,
                             accent: '#ffa500',
                             browsePlaylists: true,
-                            autoplay: true,
+                            autoplay: false,
                             playerTheme: 'light',
                             listTheme: 'light',
                             responsive: true

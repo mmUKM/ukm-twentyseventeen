@@ -11,11 +11,11 @@ get_header(); ?>
     <?php
 
     $query = new WP_Query( array(
-        'post_type'       => 'staff',
-        'department'      => get_query_var( 'position' ),
-        'posts_per_page'  => -1,
-        'orderby'         => 'menu_order',
-        'order'           => 'ASC',
+        'post_type'         => 'staff',
+        'position'          => get_query_var( 'position' ),
+        'posts_per_page'    => -1,
+        'orderby'           => 'menu_order',
+        'order'             => 'ASC',
     ));
 
     if ( $query->have_posts() ) : ?>

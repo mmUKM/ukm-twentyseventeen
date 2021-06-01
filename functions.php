@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
     function ukmtheme_scripts() {
         // CSS
         wp_deregister_script( 'jquery' );
-        wp_enqueue_script( 'jquery', get_template_directory_uri() . '/lib/jquery/jquery.min.js', array(), '2017.4.20201101', false );
+        wp_enqueue_script( 'jquery', get_template_directory_uri() . '/lib/jquery/jquery-3.6.0.min.js', array(), '3.6.0', false );
         wp_enqueue_script( 'uikit', get_template_directory_uri() . '/lib/uikit/js/uikit.min.js', array(), '2017.4.20201101', true );
         wp_enqueue_script( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/js/components/accordion.min.js', array(), '2017.4.20201101', true );
         wp_enqueue_script( 'uikit-slider', get_template_directory_uri() . '/lib/uikit/js/components/slider.min.js', array(), '2017.4.20201101', true );
@@ -40,10 +40,10 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
         wp_enqueue_script( 'uikit-lightbox', get_template_directory_uri() . '/lib/uikit/js/components/lightbox.min.js', array(), '2017.4.20201101', true );
         wp_enqueue_script( 'uikit-search', get_template_directory_uri() . '/lib/uikit/js/components/search.min.js', array(), '2017.4.20201101', true );
         wp_enqueue_script( 'uikit-sticky', get_template_directory_uri() . '/lib/uikit/js/components/sticky.min.js', array(), '2017.4.20201101', true );
-        wp_enqueue_script( 'jqnewsticker', get_template_directory_uri() . '/lib/jqnewsticker/newsTicker.js', array(), '2017.4.20201101', true );
+        //wp_enqueue_script( 'jqnewsticker', get_template_directory_uri() . '/lib/jqnewsticker/newsTicker.js', array(), '2017.4.20201101', true );
         wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/lib/fitvids/jquery.fitvids.js', array(), '2017.4.20201101', true );
         wp_enqueue_script( 'ytv', get_template_directory_uri() . '/lib/ytv/src/ytv.js', array(), '2017.4.20201101', true );
-        wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/scripts.min.js', array(), '2017.4.20201101', true );
+        wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/src/scripts.js', array(), '2017.4.20201101', true );
         // JS
         wp_enqueue_style( 'uikit', get_template_directory_uri() . '/lib/uikit/css/uikit.almost-flat.min.css', false, '2017.4.20201101' );
         wp_enqueue_style( 'uikit-accordian', get_template_directory_uri() . '/lib/uikit/css/components/accordion.almost-flat.min.css', false, '2017.4.20201101' );

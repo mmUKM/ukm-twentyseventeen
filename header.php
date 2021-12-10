@@ -31,7 +31,7 @@
                             </a>
                         <?php else : ?>
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="<?php echo get_template_directory_uri() . '/img/logo-black-text.png'; ?>" height="90" width="400" alt="<?php echo get_bloginfo('name'); ?>">
+                                <img src="<?php echo get_template_directory_uri() . '/img/logo-u-watan.png'; ?>" height="90" width="400" alt="<?php echo get_bloginfo('name'); ?>">
                             </a>
                         <?php endif; ?>
                     </div>

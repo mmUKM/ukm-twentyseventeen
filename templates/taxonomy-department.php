@@ -21,9 +21,11 @@ get_header(); ?>
     if ( $query->have_posts() ) : ?>
 
     <h2><?php single_term_title(); ?></h2>
-
+    <div class="uk-panel uk-panel-box">
+        <p><?php echo term_description(); ?></p>
+    </div>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-    <div class="column">
+    <div class="column uk-margin-top">
         <div class="large-2-12 small-2-12">
                 <div class="staff-photo padding-right">
                     <?php

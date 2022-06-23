@@ -12,20 +12,20 @@ function ukmtheme_register_required_plugins() {
     $plugins = array(
 
         array(
-            'name'      => 'Page Builder by SiteOrigin',
-            'slug'      => 'siteorigin-panels',
+            'name'      => 'Elementor Website Builder',
+            'slug'      => 'elementor',
             'required'  => false,
         ),
 
         array(
-            'name'      => 'SiteOrigin Widgets Bundle',
-            'slug'      => 'so-widgets-bundle',
+            'name'      => 'Elementor Header & Footer Builder',
+            'slug'      => 'header-footer-elementor',
             'required'  => false,
         ),
 
         array(
-            'name'      => 'SiteOrigin CSS',
-            'slug'      => 'so-css',
+            'name'      => 'ElementsKit Elementor addons (Header Footer Builder, Mega Menu Builder, Free Elementor Widgets & Elementor Templates Library)',
+            'slug'      => 'elementskit-lite',
             'required'  => false,
         ),
         
@@ -47,12 +47,6 @@ function ukmtheme_register_required_plugins() {
             'required'  => false,
         ),
     
-        array(
-            'name'      => 'TablePress',
-            'slug'      => 'tablepress',
-            'required'  => false,
-        ),
-
         array(
             'name'      => 'All in One SEO Pack',
             'slug'      => 'all-in-one-seo-pack',

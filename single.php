@@ -4,12 +4,11 @@
 * @subpackage UKM_Twenty_Seventeen
 */
 get_header(); ?>
-<div id="primary" class="content-area wrap column device-padding">
-    <div id="main" class="site-main large-12-12 small-12-12" role="main">
+<div id="primary" class="wrap uk-margin uk-padding" uk-grid>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'uk-article uk-width-1-1' ); ?>>
             <?php the_title( '<h2>', '</h2>' ); ?>
             <?php the_content(); ?>
         </article>
@@ -18,6 +17,5 @@ get_header(); ?>
 
     <?php get_template_part('templates/content','edit' ); ?>
     
-    </div>
 </div>
 <?php get_footer(); ?>

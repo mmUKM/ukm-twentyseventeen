@@ -5,7 +5,7 @@
  */
 ?>
 </div <?php // END STICKY FOOTER ?>>
-<footer class="footer">
+<footer id="footer">
 <?php get_template_part( 'templates/widget', 'footer' ); ?>
     <div class="copyright-with-navigation">
         <div class="wrap column">

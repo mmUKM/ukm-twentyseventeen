@@ -1,33 +1,24 @@
-@import "grid";
-@import "menus";
-@import "core";
-
 $font-13px: 13px;
 
 // TYPOGRAPHY
 
 html {
-        font:400 16px/20px "Lato",Helvetica, Arial, sans-serif;
-        -webkit-text-size-adjust:100%;
-        -ms-text-size-adjust:100%;
-        color:#444
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 15px 0;
-    font-family: "Lato",Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    color: #444;
-    text-transform: none;
-}
-
-h2.title {
-    font-family: "Lato",Helvetica, Arial, sans-serif;
+    font:400 16px/20px "Poppins",Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    color:#444
 }
 
 em {
-    color: #444444;
+    color: #444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px 0;
+    font-family: "Poppins",Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #444;
+    text-transform: none;
 }
 
 // PADDING
@@ -63,15 +54,50 @@ em {
 
 .wrap {
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1140px;
 }
 
-.header-wrap {
-    background: #fdfdfd;
+#header-wrap {
+    min-height:60px;
+    background-color:#78CEEF;
+    position:relative;
+}
+
+#header-wrap-overlay {
+    background-image: url('img/songket-stripe.png');
+    opacity: 0.2;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+#header {
+    position: relative;
+    z-index: 2;
 }
 
 .logo {
     position: relative;
+}
+
+#ptj-name-container {
+    background-color: #1d92c9;
+}
+#ptj-name {
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+    #ptj-name-title {
+        color: #fff;
+    }
+    #ptj-name-sub-title {
+        font-style: italic;
+        font-weight: 200;
+    }
 }
 
 .logo-triangle {
@@ -140,7 +166,7 @@ em {
 
 h1.site-name {
     margin: 0;
-    font-family: "Lato",Helvetica, Arial, sans-serif;
+    font-family: "Poppins",Helvetica, Arial, sans-serif;
     font-size: 21px;
     color: #292929;
     text-align: right;
@@ -205,13 +231,14 @@ h1.site-name {
 
 // footer
 
-.footer {
+#footer {
     position: relative;
     margin-top: 40px;
     padding-top: 40px;
     padding-bottom: 0;
-    background: #292929;
     color: #fff;
+    background: rgb(14,110,220);
+    background: linear-gradient(0deg, rgba(14,110,220,1) 0%, rgba(29,146,201,1) 100%);
 }
 
 .copyright-with-navigation {
@@ -222,6 +249,7 @@ h1.site-name {
     p {
         margin: 0 0 0 0;
         text-align: center;
+        font-size: 12px;
     }
 }
 
@@ -230,11 +258,15 @@ h1.site-name {
     margin: 0 auto;
     list-style-type: none;
     padding-left: 0;
+    ul {
+        padding: 0;
+    }
     li {
         display: inline-block;
         a {
             display: block;
             padding: 0 5px 0 5px;
+            font-size: 12px;
         }
         a:link,
         a:visited {
@@ -326,57 +358,6 @@ html, body {
     padding: 5px 10px 5px 0;
     float: left;
 }
-
-//slideshow
-
-#slideshow-wrap {
-    background: #f9f9f9;
-    padding: 1px 0;
-}
-
-.slideshow {
-    h2, p {
-        text-shadow: 0 1px 2px #000;
-    }
-}
-
-//slideshow owl carousel
-
-.owl-dots {
-    margin-top: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 5%;
-}
-
-//slideshow bx-slider
-
-.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-}
-.bx-wrapper {
-    margin-bottom: 0;
-}
-.bx-wrapper {
-    padding: 0 0 0 0;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    border: 0;
-}
-.bx-wrapper .bx-viewport {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-}
-ul#bxslider {
-    margin: 0;
-    padding: 0;
-}
-
 
 // widget: event
 .widget-event {
@@ -481,7 +462,7 @@ h1.conference-site-name {
 
 #pengumuman {
 	background: white;
-	color: #000;
+	color: #444;
 	box-shadow: 0 1px 5px rgba(0,0,0,.3);
 }
 
@@ -508,7 +489,7 @@ h1.conference-site-name {
 }
 .pengumuman-item {
 	display: block;
-	color: #000;
+	color: #444;
 	padding: 10px 0 20px 10px;
 }
 
@@ -551,7 +532,7 @@ h1.conference-site-name {
 
 // Mobile config
 
-@media only screen and (min-width: 641px) and (max-width: 960px) {
+@media only screen and (min-width: 641px) and (max-width: 1140px) {
     .device-padding {
         padding: 5px 20px;
     }
@@ -585,4 +566,11 @@ h1.conference-site-name {
     .device-padding {
         padding: 5px 20px;
     }
+    #ptj-name-title-mobile {
+        padding: .5rem 0;
+        background-color: #1d92c9;
+        color: #fff;
+    }
 }
+@import "menus";
+@import "core";

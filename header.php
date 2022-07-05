@@ -5,7 +5,7 @@
  */
 ?>
 <!DOCTYPE html>
-<?php echo '<!-- WP UKMTheme v-' . wp_get_theme()->get( 'Version' ) . ' by Jamaludin Rajalu -->'; ?>
+<?php echo '<!-- WP UKMTheme v-' . wp_get_theme()->get( 'Version' ) . ' oleh Jamaludin Rajalu -->'; ?>
 
 <html <?php language_attributes(); ?>>
 <head>
@@ -18,105 +18,31 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="page-wrap">
-<?php if ( get_theme_mod( 'ukmtheme_helpdesk_header' ) == 1 ) { ?>
-<header class="header-wrap">
-    <div class="header">
-        <div class="wrap column">
-            <div class="large-6-12 small-hidden logo">
-                <div class="custom-header-logo-wrap">
-                    <div class="ukm-custom-logo">
-                        <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="<?php echo get_theme_mod( 'ukmtheme_logo_image' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
-                            </a>
-                        <?php else : ?>
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="<?php echo get_template_directory_uri() . '/img/logo-u-watan.png'; ?>" height="90" width="400" alt="<?php echo get_bloginfo('name'); ?>">
-                            </a>
-                        <?php endif; ?>
-                    </div>
-                    <div class="ukm-site-name">
-                        <?php /** Header Title */
-                            if ( get_theme_mod( 'ukmtheme_hide_title' ) == 0 ) { ?>
-                            <div class="column">
-                                <h1 class="site-name uk-float-left" style="font-size:<?php echo get_theme_mod( 'ukmtheme_title_size' ); ?>"><?php echo bloginfo( 'name' ); ?></h1>
-                            </div>
-                        <?php } ?>
-                    </div>
+<div id="header-wrap">
+    <div id="header-wrap-overlay"></div>
+    <div id="header" class="wrap" uk-grid>
+        <div class="uk-width-1-3@s uk-visible@s">
+            <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img src="<?php echo get_theme_mod( 'ukmtheme_logo_image' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+                </a>
+            <?php else : ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img src="<?php echo get_template_directory_uri() . '/img/logo-u-watan.png'; ?>" height="60" width="379" alt="<?php echo get_bloginfo('name'); ?>">
+                </a>
+            <?php endif; ?>
+        </div>
+        <div class="uk-width-1-3@s uk-hidden@s">
+            <div uk-grid>
+                <div class="uk-width-1-1 uk-padding-remove">
+                    <img class="uk-align-center" src="<?php echo get_template_directory_uri() . '/img/logo-mobile.png'; ?>" alt="alt"/>
+                </div>
+                <div class="uk-width-1-1 uk-padding-remove uk-margin-remove">
+                    <h6 class="uk-text-center" id="ptj-name-title-mobile"><?php echo bloginfo( 'name' ); ?></h6>
                 </div>
             </div>
-            <div class="large-4-12">
-                <div class="column top-nav-wrap uk-vertical-align-middle">
-                    <div class="custom-header-top-nav">
-                        <div class="large-9-12">
-                            <?php
-                                wp_nav_menu(array(
-                                    'theme_location'  => 'top',
-                                    'menu'            => 'Top Navigation',
-                                    'menu_class'      => 'top-nav',
-                                ));
-                            ?>
-                        </div>
-                        <div class="large-3-12">
-                            <?php get_template_part( 'templates/off', 'canvas-tools' ); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="large-2-12 custom-header-right-image">
-                        <?php if ( get_theme_mod( 'ukmtheme_custom_header_image' ) ) { ?>
-                            <img src="<?php echo get_theme_mod( 'ukmtheme_custom_header_image' ); ?>" height="136" width="170" alt="<?php echo get_bloginfo('name'); ?>" class="uk-float-right">
-                        <?php } else { ?>
-                            <img src="<?php echo get_template_directory_uri() . '/img/placeholder-custom-header.png'; ?>"  height="136" width="150" alt="<?php echo get_bloginfo('name'); ?>" class="uk-float-right">
-                        <?php } ?>
-            </div>
-    </div>
-</header>
-<?php } else { //END CUSTOM HEADER ?>
-    <header class="header-wrap">
-    <div class="header">
-        <div class="wrap column">
-            <div class="large-6-12 small-hidden logo">
-                <div class="ukm-site-logo">
-                    <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                            <img src="<?php echo get_theme_mod( 'ukmtheme_logo_image' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
-                        </a>
-                    <?php else : ?>
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="<?php echo get_template_directory_uri() . '/img/logo-u-watan.png'; ?>" height="90" width="400" alt="<?php echo get_bloginfo('name'); ?>">
-                        </a>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <div class="large-6-12">
-                <div class="column top-nav-wrap">
-                    <div class="large-10-12 small-7-12">
-                        <?php
-                            wp_nav_menu(array(
-                                'theme_location'  => 'top',
-                                'menu'            => 'Top Navigation',
-                                'menu_class'      => 'top-nav',
-                            ));
-                        ?>
-                    </div>
-                    <div class="large-2-12 small-5-12">
-                        <?php get_template_part( 'templates/off', 'canvas-tools' ); ?>
-                    </div>
-                </div>
-                <?php /** Header Title */
-                if ( get_theme_mod( 'ukmtheme_hide_title' ) == 0 ) { ?>
-                <div class="column">
-                    <h1 class="site-name" style="font-size:<?php echo get_theme_mod( 'ukmtheme_title_size' ); ?>"><?php echo bloginfo( 'name' ); ?></h1>
-                </div>
-                <?php } ?>
-            </div>
-    </div>
-</header>
-<?php } // END DEFAULT HEADER ?>
-<nav class="main-nav" role="navigation" data-uk-sticky="{media:'(min-width: 959px)'}">
-    <div class="wrap column">
-        <div class="large-11-12 small-11-12">
+        </div>
+        <div class="uk-width-2-3@s uk-padding-remove uk-margin-remove">
             <?php
                 wp_nav_menu(array(
                     'theme_location'    => 'main',
@@ -127,8 +53,15 @@
                 ));
             ?>
         </div>
-        <div class="large-1-12 small-1-12">
-        <?php get_template_part( 'templates/off', 'canvas-search' );?>
+    </div>
+</div>
+<div id="ptj-name-container">
+    <div id="ptj-name" class="wrap uk-visible@s" uk-grid>
+        <div class="uk-width-auto@s">
+            <h4 id="ptj-name-title"><?php echo bloginfo( 'name' ); ?></h4>
+        </div>
+        <div class="uk-width-expand@s uk-padding-remove uk-margin-auto@s">
+            <h4 id="ptj-name-sub-title">&nbsp;<?php echo bloginfo( 'description' ); ?></h4>
         </div>
     </div>
-</nav>
+</div>

@@ -319,26 +319,13 @@ function ukmtheme_customizer( $wp_customize ) {
     'title'      => __( 'Footer', 'ukmtheme' ),
     'priority'   => 100,
     ) );
-
-    // Footer widgets: one column
-    $wp_customize->add_setting( 'ukmtheme_footer_widget_one', array(
-        'default' => 0
-    ) );
-
-    $wp_customize->add_control( 'ukmtheme_footer_widget_one', array(
-        'label'         => __( 'FOOTER BUILDER', 'ukmtheme' ),
-        'description'   => 'Tandakan ini untuk menggunakan sepenuhnya plugin Page Builder by SiteOrigin',
-        'section'       => 'ukmtheme_footer_widgets',
-        'priority'      => 10,
-        'type'          => 'checkbox'
-    ) );
-
+    
     // Footer widgets: three column
-    $wp_customize->add_setting( 'ukmtheme_footer_widget_three', array(
+    $wp_customize->add_setting( 'ukmtheme_footer_widget_basic', array(
         'default' => 0
     ) );
 
-    $wp_customize->add_control( 'ukmtheme_footer_widget_three', array(
+    $wp_customize->add_control( 'ukmtheme_footer_widget_basic', array(
         'label'     => __( 'BASIC FOOTER', 'ukmtheme' ),
         'description'   => 'Paparan asas 3 blok footer',
         'section'   => 'ukmtheme_footer_widgets',

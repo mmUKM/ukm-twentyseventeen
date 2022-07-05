@@ -5,21 +5,8 @@
  *
  * Post type
  * ===============================
- * 01. Appreciation
- * 02. Conference
- * 03. Events
- * 04. Expertise
- * 05. FAQs
- * 06. Gallery
- * 07. Journal
- * 08. Latest News/News
- * 09. Page Taxonomies
- * 10. Press Release
- * 11. Publications
- * 12. Staff Directory
- * 13. Slideset
- * 14. Slideshow
- * 15. Tab
+ * 01. Soalan Lazim
+ * 02. Galeri
  *
  * Custom Column Adjustment
  * ===============================
@@ -28,309 +15,11 @@
  * @link http://codex.wordpress.org/Plugin_API/Action_Reference/manage_$post_type_posts_custom_column
  */
 
-// POST TYPE: APPRECIATION
-
-function ut_appreciation() {
-    $labels = array(
-        'name'                => _x( 'Appreciation', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Appreciation', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Appreciation', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Appreciation:', 'ukmtheme' ),
-        'all_items'           => __( 'All Appreciation', 'ukmtheme' ),
-        'view_item'           => __( 'View Appreciation', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Appreciation', 'ukmtheme' ),
-        'add_new'             => __( 'New Appreciation', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Appreciation', 'ukmtheme' ),
-        'update_item'         => __( 'Update Appreciation', 'ukmtheme' ),
-        'search_items'        => __( 'Search Appreciation', 'ukmtheme' ),
-        'not_found'           => __( 'No Appreciation found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Appreciation found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'Appreciation', 'ukmtheme' ),
-        'description'         => __( 'Appreciation manager for UKM', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', 'revisions', ),
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-appreciation.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'appreciation', $args );
-}
-add_action( 'init', 'ut_appreciation', 0 );
-
-function ut_add_new_appreciation_columns( $columns ) {
-    $columns = array(
-        'cb'                    => '<input type="checkbox">',
-        'title'                 => __( 'Greeting', 'ukmtheme' ),
-        'ut_appreciation_by'    => __( 'By','ukmtheme' ),
-        'ut_appreciation_ptj'   => __( 'PTJ','ukmtheme' ),
-        'ut_appreciation_date'  => __( 'Date','ukmtheme' )
-    );
-    return $columns;
-}
-add_filter('manage_edit-appreciation_columns', 'ut_add_new_appreciation_columns');
-
-function ut_appreciation_custom_columns( $column ) {
-    global $post;
-
-    switch ( $column ) {
-        case 'ut_appreciation_by' : echo get_post_meta($post->ID,'ut_appreciation_by',true); break;
-        case 'ut_appreciation_ptj' : echo get_post_meta($post->ID,'ut_appreciation_ptj',true); break;
-        case 'ut_appreciation_date' : echo get_post_meta($post->ID,'ut_appreciation_date',true); break;
-    }
-}
-add_action('manage_appreciation_posts_custom_column', 'ut_appreciation_custom_columns');
-
-// POST TYPE: CONFERENCE
-
-function title_conference_input ( $title ) {
-    if ( get_post_type() == 'conference' ) {
-        $title = __( 'Enter Conference Name', 'ukmtheme' );
-    }
-    return $title;
-}
-add_filter( 'enter_title_here', 'title_conference_input' );
-
-function ut_conference_slideshow( $file_list_meta_key, $img_size = 'full' ) {
-    $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
-    echo '<ul class="uk-slideshow">';
-    foreach ( (array) $files as $attachment_id => $attachment_url ) {
-        echo '<li>';
-        echo wp_get_attachment_image( $attachment_id, $img_size );
-        echo '</li>';
-    }
-    echo '</ul>';
-}
-
-function ut_conference_keynote( $file_list_meta_key, $img_size = 'full' ) {
-    $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
-    echo '<ul class="uk-slideset uk-grid uk-flex-center uk-grid-width-1-4">';
-    foreach ( (array) $files as $attachment_id => $attachment_url ) {
-        echo '<li>';
-        echo '<a href="'. wp_get_attachment_url( $attachment_id ) .'" title="'. get_the_title( $attachment_id ) .'">';
-            echo wp_get_attachment_image( $attachment_id, $img_size );
-        echo '</a>';
-        echo '<p style="text-align:center;">';
-            echo '<strong>' . get_the_title( $attachment_id ) . '</strong><br>';
-            echo get_post( $attachment_id )->post_excerpt . '<br>';
-            echo get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
-        echo '</p>';
-        echo '</li>';
-    }
-    echo '</ul';
-}
-
-function ut_conference() {
-    $labels = array(
-        'name'                  => _x( 'Conferences', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'         => _x( 'Conference', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'             => __( 'Conference', 'ukmtheme' ),
-        'name_admin_bar'        => __( 'Conference', 'ukmtheme' ),
-        'archives'              => __( 'Conference Archives', 'ukmtheme' ),
-        'parent_item_colon'     => __( 'Parent Conference:', 'ukmtheme' ),
-        'all_items'             => __( 'All Conferences', 'ukmtheme' ),
-        'add_new_item'          => __( 'Add New Conference', 'ukmtheme' ),
-        'add_new'               => __( 'Add New', 'ukmtheme' ),
-        'new_item'              => __( 'New Conference', 'ukmtheme' ),
-        'edit_item'             => __( 'Edit Conference', 'ukmtheme' ),
-        'update_item'           => __( 'Update Conference', 'ukmtheme' ),
-        'view_item'             => __( 'View Conference', 'ukmtheme' ),
-        'search_items'          => __( 'Search Conference', 'ukmtheme' ),
-        'not_found'             => __( 'Not found', 'ukmtheme' ),
-        'not_found_in_trash'    => __( 'Not found in Trash', 'ukmtheme' ),
-        'featured_image'        => __( 'Featured Image', 'ukmtheme' ),
-        'set_featured_image'    => __( 'Set featured image', 'ukmtheme' ),
-        'remove_featured_image' => __( 'Remove featured image', 'ukmtheme' ),
-        'use_featured_image'    => __( 'Use as featured image', 'ukmtheme' ),
-        'insert_into_item'      => __( 'Insert into conference', 'ukmtheme' ),
-        'uploaded_to_this_item' => __( 'Uploaded to this conference', 'ukmtheme' ),
-        'items_list'            => __( 'Conferences list', 'ukmtheme' ),
-        'items_list_navigation' => __( 'Conferences list navigation', 'ukmtheme' ),
-        'filter_items_list'     => __( 'Filter conferences list', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'                 => __( 'Conference', 'ukmtheme' ),
-        'description'           => __( 'Conference plugin for UKM Twenty Seventeen Theme', 'ukmtheme' ),
-        'labels'                => $labels,
-        'supports'              => array( 'title', ),
-        //'taxonomies'            => array( 'category', 'post_tag' ),
-        'hierarchical'          => false,
-        'public'                => true,
-        'show_ui'               => true,
-        'show_in_menu'          => true,
-        'menu_icon'             => get_template_directory_uri() . '/img/icon-conference.svg',
-        'show_in_admin_bar'     => false,
-        'show_in_nav_menus'     => true,
-        'can_export'            => true,
-        'has_archive'           => true,
-        'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
-        'capability_type'       => 'page',
-    );
-    register_post_type( 'conference', $args );
-}
-add_action( 'init', 'ut_conference', 0 );
-
-// POST TYPE: EVENT
-
-function ut_event() {
-    $labels = array(
-        'name'                => _x( 'Events', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Event', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Event', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Event:', 'ukmtheme' ),
-        'all_items'           => __( 'All Events', 'ukmtheme' ),
-        'view_item'           => __( 'View Event', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Event', 'ukmtheme' ),
-        'add_new'             => __( 'New Event', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Event', 'ukmtheme' ),
-        'update_item'         => __( 'Update Event', 'ukmtheme' ),
-        'search_items'        => __( 'Search Events', 'ukmtheme' ),
-        'not_found'           => __( 'No Events found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Events found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'event', 'ukmtheme' ),
-        'description'         => __( 'Event manager for UKM', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', ),
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-event.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'event', $args );
-}
-add_action( 'init', 'ut_event', 0 );
-
-function ut_add_new_event_columns( $columns ){
-    $columns = array(
-        'cb'                  => '<input type="checkbox">',
-        'title'               => __( 'Event', 'ukmtheme' ),
-        'ut_event_date'       => __( 'Date', 'ukmtheme' ),
-        'ut_event_time_start' => __( 'Start', 'ukmtheme' ),
-        'ut_event_time_end'   => __( 'End', 'ukmtheme' ),
-        'ut_event_venue'      => __( 'Venue', 'ukmtheme' )
-    );
-    return $columns;
-}
-add_filter('manage_edit-event_columns', 'ut_add_new_event_columns');
-
-function ut_event_custom_columns( $column ){
-    global $post;
-
-    switch ($column) {
-        case 'ut_event_date' : echo get_post_meta($post->ID,'ut_event_date',true); break;
-        case 'ut_event_time_start' : echo get_post_meta($post->ID,'ut_event_time_start',true); break;
-        case 'ut_event_time_end' : echo get_post_meta($post->ID,'ut_event_time_end',true); break;
-        case 'ut_event_venue' : echo get_post_meta($post->ID,'ut_event_venue',true); break;
-    }
-}
-add_action('manage_event_posts_custom_column', 'ut_event_custom_columns');
-
-// POST TYPE: EXPERTISE
-
-function title_expert_input ( $title ) {
-    if ( get_post_type() == 'expertise' ) {
-    $title = __( 'Expert Name', 'ukmtheme' );
-    }
-    return $title;
-}
-add_filter( 'enter_title_here', 'title_expert_input' );
-
-function ut_expertise() {
-    $labels = array(
-        'name'                => _x( 'Expertise', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Expertise', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Expertise', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Expertise:', 'ukmtheme' ),
-        'all_items'           => __( 'All Expertise', 'ukmtheme' ),
-        'view_item'           => __( 'View Expertise', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Expertise', 'ukmtheme' ),
-        'add_new'             => __( 'New Expertise', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Expertise', 'ukmtheme' ),
-        'update_item'         => __( 'Update Expertise', 'ukmtheme' ),
-        'search_items'        => __( 'Search Expertise', 'ukmtheme' ),
-        'not_found'           => __( 'No Expertise found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Expertise found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'expertise', 'ukmtheme' ),
-        'description'         => __( 'Expertise manager for UKM', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', 'revisions', ),
-        'hierarchical'        => true,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-expertise.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'expertise', $args );
-}
-add_action( 'init', 'ut_expertise', 0 );
-
-function ut_add_new_expertise_columns( $columns ) {
-    $columns = array(
-        'cb'                          => '<input type="checkbox">',
-        'ut_expertise_photo'          => __( 'Photo', 'ukmtheme' ),
-        'title'                       => __( 'Name', 'ukmtheme' ),
-        'ut_expertise_position'       => __( 'Current Position', 'ukmtheme' ),
-        'ut_expertise_email'          => __( 'Email', 'ukmtheme' ),
-        'ut_expertise_contact'        => __( 'Contact', 'ukmtheme' )
-    );
-    return $columns;
-}
-add_filter('manage_edit-expertise_columns', 'ut_add_new_expertise_columns');
-
-function ut_expertise_custom_columns( $column ) {
-    global $post;
-
-    switch ( $column ) {
-        case 'ut_expertise_photo' :
-        $expertPhoto = get_post_meta( $post->ID,'ut_expertise_photo',true );
-        if ( $expertPhoto ) {
-            echo '<img src="'.$expertPhoto.'" width="60">'; break;
-        }
-        else {
-            echo '<img src="'. get_template_directory_uri() .'/img/placeholder_staff.svg" width="60">'; break;
-        }
-        case 'ut_expertise_position' : echo get_post_meta( $post->ID,'ut_expertise_position',true ); break;
-        case 'ut_expertise_email' : echo get_post_meta( $post->ID,'ut_expertise_email',true ); break;
-        case 'ut_expertise_contact' : echo get_post_meta( $post->ID,'ut_expertise_contact',true );
-    }
-}
-add_action('manage_expertise_posts_custom_column', 'ut_expertise_custom_columns');
-
-// POST TYPE: FAQ
+// POST TYPE: Soalan Lazim
 
 function title_faq_input ( $title ) {
     if ( get_post_type() == 'faq' ) {
-    $title = __( 'Enter question here', 'ukmtheme' );
+    $title = esc_html__( 'Enter question here', 'ukmtheme' );
     }
     return $title;
 }
@@ -338,23 +27,23 @@ add_filter( 'enter_title_here', 'title_faq_input' );
 
 function ukmtheme_faq() {
     $labels = array(
-        'name'                => _x( 'FAQs', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'FAQ', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'FAQ', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent FAQ:', 'ukmtheme' ),
-        'all_items'           => __( 'All FAQs', 'ukmtheme' ),
-        'view_item'           => __( 'View FAQ', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New FAQ', 'ukmtheme' ),
-        'add_new'             => __( 'New FAQ', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit FAQ', 'ukmtheme' ),
-        'update_item'         => __( 'Update FAQ', 'ukmtheme' ),
-        'search_items'        => __( 'Search FAQs', 'ukmtheme' ),
-        'not_found'           => __( 'No FAQs found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No FAQs found in Trash', 'ukmtheme' ),
+        'name'                => esc_html__( 'Soalan Lazim', 'Post Type General Name', 'ukmtheme' ),
+        'singular_name'       => esc_html__( 'Soalan Lazim', 'Post Type Singular Name', 'ukmtheme' ),
+        'menu_name'           => esc_html__( 'Soalan Lazim', 'ukmtheme' ),
+        'parent_item_colon'   => esc_html__( 'Parent Soalan Lazim:', 'ukmtheme' ),
+        'all_items'           => esc_html__( 'All Soalan Lazim', 'ukmtheme' ),
+        'view_item'           => esc_html__( 'View Soalan Lazim', 'ukmtheme' ),
+        'add_new_item'        => esc_html__( 'Add New Soalan Lazim', 'ukmtheme' ),
+        'add_new'             => esc_html__( 'New Soalan Lazim', 'ukmtheme' ),
+        'edit_item'           => esc_html__( 'Edit Soalan Lazim', 'ukmtheme' ),
+        'update_item'         => esc_html__( 'Update Soalan Lazim', 'ukmtheme' ),
+        'search_items'        => esc_html__( 'Search Soalan Lazim', 'ukmtheme' ),
+        'not_found'           => esc_html__( 'No Soalan Lazim found', 'ukmtheme' ),
+        'not_found_in_trash'  => esc_html__( 'No Soalan Lazim found in Trash', 'ukmtheme' ),
     );
     $args = array(
-        'label'               => __( 'faq', 'ukmtheme' ),
-        'description'         => __( 'FAQ manager for UKM', 'ukmtheme' ),
+        'label'               => esc_html__( 'faq', 'ukmtheme' ),
+        'description'         => esc_html__( 'Soalan Lazim manager for UKM', 'ukmtheme' ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'revisions', ),
         'taxonomies'          => array( 'faqcat' ),
@@ -377,20 +66,20 @@ add_action( 'init', 'ukmtheme_faq', 0 );
 
 function ukmtheme_faq_category()  {
     $labels = array(
-        'name'                       => _x( 'FAQ Categories', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'FAQ Category', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Categories', 'ukmtheme' ),
-        'all_items'                  => __( 'All Categories', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Category', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Category:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Category Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Category', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Category', 'ukmtheme' ),
-        'update_item'                => __( 'Update Category', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Categories with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Categories', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Categories', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Categories', 'ukmtheme' ),
+        'name'                       => esc_html__( 'Soalan Lazim Categories', 'Taxonomy General Name', 'ukmtheme' ),
+        'singular_name'              => esc_html__( 'Soalan Lazim Category', 'Taxonomy Singular Name', 'ukmtheme' ),
+        'menu_name'                  => esc_html__( 'Categories', 'ukmtheme' ),
+        'all_items'                  => esc_html__( 'All Categories', 'ukmtheme' ),
+        'parent_item'                => esc_html__( 'Parent Category', 'ukmtheme' ),
+        'parent_item_colon'          => esc_html__( 'Parent Category:', 'ukmtheme' ),
+        'new_item_name'              => esc_html__( 'New Category Name', 'ukmtheme' ),
+        'add_new_item'               => esc_html__( 'Add New Category', 'ukmtheme' ),
+        'edit_item'                  => esc_html__( 'Edit Category', 'ukmtheme' ),
+        'update_item'                => esc_html__( 'Update Category', 'ukmtheme' ),
+        'separate_items_with_commas' => esc_html__( 'Separate Categories with commas', 'ukmtheme' ),
+        'search_items'               => esc_html__( 'Search Categories', 'ukmtheme' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove Categories', 'ukmtheme' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used Categories', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                       => 'faq-category',
@@ -415,8 +104,8 @@ add_action( 'init', 'ukmtheme_faq_category', 0 );
 function ut_add_new_faq_columns( $columns ){
     $columns = array(
         'cb'                          => '<input type="checkbox">',
-        'title'                       => __( 'Question', 'ukmtheme' ),
-        'faqcat'                      => __( 'Category', 'ukmtheme' ),
+        'title'                       => esc_html__( 'Question', 'ukmtheme' ),
+        'faqcat'                      => esc_html__( 'Category', 'ukmtheme' ),
     );
     return $columns;
 }
@@ -449,23 +138,23 @@ function ut_lightbox_gallery( $file_list_meta_key, $img_size = 'medium' ) {
 
 function ut_gallery() {
     $labels = array(
-        'name'                => _x( 'Gallery', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Gallery', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Gallery', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Gallery:', 'ukmtheme' ),
-        'all_items'           => __( 'All Gallery', 'ukmtheme' ),
-        'view_item'           => __( 'View Gallery', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Gallery', 'ukmtheme' ),
-        'add_new'             => __( 'Add New', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Gallery', 'ukmtheme' ),
-        'update_item'         => __( 'Update Gallery', 'ukmtheme' ),
-        'search_items'        => __( 'Search Gallery', 'ukmtheme' ),
-        'not_found'           => __( 'No Gallery found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Gallery found in Trash', 'ukmtheme' ),
+        'name'                => esc_html__( 'Galeri Foto', 'Post Type General Name', 'ukmtheme' ),
+        'singular_name'       => esc_html__( 'Galeri Foto', 'Post Type Singular Name', 'ukmtheme' ),
+        'menu_name'           => esc_html__( 'Galeri Foto', 'ukmtheme' ),
+        'parent_item_colon'   => esc_html__( 'Parent Galeri Foto:', 'ukmtheme' ),
+        'all_items'           => esc_html__( 'All Galeri Foto', 'ukmtheme' ),
+        'view_item'           => esc_html__( 'View Galeri Foto', 'ukmtheme' ),
+        'add_new_item'        => esc_html__( 'Add New Galeri Foto', 'ukmtheme' ),
+        'add_new'             => esc_html__( 'Add New', 'ukmtheme' ),
+        'edit_item'           => esc_html__( 'Edit Galeri Foto', 'ukmtheme' ),
+        'update_item'         => esc_html__( 'Update Galeri Foto', 'ukmtheme' ),
+        'search_items'        => esc_html__( 'Search Galeri Foto', 'ukmtheme' ),
+        'not_found'           => esc_html__( 'No Galeri Foto found', 'ukmtheme' ),
+        'not_found_in_trash'  => esc_html__( 'No Galeri Foto found in Trash', 'ukmtheme' ),
     );
     $args = array(
-        'label'               => __( 'Gallery', 'ukmtheme' ),
-        'description'         => __( 'Gallery manager for UKM', 'ukmtheme' ),
+        'label'               => esc_html__( 'Galeri Foto', 'ukmtheme' ),
+        'description'         => esc_html__( 'Galeri Foto manager for UKM', 'ukmtheme' ),
         'labels'              => $labels,
         'supports'            => array( 'title' ),
         'taxonomies'          => array( 'galcat' ),
@@ -488,21 +177,21 @@ add_action( 'init', 'ut_gallery', 0 );
 
 function ukmtheme_gallery_category_taxonomy() {
     $labels = array(
-        'name'                       => _x( 'Gallery Albums', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Gallery Album', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Album', 'ukmtheme' ),
-        'all_items'                  => __( 'All Items', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Gallery Album', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Gallery Album:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Gallery Album Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Gallery Album', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Gallery Album', 'ukmtheme' ),
-        'update_item'                => __( 'Update Gallery Album', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Gallery Albums with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Gallery Albums', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Gallery Albums', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Gallery Albums', 'ukmtheme' ),
-        'not_found'                  => __( 'Not Found', 'ukmtheme' ),
+        'name'                       => esc_html__( 'Galeri Foto Albums', 'Taxonomy General Name', 'ukmtheme' ),
+        'singular_name'              => esc_html__( 'Galeri Foto Album', 'Taxonomy Singular Name', 'ukmtheme' ),
+        'menu_name'                  => esc_html__( 'Album', 'ukmtheme' ),
+        'all_items'                  => esc_html__( 'All Items', 'ukmtheme' ),
+        'parent_item'                => esc_html__( 'Parent Galeri Foto Album', 'ukmtheme' ),
+        'parent_item_colon'          => esc_html__( 'Parent Galeri Foto Album:', 'ukmtheme' ),
+        'new_item_name'              => esc_html__( 'New Galeri Foto Album Name', 'ukmtheme' ),
+        'add_new_item'               => esc_html__( 'Add New Galeri Foto Album', 'ukmtheme' ),
+        'edit_item'                  => esc_html__( 'Edit Galeri Foto Album', 'ukmtheme' ),
+        'update_item'                => esc_html__( 'Update Galeri Foto Album', 'ukmtheme' ),
+        'separate_items_with_commas' => esc_html__( 'Separate Galeri Foto Albums with commas', 'ukmtheme' ),
+        'search_items'               => esc_html__( 'Search Galeri Foto Albums', 'ukmtheme' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove Galeri Foto Albums', 'ukmtheme' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used Galeri Foto Albums', 'ukmtheme' ),
+        'not_found'                  => esc_html__( 'Not Found', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                       => 'gallery-category',
@@ -524,177 +213,23 @@ function ukmtheme_gallery_category_taxonomy() {
 }
 add_action( 'init', 'ukmtheme_gallery_category_taxonomy', 0 );
 
-// POST TYPE: JOURNAL
-
-function title_journal_input ( $title ) {
-    if ( get_post_type() == 'journal' ) {
-        $title = __( 'Enter journal name here', 'ukmtheme' );
-    }
-    return $title;
-}
-add_filter( 'enter_title_here', 'title_journal_input' );
-
-function ut_journal() {
-    $labels = array(
-        'name'                => _x( 'Journals', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Journal', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Journal', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Journal:', 'ukmtheme' ),
-        'all_items'           => __( 'All Articles', 'ukmtheme' ),
-        'view_item'           => __( 'View Journal', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Journal', 'ukmtheme' ),
-        'add_new'             => __( 'New Article', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Journal', 'ukmtheme' ),
-        'update_item'         => __( 'Update Journal', 'ukmtheme' ),
-        'search_items'        => __( 'Search Journals', 'ukmtheme' ),
-        'not_found'           => __( 'No Journals found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Journals found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'Journal', 'ukmtheme' ),
-        'description'         => __( 'Journal information pages', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', 'editor' ),
-        'taxonomies'          => array( 'jourcat', 'jourkey' ),
-        'hierarchical'        => true,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-journal.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'journal', $args );
-}
-add_action( 'init', 'ut_journal', 0 );
-
-function ut_journal_category()  {
-    $labels = array(
-        'name'                       => _x( 'Journal Categories', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Journal Category', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Journals', 'ukmtheme' ),
-        'all_items'                  => __( 'All Categories', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Category', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Category:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Category Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Category', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Category', 'ukmtheme' ),
-        'update_item'                => __( 'Update Category', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Categories with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Categories', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Categories', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Categories', 'ukmtheme' ),
-    );
-    $rewrite = array(
-        'slug'                       => 'journal-category',
-        'with_front'                 => true,
-        'hierarchical'               => false,
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => true,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => false,
-        'query_var'                  => 'jourcat',
-        'rewrite'                    => $rewrite,
-    );
-    register_taxonomy( 'jourcat', 'journal', $args );
-}
-add_action( 'init', 'ut_journal_category', 0 );
-
-function ut_journal_keyword()  {
-    $labels = array(
-        'name'                       => _x( 'Journal Keywords', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Journal Keyword', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Keywords', 'ukmtheme' ),
-        'all_items'                  => __( 'All Keywords', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Keyword', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Keyword:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Keyword Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Keyword', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Keyword', 'ukmtheme' ),
-        'update_item'                => __( 'Update Keyword', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Keywords with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Keywords', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Keywords', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Keywords', 'ukmtheme' ),
-    );
-    $rewrite = array(
-        'slug'                       => 'journal-keyword',
-        'with_front'                 => true,
-        'hierarchical'               => false,
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => false,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => false,
-        'query_var'                  => 'jourkey',
-        'rewrite'                    => $rewrite,
-    );
-    register_taxonomy( 'jourkey', 'journal', $args );
-}
-add_action( 'init', 'ut_journal_keyword', 0 );
-
-function ut_add_new_journal_columns( $columns ) {
-    $columns = array(
-        'cb'                => '<input type="checkbox">',
-        'ut_journal_cover'  => __( 'Cover', 'ukmtheme' ),
-        'title'             => __( 'Article', 'ukmtheme' ),
-        'jourcat'           => __( 'Journal', 'ukmtheme' ),
-        'jourkey'           => __( 'Keyword', 'ukmtheme' ),
-        'ut_journal_author' => __( 'Author', 'ukmtheme' )
-    );
-    return $columns;
-}
-add_filter('manage_edit-journal_columns', 'ut_add_new_journal_columns');
-
-function ut_journal_custom_columns( $column ) {
-    global $post;
-    switch ($column) {
-        case 'ut_journal_cover' :
-            $pub_cover = get_post_meta( $post->ID,'ut_journal_cover',true );
-            if ( $pub_cover ) { ?>
-            <img src="<?php echo $pub_cover; ?>" alt="" width="50">
-            <?php }
-            else { ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder_journal.svg" width="50">
-        <?php } break;
-        case 'jourcat' : echo get_the_term_list( $post->ID, 'jourcat', '', ', ',''); break;
-        case 'jourkey' : echo get_the_term_list( $post->ID, 'jourkey', '', ', ',''); break;
-        case 'ut_journal_author' : echo get_post_meta($post->ID,'ut_journal_author',true); break;
-    }
-}
-add_action('manage_journal_posts_custom_column', 'ut_journal_custom_columns');
-
 // POST TYPE: NEWS
 
 function ukmtheme_latest_news() {
     $labels = array(
-        'name'                => _x( 'News', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'News', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'News', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent News:', 'ukmtheme' ),
-        'all_items'           => __( 'All News', 'ukmtheme' ),
-        'view_item'           => __( 'View News', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New News', 'ukmtheme' ),
-        'add_new'             => __( 'Add New', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit News', 'ukmtheme' ),
-        'update_item'         => __( 'Update News', 'ukmtheme' ),
-        'search_items'        => __( 'Search News', 'ukmtheme' ),
-        'not_found'           => __( 'Not found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'Not found in Trash', 'ukmtheme' ),
+        'name'                => esc_html__( 'Berita', 'Post Type General Name', 'ukmtheme' ),
+        'singular_name'       => esc_html__( 'Berita', 'Post Type Singular Name', 'ukmtheme' ),
+        'menu_name'           => esc_html__( 'Berita', 'ukmtheme' ),
+        'parent_item_colon'   => esc_html__( 'Parent Berita:', 'ukmtheme' ),
+        'all_items'           => esc_html__( 'All Berita', 'ukmtheme' ),
+        'view_item'           => esc_html__( 'View Berita', 'ukmtheme' ),
+        'add_new_item'        => esc_html__( 'Add New Berita', 'ukmtheme' ),
+        'add_new'             => esc_html__( 'Add New', 'ukmtheme' ),
+        'edit_item'           => esc_html__( 'Edit Berita', 'ukmtheme' ),
+        'update_item'         => esc_html__( 'Update Berita', 'ukmtheme' ),
+        'search_items'        => esc_html__( 'Search Berita', 'ukmtheme' ),
+        'not_found'           => esc_html__( 'Not found', 'ukmtheme' ),
+        'not_found_in_trash'  => esc_html__( 'Not found in Trash', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                => 'news',
@@ -703,8 +238,8 @@ function ukmtheme_latest_news() {
         'feeds'               => true,
     );
     $args = array(
-        'label'               => __( 'ukmnews', 'ukmtheme' ),
-        'description'         => __( 'Latest News', 'ukmtheme' ),
+        'label'               => esc_html__( 'ukmnews', 'ukmtheme' ),
+        'description'         => esc_html__( 'Latest Berita', 'ukmtheme' ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', ),
         'taxonomies'          => array( 'newscat' ),
@@ -729,21 +264,21 @@ add_action( 'init', 'ukmtheme_latest_news', 0 );
 
 function ukmtheme_news_category_taxonomy() {
     $labels = array(
-        'name'                       => _x( 'News Categories', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'News Category', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Categories', 'ukmtheme' ),
-        'all_items'                  => __( 'All Items', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent News Category', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent News Category:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New News Category Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New News Category', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit News Category', 'ukmtheme' ),
-        'update_item'                => __( 'Update News Category', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate News Categories with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search News Categories', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove News Categories', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used News Categories', 'ukmtheme' ),
-        'not_found'                  => __( 'Not Found', 'ukmtheme' ),
+        'name'                       => esc_html__( 'Berita Categories', 'Taxonomy General Name', 'ukmtheme' ),
+        'singular_name'              => esc_html__( 'Berita Category', 'Taxonomy Singular Name', 'ukmtheme' ),
+        'menu_name'                  => esc_html__( 'Categories', 'ukmtheme' ),
+        'all_items'                  => esc_html__( 'All Items', 'ukmtheme' ),
+        'parent_item'                => esc_html__( 'Parent Berita Category', 'ukmtheme' ),
+        'parent_item_colon'          => esc_html__( 'Parent Berita Category:', 'ukmtheme' ),
+        'new_item_name'              => esc_html__( 'New Berita Category Name', 'ukmtheme' ),
+        'add_new_item'               => esc_html__( 'Add New Berita Category', 'ukmtheme' ),
+        'edit_item'                  => esc_html__( 'Edit Berita Category', 'ukmtheme' ),
+        'update_item'                => esc_html__( 'Update Berita Category', 'ukmtheme' ),
+        'separate_items_with_commas' => esc_html__( 'Separate Berita Categories with commas', 'ukmtheme' ),
+        'search_items'               => esc_html__( 'Search Berita Categories', 'ukmtheme' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove Berita Categories', 'ukmtheme' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used Berita Categories', 'ukmtheme' ),
+        'not_found'                  => esc_html__( 'Not Found', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                       => 'news-category',
@@ -765,205 +300,27 @@ function ukmtheme_news_category_taxonomy() {
 }
 add_action( 'init', 'ukmtheme_news_category_taxonomy', 0 );
 
-// POST TYPE: PRESS RELEASE
-
-function ut_press() {
-    $labels = array(
-        'name'                => _x( 'News Clipping', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'News Clipping', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'News Clipping', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Press Release:', 'ukmtheme' ),
-        'all_items'           => __( 'All', 'ukmtheme' ),
-        'view_item'           => __( 'View News Clipping', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New', 'ukmtheme' ),
-        'add_new'             => __( 'Add New', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit News Clipping', 'ukmtheme' ),
-        'update_item'         => __( 'Update News Clipping', 'ukmtheme' ),
-        'search_items'        => __( 'Search News Clipping', 'ukmtheme' ),
-        'not_found'           => __( 'No News Clipping found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No News Clipping found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'News Clipping', 'ukmtheme' ),
-        'description'         => __( 'News Clipping manager for UKM', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', 'revisions', ),
-        'hierarchical'        => true,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-press.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'press', $args );
-}
-add_action( 'init', 'ut_press', 0 );
-
-function ut_press_custom_columns( $column ) {
-    global $post;
-
-    switch ($column) {
-        case 'ut_press_date' : echo get_post_meta( $post->ID,'ut_press_date',true ); break;
-    }
-}
-add_action( 'manage_press_posts_custom_column', 'ut_press_custom_columns' );
-
-function ut_add_new_press_columns( $columns ){
-    $columns = array(
-        'cb'                  => '<input type="checkbox">',
-        'ut_press_date'       => __( 'Date', 'ukmtheme' ),
-        'title'               => __( 'Title', 'ukmtheme' ),
-    );
-    return $columns;
-}
-add_filter('manage_edit-press_columns', 'ut_add_new_press_columns');
-
-// POST TYPE: PUBLICATION
-
-function title_publication_input ( $title ) {
-    if ( get_post_type() == 'publication' ) {
-        $title = __( 'Enter publication name here', 'ukmtheme' );
-    }
-    return $title;
-}
-add_filter( 'enter_title_here', 'title_publication_input' );
-
-function ut_publication() {
-    $labels = array(
-        'name'                => _x( 'Publications', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Publication', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Publication', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Publication:', 'ukmtheme' ),
-        'all_items'           => __( 'All Publications', 'ukmtheme' ),
-        'view_item'           => __( 'View Publication', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Publication', 'ukmtheme' ),
-        'add_new'             => __( 'New Publication', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Publication', 'ukmtheme' ),
-        'update_item'         => __( 'Update Publication', 'ukmtheme' ),
-        'search_items'        => __( 'Search Publications', 'ukmtheme' ),
-        'not_found'           => __( 'No Publications found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Publications found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'publication', 'ukmtheme' ),
-        'description'         => __( 'Publication information pages', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title' ),
-        'taxonomies'          => array( 'pubcat' ),
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-publication.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'publication', $args );
-}
-add_action( 'init', 'ut_publication', 0 );
-
-function ut_publication_category()  {
-    $labels = array(
-        'name'                       => _x( 'Publication Categories', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Publication Category', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Categories', 'ukmtheme' ),
-        'all_items'                  => __( 'All Categories', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Category', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Category:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Category Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Category', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Category', 'ukmtheme' ),
-        'update_item'                => __( 'Update Category', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Categories with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Categories', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Categories', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Categories', 'ukmtheme' ),
-    );
-    $rewrite = array(
-        'slug'                       => 'publication-category',
-        'with_front'                 => true,
-        'hierarchical'               => false,
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => true,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => false,
-        'query_var'                  => 'pubcat',
-        'rewrite'                    => $rewrite,
-    );
-    register_taxonomy( 'pubcat', 'publication', $args );
-}
-add_action( 'init', 'ut_publication_category', 0 );
-
-function ut_add_new_publication_columns( $columns ){
-    $columns = array(
-        'cb'                          => '<input type="checkbox">',
-        'ut_publication_cover'        => __( 'Cover', 'ukmtheme' ),
-        'title'                       => __( 'Title', 'ukmtheme' ),
-        'pubcat'                      => __( 'Category', 'ukmtheme' ),
-        'ut_publication_author'       => __( 'Author', 'ukmtheme' ),
-        'ut_publication_publisher'    => __( 'Publisher', 'ukmtheme' ),
-        'ut_publication_year'         => __( 'Year', 'ukmtheme' )
-    );
-    return $columns;
-}
-add_filter('manage_edit-publication_columns', 'ut_add_new_publication_columns');
-
-function ut_publication_custom_columns( $column ){
-    global $post;
-    switch ($column) {
-        case 'ut_publication_cover' :
-        $pub_cover = get_post_meta( $post->ID,'ut_publication_cover',true );
-        if ( $pub_cover ) { ?>
-            <img src="<?php echo $pub_cover; ?>" alt="" width="50">
-        <?php }
-        else { ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder_publication.svg" width="50">
-        <?php } break;
-        case 'pubcat' : echo get_the_term_list( $post->ID, 'pubcat', '', ', ',''); break;
-        case 'ut_publication_author' : echo get_post_meta( $post->ID,'ut_publication_author',true ); break;
-        case 'ut_publication_publisher' : echo get_post_meta( $post->ID,'ut_publication_publisher',true ); break;
-        case 'ut_publication_year' : echo get_post_meta( $post->ID,'ut_publication_year',true );
-    }
-}
-add_action('manage_publication_posts_custom_column', 'ut_publication_custom_columns');
-
 // POST TYPE: SLIDESET
 
 function ut_slideset() {
     $labels = array(
-        'name'                => _x( 'Slideset', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Slideset', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Slideset', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Slideset:', 'ukmtheme' ),
-        'all_items'           => __( 'All Slideset', 'ukmtheme' ),
-        'view_item'           => __( 'View Slideset', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Slideset', 'ukmtheme' ),
-        'add_new'             => __( 'New Slideset', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Slideset', 'ukmtheme' ),
-        'update_item'         => __( 'Update Slideset', 'ukmtheme' ),
-        'search_items'        => __( 'Search Slideset', 'ukmtheme' ),
-        'not_found'           => __( 'No Slideset found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Slideset found in Trash', 'ukmtheme' ),
+        'name'                => esc_html__( 'Slideset', 'Post Type General Name', 'ukmtheme' ),
+        'singular_name'       => esc_html__( 'Slideset', 'Post Type Singular Name', 'ukmtheme' ),
+        'menu_name'           => esc_html__( 'Slideset', 'ukmtheme' ),
+        'parent_item_colon'   => esc_html__( 'Parent Slideset:', 'ukmtheme' ),
+        'all_items'           => esc_html__( 'All Slideset', 'ukmtheme' ),
+        'view_item'           => esc_html__( 'View Slideset', 'ukmtheme' ),
+        'add_new_item'        => esc_html__( 'Add New Slideset', 'ukmtheme' ),
+        'add_new'             => esc_html__( 'New Slideset', 'ukmtheme' ),
+        'edit_item'           => esc_html__( 'Edit Slideset', 'ukmtheme' ),
+        'update_item'         => esc_html__( 'Update Slideset', 'ukmtheme' ),
+        'search_items'        => esc_html__( 'Search Slideset', 'ukmtheme' ),
+        'not_found'           => esc_html__( 'No Slideset found', 'ukmtheme' ),
+        'not_found_in_trash'  => esc_html__( 'No Slideset found in Trash', 'ukmtheme' ),
     );
     $args = array(
-        'label'               => __( 'Slideset', 'ukmtheme' ),
-        'description'         => __( 'Slideset manager for UKM', 'ukmtheme' ),
+        'label'               => esc_html__( 'Slideset', 'ukmtheme' ),
+        'description'         => esc_html__( 'Slideset manager for UKM', 'ukmtheme' ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'revisions' ),
         'hierarchical'        => true,
@@ -986,9 +343,9 @@ add_action( 'init', 'ut_slideset', 0 );
 function ut_add_new_slideset_columns( $columns ) {
     $columns = array(
         'cb'                    => '<input type="checkbox">',
-        'ut_slideset_image'     => __( 'Image', 'ukmtheme' ),
-        'title'                 => __( 'Title', 'ukmtheme' ),
-        'date'                  => __( 'Date', 'ukmtheme' )
+        'ut_slideset_image'     => esc_html__( 'Image', 'ukmtheme' ),
+        'title'                 => esc_html__( 'Title', 'ukmtheme' ),
+        'date'                  => esc_html__( 'Date', 'ukmtheme' )
     );
     return $columns;
 }
@@ -1007,7 +364,7 @@ add_action('manage_slideset_posts_custom_column', 'ut_slideset_custom_columns');
 
 function title_slideshow_input ( $title ) {
     if ( get_post_type() == 'slideshow' ) {
-        $title = __( 'Enter slide title here', 'ukmtheme' );
+        $title = esc_html__( 'Enter slide title here', 'ukmtheme' );
     }
     return $title;
 }
@@ -1015,23 +372,23 @@ add_filter( 'enter_title_here', 'title_slideshow_input' );
 
 function ut_slideshow() {
     $labels = array(
-        'name'                => _x( 'Slideshows', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Slideshow', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Slideshow', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Slideshow:', 'ukmtheme' ),
-        'all_items'           => __( 'All Slideshows', 'ukmtheme' ),
-        'view_item'           => __( 'View Slideshow', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Slideshow', 'ukmtheme' ),
-        'add_new'             => __( 'New Slideshow', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Slideshow', 'ukmtheme' ),
-        'update_item'         => __( 'Update Slideshow', 'ukmtheme' ),
-        'search_items'        => __( 'Search Slideshows', 'ukmtheme' ),
-        'not_found'           => __( 'No Slideshows found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Slideshows found in Trash', 'ukmtheme' ),
+        'name'                => esc_html__( 'Slideshow', 'Post Type General Name', 'ukmtheme' ),
+        'singular_name'       => esc_html__( 'Slideshow', 'Post Type Singular Name', 'ukmtheme' ),
+        'menu_name'           => esc_html__( 'Slideshow', 'ukmtheme' ),
+        'parent_item_colon'   => esc_html__( 'Parent Slideshow:', 'ukmtheme' ),
+        'all_items'           => esc_html__( 'All Slideshow', 'ukmtheme' ),
+        'view_item'           => esc_html__( 'View Slideshow', 'ukmtheme' ),
+        'add_new_item'        => esc_html__( 'Add New Slideshow', 'ukmtheme' ),
+        'add_new'             => esc_html__( 'New Slideshow', 'ukmtheme' ),
+        'edit_item'           => esc_html__( 'Edit Slideshow', 'ukmtheme' ),
+        'update_item'         => esc_html__( 'Update Slideshow', 'ukmtheme' ),
+        'search_items'        => esc_html__( 'Search Slideshow', 'ukmtheme' ),
+        'not_found'           => esc_html__( 'No Slideshow found', 'ukmtheme' ),
+        'not_found_in_trash'  => esc_html__( 'No Slideshow found in Trash', 'ukmtheme' ),
     );
     $args = array(
-        'label'               => __( 'slideshow', 'ukmtheme' ),
-        'description'         => __( 'Frontpage image slideshow', 'ukmtheme' ),
+        'label'               => esc_html__( 'slideshow', 'ukmtheme' ),
+        'description'         => esc_html__( 'Frontpage image slideshow', 'ukmtheme' ),
         'labels'              => $labels,
         'supports'            => array( 'title' ),
         'hierarchical'        => true,
@@ -1054,9 +411,9 @@ add_action( 'init', 'ut_slideshow', 0 );
 function ut_add_new_slideshow_columns( $columns ) {
     $columns = array(
         'cb'                    => '<input type="checkbox">',
-        'ut_slideshow_image'    => __( 'Image', 'ukmtheme' ),
-        'title'                 => __( 'Title', 'ukmtheme' ),
-        'date'                  => __( 'Date', 'ukmtheme' )
+        'ut_slideshow_image'    => esc_html__( 'Image', 'ukmtheme' ),
+        'title'                 => esc_html__( 'Title', 'ukmtheme' ),
+        'date'                  => esc_html__( 'Date', 'ukmtheme' )
     );
     return $columns;
 }
@@ -1075,7 +432,7 @@ add_action( 'manage_slideshow_posts_custom_column', 'ut_slideshow_custom_columns
 
 function title_staff_input ( $title ) {
     if ( get_post_type() == 'staff' ) {
-        $title = __( 'Enter staff name here', 'ukmtheme' );
+        $title = esc_html__( 'Enter staff name here', 'ukmtheme' );
     }
     return $title;
 }
@@ -1083,19 +440,19 @@ add_filter( 'enter_title_here', 'title_staff_input' );
 
 function ukmtheme_staff_directory() {
     $labels = array(
-        'name'                => _x( 'Staffs', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Staff', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Staff Directory', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Staff:', 'ukmtheme' ),
-        'all_items'           => __( 'All Staffs', 'ukmtheme' ),
-        'view_item'           => __( 'View Staff', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Staff', 'ukmtheme' ),
-        'add_new'             => __( 'Add New', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Staff', 'ukmtheme' ),
-        'update_item'         => __( 'Update Staff', 'ukmtheme' ),
-        'search_items'        => __( 'Search Staffs', 'ukmtheme' ),
-        'not_found'           => __( 'Not found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'Not found in Trash', 'ukmtheme' ),
+        'name'                => esc_html__( 'Staf', 'Post Type General Name', 'ukmtheme' ),
+        'singular_name'       => esc_html__( 'Staf', 'Post Type Singular Name', 'ukmtheme' ),
+        'menu_name'           => esc_html__( 'Direktori Staf', 'ukmtheme' ),
+        'parent_item_colon'   => esc_html__( 'Parent Staf:', 'ukmtheme' ),
+        'all_items'           => esc_html__( 'All Staf', 'ukmtheme' ),
+        'view_item'           => esc_html__( 'View Staf', 'ukmtheme' ),
+        'add_new_item'        => esc_html__( 'Add New Staf', 'ukmtheme' ),
+        'add_new'             => esc_html__( 'Add New', 'ukmtheme' ),
+        'edit_item'           => esc_html__( 'Edit Staf', 'ukmtheme' ),
+        'update_item'         => esc_html__( 'Update Staf', 'ukmtheme' ),
+        'search_items'        => esc_html__( 'Search Staf', 'ukmtheme' ),
+        'not_found'           => esc_html__( 'Not found', 'ukmtheme' ),
+        'not_found_in_trash'  => esc_html__( 'Not found in Trash', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                => 'staff-directory',
@@ -1104,8 +461,8 @@ function ukmtheme_staff_directory() {
         'feeds'               => true,
     );
     $args = array(
-        'label'               => __( 'staff', 'ukmtheme' ),
-        'description'         => __( 'Latest Staffs', 'ukmtheme' ),
+        'label'               => esc_html__( 'staff', 'ukmtheme' ),
+        'description'         => esc_html__( 'Latest Staf', 'ukmtheme' ),
         'labels'              => $labels,
         'supports'            => array( 'title', 'revisions', ),
         'taxonomies'          => array( 'department', 'position' ),
@@ -1130,21 +487,21 @@ add_action( 'init', 'ukmtheme_staff_directory', 0 );
 
 function ukmtheme_staff_position_taxonomy() {
     $labels = array(
-        'name'                       => _x( 'Positions', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Position', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Position', 'ukmtheme' ),
-        'all_items'                  => __( 'All Items', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Position', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Position:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Position Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Position', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Position', 'ukmtheme' ),
-        'update_item'                => __( 'Update Position', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Positions with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Positions', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Positions', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Positions', 'ukmtheme' ),
-        'not_found'                  => __( 'Not Found', 'ukmtheme' ),
+        'name'                       => esc_html__( 'Positions', 'Taxonomy General Name', 'ukmtheme' ),
+        'singular_name'              => esc_html__( 'Position', 'Taxonomy Singular Name', 'ukmtheme' ),
+        'menu_name'                  => esc_html__( 'Position', 'ukmtheme' ),
+        'all_items'                  => esc_html__( 'All Items', 'ukmtheme' ),
+        'parent_item'                => esc_html__( 'Parent Position', 'ukmtheme' ),
+        'parent_item_colon'          => esc_html__( 'Parent Position:', 'ukmtheme' ),
+        'new_item_name'              => esc_html__( 'New Position Name', 'ukmtheme' ),
+        'add_new_item'               => esc_html__( 'Add New Position', 'ukmtheme' ),
+        'edit_item'                  => esc_html__( 'Edit Position', 'ukmtheme' ),
+        'update_item'                => esc_html__( 'Update Position', 'ukmtheme' ),
+        'separate_items_with_commas' => esc_html__( 'Separate Positions with commas', 'ukmtheme' ),
+        'search_items'               => esc_html__( 'Search Positions', 'ukmtheme' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove Positions', 'ukmtheme' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used Positions', 'ukmtheme' ),
+        'not_found'                  => esc_html__( 'Not Found', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                       => 'staff-position',
@@ -1168,21 +525,21 @@ add_action( 'init', 'ukmtheme_staff_position_taxonomy', 0 );
 
 function ukmtheme_staff_department_taxonomy() {
     $labels = array(
-        'name'                       => _x( 'Departments', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Department', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Department', 'ukmtheme' ),
-        'all_items'                  => __( 'All Departments', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Department', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Department:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Department Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Department', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Department', 'ukmtheme' ),
-        'update_item'                => __( 'Update Department', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate departments with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Departments', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove departments', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used departments', 'ukmtheme' ),
-        'not_found'                  => __( 'Not Found', 'ukmtheme' ),
+        'name'                       => esc_html__( 'Departments', 'Taxonomy General Name', 'ukmtheme' ),
+        'singular_name'              => esc_html__( 'Department', 'Taxonomy Singular Name', 'ukmtheme' ),
+        'menu_name'                  => esc_html__( 'Department', 'ukmtheme' ),
+        'all_items'                  => esc_html__( 'All Departments', 'ukmtheme' ),
+        'parent_item'                => esc_html__( 'Parent Department', 'ukmtheme' ),
+        'parent_item_colon'          => esc_html__( 'Parent Department:', 'ukmtheme' ),
+        'new_item_name'              => esc_html__( 'New Department Name', 'ukmtheme' ),
+        'add_new_item'               => esc_html__( 'Add New Department', 'ukmtheme' ),
+        'edit_item'                  => esc_html__( 'Edit Department', 'ukmtheme' ),
+        'update_item'                => esc_html__( 'Update Department', 'ukmtheme' ),
+        'separate_items_with_commas' => esc_html__( 'Separate departments with commas', 'ukmtheme' ),
+        'search_items'               => esc_html__( 'Search Departments', 'ukmtheme' ),
+        'add_or_remove_items'        => esc_html__( 'Add or remove departments', 'ukmtheme' ),
+        'choose_from_most_used'      => esc_html__( 'Choose from the most used departments', 'ukmtheme' ),
+        'not_found'                  => esc_html__( 'Not Found', 'ukmtheme' ),
     );
     $rewrite = array(
         'slug'                       => 'staff-department',
@@ -1212,7 +569,7 @@ function restrict_listings_by_department() {
         $term = isset($wp_query->query['department']) ? $wp_query->query['department'] :'';
         $department_taxonomy = get_taxonomy( $taxonomy );
         wp_dropdown_categories(array(
-            'show_option_all' =>  __( 'All Department', 'ukmtheme' ),
+            'show_option_all' =>  esc_html__( 'All Department', 'ukmtheme' ),
             'taxonomy'        =>  $taxonomy,
             'name'            =>  'department',
             'orderby'         =>  'name',
@@ -1244,7 +601,7 @@ function restrict_listings_by_position() {
         $term = isset( $wp_query->query['position'] ) ? $wp_query->query['position'] :'';
         $position_taxonomy = get_taxonomy($taxonomy);
         wp_dropdown_categories(array(
-            'show_option_all' =>  __( 'All Position', 'ukmtheme' ),
+            'show_option_all' =>  esc_html__( 'All Position', 'ukmtheme' ),
             'taxonomy'        =>  $taxonomy,
             'name'            =>  'position',
             'orderby'         =>  'name',
@@ -1271,10 +628,10 @@ add_filter( 'parse_query','convert_position_id_to_taxonomy_term_in_query' );
 function ut_add_new_staff_columns( $columns ){
     $columns = array(
         'cb'                  => '<input type="checkbox">',
-        'ut_staff_photo'      => __( 'Photo', 'ukmtheme' ),
-        'title'               => __( 'Name', 'ukmtheme' ),
-        'ut_staff_position'   => __( 'Position', 'ukmtheme' ),
-        'ut_staff_department' => __( 'Department', 'ukmtheme' )
+        'ut_staff_photo'      => esc_html__( 'Photo', 'ukmtheme' ),
+        'title'               => esc_html__( 'Name', 'ukmtheme' ),
+        'ut_staff_position'   => esc_html__( 'Position', 'ukmtheme' ),
+        'ut_staff_department' => esc_html__( 'Department', 'ukmtheme' )
     );
     return $columns;
 }
@@ -1299,141 +656,6 @@ function ut_staff_custom_columns( $column ) {
 }
 add_action( 'manage_staff_posts_custom_column', 'ut_staff_custom_columns' );
 
-// POST TYPE: TAB
-
-function ut_tab() {
-    $labels = array(
-        'name'                => _x( 'Tab', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Tab', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Tab Widget', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Tab:', 'ukmtheme' ),
-        'all_items'           => __( 'All Tab', 'ukmtheme' ),
-        'view_item'           => __( 'View Tab', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Tab', 'ukmtheme' ),
-        'add_new'             => __( 'New Tab', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Tab', 'ukmtheme' ),
-        'update_item'         => __( 'Update Tab', 'ukmtheme' ),
-        'search_items'        => __( 'Search Tab', 'ukmtheme' ),
-        'not_found'           => __( 'No Tab found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Tab found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'Tab', 'ukmtheme' ),
-        'description'         => __( 'Tab manager for UKM', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', 'editor', 'revisions', ),
-        'hierarchical'        => true,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-tab.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'tab', $args );
-}
-add_action( 'init', 'ut_tab', 0 );
-
-/**
- * @name Video Collection from youtube, vimeo etc.
- * @package UKMTheme
- * @subpackage Video Plugin
- * @since 1.0
- * @author Jamaludin Rajalu
- */
-
-function ut_video() {
-    $labels = array(
-        'name'                => _x( 'Video', 'Post Type General Name', 'ukmtheme' ),
-        'singular_name'       => _x( 'Video', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Video', 'ukmtheme' ),
-        'parent_item_colon'   => __( 'Parent Video:', 'ukmtheme' ),
-        'all_items'           => __( 'All Video', 'ukmtheme' ),
-        'view_item'           => __( 'View Video', 'ukmtheme' ),
-        'add_new_item'        => __( 'Add New Video', 'ukmtheme' ),
-        'add_new'             => __( 'New Video', 'ukmtheme' ),
-        'edit_item'           => __( 'Edit Video', 'ukmtheme' ),
-        'update_item'         => __( 'Update Video', 'ukmtheme' ),
-        'search_items'        => __( 'Search Video', 'ukmtheme' ),
-        'not_found'           => __( 'No Video found', 'ukmtheme' ),
-        'not_found_in_trash'  => __( 'No Video found in Trash', 'ukmtheme' ),
-    );
-    $args = array(
-        'label'               => __( 'Video', 'ukmtheme' ),
-        'description'         => __( 'Video manager for UKM', 'ukmtheme' ),
-        'labels'              => $labels,
-        'supports'            => array( 'title', ),
-        'taxonomies'          => array( 'vidcat' ),
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => false,
-        'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/img/icon-video.svg',
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-    );
-    register_post_type( 'video', $args );
-}
-add_action( 'init', 'ut_video', 0 );
-
-function ut_video_category()  {
-    $labels = array(
-        'name'                       => _x( 'Video Categories', 'Taxonomy General Name', 'ukmtheme' ),
-        'singular_name'              => _x( 'Video Category', 'Taxonomy Singular Name', 'ukmtheme' ),
-        'menu_name'                  => __( 'Video Category', 'ukmtheme' ),
-        'all_items'                  => __( 'All Categories', 'ukmtheme' ),
-        'parent_item'                => __( 'Parent Category', 'ukmtheme' ),
-        'parent_item_colon'          => __( 'Parent Category:', 'ukmtheme' ),
-        'new_item_name'              => __( 'New Category Name', 'ukmtheme' ),
-        'add_new_item'               => __( 'Add New Category', 'ukmtheme' ),
-        'edit_item'                  => __( 'Edit Category', 'ukmtheme' ),
-        'update_item'                => __( 'Update Category', 'ukmtheme' ),
-        'separate_items_with_commas' => __( 'Separate Categories with commas', 'ukmtheme' ),
-        'search_items'               => __( 'Search Categories', 'ukmtheme' ),
-        'add_or_remove_items'        => __( 'Add or remove Categories', 'ukmtheme' ),
-        'choose_from_most_used'      => __( 'Choose from the most used Categories', 'ukmtheme' ),
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => false,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => true,
-    );
-    register_taxonomy( 'vidcat', 'video', $args );
-}
-add_action( 'init', 'ut_video_category', 0 );
-
-function ut_add_new_video_columns( $columns ) {
-    $columns = array(
-    'cb'      => '<input type="checkbox">',
-    'title'   => __( 'Title', 'ukmtheme' ),
-    'vidcat'  => __( 'Category', 'ukmtheme' ),
-    );
-    return $columns;
-}
-add_filter( 'manage_edit-video_columns', 'ut_add_new_video_columns' );
-
-function ut_video_custom_columns( $column ){
-    global $post;
-    switch ( $column ) {
-        case 'vidcat' : echo get_the_term_list( $post->ID, 'vidcat', '', ', ',''); break;
-    }
-}
-add_action( 'manage_video_posts_custom_column', 'ut_video_custom_columns' );
-
 /**
  * Include single, archive and taxonomy from custom directory
  * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/template_include
@@ -1441,95 +663,7 @@ add_action( 'manage_video_posts_custom_column', 'ut_video_custom_columns' );
  * @link http://codex.wordpress.org/Function_Reference/is_post_type_archive
  */
 
-// POST TYPE FILES: APPRECIATION
-
-function get_appreciation_post_type_template($single_appreciation_template) {
-    global $post;
-    if ( $post->post_type == 'appreciation' ) {
-        $single_appreciation_template = get_template_directory() . '/templates/single-appreciation.php';
-    }
-    return $single_appreciation_template;
-}
-add_filter( 'single_template', 'get_appreciation_post_type_template' );
-
-function archive_appreciation_page_template( $template_appreciation ) {
-    if ( is_post_type_archive( 'appreciation' )  ) {
-        $new_template_appreciation = get_template_directory() . '/templates/archive-appreciation.php';
-        if ( '' != $new_template_appreciation ) {
-            return $new_template_appreciation ;
-        }
-    }
-    return $template_appreciation;
-}
-add_filter( 'template_include', 'archive_appreciation_page_template', 99 );
-
-// POST TYPE FILES: CONFERENCE
-
-function get_conference_post_type_template($single_conference_template) {
-    global $post;
-    if ( $post->post_type == 'conference' ) {
-        $single_conference_template = get_template_directory() . '/templates/single-conference.php';
-    }
-    return $single_conference_template;
-}
-add_filter( 'single_template', 'get_conference_post_type_template' );
-
-function archive_conference_page_template( $template_conference ) {
-    if ( is_post_type_archive( 'conference' )  ) {
-        $new_template_conference = get_template_directory() . '/templates/archive-conference.php';
-        if ( '' != $new_template_conference ) {
-            return $new_template_conference ;
-        }
-    }
-    return $template_conference;
-}
-add_filter( 'template_include', 'archive_conference_page_template', 99 );
-
-// POST TYPE FILES: EVENT
-
-function get_event_post_type_template( $single_event_template ) {
-    global $post;
-    if ( $post->post_type == 'event' ) {
-        $single_event_template = get_template_directory() . '/templates/single-event.php';
-    }
-    return $single_event_template;
-}
-add_filter( 'single_template', 'get_event_post_type_template' );
-
-function archive_event_page_template( $template_event ) {
-    if ( is_post_type_archive( 'event' )  ) {
-        $new_template_event = get_template_directory() . '/templates/archive-event.php';
-        if ( '' != $new_template_event ) {
-            return $new_template_event ;
-        }
-    }
-    return $template_event;
-}
-add_filter( 'template_include', 'archive_event_page_template', 99 );
-
-// POST TYPE FILE: EXPERTISE
-
-function get_expertise_post_type_template($single_expertise_template) {
-    global $post;
-    if ($post->post_type == 'expertise') {
-        $single_expertise_template = get_template_directory() . '/templates/single-expertise.php';
-    }
-    return $single_expertise_template;
-}
-add_filter( 'single_template', 'get_expertise_post_type_template' );
-
-function archive_expertise_page_template( $template_expertise ) {
-    if ( is_post_type_archive( 'expertise' )  ) {
-        $new_template_expertise = get_template_directory() . '/templates/archive-expertise.php';
-        if ( '' != $new_template_expertise ) {
-            return $new_template_expertise ;
-        }
-    }
-    return $template_expertise;
-}
-add_filter( 'template_include', 'archive_expertise_page_template', 99 );
-
-// POST TYPE FILES: FAQ
+// POST TYPE FILES: Soalan Lazim
 
 function archive_faq_page_template( $template_faq ) {
     if ( is_post_type_archive( 'faq' )  ) {
@@ -1628,96 +762,6 @@ function taxonomy_news_page_template( $template_newscat ) {
 }
 add_filter( 'template_include', 'taxonomy_news_page_template', 99 );
 
-// POST TYPE FILES: JOURNAL
-
-function get_journal_post_type_template($single_journal_template) {
-    global $post;
-        if ( $post->post_type == 'journal' ) {
-            $single_journal_template = get_template_directory() . '/templates/single-journal.php';
-        }
-        return $single_journal_template;
-}
-add_filter( 'single_template', 'get_journal_post_type_template' );
-
-function archive_journal_page_template( $template_journal ) {
-    if ( is_post_type_archive( 'journal' )  ) {
-        $new_template_journal = get_template_directory() . '/templates/archive-journal.php';
-        if ( '' != $new_template_journal ) {
-            return $new_template_journal ;
-        }
-    }
-    return $template_journal;
-}
-add_filter( 'template_include', 'archive_journal_page_template', 99 );
-
-function taxonomy_jourcat_page_template( $template_journalcat ) {
-    if ( is_tax( 'jourcat' )  ) {
-        $new_template_journalcat = get_template_directory() . '/templates/taxonomy-jourcat.php';
-        if ( '' != $new_template_journalcat ) {
-            return $new_template_journalcat ;
-        }
-    }
-    return $template_journalcat;
-}
-add_filter( 'template_include', 'taxonomy_jourcat_page_template', 99 );
-
-function taxonomy_jourkey_page_template( $template_journalcat ) {
-    if ( is_tax( 'jourkey' )  ) {
-        $new_template_journalcat = get_template_directory() . '/templates/taxonomy-jourkey.php';
-        if ( '' != $new_template_journalcat ) {
-            return $new_template_journalcat ;
-        }
-    }
-    return $template_journalcat;
-}
-add_filter( 'template_include', 'taxonomy_jourkey_page_template', 99 );
-
-// POST TYPE FILES: PRESS RELEASE
-
-function archive_press_page_template( $template_press ) {
-    if ( is_post_type_archive( 'press' )  ) {
-        $new_template_press = get_template_directory() . '/templates/archive-press.php';
-        if ( '' != $new_template_press ) {
-            return $new_template_press ;
-        }
-    }
-    return $template_press;
-}
-add_filter( 'template_include', 'archive_press_page_template', 99 );
-
-// POST TYPE FILES: PUBLICATION
-
-function get_publication_post_type_template($single_publication_template) {
-    global $post;
-    if ($post->post_type == 'publication') {
-        $single_publication_template = get_template_directory() . '/templates/single-publication.php';
-    }
-    return $single_publication_template;
-}
-add_filter( 'single_template', 'get_publication_post_type_template' );
-
-function archive_publication_page_template( $template_publication ) {
-    if ( is_post_type_archive( 'publication' )  ) {
-        $new_template_publication = get_template_directory() . '/templates/archive-publication.php';
-        if ( '' != $new_template_publication ) {
-            return $new_template_publication ;
-        }
-    }
-    return $template_publication;
-}
-add_filter( 'template_include', 'archive_publication_page_template', 99 );
-
-function taxonomy_pubcat_page_template( $template_pubcat ) {
-    if ( is_tax( 'pubcat' )  ) {
-        $new_template_pubcat = get_template_directory() . '/templates/taxonomy-pubcat.php';
-        if ( '' != $new_template_pubcat ) {
-            return $new_template_pubcat ;
-        }
-    }
-    return $template_pubcat;
-}
-add_filter( 'template_include', 'taxonomy_pubcat_page_template', 99 );
-
 // POST TYPE FILES: STAFF
 
 function get_staff_post_type_template($single_staff_template) {
@@ -1761,36 +805,3 @@ function taxonomy_position_page_template( $template_position ) {
     return $template_position;
 }
 add_filter( 'template_include', 'taxonomy_position_page_template', 99 );
-
-// POST TYPE FILES: VIDEO
-
-function get_video_post_type_template($single_video_template) {
-    global $post;
-        if ( $post->post_type == 'video' ) {
-            $single_video_template = get_template_directory() . '/templates/single-video.php';
-        }
-        return $single_video_template;
-}
-add_filter( 'single_template', 'get_video_post_type_template' );
-
-function archive_video_page_template( $template_video ) {
-    if ( is_post_type_archive( 'video' )  ) {
-        $new_template_video = get_template_directory() . '/templates/archive-video.php';
-            if ( '' != $new_template_video ) {
-                return $new_template_video ;
-            }
-    }
-    return $template_video;
-}
-add_filter( 'template_include', 'archive_video_page_template', 99 );
-
-function taxonomy_vidcat_page_template( $template_vidcat ) {
-    if ( is_tax( 'vidcat' )  ) {
-        $new_template_vidcat = get_template_directory() . '/templates/taxonomy-vidcat.php';
-        if ( '' != $new_template_vidcat ) {
-            return $new_template_vidcat ;
-        }
-    }
-    return $template_vidcat;
-}
-add_filter( 'template_include', 'taxonomy_vidcat_page_template', 99 );

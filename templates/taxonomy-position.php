@@ -6,7 +6,7 @@
 
 get_header(); ?>
 <div class="wrap column">
-<article class="article large-12-12">
+<article class="uk-padding">
 
     <?php
 
@@ -21,10 +21,9 @@ get_header(); ?>
     if ( $query->have_posts() ) : ?>
 
     <h2><?php single_term_title(); ?></h2>
-
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-    <div class="column">
-        <div class="large-2-12 small-2-12">
+    <div class="uk-margin-top" uk-grid>
+        <div class="uk-width-1-3 uk-width-1-4@s">
                 <div class="staff-photo padding-right">
                     <?php
                         $staff_photo = get_post_meta( get_the_ID(),'ut_staff_photo',true );
@@ -39,7 +38,7 @@ get_header(); ?>
                 </div>
         </div>
 
-        <div class="large-8-12 small-9-12">
+        <div class="uk-width-2-3 uk-width-3-4@s">
             <div class="staff-detail padding-left">
                 <?php the_title( '<h3>', '</h3>' ); ?>
                 <ul>
@@ -58,7 +57,7 @@ get_header(); ?>
                         <?php }
                         else { ?>
                             <h3>
-                                <?php _e( 'Scope of Work','ukmtheme' ); ?>
+                                <?php _e( 'Bidang Tugas','ukmtheme' ); ?>
                             </h3>
                         <?php } ?>
                     <span class="staff-scope">

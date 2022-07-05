@@ -4,38 +4,10 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 ?>
-<?php if ( get_theme_mod( 'ukmtheme_footer_widget_five' ) == 1 ) { ?>
-<div class="wrap padding-top padding-bottom device-padding">
-  <div class="uk-grid" data-uk-grid-match="">
-    <?php if (dynamic_sidebar( 'sidebar-6' )) : else : ?><?php endif; ?>
-  </div>
-</div>
-<?php } ?>
-<?php if ( get_theme_mod( 'ukmtheme_footer_widget_four' ) == 1 ) { ?>
-<div class="wrap padding-top padding-bottom device-padding">
-  <div class="uk-grid" data-uk-grid-match="">
-    <?php if (dynamic_sidebar( 'sidebar-7' )) : else : ?><?php endif; ?>
-  </div>
-</div>
-<?php } ?>
-<?php if ( get_theme_mod( 'ukmtheme_footer_widget_three' ) == 1 ) { ?>
-<div class="wrap padding-top padding-bottom device-padding">
-  <div class="uk-grid" data-uk-grid-match="">
-    <?php if (dynamic_sidebar( 'sidebar-8' )) : else : ?><?php endif; ?>
-  </div>
-</div>
-<?php } ?>
-<?php if ( get_theme_mod( 'ukmtheme_footer_widget_two' ) == 1 ) { ?>
-<div class="wrap padding-top padding-bottom device-padding">
-  <div class="uk-grid" data-uk-grid-match="">
-    <?php if (dynamic_sidebar( 'sidebar-9' )) : else : ?><?php endif; ?>
-  </div>
-</div>
-<?php } ?>
-<?php if ( get_theme_mod( 'ukmtheme_footer_widget_one' ) == 1 ) { ?>
-<div class="wrap padding-top padding-bottom device-padding">
-  <div class="uk-grid" data-uk-grid-match="">
-    <?php if (dynamic_sidebar( 'sidebar-10' )) : else : ?><?php endif; ?>
-  </div>
+<?php if ( get_theme_mod( 'ukmtheme_footer_widget_basic' ) == 1 ) { ?>
+<div class="wrap uk-padding">
+    <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
+        <?php if (dynamic_sidebar( 'sidebar-8' )) : else : ?><?php endif; ?>
+    </div>
 </div>
 <?php } ?>

@@ -191,5 +191,29 @@ get_header(); ?>
                 </script>
         </div>
     <?php } //END YOUTUBE PLAYLIST ?>
+    <?php
+    // START LAYOUT BUILDER BY SITEORIGIN
+    if ( get_theme_mod( 'ukmtheme_frontpage_one_box' ) == 1 ) {
+        if ( dynamic_sidebar( 'sidebar-2' ) ) : else : endif;
+    } // END LAYOUT BUILDER BY SITEORIGIN ?>
+
+    <?php
+    // START 2 BLOCK WIDGET
+    if ( get_theme_mod( 'ukmtheme_frontpage_two_box' ) == 1 ) { ?>
+        <div class="wrap">
+            <div class="uk-grid-match uk-padding" uk-grid>
+                <?php if (dynamic_sidebar( 'sidebar-3' )) : else : ?><?php endif; ?>
+            </div>
+        </div>
+    <?php } //END 2 BLOCK WIDGET?>
+    <?php
+    // START 3 BLOCK WIDGET
+    if ( get_theme_mod( 'ukmtheme_frontpage_three_box' ) == 1 ) { ?>
+        <div class="wrap">
+            <div class="uk-grid-match uk-padding" uk-grid>
+                <?php if (dynamic_sidebar( 'sidebar-4' )) : else : ?><?php endif; ?>
+            </div>
+        </div>
+    <?php } //END 3 BLOCK WIDGET?>
 <?php } //is_home() ?>
 <?php get_footer(); ?>

@@ -44,7 +44,7 @@ get_header(); ?>
     if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) { ?>
     <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
         <div uk-slider>
-            <ul class="uk-slider-items uk-child-width-1-6@s uk-child-width-1-4">
+            <ul class="uk-slider-items uk-child-width-1-4@s uk-child-width-1-4">
                 <?php
                     $args = array(
                         'post_type'       => 'slideset',

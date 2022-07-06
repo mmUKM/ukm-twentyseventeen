@@ -117,9 +117,9 @@ remove_filter( 'term_description','wpautop' );
  */
 
 add_filter( 'excerpt_more', 'ukmtheme_excerpt_more' );
-    function ukmtheme_excerpt_more($more) {
+    function ukmtheme_excerpt_more( $more ) {
         global $post;
-            return '<a class="ut-readmore" href="'. get_permalink($post->ID) . '">'. __( ' ...', 'ukmtheme' ) . '</a>';
+            return '<a class="ut-readmore" href="'. get_permalink( $post->ID ) . '">'. __( ' ...', 'ukmtheme' ) . '</a>';
     }
 
 add_filter( 'excerpt_length', 'ukmtheme_excerpt_length', 999 );
@@ -133,7 +133,7 @@ add_filter( 'excerpt_length', 'ukmtheme_excerpt_length', 999 );
  */
 
 function ukmtheme_custom_edit_post_link($output) {
-    $output = str_replace('class="post-edit-link"', 'class="post-edit-link"', $output);
+    $output = str_replace( 'class="post-edit-link"', 'class="post-edit-link"', $output );
         return $output;
 }
 add_filter( 'edit_post_link', 'ukmtheme_custom_edit_post_link' );
@@ -144,8 +144,8 @@ add_filter( 'edit_post_link', 'ukmtheme_custom_edit_post_link' );
  */
 
 add_filter( 'upload_mimes','add_custom_mime_types' );
-    function add_custom_mime_types($mimes){
-        return array_merge($mimes,array (
+    function add_custom_mime_types( $mimes ) {
+        return array_merge( $mimes, array (
             'ac3' => 'audio/ac3',
             'mpa' => 'audio/MPA',
             'flv' => 'video/x-flv',
@@ -164,9 +164,9 @@ function ukmtheme_widgets_init() {
         'name'            => __( 'FRONTPAGE: LAYOUT BUILDER', 'ukmtheme' ),
         'id'              => 'sidebar-2',
         'description'     => __( 'Gunakan widget Page Builder by SiteOrigin atau Elementor', 'ukmtheme' ),
-        'before_widget'   => '<div">',
+        'before_widget'   => '<div>',
         'after_widget'    => '</div>',
-        'before_title'    => '<h3 class="widget-title">',
+        'before_title'    => '<h3 class="uk-hidden">',
         'after_title'     => '</h3>',
     ) );
 
@@ -249,7 +249,7 @@ add_filter( 'get_search_form', 'ukmtheme_search_form' );
  */
 
 function ukmtheme_feed_request($qv) {
-    if (isset($qv['feed']) && !isset($qv['post_type']))
+    if ( isset($qv['feed']) && !isset( $qv['post_type'] ) )
         $qv['post_type'] = array( 'news', 'event' );
     return $qv;
 }

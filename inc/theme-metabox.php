@@ -4,10 +4,10 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 
-if ( file_exists( dirname( __FILE__ ) . '/lib/cmb2/init.php' ) ) {
-	require_once dirname( __FILE__ ) . '/lib/cmb2/init.php';
-} elseif ( file_exists( dirname( __FILE__ ) . '/lib/CMB2/init.php' ) ) {
-	require_once dirname( __FILE__ ) . '/lib/CMB2/init.php';
+if ( file_exists( get_template_directory() . '/lib/cmb2/init.php' ) ) {
+	require_once get_template_directory() . '/lib/cmb2/init.php';
+} elseif ( file_exists( get_template_directory() . '/lib/CMB2/init.php' ) ) {
+	require_once get_template_directory() . '/lib/CMB2/init.php';
 }
 
 // SLIDESHOW

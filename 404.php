@@ -9,6 +9,6 @@ get_header(); ?>
         <h2><?php _e( 'Nothing Found', 'ukmtheme' ); ?></h2>
         <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ukmtheme' ); ?></p>
         <?php get_search_form(); ?>
-        </article>
+    </article>
 </div>
 <?php get_footer(); ?>

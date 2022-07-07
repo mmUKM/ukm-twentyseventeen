@@ -30,15 +30,15 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
     function ukmtheme_scripts() {
         // CSS
         wp_deregister_script( 'jquery' );
-        wp_enqueue_script( 'jquery', get_template_directory_uri() . '/lib/jquery/jquery-3.6.0.min.js', array(), '3.6.0', false );
-        wp_enqueue_script( 'uikit', get_template_directory_uri() . '/lib/uikit3/js/uikit.min.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'uikit', get_template_directory_uri() . '/lib/uikit3/js/uikit-icons.min.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/lib/fitvids/jquery.fitvids.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'ytv', get_template_directory_uri() . '/lib/ytv/src/ytv.js', array(), '2017.20220701', true );
+        wp_enqueue_script( 'jquery', get_template_directory_uri() . '/packages/jquery/jquery-3.6.0.min.js', array(), '3.6.0', false );
+        wp_enqueue_script( 'uikit', get_template_directory_uri() . '/packages/uikit3/js/uikit.min.js', array(), '2017.20220701', true );
+        wp_enqueue_script( 'uikit-icons', get_template_directory_uri() . '/packages/uikit3/js/uikit-icons.min.js', array(), '2017.20220701', true );
+        wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/packages/fitvids/jquery.fitvids.js', array(), '2017.20220701', true );
+        wp_enqueue_script( 'ytv', get_template_directory_uri() . '/packages/ytv/src/ytv.js', array(), '2017.20220701', true );
         wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/src/scripts.js', array(), '2017.20220701', true );
         // JS
-        wp_enqueue_style( 'uikit', get_template_directory_uri() . '/lib/uikit3/css/uikit.min.css', false, '2017.20220701' );
-        wp_enqueue_style( 'ytv', get_template_directory_uri() . '/lib/ytv/src/ytv.css', false, '2017.20220701' );
+        wp_enqueue_style( 'uikit', get_template_directory_uri() . '/packages/uikit3/css/uikit.min.css', false, '2017.20220701' );
+        wp_enqueue_style( 'ytv', get_template_directory_uri() . '/packages/ytv/src/ytv.css', false, '2017.20220701' );
         wp_enqueue_style( 'poppins-font', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap', false, '2017.20220701' );
         wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.20220701' );
     }
@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
  * Jangan tukar nama folder theme "ukmtheme-master"
  */
 
-require( get_template_directory() . '/lib/theme-updates/theme-update-checker.php' );
+require( get_template_directory() . '/packages/theme-updates/theme-update-checker.php' );
     new ThemeUpdateChecker(
         'ukm-twentyseventeen-master',
         'https://raw.githubusercontent.com/mmUKM/ukm-twentyseventeen/master/package.json'
@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
         remove_action( 'wp_head', 'wp_generator' );
         remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
         remove_action( 'wp_print_styles', 'print_emoji_styles' );
-        load_theme_textdomain( 'ukmtheme', get_template_directory() . '/lang' );
+        load_theme_textdomain( 'ukmtheme', get_template_directory() . '/languages' );
         register_nav_menus( array(
             'top'       => __( 'Top Navigation', 'ukmtheme' ),
             'main'      => __( 'Main Navigation', 'ukmtheme' ),
@@ -82,28 +82,28 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
     }
 
 /**
- * Fuction luaran dari folder /inc/
+ * Fuction luaran dari folder /includes/
  * Post type, metabox, widgets dll.
  * Comment pautan yang tidak diperlukan sekiranya tidak perlu
  */
 
 function ukmtheme_module() {
-    require( get_template_directory() . '/inc/theme-archive-links.php' );
-    require( get_template_directory() . '/inc/theme-customizer.php' );
-    require( get_template_directory() . '/inc/theme-metabox.php' );
-    require( get_template_directory() . '/inc/theme-walker-menu.php' );
-    require( get_template_directory() . '/inc/theme-login.php' );
-    require( get_template_directory() . '/inc/theme-plugins.php' );
-    require( get_template_directory() . '/inc/theme-post-type.php' );
-    require( get_template_directory() . '/inc/theme-sitemap.php' );
-    require( get_template_directory() . '/inc/widget-address-with-social.php' );
-    require( get_template_directory() . '/inc/widget-appreciation.php' );
-    require( get_template_directory() . '/inc/widget-event.php' );
-    require( get_template_directory() . '/inc/widget-news-list.php' );
-    //require( get_template_directory() . '/inc/widget-news-thumbnail.php' );
-    require( get_template_directory() . '/inc/widget-operating-hour.php' );
-    //require( get_template_directory() . '/inc/widget-youtube.php' );
-    require( get_template_directory() . '/inc/widget-visitor-counter.php' );
+    require( get_template_directory() . '/includes/theme-archive-links.php' );
+    require( get_template_directory() . '/includes/theme-customizer.php' );
+    require( get_template_directory() . '/includes/theme-metabox.php' );
+    require( get_template_directory() . '/includes/theme-walker-menu.php' );
+    require( get_template_directory() . '/includes/theme-login.php' );
+    require( get_template_directory() . '/includes/theme-plugins.php' );
+    require( get_template_directory() . '/includes/theme-post-type.php' );
+    require( get_template_directory() . '/includes/theme-sitemap.php' );
+    require( get_template_directory() . '/includes/widget-address-with-social.php' );
+    require( get_template_directory() . '/includes/widget-appreciation.php' );
+    require( get_template_directory() . '/includes/widget-event.php' );
+    require( get_template_directory() . '/includes/widget-news-list.php' );
+    //require( get_template_directory() . '/includes/widget-news-thumbnail.php' );
+    require( get_template_directory() . '/includes/widget-operating-hour.php' );
+    //require( get_template_directory() . '/includes/widget-youtube.php' );
+    require( get_template_directory() . '/includes/widget-visitor-counter.php' );
 }
 add_action( 'after_setup_theme', 'ukmtheme_module' );
 

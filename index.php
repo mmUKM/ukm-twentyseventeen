@@ -8,7 +8,7 @@ get_header(); ?>
 <?php if ( is_home() ) { ?>
     <?php // SLIDESHOW ?>
     <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: 1440:560; animation: push">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay: true; autoplay-interval: 6000; ratio: 1440:560; animation: push">
             <ul class="uk-slideshow-items">
                 <?php
                     $args = array(
@@ -28,10 +28,10 @@ get_header(); ?>
                 </li>            
                 <?php endwhile; else: ?>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-slideshow-a.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder-slideshow-a.jpg" alt="" uk-cover>
                 </li>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder-slideshow-b.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder-slideshow-b.jpg" alt="" uk-cover>
                 </li>
                 <?php endif; ?>
             </ul>
@@ -62,12 +62,12 @@ get_header(); ?>
                     </a>
                 </li>
                 <?php endwhile; else: ?>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/img/placeholder_slider_a.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/img/placeholder_slider_b.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/img/placeholder_slider_c.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/img/placeholder_slider_d.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/img/placeholder_slider_a.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/img/placeholder_slider_b.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_a.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_b.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_c.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_d.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_a.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_b.svg'; ?>" alt=""></a></li>
                 <?php endif; ?>
             </ul>
         </div>
@@ -104,8 +104,8 @@ get_header(); ?>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top">
                                     <?php
-                                        if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url(); ?>" width="800" height="450"> <?php }
-                                        else { echo '<img src="' . get_template_directory_uri() . '/img/placeholder_news.svg" height="auto" width="auto"/>'; }
+                                        if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" width="800" height="450"> <?php }
+                                        else { echo '<img src="' . get_template_directory_uri() . '/images/placeholder_news.svg" height="450" width="800"/>'; }
                                     ?>
                                 </div>
                                 <div class="uk-card-body">
@@ -152,8 +152,8 @@ get_header(); ?>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-media-top">
                         <?php
-                            if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url(); ?>" width="800" height="450"> <?php }
-                            else { echo '<img src="' . get_template_directory_uri() . '/img/placeholder_news.svg" height="auto" width="auto"/>'; }
+                            if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" width="800" height="450"> <?php }
+                            else { echo '<img src="' . get_template_directory_uri() . '/images/placeholder_news.svg" height="450" width="800"/>'; }
                         ?>
                     </div>
                     <div class="uk-card-body">
@@ -171,7 +171,7 @@ get_header(); ?>
             <?php if ( get_theme_mod( 'ukmtheme_frontpage_ytv_title_edit' ) == 0 ) { ?>
             <h2 class="uk-heading-line uk-text-center uk-padding uk-padding-remove-top uk-margin-remove-top"><span>PTMUKM-TV</span></h2>
             <?php } else { ?>
-                <h3 class="uk-h3"><?php echo get_theme_mod( 'ukmtheme_frontpage_ytv_title' ); ?></h3>
+                <h2 class="uk-heading-line uk-text-center uk-padding uk-padding-remove-top uk-margin-remove-top"><span><?php echo get_theme_mod( 'ukmtheme_frontpage_ytv_title' ); ?></h3></span></h2>
             <?php } ?>
             <div id="ptmukm-tv-responsive"></div>
             <script>

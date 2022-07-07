@@ -1,5 +1,3 @@
-$font-13px: 13px;
-
 // TYPOGRAPHY
 
 html {
@@ -21,37 +19,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: none;
 }
 
-// PADDING
-.padding-right {
-    padding-right: 20px;
-}
-
-.padding-left {
-    padding-left: 20px;
-}
-
-.padding-top {
-    padding-top: 20px;
-}
-
-.padding-bottom {
-    padding-bottom: 20px;
-}
-
-.padding-global {
-    padding: 20px 20px 20px 20px;
-}
-
-.bottom-divider {
-    border-bottom: 1px solid #ccc;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.hidden {
-    display: none !important;
-}
-
 .wrap {
     margin: 0 auto;
     max-width: 1140px;
@@ -64,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header-wrap-overlay {
-    background-image: url('img/songket-stripe.png');
+    background-image: url('images/songket-stripe.png');
     opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
@@ -80,10 +47,6 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-.logo {
-    position: relative;
-}
-
 #ptj-name-container {
     background-color: #1d92c9;
 }
@@ -93,122 +56,15 @@ h1, h2, h3, h4, h5, h6 {
     }
     #ptj-name-title {
         color: #fff;
+        font-weight: 600;
+        padding-right: .3rem;
     }
     #ptj-name-sub-title {
         font-style: italic;
         font-weight: 200;
+        font-size: 1rem;
+        line-height: 2rem;
     }
-}
-
-.logo-triangle {
-    width: 0;
-    height: 0;
-    border-top: 100px solid #e41e26;
-    border-right: 100px solid transparent;
-    background: #a7a9ac;
-    position: absolute;
-    right: -3px;
-    top: 0;
-}
-
-.header {
-    background: transparent;
-}
-
-.top-nav-wrap {
-    padding-right: 0;
-}
-
-.top-nav {
-    float: right;
-    list-style-type: none;
-    margin-top: 10px;
-    padding-left: 0;
-    li {
-        display: inline-block;
-        a {
-            display: block;
-            padding: 5px 0 0 10px;
-            font-size: $font-13px;
-        }
-        a:link,
-        a:visited {
-            color: #292929;
-        }
-        a:hover {
-            color: #e41e26;
-            text-decoration: none;
-        }
-    }
-}
-
-.top-nav-search {
-    text-align: center;
-    color: #292929;
-    display: block;
-    margin-top: 15px;
-    font-size: 18px;
-}
-
-.top-nav-tool {
-    display: block;
-    margin-top: 15px;
-    padding: 0 30px 0 15px;
-    text-align: right;
-    color: #292929;
-    font-size: 13px;
-}
-
-.top-nav-tool:hover {
-    color: #e41e26;
-    text-decoration: none;
-}
-
-h1.site-name {
-    margin: 0;
-    font-family: "Poppins",Helvetica, Arial, sans-serif;
-    font-size: 21px;
-    color: #292929;
-    text-align: right;
-    padding-right: 6.3325%;
-    line-height: 10px;
-}
-
-.main-nav {
-    position: relative;
-    z-index: 500;
-    background: #292929;
-    color: #fff;
-    height: 48px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 10px -6px;;
-}
-
-.main-nav:before {
-    display: block;
-    content: "";
-    height: 4px;
-    background: #e41e26; /* Old browsers */
-    background: -moz-linear-gradient(left,  #e41e26 0%, #e41e26 50%, #a7a9ac 50%, #a7a9ac 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#a7a9ac 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #e41e26 0%,#e41e26 50%,#a7a9ac 50%,#a7a9ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e41e26', endColorstr='#a7a9ac',GradientType=1 ); /* IE6-9 */
-}
-
-
-.main-nav-menu-icon {
-    font-size: 18px;
-    display: block;
-    padding-top: 12px;
-    text-align: center;
-}
-.main-nav-menu-icon,
-.main-nav-menu-icon:visited {
-    color: #fff;
-}
-
-.main-nav-menu-icon:hover {
-    color: #ccc;
-    text-decoration: none;
 }
 
 // tabber
@@ -314,21 +170,6 @@ html, body {
 }
 
 // ARTICLE, PAGES, POSTS
-
-.article {
-    padding: 20px 20px 10px 0;
-}
-
-.article {
-    h2 {
-    padding: 0 0 20px 0;
-    }
-}
-
-.aside {
-    padding: 20px 10px 20px 10px;
-}
-
 
 // staff
 
@@ -456,7 +297,7 @@ h1.conference-site-name {
 }
 
 #pengumuman-wrap {
-    background: url('img/grey-pattern-1029577b.png') repeat;
+    background: url('images/grey-pattern-1029577b.png') repeat;
     padding: 20px 0 20px 0;
 }
 

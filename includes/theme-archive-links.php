@@ -39,7 +39,7 @@ function addPostTypeArchivesMenu() {
     } ?>
 <div id="archives-metabox" class="posttypediv">
     <ul id="archive-tabs" class="posttype-tabs add-menu-item-tabs">
-        <li class="tabs"><a class="nav-tab-link" href="#archives-all"><?php _e('View All'); ?></a></li>
+        <li class="tabs"><a class="nav-tab-link" href="#archives-all"><?php _e( 'View All' ); ?></a></li>
     </ul>
 
     <div id="archives-all" class="tabs-panel tabs-panel-view-all tabs-panel-active">
@@ -71,7 +71,7 @@ function addPostTypeArchivesMenu() {
 
     <p class="button-controls">
     <span class="list-controls">
-        <a href="<?php echo esc_url( add_query_arg(array( 'archives-metabox-tab' => 'all', 'selectall' => 1), remove_query_arg($removed_args))); ?>#archives-metabox" class="select-all"><?php _e( 'Select All' ); ?></a>
+        <a href="<?php echo esc_url( add_query_arg(array( 'archives-metabox-tab' => 'all', 'selectall' => 1 ), remove_query_arg($removed_args))); ?>#archives-metabox" class="select-all"><?php _e( 'Select All' ); ?></a>
     </span>
     <span class="add-to-menu">
         <input type="submit" class="button-secondary submit-add-to-menu" value="<?php esc_attr_e( 'Add to Menu' ); ?>" name="add-post-type-menu-item" id="submit-archives-metabox" />
@@ -88,7 +88,7 @@ function addPostTypeArchivesMenu() {
  */
 function addMetaBox()
 {
-    add_meta_box( 'post-type-archives', __( 'Link Arkib' ), 'addPostTypeArchivesMenu', 'nav-menus', 'side', 'low' );
+    add_meta_box( 'post-type-archives', __( 'Pautan Senarai: Staf, Expert, News Clip, Publication, FAQ' ), 'addPostTypeArchivesMenu', 'nav-menus', 'side', 'low' );
 }
 
 /*

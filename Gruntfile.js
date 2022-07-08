@@ -105,7 +105,10 @@ module.exports = function(grunt) {
                     linebreak: true
                 },
                 files: {
-                    src: [ 'style.css' ]
+                    src: [ 
+                        'style.css',
+                        'readme.txt'
+                    ]
                 }
             }
         },

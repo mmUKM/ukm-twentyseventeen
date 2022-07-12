@@ -87,7 +87,7 @@ get_header(); ?>
             </div>
             <div class="uk-slider-container-offset" uk-slider>
                 <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
-                    <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-2 uk-grid" uk-grid uk-height-match="target: > li > .uk-card">
+                    <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-2 uk-grid" uk-grid uk-height-match="target: > li > div > .uk-card">
                         <?php
 
                         $news = get_theme_mod( 'ukmtheme_frontpage_news' );
@@ -101,6 +101,7 @@ get_header(); ?>
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
                         <li>
+                            <div>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top">
                                     <?php
@@ -112,6 +113,7 @@ get_header(); ?>
                                     <p><a href="<?php echo get_permalink(); ?>" class="uk-link-heading"><?php the_title(); ?></a></p>
                                 </div>
                             </div>
+                            </div>
                         </li>
 
                         <?php endwhile; ?>
@@ -119,8 +121,9 @@ get_header(); ?>
                     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
                     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
                 </div>
+                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
             </div>
-            <a class="uk-button uk-button-secondary uk-width-1-6@s uk-width-1-2 uk-align-center" href="<?php echo get_post_type_archive_link('news'); ?>">ARKIB</a>
+            <a class="uk-button uk-button-default uk-width-1-6@s uk-width-1-2 uk-align-center" href="<?php echo get_post_type_archive_link('news'); ?>">ARKIB</a>
         </div>
     </div>
     <?php } // END LATEST NEWS ?>
@@ -149,15 +152,17 @@ get_header(); ?>
                     while ( $loop->have_posts() ) : $loop->the_post();
 
                 ?>
-                <div class="uk-card uk-card-default">
-                    <div class="uk-card-media-top">
-                        <?php
-                            if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" width="800" height="450"> <?php }
-                            else { echo '<img src="' . get_template_directory_uri() . '/images/placeholder_news.svg" height="450" width="800"/>'; }
-                        ?>
-                    </div>
-                    <div class="uk-card-body">
-                        <p><a href="<?php echo get_permalink(); ?>" class="uk-link-heading"><?php the_title(); ?></a></p>
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <?php
+                                if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" width="800" height="450"> <?php }
+                                else { echo '<img src="' . get_template_directory_uri() . '/images/placeholder_news.svg" height="450" width="800"/>'; }
+                            ?>
+                        </div>
+                        <div class="uk-card-body">
+                            <p><a href="<?php echo get_permalink(); ?>" class="uk-link-heading"><?php the_title(); ?></a></p>
+                        </div>
                     </div>
                 </div>
                 <?php endwhile; ?>

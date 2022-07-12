@@ -216,3 +216,36 @@ function taxonomy_pubcat_page_template( $template_pubcat ) {
     return $template_pubcat;
 }
 add_filter( 'template_include', 'taxonomy_pubcat_page_template', 99 );
+
+// POST TYPE FILES: VIDEO
+
+function get_video_post_type_template($single_video_template) {
+    global $post;
+        if ( $post->post_type == 'video' ) {
+            $single_video_template = get_template_directory() . '/templates/single-video.php';
+        }
+        return $single_video_template;
+}
+add_filter( 'single_template', 'get_video_post_type_template' );
+
+function archive_video_page_template( $template_video ) {
+    if ( is_post_type_archive( 'video' )  ) {
+        $new_template_video = get_template_directory() . '/templates/archive-video.php';
+            if ( '' != $new_template_video ) {
+                return $new_template_video ;
+            }
+    }
+    return $template_video;
+}
+add_filter( 'template_include', 'archive_video_page_template', 99 );
+
+function taxonomy_vidcat_page_template( $template_vidcat ) {
+    if ( is_tax( 'vidcat' )  ) {
+        $new_template_vidcat = get_template_directory() . '/templates/taxonomy-vidcat.php';
+        if ( '' != $new_template_vidcat ) {
+            return $new_template_vidcat ;
+        }
+    }
+    return $template_vidcat;
+}
+add_filter( 'template_include', 'taxonomy_vidcat_page_template', 99 );

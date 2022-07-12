@@ -213,7 +213,7 @@ function ukmtheme_extra_widgets_init() {
             'name'            => __( 'FOOTER', 'ukmtheme' ),
             'id'              => 'sidebar-8',
             'description'     => __( 'Masukkan 3 widget sahaja', 'ukmtheme' ),
-            'before_widget'   => '<div',
+            'before_widget'   => '<div>',
             'after_widget'    => '</div>',
             'before_title'    => '<h3 class="uk-hidden">',
             'after_title'     => '</h3>',

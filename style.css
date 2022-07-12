@@ -1,7 +1,7 @@
 /*
 Theme Name: UKM Twenty Seventeen
 Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20220704
+Version: 2017.20220705
 Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
@@ -550,7 +550,7 @@ h1.conference-site-name {
     -ms-transition: opacity .3s ease, top .25s ease;
     -o-transition: opacity .3s ease, top .25s ease;
     transition: opacity .3s ease, top .25s ease;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 #cssmenu ul ul ul {

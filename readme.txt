@@ -1,43 +1,11 @@
-/*
-Theme Name: UKM Twenty Seventeen
-Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20220706
-Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
-Author: Jamaludin Rajalu
-Author URI: https://www.facebook.com/jrajalu
-License: GNU General Public License v2
+=== UKM Twenty Seventeen ===
+Contributors: Jamaludin Rajalu
+Requires at least: WordPress 4.4
+Tested up to: WordPress 4.5.2
+Version: 2017.2022xxxx
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
-/*
-Theme Name: UKM Twenty Seventeen
-Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20220705
-Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
-Author: Jamaludin Rajalu
-Author URI: https://www.facebook.com/jrajalu
-License: GNU General Public License v2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
-/*
-Theme Name: UKM Twenty Seventeen
-Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20220705
-Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
-Author: Jamaludin Rajalu
-Author URI: https://www.facebook.com/jrajalu
-License: GNU General Public License v2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
-/*
-Theme Name: UKM Twenty Seventeen
-Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20220704
-Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
-Author: Jamaludin Rajalu
-Author URI: https://www.facebook.com/jrajalu
-License: GNU General Public License v2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+
 == Copyright ==
 
 UKM Twenty Seventeen WordPress Theme

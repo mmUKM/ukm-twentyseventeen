@@ -232,10 +232,10 @@ add_action( 'widgets_init', 'ukmtheme_extra_widgets_init' );
  * @return string
  */
 function ukmtheme_search_form( $form ) {
-        $form = '<form role="search" method="get" id="searchform" class="uk-form searchform" action="' . home_url( '/' ) . '" >
+        $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
         <div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
-        <input type="text" value="' . get_search_query() . '" name="s" id="s" />
-        <button class="uk-button uk-button-primary" type="submit" id="searchsubmit" >'. esc_attr__( 'Search' ) .'</button>
+        <input class="uk-input uk-form-width-medium" type="text" value="' . get_search_query() . '" name="s" id="s" />
+        <button class="uk-button uk-button-default" type="submit" id="searchsubmit" >'. esc_attr__( 'Search' ) .'</button>
         </div>
         </form>';
 

@@ -125,14 +125,16 @@ function ut_lightbox_gallery( $file_list_meta_key, $img_size = 'medium' ) {
 
     $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
 
-    echo '<div class="gallery">';
+    echo '<div class="uk-child-width-1-2 uk-child-width-1-3@s" uk-grid uk-lightbox="animation: slide">';
 
-    foreach ( (array) $files as $attachment_id => $attachment_url ) {
-        echo '<a class="gallery-image" href="'. wp_get_attachment_url( $attachment_id ) .'" data-uk-lightbox="&#123;group:&#39;group-'. get_the_ID() .'&#39;&#125;" title="'. get_the_title( $attachment_id ) .'">';
-        echo wp_get_attachment_image( $attachment_id, $img_size );
-        echo '</a>';
-    }
-    echo '</div>';
+        foreach ( (array) $files as $attachment_id => $attachment_url ) {
+            echo '<div>';
+                echo '<a class="gallery-image" href="'. wp_get_attachment_url( $attachment_id ) .'" data-caption="'. get_the_title( $attachment_id ) .'">';
+                    echo wp_get_attachment_image( $attachment_id, $img_size );
+                echo '</a>';
+            echo '</div>';
+        }
+        echo '</div>';
 }
 
 function ut_gallery() {
@@ -669,7 +671,7 @@ function ut_expertise() {
     $labels = array(
         'name'                => _x( 'Expertise', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'Expertise', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Pakar Bidang', 'ukmtheme' ),
+        'menu_name'           => __( 'Expertise', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Expertise:', 'ukmtheme' ),
         'all_items'           => __( 'All Expertise', 'ukmtheme' ),
         'view_item'           => __( 'View Expertise', 'ukmtheme' ),

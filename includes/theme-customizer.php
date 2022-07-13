@@ -26,7 +26,7 @@ function ukmtheme_customizer( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ukmtheme_logo_image', array(
         'label'		=> __( 'Custom Site Logo', 'ukmtheme' ),
-        'description' => __( 'Image or vector file size 399x100 pixel. Use PNG or SVG file only', 'ukmtheme' ),
+        'description' => __( 'Image size 379x60 pixel. Use PNG or SVG file only', 'ukmtheme' ),
         'section'	=> 'ukmtheme_theme_logo',
         'settings'	=> 'ukmtheme_logo_image',
         'priority'	=> 20

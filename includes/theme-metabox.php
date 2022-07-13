@@ -151,13 +151,6 @@ add_action( 'cmb2_init', 'ukmtheme_gallery_metaboxes' );
         ) );
     
         $gallery->add_field( array(
-            'name'    => esc_html__('Description', 'ukmtheme' ),
-            'desc'    => esc_html__('Some description.', 'ukmtheme' ),
-            'id'      => 'ut_gallery_description',
-            'type'    => 'textarea',
-        ) );
-
-        $gallery->add_field( array(
             'name'    => esc_html__('Gallery Cover Image', 'ukmtheme' ),
             'desc'    => esc_html__('Upload an image or enter a URL. Dimensions of the image should be 300x240 pixels.', 'ukmtheme' ),
             'id'      => 'ut_gallery_cover',

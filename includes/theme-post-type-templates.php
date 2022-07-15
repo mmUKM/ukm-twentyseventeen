@@ -248,4 +248,15 @@ function taxonomy_vidcat_page_template( $template_vidcat ) {
     }
     return $template_vidcat;
 }
-add_filter( 'template_include', 'taxonomy_vidcat_page_template', 99 );
+add_filter( 'template_include', 'taxonomy_circat_page_template', 99 );
+
+function taxonomy_circat_page_template( $template_circat ) {
+    if ( is_tax( 'circat' )  ) {
+        $new_template_circat = get_template_directory() . '/templates/taxonomy-circat.php';
+        if ( '' != $new_template_circat ) {
+            return $new_template_circat ;
+        }
+    }
+    return $template_circat;
+}
+add_filter( 'template_include', 'taxonomy_circat_page_template', 99 );

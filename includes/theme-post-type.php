@@ -1047,7 +1047,7 @@ function ukmtheme_pekeliling() {
 		'rewrite_no_front'    => false,
 		'show_in_menu'        => true,
 		'menu_position'       => 25,
-		'menu_icon'           => 'dashicons-media-text',
+		'menu_icon'           => get_template_directory_uri() . '/images/icon-press.svg',
 		'supports' => [
 			'title',
 		],
@@ -1055,5 +1055,48 @@ function ukmtheme_pekeliling() {
 		'rewrite' => true
 	];
 
-	register_post_type( 'ut_pekeliling', $args );
+	register_post_type( 'pekeliling', $args );
+}
+
+// TAHUN PEKELILING
+
+add_action( 'init', 'ukmtheme_pekeliling_tahun' );
+function ukmtheme_pekeliling_tahun() {
+	$args = [
+		'label'  => esc_html__( 'Kategori Pekeliling', 'ukmtheme' ),
+		'labels' => [
+			'menu_name'                  => esc_html__( 'Kategori Pekeliling', 'ukmtheme' ),
+			'all_items'                  => esc_html__( 'All Kategori Pekeliling', 'ukmtheme' ),
+			'edit_item'                  => esc_html__( 'Edit Kategori Pekeliling', 'ukmtheme' ),
+			'view_item'                  => esc_html__( 'View Kategori Pekeliling', 'ukmtheme' ),
+			'update_item'                => esc_html__( 'Update Kategori Pekeliling', 'ukmtheme' ),
+			'add_new_item'               => esc_html__( 'Add new Kategori Pekeliling', 'ukmtheme' ),
+			'new_item'                   => esc_html__( 'New Kategori Pekeliling', 'ukmtheme' ),
+			'parent_item'                => esc_html__( 'Parent Kategori Pekeliling', 'ukmtheme' ),
+			'parent_item_colon'          => esc_html__( 'Parent Kategori Pekeliling', 'ukmtheme' ),
+			'search_items'               => esc_html__( 'Search Kategori Pekeliling', 'ukmtheme' ),
+			'popular_items'              => esc_html__( 'Popular Kategori Pekeliling', 'ukmtheme' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Kategori Pekeliling with commas', 'ukmtheme' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Kategori Pekeliling', 'ukmtheme' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Kategori Pekeliling', 'ukmtheme' ),
+			'not_found'                  => esc_html__( 'No Kategori Pekeliling found', 'ukmtheme' ),
+			'name'                       => esc_html__( 'Kategori Pekeliling', 'ukmtheme' ),
+			'singular_name'              => esc_html__( 'Kategori Pekeliling', 'ukmtheme' ),
+		],
+		'public'               => true,
+		'show_ui'              => true,
+		'show_in_menu'         => true,
+		'show_in_nav_menus'    => true,
+		'show_tagcloud'        => true,
+		'show_in_quick_edit'   => true,
+		'show_admin_column'    => false,
+		'show_in_rest'         => true,
+		'hierarchical'         => true,
+		'query_var'            => true,
+		'sort'                 => false,
+		'rewrite_no_front'     => false,
+		'rewrite_hierarchical' => false,
+		'rewrite' => [ 'slug' => 'kategori-pekeliling' ]
+	];
+	register_taxonomy( 'circat', [ 'pekeliling' ], $args );
 }

@@ -401,3 +401,33 @@ add_action( 'cmb2_init', 'ukmtheme_video_metaboxes' );
         ) );
 
         }
+
+// Post Type: Pekeliling
+
+add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
+
+    function ukmtheme_pekeliling_metaboxes() { 
+
+        $pekeliling = new_cmb2_box( array(
+            'id'            => 'pekeliling_metabox',
+            'title'         => esc_html__( 'Butiran', 'ukmtheme' ),
+            'object_types'  => array( 'pekeliling', ),
+            'context'       => 'normal',
+            'priority'      => 'high',
+            'show_names'    => true,
+        ) );
+        $pekeliling->add_field( array(
+            'name'    => esc_html__( 'Tarikh', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Tarikh Pekeliling', 'ukmtheme' ),
+            'id'      => 'ut_pekeliling_date',
+            'type'    => 'text_date',
+            'date_format' => esc_html__( 'd/m/Y', 'cmb2' ),
+        ));  
+        $pekeliling->add_field( array(
+            'name'    => esc_html__( 'Fail', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Jika fail lebih dari satu. Sila satukan dalam format .zip atau gabungkan dalam satu fail .pdf', 'ukmtheme' ),
+            'id'      => 'ut_pekeliling_file',
+            'type'         => 'file_list',
+            'allow'   => array( 'url' ),
+        ) );
+    }

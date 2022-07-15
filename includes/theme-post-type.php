@@ -1009,3 +1009,51 @@ function ut_video_custom_columns( $column ){
     }
 }
 add_action( 'manage_video_posts_custom_column', 'ut_video_custom_columns' );
+
+// PEKELILING 
+add_action( 'init', 'ukmtheme_pekeliling' );
+function ukmtheme_pekeliling() {
+	$args = [
+		'label'  => esc_html__( 'Pekeliling', 'text-domain' ),
+		'labels' => [
+			'menu_name'          => esc_html__( 'Pekeliling', 'ukmtheme' ),
+			'name_admin_bar'     => esc_html__( 'Pekeliling', 'ukmtheme' ),
+			'add_new'            => esc_html__( 'Add Pekeliling', 'ukmtheme' ),
+			'add_new_item'       => esc_html__( 'Add new Pekeliling', 'ukmtheme' ),
+			'new_item'           => esc_html__( 'New Pekeliling', 'ukmtheme' ),
+			'edit_item'          => esc_html__( 'Edit Pekeliling', 'ukmtheme' ),
+			'view_item'          => esc_html__( 'View Pekeliling', 'ukmtheme' ),
+			'update_item'        => esc_html__( 'View Pekeliling', 'ukmtheme' ),
+			'all_items'          => esc_html__( 'All Pekeliling', 'ukmtheme' ),
+			'search_items'       => esc_html__( 'Search Pekeliling', 'ukmtheme' ),
+			'parent_item_colon'  => esc_html__( 'Parent Pekeliling', 'ukmtheme' ),
+			'not_found'          => esc_html__( 'No Pekeliling found', 'ukmtheme' ),
+			'not_found_in_trash' => esc_html__( 'No Pekeliling found in Trash', 'ukmtheme' ),
+			'name'               => esc_html__( 'Pekeliling', 'ukmtheme' ),
+			'singular_name'      => esc_html__( 'Pekeliling', 'ukmtheme' ),
+		],
+		'public'              => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => false,
+		'show_in_rest'        => false,
+		'capability_type'     => 'page',
+		'hierarchical'        => true,
+		'has_archive'         => true,
+		'query_var'           => true,
+		'can_export'          => true,
+		'rewrite_no_front'    => false,
+		'show_in_menu'        => true,
+		'menu_position'       => 25,
+		'menu_icon'           => 'dashicons-media-text',
+		'supports' => [
+			'title',
+		],
+		
+		'rewrite' => true
+	];
+
+	register_post_type( 'ut_pekeliling', $args );
+}

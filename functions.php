@@ -189,8 +189,8 @@ function ukmtheme_extra_widgets_init() {
             'name'            => __( 'FRONTPAGE: 2 BLOCK', 'ukmtheme' ),
             'id'              => 'sidebar-3',
             'description'     => __( '2 blok widget di frontpage di bawah berita.', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-1-2">',
-            'after_widget'    => '</div>',
+            'before_widget'   => '<div><div class="uk-card uk-card-default uk-padding-small">',
+            'after_widget'    => '</div></div>',
             'before_title'    => '<h3 class="uk-hidden">',
             'after_title'     => '</h3>',
         ) );
@@ -201,8 +201,8 @@ function ukmtheme_extra_widgets_init() {
             'name'            => __( 'FRONTPAGE: 3 BLOCK', 'ukmtheme' ),
             'id'              => 'sidebar-4',
             'description'     => __( '3 blok widget di frontpage di bawah berita.', 'ukmtheme' ),
-            'before_widget'   => '<div class="uk-width-1-3">',
-            'after_widget'    => '</div>',
+            'before_widget'   => '<div><div class="uk-card uk-card-default uk-padding-small">',
+            'after_widget'    => '</div></div>',
             'before_title'    => '<h3 class="uk-hidden">',
             'after_title'     => '</h3>',
         ) );

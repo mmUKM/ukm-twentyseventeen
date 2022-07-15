@@ -7,10 +7,10 @@
 </div <?php // END STICKY FOOTER ?>>
 <footer id="footer">
 <?php get_template_part( 'templates/widget', 'footer' ); ?>
-    <div class="copyright-with-navigation">
-        <div class="wrap column">
-            <div class="large-12-12">
-                <p class="ut-copyright"><?php _e( 'Copyright &copy;&nbsp;', 'ukmtheme' ); ?><?php echo date( 'Y' ); ?>&nbsp;<?php _e( 'Universiti Kebangsaan Malaysia', 'ukmtheme' ); ?></p>
+    <div class="uk-padding">
+        <div uk-grid>
+            <div class="uk-width-1-1 uk-padding">
+                <p class="uk-text-center"><?php _e( 'Copyright &copy;&nbsp;', 'ukmtheme' ); ?><?php echo date( 'Y' ); ?>&nbsp;<?php _e( 'Universiti Kebangsaan Malaysia', 'ukmtheme' ); ?></p>
                 <?php 
                     wp_nav_menu(
                         array(

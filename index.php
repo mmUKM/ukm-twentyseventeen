@@ -87,7 +87,7 @@ get_header(); ?>
             </div>
             <div class="uk-slider-container-offset" uk-slider>
                 <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
-                    <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-2 uk-grid" uk-grid uk-height-match="target: > li > div > .uk-card">
+                    <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-1 uk-grid" uk-grid uk-height-match="target: > li > div > .uk-card">
                         <?php
 
                         $news = get_theme_mod( 'ukmtheme_frontpage_news' );
@@ -172,7 +172,7 @@ get_header(); ?>
     <?php } // END LATEST NEWS THUMBNAIL ?>
     <?php // YOUTUBE PLAYLIST
     if ( get_theme_mod( 'ukmtheme_frontpage_ytv' ) == 1 ) { ?>
-        <div id="frontpage-video-playlist" class="uk-container">
+        <div class="wrap uk-padding">
             <?php if ( get_theme_mod( 'ukmtheme_frontpage_ytv_title_edit' ) == 0 ) { ?>
             <h2 class="uk-heading-line uk-text-center uk-padding uk-padding-remove-top uk-margin-remove-top"><span>PTMUKM-TV</span></h2>
             <?php } else { ?>
@@ -205,8 +205,8 @@ get_header(); ?>
     <?php
     // START 2 BLOCK WIDGET
     if ( get_theme_mod( 'ukmtheme_frontpage_two_box' ) == 1 ) { ?>
-        <div class="wrap">
-            <div class="uk-grid-match uk-padding" uk-grid>
+        <div class="wrap uk-padding">
+            <div class="uk-grid-match uk-child-width-1-2@s" uk-grid>
                 <?php if (dynamic_sidebar( 'sidebar-3' )) : else : ?><?php endif; ?>
             </div>
         </div>
@@ -214,8 +214,8 @@ get_header(); ?>
     <?php
     // START 3 BLOCK WIDGET
     if ( get_theme_mod( 'ukmtheme_frontpage_three_box' ) == 1 ) { ?>
-        <div class="wrap">
-            <div class="uk-grid-match uk-padding" uk-grid>
+        <div class="wrap uk-padding">
+            <div class="uk-grid-match uk-child-width-1-3@s" uk-grid>
                 <?php if (dynamic_sidebar( 'sidebar-4' )) : else : ?><?php endif; ?>
             </div>
         </div>

@@ -417,15 +417,15 @@ add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
             'show_names'    => true,
         ) );
         $pekeliling->add_field( array(
-            'name'    => esc_html__( 'Tarikh', 'ukmtheme' ),
-            'desc'    => esc_html__( 'Tarikh Pekeliling', 'ukmtheme' ),
+            'name'    => esc_html__( 'Tarikh Kuat Kuasa', 'ukmtheme' ),
+            'desc'    => esc_html__( '20/11/2011', 'ukmtheme' ),
             'id'      => 'ut_pekeliling_date',
             'type'    => 'text_date',
             'date_format' => esc_html__( 'd/m/Y', 'cmb2' ),
         ));  
         $pekeliling->add_field( array(
             'name'    => esc_html__( 'Fail', 'ukmtheme' ),
-            'desc'    => esc_html__( 'Jika fail lebih dari satu. Sila satukan dalam format .zip atau gabungkan dalam satu fail .pdf', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Muat naik fail pdf, doc dan lain-lain. Namakan fail mengikut nama sebenar sebelum dimuat naik. Boleh muat naik lebih dari satu fail.', 'ukmtheme' ),
             'id'      => 'ut_pekeliling_file',
             'type'         => 'file_list',
             'allow'   => array( 'url' ),

@@ -1016,7 +1016,7 @@ function ukmtheme_pekeliling() {
 	$args = [
 		'label'  => esc_html__( 'Pekeliling', 'text-domain' ),
 		'labels' => [
-			'menu_name'          => esc_html__( 'Pekeliling', 'ukmtheme' ),
+			'menu_name'          => esc_html__( 'Pekeliling / GP', 'ukmtheme' ),
 			'name_admin_bar'     => esc_html__( 'Pekeliling', 'ukmtheme' ),
 			'add_new'            => esc_html__( 'Add Pekeliling', 'ukmtheme' ),
 			'add_new_item'       => esc_html__( 'Add new Pekeliling', 'ukmtheme' ),
@@ -1099,4 +1099,19 @@ function ukmtheme_pekeliling_tahun() {
 		'rewrite' => [ 'slug' => 'kategori-pekeliling' ]
 	];
 	register_taxonomy( 'circat', [ 'pekeliling' ], $args );
+}
+
+function ut_pekeliling_list_file( $file_list_meta_pekeliling_list_file ) {
+
+	// Get the list of files
+	$files = get_post_meta( get_the_ID(), $file_list_meta_pekeliling_list_file, 1 );
+
+	echo '<div class="file-list-wrap">';
+	// Loop through them and output an image
+	foreach ( (array) $files as $attachment_id => $attachment_url ) {
+		echo '<div class="file-list-image">';
+		    echo '<span uk-icon="file-text"></span>&nbsp;<a href="'. wp_get_attachment_url( $attachment_id ) . '">'. get_the_title( $attachment_id ). '</a>';
+		echo '</div>';
+	}
+	echo '</div>';
 }

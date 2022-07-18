@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="wrap">
     <article class="uk-padding">
         <h2><?php _e( 'Gallery', 'ukmtheme' ) ; ?></h2>
-        <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+        <div class="uk-child-width-1-3@s uk-grid-small uk-grid-match" uk-grid>
             <?php
 
             $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -48,8 +48,8 @@ get_header(); ?>
             <?php endwhile; else: ?>
                 <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ukmtheme' ); ?></p>
                 <?php endif; ?>
-            <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
         </div>
+        <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
     </article>
 </div>
 <?php get_footer(); ?>

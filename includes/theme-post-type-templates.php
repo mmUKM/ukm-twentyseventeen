@@ -248,8 +248,10 @@ function taxonomy_vidcat_page_template( $template_vidcat ) {
     }
     return $template_vidcat;
 }
-add_filter( 'template_include', 'taxonomy_circat_page_template', 99 );
 
+add_filter( 'template_include', 'taxonomy_vidcat_page_template', 99 );
+
+// POST TYPE FILES: PEKELILING
 function taxonomy_circat_page_template( $template_circat ) {
     if ( is_tax( 'circat' )  ) {
         $new_template_circat = get_template_directory() . '/templates/taxonomy-circat.php';
@@ -260,3 +262,14 @@ function taxonomy_circat_page_template( $template_circat ) {
     return $template_circat;
 }
 add_filter( 'template_include', 'taxonomy_circat_page_template', 99 );
+
+function archive_pekeliling_page_template( $template_pekeliling ) {
+    if ( is_post_type_archive( 'pekeliling' )  ) {
+        $new_template_pekeliling = get_template_directory() . '/templates/archive-pekeliling.php';
+            if ( '' != $new_template_pekeliling ) {
+                return $new_template_pekeliling ;
+            }
+    }
+    return $template_pekeliling;
+}
+add_filter( 'template_include', 'archive_pekeliling_page_template', 99 );

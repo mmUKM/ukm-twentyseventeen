@@ -1,7 +1,7 @@
 /*
 Theme Name: UKM Twenty Seventeen
 Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20220710
+Version: 2017.20220712
 Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
@@ -9,7 +9,7 @@ License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 html {
-    font: 400 16px/20px "Poppins",Helvetica, Arial, sans-serif;
+    font: 400 16px/20px "Poppins", Helvetica, Arial, sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     color: #444;
@@ -21,7 +21,7 @@ em {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 15px 0;
-    font-family: "Poppins",Helvetica, Arial, sans-serif;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-weight: 600;
     color: #444;
     text-transform: none;
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 #ptj-name #ptj-name-title {
     color: #fff;
     font-weight: 600;
-    padding-right: .3rem;
+    padding-right: 0.3rem;
 }
 
 #ptj-name #ptj-name-sub-title {
@@ -76,28 +76,14 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 2rem;
 }
 
-.ut-tabber-wrap {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.ut-tabber-button {
-    display: table;
-    margin: 0 auto;
-}
-
-.widget-box {
-    padding: 10px 5px;
-}
-
 #footer {
     position: relative;
     margin-top: 40px;
     padding-top: 40px;
     padding-bottom: 0;
     color: #fff;
-    background: #0e6edc;
-    background: linear-gradient(0deg, #0e6edc 0%, #1d92c9 100%);
+    background: rgb(14, 110, 220);
+    background: linear-gradient(0deg, rgb(14, 110, 220) 0%, rgb(29, 146, 201) 100%);
 }
 
 .copyright-with-navigation {
@@ -135,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-nav li a:link,
-    .footer-nav li a:visited {
+.footer-nav li a:visited {
     color: #fff;
 }
 
@@ -250,7 +236,7 @@ html, body {
 
 h1.conference-site-name {
     margin: 0;
-    font-family: 'Merriweather Light', serif;
+    font-family: "Merriweather Light", serif;
     font-size: 21px;
     color: #292929;
     text-align: right;
@@ -273,7 +259,7 @@ h1.conference-site-name {
 }
 
 #ConferenceMenu ul li a {
-    font: 400 18px/20px "Bebas Neue Regular",Helvetica Neue,Helvetica,Arial,sans-serif;
+    font: 400 18px/20px "Bebas Neue Regular", Helvetica Neue, Helvetica, Arial, sans-serif;
     display: block;
     padding: 22px 7px 22px 7px;
     line-height: 0;
@@ -407,7 +393,7 @@ h1.conference-site-name {
     }
 
     #ptj-name-title-mobile {
-        padding: .5rem 0;
+        padding: 0.5rem 0;
         background-color: #1d92c9;
         color: #fff;
     }
@@ -518,11 +504,11 @@ h1.conference-site-name {
     border: 12px solid transparent;
     border-top-color: transparent;
     z-index: -2;
-    -webkit-transition: left .25s ease;
-    -moz-transition: left .25s ease;
-    -ms-transition: left .25s ease;
-    -o-transition: left .25s ease;
-    transition: left .25s ease;
+    -webkit-transition: left 0.25s ease;
+    -moz-transition: left 0.25s ease;
+    -ms-transition: left 0.25s ease;
+    -o-transition: left 0.25s ease;
+    transition: left 0.25s ease;
 }
 
 #cIndicator {
@@ -541,11 +527,11 @@ h1.conference-site-name {
     left: -9999px;
     top: 70px;
     opacity: 0;
-    -webkit-transition: opacity .3s ease, top .25s ease;
-    -moz-transition: opacity .3s ease, top .25s ease;
-    -ms-transition: opacity .3s ease, top .25s ease;
-    -o-transition: opacity .3s ease, top .25s ease;
-    transition: opacity .3s ease, top .25s ease;
+    -webkit-transition: opacity 0.3s ease, top 0.25s ease;
+    -moz-transition: opacity 0.3s ease, top 0.25s ease;
+    -ms-transition: opacity 0.3s ease, top 0.25s ease;
+    -o-transition: opacity 0.3s ease, top 0.25s ease;
+    transition: opacity 0.3s ease, top 0.25s ease;
     z-index: 9999;
 }
 
@@ -591,11 +577,11 @@ h1.conference-site-name {
     font-size: 12px;
     color: #000;
     background: #f3f3f3;
-    -webkit-transition: all .35s ease;
-    -moz-transition: all .35s ease;
-    -ms-transition: all .35s ease;
-    -o-transition: all .35s ease;
-    transition: all .35s ease;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -ms-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
 }
 
 #cssmenu.align-right ul ul li a {
@@ -613,7 +599,7 @@ h1.conference-site-name {
 }
 
 #cssmenu > ul > li > ul::after {
-    content: '';
+    content: "";
     border: 6px solid transparent;
     width: 0;
     height: 0;
@@ -633,10 +619,10 @@ h1.conference-site-name {
     border-left-color: #9ea2a5;
     right: 10px;
     top: 12px;
-    -moz-transition: all .2s ease;
-    -ms-transition: all .2s ease;
-    -o-transition: all .2s ease;
-    transition: all .2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
     -webkit-transition: -webkit-transform 0.2s ease, right 0.2s ease;
 }
 
@@ -668,7 +654,7 @@ h1.conference-site-name {
     transform: rotateY(180deg);
 }
 
-@media all and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     #cssmenu {
         width: auto;
     }
@@ -687,7 +673,7 @@ h1.conference-site-name {
     }
 
     #cssmenu .submenuArrow,
-  #cssmenu #indicatorContainer {
+#cssmenu #indicatorContainer {
         display: none;
     }
 
@@ -701,7 +687,7 @@ h1.conference-site-name {
     }
 
     #cssmenu li,
-  #cssmenu > ul > li {
+#cssmenu > ul > li {
         display: none;
     }
 
@@ -710,13 +696,13 @@ h1.conference-site-name {
     }
 
     #cssmenu ul ul,
-  #cssmenu ul ul ul,
-  #cssmenu ul > li:hover > ul,
-  #cssmenu ul ul > li:hover > ul,
-  #cssmenu.align-right ul ul,
-  #cssmenu.align-right ul ul ul,
-  #cssmenu.align-right ul > li:hover > ul,
-  #cssmenu.align-right ul ul > li:hover > ul {
+#cssmenu ul ul ul,
+#cssmenu ul > li:hover > ul,
+#cssmenu ul ul > li:hover > ul,
+#cssmenu.align-right ul ul,
+#cssmenu.align-right ul ul ul,
+#cssmenu.align-right ul > li:hover > ul,
+#cssmenu.align-right ul ul > li:hover > ul {
         position: relative;
         left: auto;
         top: auto;
@@ -778,7 +764,7 @@ h1.conference-site-name {
     }
 
     #cssmenu ul.open li,
-  #cssmenu > ul.open > li {
+#cssmenu > ul.open > li {
         display: block;
     }
 
@@ -793,7 +779,7 @@ h1.conference-site-name {
 
     #cssmenu #menu-button::after {
         display: block;
-        content: '';
+        content: "";
         position: absolute;
         height: 3px;
         width: 22px;
@@ -805,7 +791,7 @@ h1.conference-site-name {
 
     #cssmenu #menu-button::before {
         display: block;
-        content: '';
+        content: "";
         position: absolute;
         height: 3px;
         width: 22px;
@@ -815,7 +801,7 @@ h1.conference-site-name {
     }
 
     #cssmenu ul.open #menu-button::after,
-  #cssmenu ul.open #menu-button::before {
+#cssmenu ul.open #menu-button::before {
         border-color: #fff;
     }
 }
@@ -864,7 +850,7 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #f0f0f0;
     max-width: 96%;
-  /* Image does not overflow the content area */
+ /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
 }
@@ -924,5 +910,5 @@ a img.aligncenter {
     top: 5px;
     width: auto;
     z-index: 100000;
-  /* Above WP toolbar. */
+ /* Above WP toolbar. */
 }

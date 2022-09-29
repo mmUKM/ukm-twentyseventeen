@@ -430,4 +430,18 @@ add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
             'type'         => 'file_list',
             'allow'   => array( 'url' ),
         ) );
+
+        $pekeliling->add_field( array(
+            'name'    => esc_html__( 'Pindaan', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Pindaan', 'ukmtheme' ),
+            'id'      => 'ut_pekeliling_pinda',
+            'type'         => 'text',
+        ) );
+
+        $pekeliling->add_field( array(
+            'name'    => esc_html__( 'Tindakan', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Tindakan', 'ukmtheme' ),
+            'id'      => 'ut_pekeliling_tindakan',
+            'type'         => 'text',
+        ) );
     }

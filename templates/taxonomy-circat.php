@@ -8,7 +8,15 @@ get_header(); ?>
 <div class="wrap">
     <article class="uk-padding">
     <h2><?php single_term_title(); ?></h2>
-        <ul class="uk-list uk-list-divider">
+        <ul class="uk-list uk-list-striped">
+            <li>
+                <div uk-grid>
+                    <div class="uk-width-1-1 uk-width-1-6@s">TARIKH</div>
+                    <div class="uk-width-1-1 uk-width-1-2@s">PEKELILING</div>
+                    <div class="uk-width-1-1 uk-width-1-6@s">PINDAAN</div>
+                    <div class="uk-width-1-1 uk-width-1-6@s">TINDAKAN</div>
+                </div>
+            </li>
             <?php
                 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
@@ -23,9 +31,15 @@ get_header(); ?>
                 <li>
                     <div uk-grid>
                         <div class="uk-width-1-1 uk-width-1-6@s"><span class="uk-label"><?php echo get_post_meta( $post->ID, 'ut_pekeliling_date', true ); ?></span></div>
-                        <div class="uk-width-1-1 uk-width-5-6@s uk-margin-remove">
-                            <?php the_title( '<h4 class="uk-heading">', '</h4>'); ?>
+                        <div class="uk-width-1-1 uk-width-1-2@s">
+                            <?php the_title( '<p class="uk-heading">', '</p>'); ?>
                             <?php ut_pekeliling_list_file( 'ut_pekeliling_file' ); ?>
+                        </div>
+                        <div class="uk-width-1-1 uk-width-1-6@s">
+                        <p class="uk-heading"><?php echo get_post_meta( $post->ID, 'ut_pekeliling_pinda', true ); ?></p>
+                        </div>
+                        <div class="uk-width-1-1 uk-width-1-6@s">
+                        <p class="uk-heading"><?php echo get_post_meta( $post->ID, 'ut_pekeliling_tindakan', true ); ?></p>
                         </div>
                     </div>
                 </li>
@@ -34,7 +48,6 @@ get_header(); ?>
             <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ukmtheme' ); ?></p>
             <?php get_search_form(); ?>
             <?php endif; ?>
-            <hr>
         </ul>
         <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
     </article>

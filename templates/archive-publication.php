@@ -13,7 +13,7 @@ get_header(); ?>
         $query = new WP_Query( array(
         'post_type'       => 'publication',
         'pubcat'          => get_query_var( 'pubcat' ),
-        'posts_per_page'  => 10,
+        'posts_per_page'  => -10,
         'paged'           => $paged
         ));
 

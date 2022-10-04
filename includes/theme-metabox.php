@@ -301,6 +301,13 @@ add_action( 'cmb2_init', 'ukmtheme_publication_metaboxes' );
             'id'      => 'ut_publication_reference',
             'type'    => 'text_url',
         ) );
+
+        $publication->add_field( array(
+            'name'    => esc_html__( 'Rename Download Title', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Get Now!', 'ukmtheme' ),
+            'id'      => 'ut_publication_renamedownload',
+            'type'    => 'text',
+        ) );
     }
 
 // Post Type: Expertise

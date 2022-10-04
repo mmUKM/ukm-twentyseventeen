@@ -34,7 +34,14 @@ get_header(); ?>
                     <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_author', true ); ?></li>
                     <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="print"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_publisher', true ); ?></li>
                     <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="calendar"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_year', true ); ?></li>
-                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="link"></span>&nbsp;<a href="<?php echo get_post_meta( $post->ID, 'ut_publication_reference', true ); ?>">Download</a></li>
+                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="link"></span>&nbsp;<a href="<?php echo get_post_meta( $post->ID, 'ut_publication_reference', true ); ?>">
+                            <?php if ( get_post_meta( $post->ID, 'ut_publication_renamedownload', true ) ) { ?>
+                                <?php echo get_post_meta( $post->ID, 'ut_publication_renamedownload', true ); ?>
+                            <?php } else { ?>
+                                Download
+                            <?php } ?>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

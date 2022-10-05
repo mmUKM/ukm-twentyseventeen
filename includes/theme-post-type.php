@@ -44,7 +44,7 @@ function ukmtheme_faq() {
         'label'               => esc_html__( 'faq', 'ukmtheme' ),
         'description'         => esc_html__( 'Soalan Lazim manager for UKM', 'ukmtheme' ),
         'labels'              => $labels,
-        'supports'            => array( 'title', 'editor', 'revisions', ),
+        'supports'            => array( 'title', 'editor', 'revisions', 'page-attributes' ),
         'taxonomies'          => array( 'faqcat' ),
         'hierarchical'        => true,
         'public'              => true,
@@ -826,9 +826,9 @@ function ut_publication() {
         'label'               => __( 'publication', 'ukmtheme' ),
         'description'         => __( 'Publication information pages', 'ukmtheme' ),
         'labels'              => $labels,
-        'supports'            => array( 'title', 'thumbnail' ),
+        'supports'            => array( 'title', 'thumbnail', 'page-attributes' ),
         'taxonomies'          => array( 'pubcat' ),
-        'hierarchical'        => false,
+        'hierarchical'        => true,
         'public'              => true,
         'show_ui'             => true,
         'show_in_menu'        => true,
@@ -1050,6 +1050,7 @@ function ukmtheme_pekeliling() {
 		'menu_icon'           => get_template_directory_uri() . '/images/icon-press.svg',
 		'supports' => [
 			'title',
+            'page-attributes'
 		],
 		
 		'rewrite' => true

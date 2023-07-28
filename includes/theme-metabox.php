@@ -452,3 +452,34 @@ add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
             'type'         => 'text',
         ) );
     }
+
+    // Post Type: kelestarian
+
+    add_action( 'cmb2_init', 'ukmtheme_kelestarian_metaboxes' );
+
+    function ukmtheme_kelestarian_metaboxes() { 
+
+        $kelestarian = new_cmb2_box( array(
+            'id'            => 'kelestarian_metabox',
+            'title'         => esc_html__( 'Butiran', 'ukmtheme' ),
+            'object_types'  => array( 'kelestarian', ),
+            'context'       => 'normal',
+            'priority'      => 'high',
+            'show_names'    => true,
+        ) );
+        $kelestarian->add_field( array(
+            'name'    => esc_html__( 'Tarikh', 'ukmtheme' ),
+            'desc'    => esc_html__( '20/11/2011', 'ukmtheme' ),
+            'id'      => 'ut_kelestarian_date',
+            'type'    => 'text_date',
+            'date_format' => esc_html__( 'd/m/Y', 'cmb2' ),
+        ));  
+
+        $kelestarian->add_field( array(
+            'name'    => esc_html__( 'Ringkasan', 'ukmtheme' ),
+            'desc'    => esc_html__( 'Ringkasan kelestarian', 'ukmtheme' ),
+            'id'      => 'ut_kelestarian_ringkasan',
+            'type'    => 'wysiwyg',
+            'options' => array( 'textarea_rows' => 5, ),
+        ) );
+    }

@@ -1,7 +1,7 @@
 /*
 Theme Name: UKM Twenty Seventeen
 Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20221005
+Version: 2017.20230728
 Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
@@ -674,7 +674,7 @@ h1.conference-site-name {
     }
 
     #cssmenu .submenuArrow,
-#cssmenu #indicatorContainer {
+  #cssmenu #indicatorContainer {
         display: none;
     }
 
@@ -688,7 +688,7 @@ h1.conference-site-name {
     }
 
     #cssmenu li,
-#cssmenu > ul > li {
+  #cssmenu > ul > li {
         display: none;
     }
 
@@ -697,13 +697,13 @@ h1.conference-site-name {
     }
 
     #cssmenu ul ul,
-#cssmenu ul ul ul,
-#cssmenu ul > li:hover > ul,
-#cssmenu ul ul > li:hover > ul,
-#cssmenu.align-right ul ul,
-#cssmenu.align-right ul ul ul,
-#cssmenu.align-right ul > li:hover > ul,
-#cssmenu.align-right ul ul > li:hover > ul {
+  #cssmenu ul ul ul,
+  #cssmenu ul > li:hover > ul,
+  #cssmenu ul ul > li:hover > ul,
+  #cssmenu.align-right ul ul,
+  #cssmenu.align-right ul ul ul,
+  #cssmenu.align-right ul > li:hover > ul,
+  #cssmenu.align-right ul ul > li:hover > ul {
         position: relative;
         left: auto;
         top: auto;
@@ -765,7 +765,7 @@ h1.conference-site-name {
     }
 
     #cssmenu ul.open li,
-#cssmenu > ul.open > li {
+  #cssmenu > ul.open > li {
         display: block;
     }
 
@@ -802,7 +802,7 @@ h1.conference-site-name {
     }
 
     #cssmenu ul.open #menu-button::after,
-#cssmenu ul.open #menu-button::before {
+  #cssmenu ul.open #menu-button::before {
         border-color: #fff;
     }
 }

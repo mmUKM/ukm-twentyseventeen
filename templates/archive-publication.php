@@ -5,16 +5,16 @@
  */
 get_header(); ?>
 <div class="wrap">
-  <article class="uk-padding">
+    <article class="uk-padding">
     <h2><?php _e( 'Publication', 'ukmtheme' ); ?></h2>
     <?php
-        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+        //$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
         $query = new WP_Query( array(
         'post_type'       => 'publication',
         'pubcat'          => get_query_var( 'pubcat' ),
-        'posts_per_page'  => -10,
-        'paged'           => $paged
+        'posts_per_page'  => -1,
+        //'paged'           => $paged
         ));
 
         if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>

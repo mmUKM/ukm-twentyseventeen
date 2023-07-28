@@ -24,7 +24,7 @@ function ukmtheme_register_required_plugins() {
         ),
 
         array(
-            'name'      => 'ElementsKit Elementor addons (Header Footer Builder, Mega Menu Builder, Free Elementor Widgets & Elementor Templates Library)',
+            'name'      => 'ElementsKit Elementor addons',
             'slug'      => 'elementskit-lite',
             'required'  => false,
         ),

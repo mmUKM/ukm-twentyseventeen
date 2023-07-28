@@ -273,3 +273,41 @@ function archive_pekeliling_page_template( $template_pekeliling ) {
     return $template_pekeliling;
 }
 add_filter( 'template_include', 'archive_pekeliling_page_template', 99 );
+
+// POST TYPE FILES: kelestarian
+
+function get_kelestarian_post_type_template($single_kelestarian_template) {
+
+    global $post;
+	
+        if ( $post->post_type == 'kelestarian' ) {
+		
+            $single_kelestarian_template = get_template_directory() . '/templates/single-kelestarian.php';
+        }
+        
+        return $single_kelestarian_template;
+}
+
+add_filter( 'single_template', 'get_kelestarian_post_type_template' );
+
+function taxonomy_lestaricat_page_template( $template_lestaricat ) {
+    if ( is_tax( 'lestaricat' )  ) {
+        $new_template_lestaricat = get_template_directory() . '/templates/taxonomy-lestaricat.php';
+        if ( '' != $new_template_lestaricat ) {
+            return $new_template_lestaricat ;
+        }
+    }
+    return $template_lestaricat;
+}
+add_filter( 'template_include', 'taxonomy_lestaricat_page_template', 99 );
+
+function archive_kelestarian_page_template( $template_kelestarian ) {
+    if ( is_post_type_archive( 'kelestarian' )  ) {
+        $new_template_kelestarian = get_template_directory() . '/templates/archive-kelestarian.php';
+            if ( '' != $new_template_kelestarian ) {
+                return $new_template_kelestarian ;
+            }
+    }
+    return $template_kelestarian;
+}
+add_filter( 'template_include', 'archive_kelestarian_page_template', 99 );

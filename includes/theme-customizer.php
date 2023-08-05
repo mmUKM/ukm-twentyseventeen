@@ -444,6 +444,39 @@ function ukmtheme_customizer( $wp_customize ) {
         'type'      => 'text'
     ) );
 
+    // DIREKTORI STAF
+
+    $wp_customize->add_section( 'ukmtheme_staff_directory' , array(
+        'title'      => __( 'Direktori Staf', 'ukmtheme' ),
+        'priority'   => 100,
+    ) );
+
+    // Paparan Grid View Staf
+    $wp_customize->add_setting( 'ukmtheme_staff_grid_view', array( 
+        'default' => 0 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_staff_grid_view', array(
+        'label'     => __( 'Paparan Grid', 'ukmtheme' ),
+        'description'   => 'Tandakan sekiranya ingin mengubah paparan dalam bentuk grid',
+        'section'   => 'ukmtheme_staff_directory',
+        'priority'  => 10,
+        'type'      => 'checkbox'
+    ) );
+
+        // Paparan Grid View Staf
+        $wp_customize->add_setting( 'ukmtheme_staff_hide_phone', array( 
+            'default' => 0 
+        ) );
+
+    $wp_customize->add_control( 'ukmtheme_staff_hide_phone', array(
+        'label'     => __( 'Sorok No Telefon', 'ukmtheme' ),
+        'description'   => 'Tandakan sekiranya ingin menyorokkan maklumat telefon',
+        'section'   => 'ukmtheme_staff_directory',
+        'priority'  => 10,
+        'type'      => 'checkbox'
+    ) );
+
     /**
      * Remove default customize setting
      * Title, Frontpage, navigation, header image.

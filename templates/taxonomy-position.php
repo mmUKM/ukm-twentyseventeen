@@ -5,14 +5,15 @@
  */
 
 get_header(); ?>
-<div class="wrap">
+<?php if ( get_theme_mod( 'ukmtheme_staff_grid_view' ) ) : ?>
+    <div class="wrap">
     <article class="uk-padding">
 
         <?php
 
         $query = new WP_Query( array(
             'post_type'         => 'staff',
-            'position'          => get_query_var( 'position' ),
+            'position'         => get_query_var( 'position'),
             'posts_per_page'    => -1,
             'orderby'           => 'menu_order',
             'order'             => 'ASC',
@@ -77,4 +78,58 @@ get_header(); ?>
         </div>
     </article>
 </div>
+<?php else : ?>
+<div class="wrap">
+    <article class="uk-padding">
+
+        <?php
+
+        $query = new WP_Query( array(
+            'post_type'       => 'staff',
+            'position'      => get_query_var( 'position' ),
+            'posts_per_page'  => -1,
+            'orderby'         => 'menu_order',
+            'order'           => 'ASC',
+        ));
+
+        if ( $query->have_posts() ) : ?>
+
+        <h2><?php single_term_title(); ?></h2>
+        
+        <div class="uk-margin-top" uk-grid>
+        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <div class="uk-grid-collapse uk-grid-match uk-margin-top uk-margin-bottom uk-card-default uk-padding" uk-grid>
+            <div class="uk-width-1-4">
+                <div class="uk-card">
+                    <?php
+                        if ( get_post_meta( get_the_ID(),'ut_staff_photo', true ) ) { ?>
+                            <img src="<?php echo get_post_meta( get_the_ID(), 'ut_staff_photo', true ); ?>" alt="">
+                        <?php } else { ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder_staff.svg">
+                        <?php }
+                    ?>
+                </div>
+            </div>
+            <div class="uk-width-3-4">
+                <div class="uk-card uk-card-body">
+                <h3 class="uk-card-title"><?php the_title(); ?></h3>
+                    <ul uk-grid>
+                        <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?></li>
+                        <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
+                            <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
+                        <?php } else { ?>
+                            <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;03-8921-5555</li>
+                        <?php } ?>
+                        <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="mail"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_email', true ); ?></li>
+                        <li>
+                        <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_staff_work_scope_desc', true ) ); ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <?php endwhile; else: endif; ?>
+    </article>
+</div>    
+<?php endif; ?>
 <?php get_footer(); ?>

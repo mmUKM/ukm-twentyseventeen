@@ -104,6 +104,7 @@ function ukmtheme_module() {
     require( get_template_directory() . '/includes/widget-operating-hour.php' );
     //require( get_template_directory() . '/includes/widget-youtube.php' );
     require( get_template_directory() . '/includes/widget-visitor-counter.php' );
+    require( get_template_directory() . '/packages/elementor-addon/elementor-addon.php' );
 }
 add_action( 'after_setup_theme', 'ukmtheme_module' );
 

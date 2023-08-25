@@ -311,3 +311,27 @@ function archive_kelestarian_page_template( $template_kelestarian ) {
     return $template_kelestarian;
 }
 add_filter( 'template_include', 'archive_kelestarian_page_template', 99 );
+
+// POST TYPE FILES: CONFERENCE
+
+function get_conference_post_type_template($single_conference_template) {
+    global $post;
+    if ( $post->post_type == 'conference' ) {
+        $single_conference_template = get_template_directory() . '/templates/single-conference.php';
+
+    }
+    return $single_conference_template;
+}
+
+add_filter( 'single_template', 'get_conference_post_type_template' );
+
+function archive_conference_page_template( $template_conference ) {
+    if ( is_post_type_archive( 'conference' )  ) {
+        $new_template_conference = get_template_directory() . '/templates/archive-conference.php';
+        if ( '' != $new_template_conference ) {
+            return $new_template_conference ;
+        }
+    }
+    return $template_conference;
+}
+add_filter( 'template_include', 'archive_conference_page_template', 99 );

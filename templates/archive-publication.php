@@ -12,7 +12,6 @@ get_header(); ?>
 
         $query = new WP_Query( array(
         'post_type'       => 'publication',
-        'pubcat'          => get_query_var( 'pubcat' ),
         'posts_per_page'  => -1,
         //'paged'           => $paged
         ));
@@ -21,8 +20,8 @@ get_header(); ?>
         <div uk-grid>
             <div class="uk-width-1-6@s uk-width-1-1">
                 <?php
-                    if ( get_post_meta( $post->ID, 'ut_publication_cover', true ) ) { ?>
-                        <img src="<?php echo get_post_meta( $post->ID, 'ut_publication_cover', true ); ?>" width="130" height="165" alt="<?php the_title(); ?>">
+                    if ( get_post_meta( get_the_ID(), 'ut_publication_cover', true ) ) { ?>
+                        <img src="<?php echo get_post_meta( get_the_ID(), 'ut_publication_cover', true ); ?>" width="130" height="165" alt="<?php the_title(); ?>">
                     <?php } else { ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder_publication.svg" width="130" height="165">
                     <?php }
@@ -31,12 +30,12 @@ get_header(); ?>
             <div class="uk-width-5-6@s uk-width-1-1">
                 <?php the_title( '<h3>', '</h3>' ); ?>
                 <ul uk-grid>
-                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_author', true ); ?></li>
-                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="print"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_publisher', true ); ?></li>
-                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="calendar"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_publication_year', true ); ?></li>
-                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="link"></span>&nbsp;<a href="<?php echo get_post_meta( $post->ID, 'ut_publication_reference', true ); ?>" target="_blank">
-                            <?php if ( get_post_meta( $post->ID, 'ut_publication_renamedownload', true ) ) { ?>
-                                <?php echo get_post_meta( $post->ID, 'ut_publication_renamedownload', true ); ?>
+                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_publication_author', true ); ?></li>
+                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="print"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_publication_publisher', true ); ?></li>
+                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="calendar"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_publication_year', true ); ?></li>
+                    <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="link"></span>&nbsp;<a href="<?php echo get_post_meta( get_the_ID(), 'ut_publication_reference', true ); ?>" target="_blank">
+                            <?php if ( get_post_meta( get_the_ID(), 'ut_publication_renamedownload', true ) ) { ?>
+                                <?php echo get_post_meta( get_the_ID(), 'ut_publication_renamedownload', true ); ?>
                             <?php } else { ?>
                                 Download
                             <?php } ?>
@@ -50,7 +49,7 @@ get_header(); ?>
         <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ukmtheme' ); ?></p>
         <?php get_search_form(); ?>
         <?php endif; ?>
-        <p><?php get_template_part( 'templates/content', 'paginate' ); ?></p>
+        <p><?php //get_template_part( 'templates/content', 'paginate' ); ?></p>
     </article>
 </div>
 <?php get_footer(); ?>

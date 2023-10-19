@@ -36,10 +36,10 @@ class Elementor_UKMTheme_News_Grid extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Jumlah Paparan', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
-				'min' => 4,
+				'min' => 3,
 				'max' => 24,
-				'step' => 4,
-				'default' => 4,
+				'step' => 3,
+				'default' => 6,
 			]
 		);
 

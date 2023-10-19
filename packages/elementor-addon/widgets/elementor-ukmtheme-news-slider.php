@@ -1,12 +1,12 @@
 <?php
-class Elementor_UKMTheme_News extends \Elementor\Widget_Base {
+class Elementor_UKMTheme_News_Slider extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'ukmtheme_news';
+		return 'ukmtheme_news_slider';
 	}
 
 	public function get_title() {
-		return esc_html__( 'UKM: Berita', 'elementor-addon' );
+		return esc_html__( 'UKM: Berita (Slider)', 'elementor-addon' );
 	}
 
 	public function get_icon() {

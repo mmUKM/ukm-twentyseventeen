@@ -12,12 +12,14 @@ function register_ukmtheme_elementor_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-slides.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-slideset.php' );
-	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news.php' );
+	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news-grid.php' );
+	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news-slider.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-staffs.php' );
 
 	$widgets_manager->register( new \Elementor_UKMTheme_Slides() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Slideset() );
-	$widgets_manager->register( new \Elementor_UKMTheme_News() );
+	$widgets_manager->register( new \Elementor_UKMTheme_News_Grid() );
+	$widgets_manager->register( new \Elementor_UKMTheme_News_Slider() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Staffs() );
 
 }

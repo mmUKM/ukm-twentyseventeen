@@ -41,7 +41,7 @@ get_header(); ?>
                             <h3 class="uk-card-title"><?php the_title(); ?></h3>
                             <ul class="uk-list uk-text-small">
                                 <li class="uk-margin-remove">
-                                    <?php echo get_the_term_list( $post->ID, 'department', '', '<br>', '' ); ?>
+                                    <?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?>
                                 </li>
                                 <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
                                     <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
@@ -114,7 +114,7 @@ get_header(); ?>
                 <div class="uk-card uk-card-body">
                 <h3 class="uk-card-title"><?php the_title(); ?></h3>
                     <ul uk-grid>
-                        <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_the_term_list( $post->ID, 'department', '', '<br>', '' ); ?></li>
+                        <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?></li>
                         <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
                             <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
                         <?php } else { ?>

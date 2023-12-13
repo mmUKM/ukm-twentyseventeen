@@ -122,7 +122,26 @@ get_header(); ?>
                         <?php } ?>
                         <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="mail"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_email', true ); ?></li>
                         <li>
-                        <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_staff_work_scope_desc', true ) ); ?>
+                            <?php
+                                if ( get_post_meta( get_the_ID(), 'ut_staff_work_scope', 1 ) ) {
+                                    if ( get_post_meta( get_the_ID(), 'ut_staff_work_scope_title', 1 ) ) { ?>
+                                        <h4>
+                                            <?php echo get_post_meta( get_the_ID(), 'ut_staff_work_scope_title_custom', true ); ?>
+                                        </h4>
+                                    <?php }
+                                    else { ?>
+                                        <h4>
+                                            <?php _e( 'Bidang Tugas','ukmtheme' ); ?>
+                                        </h4>
+                                    <?php } ?>
+                                    <span class="staff-scope">
+                                        <?php echo wpautop( get_post_meta( get_the_ID(), 'ut_staff_work_scope_desc', true ) ); ?>
+                                    </span>
+                                <?php }
+                                else {
+                                    echo '';
+                                }
+                            ?>  
                         </li>
                     </ul>
                 </div>

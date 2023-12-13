@@ -50,7 +50,8 @@ get_header(); ?>
                         </span>
                         <?php } else {
                             echo '';
-                        } ?>
+                        }
+                    ?>
                     <?php get_template_part('templates/content','edit' ); ?>
                 </div>
             </div>

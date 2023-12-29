@@ -30,7 +30,7 @@ class Elementor_UKMTheme_Slides extends \Elementor\Widget_Base {
                         <?php
                             $args = array(
                                 'post_type'       => 'slideshow',
-                                'posts_per_page'  => 10,
+                                'posts_per_page'  => 20,
                                 'orderby'         => 'menu_order'
                             );
 

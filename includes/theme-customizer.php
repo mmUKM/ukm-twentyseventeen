@@ -470,8 +470,8 @@ function ukmtheme_customizer( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( 'ukmtheme_staff_hide_phone', array(
-        'label'     => __( 'Sorok No Telefon', 'ukmtheme' ),
-        'description'   => 'Tandakan sekiranya ingin menyorokkan maklumat telefon',
+        'label'     => __( 'Papar No Telefon', 'ukmtheme' ),
+        'description'   => 'Papar maklumat no. telefon',
         'section'   => 'ukmtheme_staff_directory',
         'priority'  => 10,
         'type'      => 'checkbox'

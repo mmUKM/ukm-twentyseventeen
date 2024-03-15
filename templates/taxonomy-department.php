@@ -43,10 +43,12 @@ get_header(); ?>
                                 <li class="uk-margin-remove">
                                     <?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?>
                                 </li>
-                                <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
-                                    <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
-                                <?php } else { ?>
-                                    <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;03-8921-5555</li>
+                                <?php if ( get_theme_mod( 'ukmtheme_staff_hide_phone' ) ) { ?>
+                                    <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
+                                        <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
+                                    <?php } else { ?>
+                                        <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;03-8921-5555</li>
+                                    <?php } ?>
                                 <?php } ?>
                                 <li class="uk-margin-remove"><span uk-icon="mail"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_email', true ); ?></li>
                             </ul>
@@ -115,11 +117,13 @@ get_header(); ?>
                 <h3 class="uk-card-title"><?php the_title(); ?></h3>
                     <ul uk-grid>
                         <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="user"></span>&nbsp;<?php echo get_the_term_list( $post->ID, 'position', '', '<br>', '' ); ?></li>
-                        <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
-                            <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
-                        <?php } else { ?>
-                            <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;03-8921-5555</li>
-                        <?php } ?>
+                        <?php if ( get_theme_mod( 'ukmtheme_staff_hide_phone' ) ) { ?>
+                                    <?php if ( get_post_meta( get_the_ID(), 'ut_staff_phone', true ) ) { ?>
+                                        <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_phone', true ); ?></li>
+                                    <?php } else { ?>
+                                        <li class="uk-margin-remove"><span uk-icon="receiver"></span>&nbsp;03-8921-5555</li>
+                                    <?php } ?>
+                                <?php } ?>
                         <li class="uk-width-1-1 uk-margin-remove"><span uk-icon="mail"></span>&nbsp;<?php echo get_post_meta( get_the_ID(), 'ut_staff_email', true ); ?></li>
                         <li>
                         <?php

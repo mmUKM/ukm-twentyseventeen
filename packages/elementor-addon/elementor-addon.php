@@ -16,6 +16,7 @@ function register_ukmtheme_elementor_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news-grid.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news-slider.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-staffs.php' );
+	require_once( __DIR__ . '/widgets/elementor-ukmtheme-video-channel.php' );
 
 	$widgets_manager->register( new \Elementor_UKMTheme_FAQ() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Slides() );
@@ -23,6 +24,7 @@ function register_ukmtheme_elementor_widget( $widgets_manager ) {
 	$widgets_manager->register( new \Elementor_UKMTheme_News_Grid() );
 	$widgets_manager->register( new \Elementor_UKMTheme_News_Slider() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Staffs() );
+	$widgets_manager->register( new \Elementor_UKMTheme_Video_Channel() );
 
 }
 add_action( 'elementor/widgets/register', 'register_ukmtheme_elementor_widget' );

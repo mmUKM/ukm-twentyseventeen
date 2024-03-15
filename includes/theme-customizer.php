@@ -464,10 +464,10 @@ function ukmtheme_customizer( $wp_customize ) {
         'type'      => 'checkbox'
     ) );
 
-        // Paparan Grid View Staf
-        $wp_customize->add_setting( 'ukmtheme_staff_hide_phone', array( 
-            'default' => 0 
-        ) );
+    // Paparan No Telefon
+    $wp_customize->add_setting( 'ukmtheme_staff_hide_phone', array( 
+        'default' => 0 
+    ) );
 
     $wp_customize->add_control( 'ukmtheme_staff_hide_phone', array(
         'label'     => __( 'Sorok No Telefon', 'ukmtheme' ),

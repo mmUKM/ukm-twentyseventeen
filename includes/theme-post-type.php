@@ -1066,7 +1066,7 @@ function ukmtheme_pekeliling() {
 		'rewrite' => true
 	];
 
-	register_post_type( 'pekeliling', $args );
+	register_post_type( 'ut_pekeliling', $args );
 }
 
 // TAHUN PEKELILING
@@ -1110,7 +1110,7 @@ function ukmtheme_pekeliling_tahun() {
 		'rewrite_hierarchical' => false,
 		'rewrite' => [ 'slug' => 'kategori-pekeliling' ]
 	];
-	register_taxonomy( 'circat', [ 'pekeliling' ], $args );
+	register_taxonomy( 'circat', [ 'ut_pekeliling' ], $args );
 }
 
 function ut_pekeliling_list_file( $file_list_meta_pekeliling_list_file ) {

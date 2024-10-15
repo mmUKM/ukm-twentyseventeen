@@ -24,14 +24,15 @@ class Elementor_UKMTheme_Slides extends \Elementor\Widget_Base {
 	protected function render() {
 		?>
             <!--start slideshow-->
-            <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
+            <div>
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay: true; autoplay-interval: 6000; ratio: 1440:560; animation: push">
                     <ul class="uk-slideshow-items">
                         <?php
                             $args = array(
                                 'post_type'       => 'slideshow',
                                 'posts_per_page'  => 20,
-                                'orderby'         => 'menu_order'
+                                'orderby'         => 'menu_order',
+                                'post_status' => 'publish',
                             );
 
                             $slideshow = new WP_Query( $args );
@@ -40,7 +41,7 @@ class Elementor_UKMTheme_Slides extends \Elementor\Widget_Base {
                         ?>
                         <li>
                             <a href="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_link', true ); ?>">
-                                <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>">
+                                <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>" uk-cover>
                             </a>
                         </li>            
                         <?php endwhile; else: ?>

@@ -24,38 +24,8 @@ function ukmtheme_register_required_plugins() {
         ),
 
         array(
-            'name'      => 'ElementsKit Elementor addons',
-            'slug'      => 'elementskit-lite',
-            'required'  => false,
-        ),
-        
-        array(
-            'name'      => 'ARYO Activity Log',
-            'slug'      => 'aryo-activity-log',
-            'required'  => false,
-        ),
-
-        array(
-            'name'      => 'Polylang',
-            'slug'      => 'polylang',
-            'required'  => false,
-        ),
-
-        array(
             'name'      => 'Simple Page Ordering',
             'slug'      => 'simple-page-ordering',
-            'required'  => false,
-        ),
-    
-        array(
-            'name'      => 'All in One SEO Pack',
-            'slug'      => 'all-in-one-seo-pack',
-            'required'  => false,
-        ),
-
-        array(
-            'name'      => 'Lockdown WP Admin',
-            'slug'      => 'lockdown-wp-admin',
             'required'  => false,
         ),
 

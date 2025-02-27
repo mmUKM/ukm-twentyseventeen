@@ -12,13 +12,13 @@ function ukmtheme_register_required_plugins() {
     $plugins = array(
 
         array(
-            'name'      => 'Elementor Website Builder',
+            'name'      => 'Elementor Website Builder – More Than Just a Page Builder',
             'slug'      => 'elementor',
             'required'  => false,
         ),
 
         array(
-            'name'      => 'Elementor Header & Footer Builder',
+            'name'      => 'Ultimate Addons for Elementor (Formerly Elementor Header & Footer Builder)',
             'slug'      => 'header-footer-elementor',
             'required'  => false,
         ),

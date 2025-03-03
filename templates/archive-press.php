@@ -22,7 +22,7 @@ get_header(); ?>
                 <li>
                     <div uk-grid>
                         <div class="uk-width-1-1 uk-width-1-6@s"><span class="uk-label"><?php echo get_post_meta( $post->ID, 'ut_press_date', true ); ?></span></div>
-                        <div class="uk-width-1-1 uk-width-5-6@s uk-margin-remove" uk-lightbox><a href="<?php echo get_post_meta( $post->ID, 'ut_press_file', true ); ?>"><?php the_title(); ?></a></div>
+                        <div class="uk-width-1-1 uk-width-5-6@s uk-margin-remove" uk-lightbox><a href="<?php echo get_post_meta( $post->ID, 'ut_press_file', true ); ?>" data-type="iframe"><?php the_title(); ?></a></div>
                     </div>
                 </li>
             <?php endwhile; else: ?>

@@ -677,7 +677,7 @@ function ut_expertise() {
     $labels = array(
         'name'                => _x( 'Expertise', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'Expertise', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Expertise', 'ukmtheme' ),
+        'menu_name'           => __( 'Kepakaran', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Expertise:', 'ukmtheme' ),
         'all_items'           => __( 'All Expertise', 'ukmtheme' ),
         'view_item'           => __( 'View Expertise', 'ukmtheme' ),
@@ -750,7 +750,7 @@ function ut_press() {
     $labels = array(
         'name'                => _x( 'News Clipping', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'News Clipping', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'News Clipping', 'ukmtheme' ),
+        'menu_name'           => __( 'Klip Berita', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Press Release:', 'ukmtheme' ),
         'all_items'           => __( 'All', 'ukmtheme' ),
         'view_item'           => __( 'View News Clipping', 'ukmtheme' ),
@@ -818,7 +818,7 @@ function ut_publication() {
     $labels = array(
         'name'                => _x( 'Publications', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'Publication', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Publication', 'ukmtheme' ),
+        'menu_name'           => __( 'Penerbitan', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Publication:', 'ukmtheme' ),
         'all_items'           => __( 'All Publications', 'ukmtheme' ),
         'view_item'           => __( 'View Publication', 'ukmtheme' ),
@@ -930,7 +930,7 @@ function ut_video() {
     $labels = array(
         'name'                => _x( 'Video', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'Video', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Video', 'ukmtheme' ),
+        'menu_name'           => __( 'Geleri Video', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Video:', 'ukmtheme' ),
         'all_items'           => __( 'All Video', 'ukmtheme' ),
         'view_item'           => __( 'View Video', 'ukmtheme' ),
@@ -1135,7 +1135,7 @@ function ut_post_type_kelestarian() {
     $labels = array(
         'name'                  => _x( 'Kelestarian', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'         => _x( 'Kelestarian', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'             => __( 'Kelestarian', 'ukmtheme' ),
+        'menu_name'             => __( 'Kelestarian (SDG)', 'ukmtheme' ),
         'name_admin_bar'        => __( 'Kelestarian', 'ukmtheme' ),
         'archives'              => __( 'Kelestarian Archives', 'ukmtheme' ),
         'attributes'            => __( 'Kelestarian Attributes', 'ukmtheme' ),
@@ -1259,8 +1259,6 @@ function ut_conference_keynote( $file_list_meta_key, $img_size = 'full' ) {
                     echo '<strong>' . get_the_title( $attachment_id ) . '</strong><br>';
                     echo '<i>' . get_post( $attachment_id )->post_excerpt . '</i><br>';
                     echo get_post( $attachment_id )->post_content . '<br>';
-                    echo get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
-                echo '</div>';
             echo '</div>';
         echo '</li>';
     }
@@ -1271,7 +1269,7 @@ function ut_conference() {
     $labels = array(
         'name'                  => _x( 'Conferences', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'         => _x( 'Conference', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'             => __( 'Conference', 'ukmtheme' ),
+        'menu_name'             => __( 'Persidangan', 'ukmtheme' ),
         'name_admin_bar'        => __( 'Conference', 'ukmtheme' ),
         'archives'              => __( 'Conference Archives', 'ukmtheme' ),
         'parent_item_colon'     => __( 'Parent Conference:', 'ukmtheme' ),

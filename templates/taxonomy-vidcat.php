@@ -10,11 +10,14 @@ get_header(); ?>
         <h2><?php _e( 'Video', 'ukmtheme' ); ?>:&nbsp;<?php single_cat_title(); ?></h2>
         <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
         <?php
+
+        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
         
         $query = new WP_Query( array( 
             'post_type'       => 'video',
             'position'        => get_query_var( 'video' ),
             'posts_per_page'  => 10,
+            'paged'           => $paged
         ));
         
         

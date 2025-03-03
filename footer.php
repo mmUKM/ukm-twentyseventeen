@@ -6,7 +6,13 @@
 ?>
 </div <?php // END STICKY FOOTER ?>>
 <footer id="footer">
-<?php get_template_part( 'templates/widget', 'footer' ); ?>
+<?php 
+
+    get_template_part( 'templates/widget', 'footer' ); 
+
+    //block_template_part( 'footer' );
+
+?>
     <div class="uk-padding">
         <div uk-grid>
             <div class="uk-width-1-1 uk-padding">

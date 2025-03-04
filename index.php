@@ -23,7 +23,7 @@ get_header(); ?>
                 ?>
                 <li>
                     <a href="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_link', true ); ?>">
-                        <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>">
+                        <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>" uk-cover>
                     </a>
                 </li>            
                 <?php endwhile; else: ?>

@@ -14,7 +14,7 @@ if ( file_exists( get_template_directory() . '/includes/theme-post-type-template
 	require_once get_template_directory() . '/includes/theme-post-type-templates.php';
     }
 
-// POST TYPE: Soalan Lazim
+// POST TYPE: SOALAN LAZIM (FAQ)
 
 function title_faq_input ( $title ) {
     if ( get_post_type() == 'faq' ) {
@@ -53,7 +53,7 @@ function ukmtheme_faq() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-faq.svg',
+        'menu_icon'           => 'dashicons-editor-help',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -120,7 +120,7 @@ function ukmtheme_faq_custom_columns( $column ){
 }
 add_action('manage_faq_posts_custom_column', 'ukmtheme_faq_custom_columns');
 
-// PHOTO GALLERY
+// POST TYPE: GALERI FOTO
 
 function ut_lightbox_gallery( $file_list_meta_key, $img_size = 'medium' ) {
 
@@ -167,7 +167,7 @@ function ut_gallery() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-gallery.svg',
+        'menu_icon'           => 'dashicons-format-gallery',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -253,7 +253,7 @@ function ukmtheme_latest_news() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-news.svg',
+        'menu_icon'           => 'dashicons-megaphone',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -334,7 +334,7 @@ function ut_slideset() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-slideset.svg',
+        'menu_icon'           => 'dashicons-cover-image',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -403,7 +403,7 @@ function ut_slideshow() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-slideshow.svg',
+        'menu_icon'           => 'dashicons-format-image',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -434,7 +434,7 @@ function ut_slideshow_custom_columns( $column ) {
 }
 add_action( 'manage_slideshow_posts_custom_column', 'ut_slideshow_custom_columns' );
 
-// POST TYPE: STAFF DIRECTORY
+// POST TYPE: DIREKTORI STAF
 
 function title_staff_input ( $title ) {
     if ( get_post_type() == 'staff' ) {
@@ -479,7 +479,7 @@ function ukmtheme_staff_directory() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-staff.svg',
+        'menu_icon'           => 'dashicons-groups',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -663,7 +663,7 @@ function ut_staff_custom_columns( $column ) {
 }
 add_action( 'manage_staff_posts_custom_column', 'ut_staff_custom_columns' );
 
-// POST TYPE: EXPERTISE
+// POST TYPE: KEPAKARAN
 
 function title_expert_input ( $title ) {
     if ( get_post_type() == 'expertise' ) {
@@ -701,7 +701,7 @@ function ut_expertise() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-expertise.svg',
+        'menu_icon'           => 'dashicons-businessman',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -774,7 +774,7 @@ function ut_press() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-press.svg',
+        'menu_icon'           => 'dashicons-media-document',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -843,7 +843,7 @@ function ut_publication() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-publication.svg',
+        'menu_icon'           => 'dashicons-book-alt',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -930,7 +930,7 @@ function ut_video() {
     $labels = array(
         'name'                => _x( 'Video', 'Post Type General Name', 'ukmtheme' ),
         'singular_name'       => _x( 'Video', 'Post Type Singular Name', 'ukmtheme' ),
-        'menu_name'           => __( 'Geleri Video', 'ukmtheme' ),
+        'menu_name'           => __( 'Galeri Video', 'ukmtheme' ),
         'parent_item_colon'   => __( 'Parent Video:', 'ukmtheme' ),
         'all_items'           => __( 'All Video', 'ukmtheme' ),
         'view_item'           => __( 'View Video', 'ukmtheme' ),
@@ -955,7 +955,7 @@ function ut_video() {
         'menu_position'       => 20,
         'show_in_nav_menus'   => false,
         'show_in_admin_bar'   => false,
-        'menu_icon'           => get_template_directory_uri() . '/images/icon-video.svg',
+        'menu_icon'           => 'dashicons-format-video',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -1057,7 +1057,7 @@ function ukmtheme_pekeliling() {
 		'rewrite_no_front'    => false,
 		'show_in_menu'        => true,
 		'menu_position'       => 20,
-		'menu_icon'           => get_template_directory_uri() . '/images/icon-press.svg',
+		'menu_icon'           => 'dashicons-list-view',
 		'supports' => [
 			'title',
             'page-attributes'
@@ -1172,7 +1172,7 @@ function ut_post_type_kelestarian() {
         'show_ui'               => true,
         'show_in_menu'          => true,
         'menu_position'         => 20,
-        'menu_icon'             => get_template_directory_uri() . '/images/icon-kelestarian.svg',
+        'menu_icon'             => 'dashicons-admin-site',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
@@ -1303,7 +1303,7 @@ function ut_conference() {
         'public'                => true,
         'show_ui'               => true,
         'show_in_menu'          => true,
-        'menu_icon'             => get_template_directory_uri() . '/images/icon-conference.svg',
+        'menu_icon'             => 'dashicons-schedule',
         'show_in_admin_bar'     => false,
         'show_in_nav_menus'     => true,
         'can_export'            => true,

@@ -476,11 +476,10 @@ add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
         ));  
 
         $kelestarian->add_field( array(
-            'name'    => esc_html__( 'Ringkasan', 'ukmtheme' ),
-            'desc'    => esc_html__( 'Ringkasan kelestarian', 'ukmtheme' ),
-            'id'      => 'ut_kelestarian_ringkasan',
-            'type'    => 'wysiwyg',
-            'options' => array( 'textarea_rows' => 5, ),
+            'name'       => esc_html__( 'Ringkasan', 'ukmtheme' ),
+            'desc'      => esc_html__( 'Paste facebook embed code di sini', 'ukmtheme' ),
+            'id'        => 'ut_kelestarian_ringkasan',
+            'type'      => 'textarea_code'
         ) );
     }
 

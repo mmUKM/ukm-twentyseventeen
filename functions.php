@@ -22,8 +22,8 @@ add_action( 'wp_head', 'ukmtheme_favicon' );
 
 add_action( 'admin_enqueue_scripts', 'ukmtheme_wp_admin_scripts' );
     function ukmtheme_wp_admin_scripts() {
-        wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin.min.js', array(), '2017.20220701', true );
-        wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin.css', false, '2017.20220701' );
+        wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+        wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin.css', false, wp_get_theme()->get( 'Version' ) );
     }
 
 add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
@@ -31,16 +31,16 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
         // CSS
         wp_deregister_script( 'jquery' );
         wp_enqueue_script( 'jquery', get_template_directory_uri() . '/packages/jquery/jquery-3.6.0.min.js', array(), '3.6.0', false );
-        wp_enqueue_script( 'uikit', get_template_directory_uri() . '/packages/uikit3/js/uikit.min.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'uikit-icons', get_template_directory_uri() . '/packages/uikit3/js/uikit-icons.min.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/packages/fitvids/jquery.fitvids.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'ytv', get_template_directory_uri() . '/packages/ytv/src/ytv.js', array(), '2017.20220701', true );
-        wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/src/scripts.js', array(), '2017.20220701', true );
+        wp_enqueue_script( 'uikit', get_template_directory_uri() . '/packages/uikit3/js/uikit.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+        wp_enqueue_script( 'uikit-icons', get_template_directory_uri() . '/packages/uikit3/js/uikit-icons.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+        wp_enqueue_script( 'fitvidsjs', get_template_directory_uri() . '/packages/fitvids/jquery.fitvids.js', array(), wp_get_theme()->get( 'Version' ), true );
+        wp_enqueue_script( 'ytv', get_template_directory_uri() . '/packages/ytv/src/ytv.js', array(), wp_get_theme()->get( 'Version' ), true );
+        wp_enqueue_script( 'theme', get_template_directory_uri() . '/js/src/scripts.js', array(), wp_get_theme()->get( 'Version' ), true );
         // JS
-        wp_enqueue_style( 'uikit', get_template_directory_uri() . '/packages/uikit3/css/uikit.min.css', false, '2017.20220701' );
-        wp_enqueue_style( 'ytv', get_template_directory_uri() . '/packages/ytv/src/ytv.css', false, '2017.20220701' );
-        wp_enqueue_style( 'poppins-font', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap', false, '2017.20220701' );
-        wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2017.20220701' );
+        wp_enqueue_style( 'uikit', get_template_directory_uri() . '/packages/uikit3/css/uikit.min.css', false, wp_get_theme()->get( 'Version' ) );
+        wp_enqueue_style( 'ytv', get_template_directory_uri() . '/packages/ytv/src/ytv.css', false, wp_get_theme()->get( 'Version' ) );
+        wp_enqueue_style( 'poppins-font', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap', false, wp_get_theme()->get( 'Version' ) );
+        wp_enqueue_style( 'style', get_stylesheet_uri(), false, wp_get_theme()->get( 'Version' ) );
     }
 
 /**

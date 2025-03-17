@@ -5,7 +5,7 @@
  */
 ?>
 </div <?php // END STICKY FOOTER ?>>
-<footer id="footer">
+<footer id="footer" uk-sticky="position: bottom">
 <?php 
 
     get_template_part( 'templates/widget', 'footer' ); 

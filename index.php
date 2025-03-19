@@ -28,10 +28,13 @@ get_header(); ?>
                 </li>            
                 <?php endwhile; else: ?>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder-slideshow-a.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Slide-A.jpg" alt="" uk-cover>
                 </li>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder-slideshow-b.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Slide-B.jpg" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Slide-C.jpg" alt="" uk-cover>
                 </li>
                 <?php endif; ?>
             </ul>

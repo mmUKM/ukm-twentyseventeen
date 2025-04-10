@@ -14,7 +14,7 @@ class Elementor_UKMTheme_News_Grid extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'ukmtheme' ];
 	}
 
 	public function get_keywords() {

@@ -16,6 +16,7 @@
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-cssbeautifier": "^0.1.2",
-    "grunt-dart-sass": "^2.0.1"
+    "grunt-sass": "^4.0.0",
+    "sass": "^1.86.0"
   }
 }

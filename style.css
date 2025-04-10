@@ -9,7 +9,7 @@ License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 html {
-    font: 400 16px/20px "Poppins", Helvetica, Arial, sans-serif;
+    font: 400 16px/20px "Inter", Helvetica, Arial, sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     color: #444;
@@ -482,7 +482,7 @@ h1.conference-site-name {
     right: 10px;
     top: 20px;
     border: 5px solid transparent;
-    border-top-color: #fff;
+    border-top-color: #ffffff;
 }
 
 #cssmenu > ul > li:hover::after {
@@ -784,8 +784,8 @@ h1.conference-site-name {
         position: absolute;
         height: 3px;
         width: 22px;
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
+        border-top: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
         right: 20px;
         top: 28px;
     }
@@ -796,7 +796,7 @@ h1.conference-site-name {
         position: absolute;
         height: 3px;
         width: 22px;
-        border-top: 2px solid #fff;
+        border-top: 2px solid #ffffff;
         right: 20px;
         top: 23px;
     }

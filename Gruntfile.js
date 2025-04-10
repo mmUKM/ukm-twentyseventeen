@@ -1,3 +1,7 @@
+const sass = require('sass');
+
+require('load-grunt-tasks')(grunt);
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
@@ -5,9 +9,10 @@ module.exports = function(grunt) {
 
         // grunt-contrib-sass
 
-        'dart-sass': {
-            target: {
+        'sass': {
+            dist: {
                 options: {
+                    implementation: sass,
                     sourceMap: false
                 },
                 files: {
@@ -81,9 +86,9 @@ module.exports = function(grunt) {
                     'scss/admin.scss',
                     'scss/*.scss'
                 ],
-                tasks: ['dart-sass','cssbeautifier','usebanner'],
+                tasks: ['sass', 'cssbeautifier', 'usebanner'],
                     options: {
-                        livereload: true
+                        livereload: false,
                     }
             },
             js: {
@@ -100,14 +105,14 @@ module.exports = function(grunt) {
     // load grunt task
 
     grunt.loadNpmTasks('grunt-banner');
-    grunt.loadNpmTasks('grunt-dart-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-cssbeautifier');
 
     // execute grunt task
 
-    grunt.registerTask('default', ['dart-sass', 'uglify', 'usebanner', 'cssbeautifier']);
-    grunt.registerTask('dev', ['watch']);
+    grunt.registerTask('default', ['sass', 'uglify', 'usebanner', 'cssbeautifier']);
+    grunt.registerTask('watch', ['watch']);
 
 };

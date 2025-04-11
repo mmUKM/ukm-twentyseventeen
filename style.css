@@ -354,7 +354,11 @@ h1.conference-site-name {
     text-decoration: none;
 }
 
-.ukmtheme-slide-card h1, .ukmtheme-slide-card h2, .ukmtheme-slide-card h3, .ukmtheme-slide-card h4, .ukmtheme-slide-card h5, .ukmtheme-slide-card h6, .ukmtheme-slide-card p, .ukmtheme-slide-card span, .ukmtheme-slide-card em {
+.ukmtheme-slide-card h1, .ukmtheme-slide-card h2, .ukmtheme-slide-card h3, .ukmtheme-slide-card h4, .ukmtheme-slide-card h5, .ukmtheme-slide-card h6, .ukmtheme-slide-card p, .ukmtheme-slide-card span {
+    color: #000000 !important;
+}
+
+.ukmtheme-slide-card h1 em, .ukmtheme-slide-card h2 em, .ukmtheme-slide-card h3 em, .ukmtheme-slide-card h4 em, .ukmtheme-slide-card h5 em, .ukmtheme-slide-card h6 em, .ukmtheme-slide-card p em, .ukmtheme-slide-card span em {
     color: #000000 !important;
 }
 

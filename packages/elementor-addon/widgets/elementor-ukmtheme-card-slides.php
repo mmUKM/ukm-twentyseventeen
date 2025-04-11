@@ -141,7 +141,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 
 			<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-				<div class="uk-slider-items uk-child-width-1-3@s uk-grid">
+				<div class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > div > .uk-card">
 			
 					<?php foreach ( $settings['list'] as $index => $item ) : ?>
 						<div>
@@ -155,7 +155,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 										<?php } ?>
 								</div>
 								<div class="uk-card-body ukmtheme-slide-card">
-									<h3 class="uk-card-title">
+									<h3>
 										<?php
 										if ( $item['link']['url'] ) {
 											?><a href="<?php echo esc_url( $item['link']['url'] ); ?>"><?php echo $item['text']; ?></a><?php
@@ -203,7 +203,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 
 			<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
 
-				<div class="uk-slider-items uk-child-width-1-3@s uk-grid">
+				<div class="uk-slider-items uk-child-width-1-3@s uk-grid" uk-height-match="target: > div > .uk-card">
 				<# _.each( settings.list, function( item, index ) { #>
 					<div>
 						<div class="uk-card uk-card-default">
@@ -214,9 +214,9 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 							</div>
 						</div>
 						<div class="uk-card-body ukmtheme-slide-card">
-							<h3 style="color:#000;">{{{ item.text }}}</h3>
-							<span style="color:#000;">{{{ item.textDescription }}}</span>
-							<p style="color:#000;">{{{ item.textAdditional }}}</p>
+							<h3>{{{ item.text }}}</h3>
+							<span>{{{ item.textDescription }}}</span>
+							<p>{{{ item.textAdditional }}}</p>
 						</div>
 					</div>
 

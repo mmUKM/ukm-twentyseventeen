@@ -54,7 +54,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 						'default' => esc_html__( 'Slide 1', 'ukmtheme' ),
 					],
 					[
-						'name' => 'text-description',
+						'name' => 'textDescription',
 						'label' => esc_html__( 'Text Description', 'ukmtheme' ),
 						'type' => \Elementor\Controls_Manager::TEXTAREA,
 						'row' => 3,
@@ -62,7 +62,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 						'default' => esc_html__( 'Lihat kampus ku yang tenang, Damainya alam ciptaan tuhan, Paduan ilmu dan keimanan, Amal dan jerih digabungkan', 'ukmtheme' ),
 					],
 					[
-						'name' => 'text-additional',
+						'name' => 'textAdditional',
 						'label' => esc_html__( 'Additional Text', 'ukmtheme' ),
 						'label_block' => true,
 						'type' => \Elementor\Controls_Manager::TEXT,
@@ -99,6 +99,35 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'section_style',
+			[
+				'label' => esc_html__( 'Style', 'ukmtheme' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'content_typography',
+				'selector' => '{{WRAPPER}} .ukmtheme-slide-card',
+			]
+		);
+
+		$this->add_control(
+			'text_color',
+			[
+				'label' => esc_html__( 'Text Color', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .ukmtheme-slide-card' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
 	}
 
 	protected function render(): void {
@@ -125,7 +154,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 											<img src="<?php echo get_template_directory_uri() . '/images/elementor-image-placeholder.svg'; ?>" width="1080" height="1080" alt="">
 										<?php } ?>
 								</div>
-								<div class="uk-card-body">
+								<div class="uk-card-body ukmtheme-slide-card">
 									<h3 class="uk-card-title">
 										<?php
 										if ( $item['link']['url'] ) {
@@ -136,14 +165,14 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 										?>
 									</h3>
 										<?php
-										if ( $item['text-description'] ) { ?>
-											<span class="uk-clearfix"><?php echo esc_html__( $item['text-description'] ); ?></span>
+										if ( $item['textDescription'] ) { ?>
+											<span class="uk-clearfix"><?php echo $item['textDescription']; ?></span>
 										<?php } else { ?>
 											<span>Please insert some text!</span>
 										<?php } ?>
 										<?php
-										if ( $item['text-additional'] ) { ?>
-											<p><?php echo esc_html__( $item['text-additional'] ); ?></p>
+										if ( $item['textAdditional'] ) { ?>
+											<p><?php echo $item['textAdditional']; ?></p>
 										<?php } else { ?>
 											<span>Please insert some text!</span>
 										<?php } ?>
@@ -170,17 +199,31 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 			return;
 		}
 		#>
-		<ul>
-		<# _.each( settings.list, function( item, index ) { #>
-			<li>
-			<# if ( item.link && item.link.url ) { #>
-				<a href="{{{ item.link.url }}}">{{{ item.text }}}</a>
-			<# } else { #>
-				{{{ item.text }}}
-			<# } #>
-			</li>
-		<# } ); #>
-		</ul>
+		<div class="uk-slider-container-offset" uk-slider>
+
+			<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+				<div class="uk-slider-items uk-child-width-1-3@s uk-grid">
+				<# _.each( settings.list, function( item, index ) { #>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<# if ( item.image && item.image.url ) { #>
+									<img src="{{{ item.image.url }}}" width="1080" height="1080" alt="{{{ item.text }}}">
+								<# } #>
+							</div>
+						</div>
+						<div class="uk-card-body ukmtheme-slide-card">
+							<h3 style="color:#000;">{{{ item.text }}}</h3>
+							<span style="color:#000;">{{{ item.textDescription }}}</span>
+							<p style="color:#000;">{{{ item.textAdditional }}}</p>
+						</div>
+					</div>
+
+				<# } ); #>
+				</div>
+			</div>
+		</div>
 		<?php
 	}
 

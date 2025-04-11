@@ -10,3 +10,7 @@
 .column-ut_slideset_image {
   width: 15%;
 }
+
+.ukmtheme-slide-card h1, .ukmtheme-slide-card h2, .ukmtheme-slide-card h3, .ukmtheme-slide-card h4, .ukmtheme-slide-card h5, .ukmtheme-slide-card h6, .ukmtheme-slide-card p, .ukmtheme-slide-card span, .ukmtheme-slide-card em {
+  color: #000000 !important;
+}

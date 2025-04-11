@@ -50,19 +50,19 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 						'label' => esc_html__( 'Text', 'ukmtheme' ),
 						'label_block' => true,
 						'type' => \Elementor\Controls_Manager::TEXT,
-						'placeholder' => esc_html__( 'Slot 1', 'ukmtheme' ),
-						'default' => esc_html__( 'Slot 1', 'ukmtheme' ),
+						'placeholder' => esc_html__( 'Slide 1', 'ukmtheme' ),
+						'default' => esc_html__( 'Slide 1', 'ukmtheme' ),
 					],
 					[
 						'name' => 'text-description',
 						'label' => esc_html__( 'Text Description', 'ukmtheme' ),
 						'type' => \Elementor\Controls_Manager::TEXTAREA,
 						'row' => 3,
-						'placeholder' => esc_html__( 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz', 'ukmtheme' ),
-						'default' => esc_html__( 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz', 'ukmtheme' ),
+						'placeholder' => esc_html__( 'Lihat kampus ku yang tenang, Damainya alam ciptaan tuhan, Paduan ilmu dan keimanan, Amal dan jerih digabungkan', 'ukmtheme' ),
+						'default' => esc_html__( 'Lihat kampus ku yang tenang, Damainya alam ciptaan tuhan, Paduan ilmu dan keimanan, Amal dan jerih digabungkan', 'ukmtheme' ),
 					],
 					[
-						'name' => 'additional-text',
+						'name' => 'text-additional',
 						'label' => esc_html__( 'Additional Text', 'ukmtheme' ),
 						'label_block' => true,
 						'type' => \Elementor\Controls_Manager::TEXT,
@@ -73,19 +73,24 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 						'name' => 'link',
 						'label' => esc_html__( 'Link', 'ukmtheme' ),
 						'type' => \Elementor\Controls_Manager::URL,
-						'placeholder' => esc_html__( 'https://your-link.com', 'ukmtheme' ),
+						'placeholder' => esc_html__( 'https://www.ukm.my/', 'ukmtheme' ),
 					],
 				],
 				'default' => [
 					[
-						'text' => esc_html__( 'List Item #1', 'ukmtheme' ),
-						'text_description' => esc_html__( 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz', 'ukmtheme' ),
-						'link' => 'https://elementor.com/',
+						'text' => esc_html__( 'Slide #1', 'ukmtheme' ),
+						'text_description' => esc_html__( 'Lihat kampus ku yang tenang, Damainya alam ciptaan tuhan, Paduan ilmu dan keimanan, Amal dan jerih digabungkan', 'ukmtheme' ),
+						'link' => 'https://www.ukm.my/',
 					],
 					[
-						'text' => esc_html__( 'List Item #2', 'ukmtheme' ),
-						'text_description' => esc_html__( 'The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz', 'ukmtheme' ),
-						'link' => 'https://elementor.com/',
+						'text' => esc_html__( 'Slide #2', 'ukmtheme' ),
+						'text_description' => esc_html__( 'Lihat kampus ku yang tenang, Damainya alam ciptaan tuhan, Paduan ilmu dan keimanan, Amal dan jerih digabungkan', 'ukmtheme' ),
+						'link' => 'https://www.ukm.my/',
+					],
+					[
+						'text' => esc_html__( 'Slide #3', 'ukmtheme' ),
+						'text_description' => esc_html__( 'Lihat kampus ku yang tenang, Damainya alam ciptaan tuhan, Paduan ilmu dan keimanan, Amal dan jerih digabungkan', 'ukmtheme' ),
+						'link' => 'https://www.ukm.my/',
 					],
 				],
 				'title_field' => '{{{ text }}}',
@@ -115,9 +120,9 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 								<div class="uk-card-media-top">
 										<?php
 										if ( $item['image']['url'] ) { ?>
-											<img src="<?php echo esc_url( $item['image']['url'] ); ?>" width="1800" height="1200" alt="">
+											<img src="<?php echo esc_url( $item['image']['url'] ); ?>" width="1080" height="1080" alt="">
 										<?php } else { ?>
-											<img src="<?php echo get_template_directory_uri() . '/images/elementor-image-placeholder.svg'; ?>" width="1800" height="1200" alt="">
+											<img src="<?php echo get_template_directory_uri() . '/images/elementor-image-placeholder.svg'; ?>" width="1080" height="1080" alt="">
 										<?php } ?>
 								</div>
 								<div class="uk-card-body">
@@ -132,9 +137,15 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 									</h3>
 										<?php
 										if ( $item['text-description'] ) { ?>
-											<p><?php echo esc_html__( $item['text-description'] ); ?></p>
+											<span class="uk-clearfix"><?php echo esc_html__( $item['text-description'] ); ?></span>
 										<?php } else { ?>
-											<p>Please insert some text!</p>
+											<span>Please insert some text!</span>
+										<?php } ?>
+										<?php
+										if ( $item['text-additional'] ) { ?>
+											<p><?php echo esc_html__( $item['text-additional'] ); ?></p>
+										<?php } else { ?>
+											<span>Please insert some text!</span>
 										<?php } ?>
 								</div>
 							</div>

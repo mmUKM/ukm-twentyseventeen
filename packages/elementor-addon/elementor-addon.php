@@ -28,6 +28,7 @@ function register_ukmtheme_elementor_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-card-slides.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-slides.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-slideset.php' );
+	require_once( __DIR__ . '/widgets/elementor-ukmtheme-slideshow.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news-grid.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-news-slider.php' );
 	require_once( __DIR__ . '/widgets/elementor-ukmtheme-publications.php' );
@@ -38,6 +39,7 @@ function register_ukmtheme_elementor_widget( $widgets_manager ) {
 	$widgets_manager->register( new \Elementor_UKMTheme_Card_Slides() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Slides() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Slideset() );
+	$widgets_manager->register( new \Elementor_UKMTheme_Slideshow() );
 	$widgets_manager->register( new \Elementor_UKMTheme_News_Grid() );
 	$widgets_manager->register( new \Elementor_UKMTheme_News_Slider() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Publications() );

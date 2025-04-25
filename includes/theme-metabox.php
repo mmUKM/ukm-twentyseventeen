@@ -469,7 +469,7 @@ add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
         ) );
         $kelestarian->add_field( array(
             'name'    => esc_html__( 'Tarikh', 'ukmtheme' ),
-            'desc'    => esc_html__( '20/11/2011', 'ukmtheme' ),
+            'desc'    => esc_html__( '01/05/2025', 'ukmtheme' ),
             'id'      => 'ut_kelestarian_date',
             'type'    => 'text_date',
             'date_format' => esc_html__( 'd/m/Y', 'cmb2' ),
@@ -479,7 +479,36 @@ add_action( 'cmb2_init', 'ukmtheme_pekeliling_metaboxes' );
             'name'       => esc_html__( 'Ringkasan', 'ukmtheme' ),
             'desc'      => esc_html__( 'Paste facebook embed code di sini', 'ukmtheme' ),
             'id'        => 'ut_kelestarian_ringkasan',
-            'type'      => 'textarea_code'
+            'type'    => 'wysiwyg',
+            'options' => array( 'textarea_rows' => 5, ),
+            'sanitization_cb' => false,
+        ) );
+
+        $kelestarian->add_field( array(
+            'name'         => esc_html__('Poster SDG', 'ukmtheme' ),
+            'desc'         => esc_html__('Pilih Poster SDG', 'ukmtheme' ),
+            'id'           => 'ut_kelestarian_sdg',
+            'type'         => 'multicheck',
+            'options'       => array(
+                get_template_directory_uri() . '/images/sdg-1.png' =>   esc_html__( 'SDG 1', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-2.png' =>   esc_html__( 'SDG 2', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-3.png' =>   esc_html__( 'SDG 3', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-4.png' =>   esc_html__( 'SDG 4', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-5.png' =>   esc_html__( 'SDG 5', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-6.png' =>   esc_html__( 'SDG 6', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-7.png' =>   esc_html__( 'SDG 7', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-8.png' =>   esc_html__( 'SDG 8', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-9.png' =>   esc_html__( 'SDG 9', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-10.png' =>   esc_html__( 'SDG 10', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-11.png' =>   esc_html__( 'SDG 11', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-12.png' =>   esc_html__( 'SDG 12', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-13.png' =>   esc_html__( 'SDG 13', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-14.png' =>   esc_html__( 'SDG 14', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-15.png' =>   esc_html__( 'SDG 15', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-16.png' =>   esc_html__( 'SDG 16', 'cmb2' ),
+                get_template_directory_uri() . '/images/sdg-17.png' =>   esc_html__( 'SDG 17', 'cmb2' ),
+            ),
+            'inline'        => 'true'
         ) );
     }
 

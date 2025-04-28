@@ -99,6 +99,14 @@ module.exports = function(grunt) {
                     }
             }
         },
+
+        // grunt-contrib-clean
+
+        clean: {
+            dist: {
+                src: ['packages/cmb2/languages/*']
+            }
+        },
     
     }); // end Project configuration
 
@@ -109,10 +117,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-cssbeautifier');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // execute grunt task
 
     grunt.registerTask('default', ['sass', 'uglify', 'usebanner', 'cssbeautifier']);
     grunt.registerTask('watch', ['watch']);
+    grunt.registerTask('clean', ['clean:dist']);
 
 };

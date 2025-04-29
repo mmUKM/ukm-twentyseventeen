@@ -49,11 +49,22 @@ add_action( 'wp_enqueue_scripts', 'ukmtheme_scripts' );
  * Jangan tukar nama folder theme "ukmtheme-master"
  */
 
-require( get_template_directory() . '/packages/theme-updates/theme-update-checker.php' );
+/* require( get_template_directory() . '/packages/theme-updates/theme-update-checker.php' );
     new ThemeUpdateChecker(
         'ukm-twentyseventeen-master',
         'https://raw.githubusercontent.com/mmUKM/ukm-twentyseventeen/master/package.json'
+); */
+
+
+require get_template_directory() . '/packages/puc/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://raw.githubusercontent.com/mmUKM/ukm-twentyseventeen/master/package.json',
+	__FILE__,
+	'ukm-twentyseventeen-master'
 );
+
 
 /**
  * Tetapan pada theme
@@ -92,7 +103,6 @@ add_action( 'after_setup_theme', 'ukmtheme_setup' );
 function ukmtheme_module() {
     require( get_template_directory() . '/includes/theme-archive-links.php' );
     require( get_template_directory() . '/includes/theme-customizer.php' );
-    require( get_template_directory() . '/includes/theme-metabox.php' );
     require( get_template_directory() . '/includes/theme-walker-menu.php' );
     require( get_template_directory() . '/includes/theme-login.php' );
     require( get_template_directory() . '/includes/theme-plugins.php' );

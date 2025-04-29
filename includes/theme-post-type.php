@@ -10,10 +10,16 @@
  * @link http://codex.wordpress.org/Plugin_API/Action_Reference/manage_$post_type_posts_custom_column
  */
 
+/** POST TYPE TEMPLATE FILE */
+
 if ( file_exists( get_template_directory() . '/includes/theme-post-type-templates.php' ) ) {
 	require_once get_template_directory() . '/includes/theme-post-type-templates.php';
     }
+/** POST TYPE CUSTOM FIELD */
 
+if ( file_exists( get_template_directory() . '/includes/theme-post-type-metabox.php' ) ) {
+    require_once get_template_directory() . '/includes/theme-post-type-metabox.php';
+    }
 // POST TYPE: SOALAN LAZIM (FAQ)
 
 function title_faq_input ( $title ) {
@@ -1129,6 +1135,30 @@ function ut_pekeliling_list_file( $file_list_meta_pekeliling_list_file ) {
 }
 
 // POST TYPE: KELESTARIAN
+
+
+function ut_kelestarian_gallery( $file_list_meta_key, $img_size = 'medium' ) {
+
+    $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
+    echo '<div uk-slideshow="animation: push">';
+        echo '<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>';
+            echo '<div class="uk-slideshow-items">';
+
+                foreach ( (array) $files as $attachment_id => $attachment_url ) {
+                    echo '<div>';
+                        echo '<img src="';
+                            echo wp_get_attachment_url( $attachment_id, array('800','600'), '', array( 'class' => 'uk-cover-container' ) );
+                        echo '" uk-cover>';
+                    echo '</div>';
+                }
+                echo '</div>';
+                echo '<a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>';
+                echo '<a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slideshow-item="next"></a>';
+            echo '</div>';
+            echo '<ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>';
+    echo '</div>';
+}
+
 
 // Register Custom Post Type
 function ut_post_type_kelestarian() {

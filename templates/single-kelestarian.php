@@ -9,8 +9,9 @@ get_header(); ?>
 
     <article class="uk-article">
         <?php while ( have_posts() ) : the_post(); ?>
-        <h2 class="uk-h2 uk-padding"><?php the_title(); ?></h2>
+        <h1 class="uk-h1 uk-padding uk-padding-remove-bottom"><?php the_title(); ?></h1>
         <div class="uk-padding" style="position: relative;">
+        <?php ut_kelestarian_gallery( 'ut_kelestarian_foto', 'post-thumbnail' ); ?>
         <p><span uk-icon="icon: calendar"></span>&nbsp;<?php echo get_post_meta( $post->ID, 'ut_kelestarian_date', true ); ?></p>
             <?php echo get_post_meta( get_the_ID(), 'ut_kelestarian_ringkasan', true ); ?>
             <div class="uk-padding uk-padding-remove-left">

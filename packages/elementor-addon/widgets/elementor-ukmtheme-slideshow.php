@@ -42,7 +42,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                         'label' => esc_html__( 'Image', 'ukmtheme' ),
                         'type' => \Elementor\Controls_Manager::MEDIA,
                         'default' => [
-                            'url' => get_template_directory_uri() . '/images/Slide-A.jpg',
+                            'url' => get_template_directory_uri() . '/images/dummy-1440x560.svg',
                         ],
                     ],
 					[
@@ -123,7 +123,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                             if ( $item['image']['url'] ) { ?>
                                 <img src="<?php echo esc_url( $item['image']['url'] ); ?>" uk-cover>
                             <?php } else { ?>
-                                <img src="<?php echo get_template_directory_uri() . '/images/Slide-A.jpg'; ?>" uk-cover>
+                                <img src="<?php echo get_template_directory_uri() . '/images/dummy-1440x560.svg'; ?>" uk-cover>
                             <?php } ?>
                         </div>
 

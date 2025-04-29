@@ -46,10 +46,13 @@ class Elementor_UKMTheme_Slides extends \Elementor\Widget_Base {
                         </li>            
                         <?php endwhile; else: ?>
                         <li>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder-slideshow-a.jpg" alt="" uk-cover>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-1440x560.svg" alt="" uk-cover>
                         </li>
                         <li>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder-slideshow-b.jpg" alt="" uk-cover>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-1440x560.svg" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-1440x560.svg" alt="" uk-cover>
                         </li>
                         <?php endif; ?>
                     </ul>

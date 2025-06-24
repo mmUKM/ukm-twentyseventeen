@@ -323,3 +323,58 @@ add_action( 'init', 'ukmtheme_posts_per_archive', 0 );
                 return $option_posts_per_page;
         }
     }
+
+
+// https://www.ukm.my/wadahict/feed/
+
+function fetch_external_rss_feed_with_uikit_slider() {
+    include_once(ABSPATH . WPINC . '/feed.php');
+    $rss = fetch_feed('https://www.ukm.my/wadahict/feed/'); // Replace with actual feed URL
+
+    if (is_wp_error($rss)) {
+        return '<p>Unable to fetch feed.</p>';
+    }
+
+    $maxitems = $rss->get_item_quantity(5);
+    $rss_items = $rss->get_items(0, $maxitems);
+
+    // Set your fallback image URL
+    $default_thumbnail = 'https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456_960_720.jpg';
+
+    $output = '<div uk-slider="autoplay: true; autoplay-interval: 5000; pause-on-hover: true">';
+    $output .= '<div class="uk-position-relative uk-visible-toggle" tabindex="-1">';
+    $output .= '<ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-3@m uk-grid" uk-height-match="target: > li > .uk-card">';
+
+    if ($maxitems == 0) {
+        $output .= '<li><p>No items found.</p></li>';
+    } else {
+        foreach ($rss_items as $item) {
+            $thumbnail_url = $default_thumbnail;
+            $enclosure = $item->get_enclosure();
+            if ($enclosure && strpos($enclosure->get_type(), 'image') !== false) {
+                $thumbnail_url = esc_url($enclosure->get_link());
+            }
+
+            $output .= '<li>';
+            $output .= '<div class="uk-card uk-card-default uk-card-hover">';
+            $output .= '<div class="uk-card-media-top">';
+            $output .= '<img src="' . $thumbnail_url . '" alt="" style="width:100%; height:auto;">';
+            $output .= '</div>';
+            $output .= '<div class="uk-card-body">';
+            $output .= '<h3 class="uk-card-title"><a href="' . esc_url($item->get_permalink()) . '">' . esc_html($item->get_title()) . '</a></h3>';
+            $output .= '<p>' . esc_html(wp_trim_words($item->get_description(), 20)) . '</p>';
+            $output .= '<p><small>' . $item->get_date('j F Y | g:i a') . '</small></p>';
+            $output .= '</div></div></li>';
+        }
+    }
+
+    $output .= '</ul>';
+    $output .= '<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slider-item="previous"><span uk-icon="icon: chevron-left"></span></a>';
+    $output .= '<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slider-item="next"><span uk-icon="icon: chevron-right"></span></a>';
+    $output .= '</div>';
+    $output .= '<ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>';
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('external_rss_feed_slider', 'fetch_external_rss_feed_with_uikit_slider');

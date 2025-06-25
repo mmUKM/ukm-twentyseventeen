@@ -329,8 +329,14 @@ add_action( 'init', 'ukmtheme_posts_per_archive', 0 );
 
 function fetch_external_rss_feed_with_uikit_slider() {
     include_once(ABSPATH . WPINC . '/feed.php');
-    $rss = fetch_feed('https://www.ukm.my/wadahict/feed/'); // Replace with actual feed URL
 
+    // ✅ Sanitize and validate the feed URL
+    $feed_url = esc_url_raw('https://www.ukm.my/wadahict/feed/?fakefile=feed.xml'); // Replace with your actual feed URL
+    if (empty($feed_url) || !filter_var($feed_url, FILTER_VALIDATE_URL)) {
+        return '<p>Invalid or missing feed URL.</p>';
+    }
+
+    $rss = fetch_feed($feed_url);
     if (is_wp_error($rss)) {
         return '<p>Unable to fetch feed.</p>';
     }
@@ -338,12 +344,11 @@ function fetch_external_rss_feed_with_uikit_slider() {
     $maxitems = $rss->get_item_quantity(5);
     $rss_items = $rss->get_items(0, $maxitems);
 
-    // Set your fallback image URL
-    $default_thumbnail = 'https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456_960_720.jpg';
+    $default_thumbnail = 'https://cdn.pixabay.com/photo/2022/12/09/03/55/big-data-7644538_1280.jpg';
 
     $output = '<div uk-slider="autoplay: true; autoplay-interval: 5000; pause-on-hover: true">';
     $output .= '<div class="uk-position-relative uk-visible-toggle" tabindex="-1">';
-    $output .= '<ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-3@m uk-grid" uk-height-match="target: > li > .uk-card">';
+    $output .= '<ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-3@m uk-grid">';
 
     if ($maxitems == 0) {
         $output .= '<li><p>No items found.</p></li>';
@@ -385,6 +390,7 @@ add_shortcode('external_rss_feed_slider', 'fetch_external_rss_feed_with_uikit_sl
 function fetch_external_rss_feed() {
     include_once(ABSPATH . WPINC . '/feed.php');
     $rss = fetch_feed('https://www.ukm.my/wadahict/feed/'); // Replace with actual feed URL
+    var_dump($rss);
 
     if (is_wp_error($rss)) {
         return '<p>Unable to fetch feed.</p>';

@@ -378,3 +378,35 @@ function fetch_external_rss_feed_with_uikit_slider() {
     return $output;
 }
 add_shortcode('external_rss_feed_slider', 'fetch_external_rss_feed_with_uikit_slider');
+
+//RSS 2
+//https://www.ukm.my/wadahict/feed/
+
+function fetch_external_rss_feed() {
+    include_once(ABSPATH . WPINC . '/feed.php');
+    $rss = fetch_feed('https://www.ukm.my/wadahict/feed/'); // Replace with actual feed URL
+
+    if (is_wp_error($rss)) {
+        return '<p>Unable to fetch feed.</p>';
+    }
+
+    $maxitems = $rss->get_item_quantity(5);
+    $rss_items = $rss->get_items(0, $maxitems);
+    $output = '<ul>';
+
+    if ($maxitems == 0) {
+        $output .= '<li>No items found.</li>';
+    } else {
+        foreach ($rss_items as $item) {
+            $output .= '<li>';
+            $output .= '<a href="' . esc_url($item->get_permalink()) . '" title="' . esc_attr($item->get_title()) . '">';
+            $output .= esc_html($item->get_title()) . '</a>';
+            $output .= ' <small>(' . $item->get_date('j F Y | g:i a') . ')</small>';
+            $output .= '</li>';
+        }
+    }
+
+    $output .= '</ul>';
+    return $output;
+}
+add_shortcode('external_rss_feed', 'fetch_external_rss_feed');

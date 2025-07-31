@@ -28,14 +28,14 @@
                 </a>
             <?php else : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-u-watan.png'; ?>" height="60" width="379" alt="<?php echo get_bloginfo('name'); ?>">
+                    <img src="<?php echo get_template_directory_uri() . '/images/logo-single-black.svg'; ?>" height="60" width="110" alt="<?php echo get_bloginfo('name'); ?>">
                 </a>
             <?php endif; ?>
         </div>
         <div class="uk-width-1-3@s uk-hidden@s">
             <div uk-grid>
                 <div class="uk-width-1-1 uk-padding-remove">
-                    <img class="uk-align-center" src="<?php echo get_template_directory_uri() . '/images/logo-mobile.png'; ?>" alt="alt"/>
+                    <img class="uk-align-center" src="<?php echo get_template_directory_uri() . '/images/logo-single-black.svg'; ?>" alt="alt"/>
                 </div>
                 <div class="uk-width-1-1 uk-padding-remove uk-margin-remove">
                     <h6 class="uk-text-center" id="ptj-name-title-mobile"><?php echo bloginfo( 'name' ); ?></h6>

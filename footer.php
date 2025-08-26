@@ -20,9 +20,10 @@
                 <?php 
                     wp_nav_menu(
                         array(
-                        'theme_location'  => 'footer',
-                        'menu'            => 'Footer Navigation',
-                        'menu_class'      => 'footer-nav',
+                        'theme_location'    => 'footer',
+                        'menu'              => 'Footer Navigation',
+                        'menu_class'        => 'footer-nav',
+                        'fallback_cb'       => 'ukmtheme_fallback_menu',
                     )); 
                 ?>
             </div>

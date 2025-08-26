@@ -27,13 +27,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #header-wrap {
     min-height:60px;
-    background-color:#78CEEF;
+    background-color:#f1faff;
+;
     position:relative;
     z-index: 999;
 }
 
 #header-wrap-overlay {
-    background-image: url('images/songket-stripe.png');
+    background-image: url('images/dotted-pattern.png');
     opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
@@ -49,15 +50,17 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-#ptj-name-container {
-    background-color: #1d92c9;
+#navigation-menu {
+    background: #0075eb;
+	background: linear-gradient(45deg, rgba(0, 117, 235, 1) 0%, rgba(0, 72, 255, 1) 100%);
 }
+
 #ptj-name {
     h1, h2, h3, h4, h5, h6 {
-        color: #fff;
+        color: #171717;
     }
     #ptj-name-title {
-        color: #fff;
+        color: #171717;
         font-weight: 600;
         padding-right: .3rem;
     }
@@ -77,8 +80,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 40px;
     padding-bottom: 0;
     color: #fff;
-    background: rgb(14,110,220);
-    background: linear-gradient(0deg, rgba(14,110,220,1) 0%, rgba(29,146,201,1) 100%);
+    background: #0075eb;
+	background: linear-gradient(45deg, rgba(0, 117, 235, 1) 0%, rgba(0, 72, 255, 1) 100%);
 }
 
 .copyright-with-navigation {
@@ -401,15 +404,14 @@ h1.conference-site-name {
     }
     #ptj-name-title-mobile {
         padding: .5rem 0;
-        background-color: #1d92c9;
-        color: #fff;
+        color: #171717;
     }
 }
 // MENUS CSS MENUS
 
 #cssmenu {
 	position: relative;
-	height: 60px;
+	height: 40px;
 	background: transparent;
 	width: auto;
 }
@@ -452,7 +454,7 @@ h1.conference-site-name {
 }
 #cssmenu > ul > #menu-button {
 	display: none;
-	height: 60px; // additional
+	height: 40px; // additional
 }
 #cssmenu ul li a {
 	display: block;
@@ -462,8 +464,8 @@ h1.conference-site-name {
 }
 #cssmenu > ul > li > a {
 	font:400 12px/18px "Poppins", Helvetica, Arial, sans-serif;
-	padding: 20px 10px; // padding: 15px 20px;
-	color: #000;
+	padding: 10px 10px; // padding: 15px 20px;
+	color: #ffffff;
 	text-transform: uppercase;
 	-webkit-transition: color 0.25s ease-out;
 	-moz-transition: color 0.25s ease-out;
@@ -536,7 +538,7 @@ h1.conference-site-name {
 }
 #cssmenu > ul > li:hover > ul {
 	left: auto;
-	top: 60px;
+	top: 40px;
 	opacity: 1;
 }
 #cssmenu.align-right > ul > li:hover > ul {
@@ -722,7 +724,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 	}
 	#cssmenu #menu-button > a {
 		//padding: 16px 20px;
-		padding: 20px 20px;
+		padding: 10px 20px;
 		color: #fff;
 	}
 	#cssmenu ul.open li,
@@ -745,7 +747,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 		border-top: 2px solid #ffffff;
 		border-bottom: 2px solid #ffffff;
 		right: 20px;
-		top: 28px;
+		top: 14px;
 	}
 	#cssmenu #menu-button::before {
 		display: block;

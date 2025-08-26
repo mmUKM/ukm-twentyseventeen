@@ -8,7 +8,7 @@ get_header(); ?>
 <?php if ( is_home() ) { ?>
     <?php // SLIDESHOW ?>
     <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay: true; autoplay-interval: 6000; ratio: 1440:560; animation: push">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay: true; autoplay-interval: 6000; ratio: 1440:600; animation: push">
             <ul class="uk-slideshow-items">
                 <?php
                     $args = array(
@@ -28,13 +28,13 @@ get_header(); ?>
                 </li>            
                 <?php endwhile; else: ?>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/Slide-A.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif" alt="" uk-cover>
                 </li>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/Slide-B.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif" alt="" uk-cover>
                 </li>
                 <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/Slide-C.jpg" alt="" uk-cover>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif" alt="" uk-cover>
                 </li>
                 <?php endif; ?>
             </ul>

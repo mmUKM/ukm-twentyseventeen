@@ -1,7 +1,7 @@
 /*
 Theme Name: UKM Twenty Seventeen
 Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2017.20250625
+Version: 2017.20250826
 Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
@@ -34,13 +34,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #header-wrap {
     min-height: 60px;
-    background-color: #78CEEF;
+    background-color: #f1faff;
     position: relative;
     z-index: 999;
 }
 
 #header-wrap-overlay {
-    background-image: url("images/songket-stripe.png");
+    background-image: url("images/dotted-pattern.png");
     opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
@@ -56,16 +56,17 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-#ptj-name-container {
-    background-color: #1d92c9;
+#navigation-menu {
+    background: #0075eb;
+    background: linear-gradient(45deg, rgb(0, 117, 235) 0%, rgb(0, 72, 255) 100%);
 }
 
 #ptj-name h1, #ptj-name h2, #ptj-name h3, #ptj-name h4, #ptj-name h5, #ptj-name h6 {
-    color: #fff;
+    color: #171717;
 }
 
 #ptj-name #ptj-name-title {
-    color: #fff;
+    color: #171717;
     font-weight: 600;
     padding-right: 0.3rem;
 }
@@ -83,8 +84,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 40px;
     padding-bottom: 0;
     color: #fff;
-    background: rgb(14, 110, 220);
-    background: linear-gradient(0deg, rgb(14, 110, 220) 0%, rgb(29, 146, 201) 100%);
+    background: #0075eb;
+    background: linear-gradient(45deg, rgb(0, 117, 235) 0%, rgb(0, 72, 255) 100%);
 }
 
 .copyright-with-navigation {
@@ -403,14 +404,13 @@ h1.conference-site-name {
 
     #ptj-name-title-mobile {
         padding: 0.5rem 0;
-        background-color: #1d92c9;
-        color: #fff;
+        color: #171717;
     }
 }
 
 #cssmenu {
     position: relative;
-    height: 60px;
+    height: 40px;
     background: transparent;
     width: auto;
 }
@@ -461,7 +461,7 @@ h1.conference-site-name {
 
 #cssmenu > ul > #menu-button {
     display: none;
-    height: 60px;
+    height: 40px;
 }
 
 #cssmenu ul li a {
@@ -472,8 +472,8 @@ h1.conference-site-name {
 
 #cssmenu > ul > li > a {
     font: 400 12px/18px "Poppins", Helvetica, Arial, sans-serif;
-    padding: 20px 10px;
-    color: #000;
+    padding: 10px 10px;
+    color: #ffffff;
     text-transform: uppercase;
     -webkit-transition: color 0.25s ease-out;
     -moz-transition: color 0.25s ease-out;
@@ -555,7 +555,7 @@ h1.conference-site-name {
 
 #cssmenu > ul > li:hover > ul {
     left: auto;
-    top: 60px;
+    top: 40px;
     opacity: 1;
 }
 
@@ -768,7 +768,7 @@ h1.conference-site-name {
     }
 
     #cssmenu #menu-button > a {
-        padding: 20px 20px;
+        padding: 10px 20px;
         color: #fff;
     }
 
@@ -795,7 +795,7 @@ h1.conference-site-name {
         border-top: 2px solid #ffffff;
         border-bottom: 2px solid #ffffff;
         right: 20px;
-        top: 28px;
+        top: 14px;
     }
 
     #cssmenu #menu-button::before {

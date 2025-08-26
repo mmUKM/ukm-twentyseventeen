@@ -21,7 +21,7 @@
 <div id="header-wrap">
     <div id="header-wrap-overlay"></div>
     <div id="header" class="wrap" uk-grid>
-        <div class="uk-width-1-3@s uk-visible@s">
+        <div class="uk-width-1-3@s uk-visible@s uk-padding-remove-left">
             <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                     <img src="<?php echo get_theme_mod( 'ukmtheme_logo_image' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
@@ -42,26 +42,28 @@
                 </div>
             </div>
         </div>
-        <div class="uk-width-2-3@s uk-padding-remove uk-margin-remove">
-            <?php
-                wp_nav_menu(array(
-                    'theme_location'    => 'main',
-                    'menu'              => 'Main Navigation',
-                    'container_id'      => 'cssmenu',
-                    'fallback_cb'       => false,
-                    'walker'            => new CSS_Menu_Maker_Walker()
-                ));
-            ?>
+        <div class="uk-width-2-3@s uk-flex uk-flex-middle uk-flex-right uk-visible@s">
+            <div id="ptj-name" class="uk-visible@s" uk-grid>
+                <div class="uk-width-auto@s">
+                    <h4 id="ptj-name-title"><?php echo bloginfo( 'name' ); ?></h4>
+                </div>
+                <div class="uk-width-expand@s uk-padding-remove uk-margin-auto@s">
+                    <h4 id="ptj-name-sub-title">&nbsp;<?php echo bloginfo( 'description' ); ?></h4>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div id="ptj-name-container">
-    <div id="ptj-name" class="wrap uk-visible@s" uk-grid>
-        <div class="uk-width-auto@s">
-            <h4 id="ptj-name-title"><?php echo bloginfo( 'name' ); ?></h4>
-        </div>
-        <div class="uk-width-expand@s uk-padding-remove uk-margin-auto@s">
-            <h4 id="ptj-name-sub-title">&nbsp;<?php echo bloginfo( 'description' ); ?></h4>
-        </div>
+<div id="navigation-menu">
+    <div class="wrap">
+        <?php
+        wp_nav_menu(array(
+            //'theme_location'    => 'main',
+            //'menu'              => 'Main Navigation',
+            'container_id'      => 'cssmenu',
+            'fallback_cb'       => 'ukmtheme_fallback_menu',
+            'walker'            => new CSS_Menu_Maker_Walker()
+        ));
+        ?>
     </div>
 </div>

@@ -33,7 +33,7 @@ function ukmtheme_slideshow_metaboxes() {
 
     $cmb->add_field( array(
         'name'    => esc_html__('Imej', 'ukmtheme' ),
-        'desc'    => esc_html__('Sila muat naik grafik yang telah disunting. Saiz yang disarakan adalah 1440 x 560 px.', 'ukmtheme' ),
+        'desc'    => esc_html__('Saiz yang disarakan adalah 2880 x 1200 px dalam format .avif.', 'ukmtheme' ),
         'id'      => 'ut_slideshow_image',
         'type'    => 'file',
         'allow'   => array('url'),

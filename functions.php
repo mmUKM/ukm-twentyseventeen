@@ -272,7 +272,7 @@ add_filter( 'get_search_form', 'ukmtheme_search_form' );
 
 function ukmtheme_feed_request($qv) {
     if ( isset($qv['feed']) && !isset( $qv['post_type'] ) )
-        $qv['post_type'] = array( 'news', 'event' );
+        $qv['post_type'] = array( 'post', 'news' );
     return $qv;
 }
 add_filter( 'request', 'ukmtheme_feed_request' );

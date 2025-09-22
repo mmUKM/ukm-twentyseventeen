@@ -168,10 +168,11 @@ add_filter( 'edit_post_link', 'ukmtheme_custom_edit_post_link' );
 add_filter( 'upload_mimes','add_custom_mime_types' );
     function add_custom_mime_types( $mimes ) {
         return array_merge( $mimes, array (
-            'ac3' => 'audio/ac3',
-            'mpa' => 'audio/MPA',
-            'flv' => 'video/x-flv',
-            'svg' => 'image/svg+xml'
+            'ac3'   => 'audio/ac3',
+            'mpa'   => 'audio/MPA',
+            'flv'   => 'video/x-flv',
+            'svg'   => 'image/svg+xml',
+            'avif'  => 'image/avif'
         ));
     }
 

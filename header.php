@@ -58,8 +58,8 @@
     <div class="wrap">
         <?php
         wp_nav_menu(array(
-            //'theme_location'    => 'main',
-            //'menu'              => 'Main Navigation',
+            'theme_location'    => 'main',
+            'menu'              => 'Main Navigation',
             'container_id'      => 'cssmenu',
             'fallback_cb'       => 'ukmtheme_fallback_menu',
             'walker'            => new CSS_Menu_Maker_Walker()

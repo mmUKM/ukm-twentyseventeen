@@ -38,7 +38,7 @@ function register_ukmtheme_elementor_widget( $widgets_manager ) {
 
 	$widgets_manager->register( new \Elementor_UKMTheme_FAQ() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Card_Slides() );
-	$widgets_manager->register( new \Elementor_UKMTheme_Slides() );
+	$widgets_manager->register( new \Elementor_UKMTheme_Slideshow() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Slideset() );
 	$widgets_manager->register( new \Elementor_UKMTheme_Carousel() );
 	$widgets_manager->register( new \Elementor_UKMTheme_News_Grid() );

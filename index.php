@@ -196,7 +196,7 @@ get_header(); ?>
                         });
                 
                     };
-                </script>
+            </script>
         </div>
     <?php } //END YOUTUBE PLAYLIST ?>
     <?php

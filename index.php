@@ -8,46 +8,62 @@ get_header(); ?>
 <?php if ( is_home() ) { ?>
     <?php // SLIDESHOW ?>
     <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay: true; autoplay-interval: 6000; ratio: 1440:600; animation: push">
-            <ul class="uk-slideshow-items">
-                <?php
-                    $args = array(
-                        'post_type'       => 'slideshow',
-                        'posts_per_page'  => 20,
-                        'orderby'         => 'menu_order'
-                    );
+        <script>
+          $(document).ready(function(){
+            $(".bxslider-home").bxSlider({
+                adaptiveHeight: true,
+                pager: false
+            });
+          });
+        </script>
+        <div class="bxslider-home">
+            <?php
+                $args = array(
+                'post_type'       => 'slideshow',
+                'posts_per_page'  => 20,
+                'orderby'         => 'menu_order'
+                );
 
-                    $slideshow = new WP_Query( $args );
+                $slideshow = new WP_Query( $args );
 
-                    if ( $slideshow->have_posts() ) : while ( $slideshow->have_posts() ) : $slideshow->the_post(); 
-                ?>
-                <li>
-                    <a href="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_link', true ); ?>">
-                        <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>" alt="<?php the_title(); ?>" uk-cover>
-                    </a>
-                </li>            
-                <?php endwhile; else: ?>
-                <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif" alt="" uk-cover>
-                </li>
-                <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif" alt="" uk-cover>
-                </li>
-                <li>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif" alt="" uk-cover>
-                </li>
-                <?php endif; ?>
-            </ul>
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                if ( $slideshow->have_posts() ) : while ( $slideshow->have_posts() ) : $slideshow->the_post(); 
+            ?>
+            <div>
+                <a href="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_link', true ); ?>">
+                    <img src="<?php echo get_post_meta( get_the_ID(),'ut_slideshow_image', true ); ?>">
+                </a>
+            </div>
+            <?php endwhile; else: ?>
+            <div>
+                <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif">
+            </div>
+            <div>
+                <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif">
+            </div>
+            <div>
+                <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif">
+            </div>
+            <?php endif; ?>
         </div>
-    </div><!--end slideshow-->
+    </div>
     <?php
     // SLIDESET
     if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) { ?>
     <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
-        <div uk-slider>
-            <ul class="uk-slider-items uk-child-width-1-4@s uk-child-width-1-4">
+        <script>
+              $(document).ready(function(){
+                $('.bxslider-carousel').bxSlider({
+                  slideWidth: 2000,
+                  minSlides: 4,
+                  maxSlides: 10,
+                  slideMargin: 10,
+                  pager: false,
+                  //controls: false,
+                  auto: true
+                });
+              });
+        </script>
+        <div class="bxslider-carousel">
                 <?php
                     $args = array(
                         'post_type'       => 'slideset',
@@ -59,20 +75,21 @@ get_header(); ?>
                     $slideset = new WP_Query( $args );
 
                     if ( $slideset->have_posts() ) : while ( $slideset->have_posts() ) : $slideset->the_post(); ?>
-                <li>
+                <div class="slide">
                     <a href="<?php echo get_post_meta(get_the_ID(),'ut_slideset_link',true); ?>" title="<?php the_title(); ?>">
                         <img src="<?php echo get_post_meta(get_the_ID(),'ut_slideset_image',true); ?>" alt="<?php the_title(); ?>">
                     </a>
-                </li>
+                </div>
                 <?php endwhile; else: ?>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_a.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_b.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_c.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_d.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_a.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_b.svg'; ?>" alt=""></a></li>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_a.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_b.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_c.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_d.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_a.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_b.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_c.svg'; ?>" alt=""></div>
+            <div class="slide"><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slider_d.svg'; ?>" alt=""></div>
                 <?php endif; ?>
-            </ul>
         </div>
     </div><!--end slideset-->
     <?php } // END SLIDESET ?>
@@ -193,8 +210,7 @@ get_header(); ?>
                             playerTheme: 'light',
                             listTheme: 'light',
                             responsive: true
-                        });
-                
+                        });             
                     };
             </script>
         </div>

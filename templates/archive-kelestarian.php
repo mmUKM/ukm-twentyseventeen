@@ -8,7 +8,7 @@ get_header(); ?>
     <article class="uk-padding">
         
         <h2><?php _e( 'Kelestarian', 'ukmtheme' ) ; ?></h2>
-        <div class="uk-padding" uk-grid>
+        <div class="uk-grid-match uk-child-width-1-3@s" uk-grid>
                 <?php
 
                     $query = new WP_Query( array( 
@@ -20,8 +20,17 @@ get_header(); ?>
 
                 if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
             
-                <div class="uk-width-3-4">
-                    <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), '' ); ?>">
+                        </div>
+                        <div class="uk-card-body">
+                            <p>
+                                <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
                     <?php endwhile; else: ?>
                         <p><?php _e( 'Sorry, no posts matched your criteria.', 'ukmtheme' ); ?></p>  

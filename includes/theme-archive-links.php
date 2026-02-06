@@ -88,7 +88,7 @@ function addPostTypeArchivesMenu() {
  */
 function addMetaBox()
 {
-    add_meta_box( 'post-type-archives', __( 'Pautan Senarai: Staf, Expert, News Clip, Publication, FAQ' ), 'addPostTypeArchivesMenu', 'nav-menus', 'side', 'low' );
+    add_meta_box( 'post-type-archives', __( 'Lain-lain Kategori' ), 'addPostTypeArchivesMenu', 'nav-menus', 'side', 'low' );
 }
 
 /*

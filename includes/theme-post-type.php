@@ -1195,7 +1195,7 @@ function ut_post_type_kelestarian() {
         'label'                 => __( 'Kelestarian', 'ukmtheme' ),
         'description'           => __( 'Custom Post Type for Kelestarian', 'ukmtheme' ),
         'labels'                => $labels,
-        'supports'              => array( 'title' ),
+        'supports'              => array( 'title', 'thumbnail' ),
         'taxonomies'            => array( 'kelestarian_category' ),
         'hierarchical'          => false,
         'public'                => true,

@@ -1136,11 +1136,22 @@ function ut_pekeliling_list_file( $file_list_meta_pekeliling_list_file ) {
 
 // POST TYPE: KELESTARIAN
 
+function ut_kelestarian_foto( $file_list_meta_id, $img_size = 'medium' ) {
+
+    $files = get_post_meta( get_the_ID(), $file_list_meta_id, 1 );
+
+    foreach ( (array) $files as $attachment_id => $attachment_url ) {
+        echo '<img src="';
+        echo wp_get_attachment_url( $attachment_id, $img_size );
+        echo '"';
+    }
+}
+
 
 function ut_kelestarian_gallery( $file_list_meta_key, $img_size = 'medium' ) {
 
     $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
-    echo '<div uk-slideshow="animation: push">';
+    echo '<div uk-slideshow="animation: push;autoplay:true">';
         echo '<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>';
             echo '<div class="uk-slideshow-items">';
 
@@ -1155,7 +1166,7 @@ function ut_kelestarian_gallery( $file_list_meta_key, $img_size = 'medium' ) {
                 echo '<a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>';
                 echo '<a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slideshow-item="next"></a>';
             echo '</div>';
-            echo '<ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>';
+            //echo '<ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>';
     echo '</div>';
 }
 

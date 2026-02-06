@@ -9,14 +9,15 @@ get_header(); ?>
     <?php // SLIDESHOW ?>
     <div style="<?php if ( get_theme_mod( 'ukmtheme_resize_slideshow' ) == 1 ) { ?> max-width: 1140px; margin: 30px auto; box-shadow: 0 1px 5px rgba(0,0,0,.5); <?php } ?>">
         <script>
-          $(document).ready(function(){
-            $(".bxslider-home").bxSlider({
-                adaptiveHeight: true,
-                pager: false
+            // bx-slider    
+            $(document).ready(function(){
+                $(".bxslider-home").bxSlider({
+                    adaptiveHeight: true,
+                    pager: false
+                });
             });
-          });
         </script>
-        <div class="bxslider-home">
+        <div class="bxslider-home"><!-- bx-slider -->
             <?php
                 $args = array(
                 'post_type'       => 'slideshow',
@@ -44,7 +45,7 @@ get_header(); ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/ukm-dectar-1.avif">
             </div>
             <?php endif; ?>
-        </div>
+        </div><!-- end bx-slider -->
     </div>
     <?php
     // SLIDESET

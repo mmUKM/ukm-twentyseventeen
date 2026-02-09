@@ -5,7 +5,7 @@
  */
 ?>
 <!DOCTYPE html>
-<?php echo '<!-- WP UKMTheme v-' . wp_get_theme()->get( 'Version' ) . ' by Jamaludin Rajalu -->'; ?>
+<?php echo '<!-- WP UKMTheme v-' . wp_get_theme()->get( 'Version' ) . ' oleh Jamaludin Rajalu -->'; ?>
 
 <html <?php language_attributes(); ?>>
 <head>
@@ -17,75 +17,71 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div class="page-wrap">
 <div id="header-wrap">
     <div id="header-wrap-overlay"></div>
     <div id="header" class="wrap" uk-grid>
-        <div class="uk-width-1-3@s uk-visible@s">
+        <div class="uk-width-1-3@s uk-visible@s uk-padding-remove-left">
             <?php if ( get_theme_mod( 'ukmtheme_logo_image' ) ) : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                     <img src="<?php echo get_theme_mod( 'ukmtheme_logo_image' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
                 </a>
             <?php else : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-u-watan.png'; ?>" height="60" width="379" alt="<?php echo get_bloginfo('name'); ?>">
+                    <img src="<?php echo get_template_directory_uri() . '/images/logo-single-black.svg'; ?>" height="60" width="110" alt="<?php echo get_bloginfo('name'); ?>">
                 </a>
             <?php endif; ?>
         </div>
         <div class="uk-width-1-3@s uk-hidden@s">
             <div uk-grid>
                 <div class="uk-width-1-1 uk-padding-remove">
-                    <img class="uk-align-center" src="<?php echo get_template_directory_uri() . '/images/logo-mobile.png'; ?>" alt="alt"/>
+                    <img class="uk-align-center" src="<?php echo get_template_directory_uri() . '/images/logo-single-black.svg'; ?>" alt="alt"/>
                 </div>
                 <div class="uk-width-1-1 uk-padding-remove uk-margin-remove">
                     <h6 class="uk-text-center" id="ptj-name-title-mobile"><?php echo bloginfo( 'name' ); ?></h6>
                 </div>
             </div>
         </div>
-        <div class="uk-width-2-3@s uk-padding-remove uk-margin-remove">
-            <?php
-                wp_nav_menu(array(
-                    'theme_location'    => 'main',
-                    'menu'              => 'Main Navigation',
-                    'container_id'      => 'cssmenu',
-                    'fallback_cb'       => false,
-                    'walker'            => new CSS_Menu_Maker_Walker()
-                ));
-            ?>
+        <div class="uk-width-2-3@s uk-flex uk-flex-middle uk-flex-right uk-visible@s">
+            <div id="ptj-name" class="uk-visible@s" uk-grid>
+                <div class="uk-width-auto@s">
+                    <h4 id="ptj-name-title"><?php echo bloginfo( 'name' ); ?></h4>
+                </div>
+                <div class="uk-width-expand@s uk-padding-remove uk-margin-auto@s">
+                    <h4 id="ptj-name-sub-title">&nbsp;<?php echo bloginfo( 'description' ); ?></h4>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div id="ptj-name-container">
-    <div id="ptj-name" class="wrap uk-visible@s" uk-grid>
-        <div class="uk-width-auto@s">
-            <h4 id="ptj-name-title"><?php the_title(); ?></h4>
-        </div>
-        <div class="uk-width-expand@s uk-padding-remove uk-margin-auto@s">
-            <h4 id="ptj-name-sub-title">&nbsp;<?php echo bloginfo( 'description' ); ?></h4>
-        </div>
-    </div>
-</div>
-<div class="wrap column">
-    <div class="large-11-12 small-11-12">
-        <div id="ConferenceMenu">
-            <?php
-            $content_1 = get_post_meta( get_the_ID(), 'ut_conference_title_1_hide', 1 );
-            $content_2 = get_post_meta( get_the_ID(), 'ut_conference_title_2_hide', 1 );
-            $content_3 = get_post_meta( get_the_ID(), 'ut_conference_title_3_hide', 1 );
-            $content_4 = get_post_meta( get_the_ID(), 'ut_conference_title_4_hide', 1 );
-            $content_5 = get_post_meta( get_the_ID(), 'ut_conference_title_5_hide', 1 );
-            $content_6 = get_post_meta( get_the_ID(), 'ut_conference_title_6_hide', 1 );
-            $content_7 = get_post_meta( get_the_ID(), 'ut_conference_title_7_hide', 1 );
-            $content_8 = get_post_meta( get_the_ID(), 'ut_conference_title_8_hide', 1 );
-            $content_9 = get_post_meta( get_the_ID(), 'ut_conference_title_9_hide', 1 );
-            $content_10 = get_post_meta( get_the_ID(), 'ut_conference_title_10_hide', 1 );
-            ?>
-
-        </div>
+<div id="navigation-menu">
+    <div class="wrap">
+        <?php
+        wp_nav_menu(array(
+            'theme_location'    => 'main',
+            'menu'              => 'Main Navigation',
+            'container_id'      => 'cssmenu',
+            'fallback_cb'       => 'ukmtheme_fallback_menu',
+            'walker'            => new CSS_Menu_Maker_Walker()
+        ));
+        ?>
     </div>
 </div>
 <div class="uk-container uk-margin-medium-top uk-margin-medium-bottom">
     <ul class="uk-flex-center" uk-tab>
-        <li><a href=""><?php _e( 'Home', 'ukmtheme' ); ?></a></li>
+            <?php
+                $content_1 = get_post_meta( get_the_ID(), 'ut_conference_title_1_hide', 1 );
+                $content_2 = get_post_meta( get_the_ID(), 'ut_conference_title_2_hide', 1 );
+                $content_3 = get_post_meta( get_the_ID(), 'ut_conference_title_3_hide', 1 );
+                $content_4 = get_post_meta( get_the_ID(), 'ut_conference_title_4_hide', 1 );
+                $content_5 = get_post_meta( get_the_ID(), 'ut_conference_title_5_hide', 1 );
+                $content_6 = get_post_meta( get_the_ID(), 'ut_conference_title_6_hide', 1 );
+                $content_7 = get_post_meta( get_the_ID(), 'ut_conference_title_7_hide', 1 );
+                $content_8 = get_post_meta( get_the_ID(), 'ut_conference_title_8_hide', 1 );
+                $content_9 = get_post_meta( get_the_ID(), 'ut_conference_title_9_hide', 1 );
+                $content_10 = get_post_meta( get_the_ID(), 'ut_conference_title_10_hide', 1 );
+            ?>
+        <li><a href=""><?php _e( '<span uk-icon="home"></span>', 'ukmtheme' ); ?></a></li>
         <?php
         // Title #1
         if ( $content_1 ) { ?>

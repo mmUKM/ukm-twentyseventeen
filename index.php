@@ -13,7 +13,8 @@ get_header(); ?>
             $(document).ready(function(){
                 $(".bxslider-home").bxSlider({
                     adaptiveHeight: true,
-                    pager: false
+                    pager: false,
+                    auto: true
                 });
             });
         </script>

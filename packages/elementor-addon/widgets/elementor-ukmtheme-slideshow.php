@@ -30,7 +30,8 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                     $(document).ready(function(){
                         $(".bxslider-home").bxSlider({
                             adaptiveHeight: true,
-                            pager: false
+                            pager: false,
+                            auto: true
                         });
                     });
                 </script>

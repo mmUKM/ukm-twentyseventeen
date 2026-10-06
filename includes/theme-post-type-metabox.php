@@ -273,6 +273,22 @@ add_action( 'cmb2_init', 'ukmtheme_publication_metaboxes' );
             'type'    => 'wysiwyg',
             'options' => array( 'textarea_rows' => 5, ),
         ) );
+        
+        $publication->add_field( array(
+	'name'    => esc_html__( 'Biography', 'ukmtheme' ),
+	'desc'    => esc_html__( 'Author Biography', 'ukmtheme' ),
+	'id'      => 'ut_publication_biography',
+	'type'    => 'wysiwyg',
+	'options' => array( 'textarea_rows' => 5, ),
+        ) );
+
+        $publication->add_field( array(
+                'name'    => esc_html__( 'Review', 'ukmtheme' ),
+                'desc'    => esc_html__( 'Review', 'ukmtheme' ),
+                'id'      => 'ut_publication_review',
+                'type'    => 'wysiwyg',
+                'options' => array( 'textarea_rows' => 5, ),
+        ) );
 
         $publication->add_field( array(
             'name'    => esc_html__( 'Cover Image', 'ukmtheme' ),
@@ -280,6 +296,14 @@ add_action( 'cmb2_init', 'ukmtheme_publication_metaboxes' );
             'id'      => 'ut_publication_cover',
             'type'    => 'file',
             'allow'   => array('url'),
+        ) );
+        
+        $publication->add_field( array(
+            'name'         => __( 'Galeri Gambar Terbitan', 'ukmtheme' ),
+            'desc'         => __( 'Muat naik gambar untuk slider (Cover & Halaman Pilihan)', 'ukmtheme' ),
+            'id'           => 'ut_publication_gallery',
+            'type'         => 'file_list',
+            'preview_size' => array( 100, 100 ),
         ) );
 
         $publication->add_field( array(

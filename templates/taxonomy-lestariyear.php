@@ -8,22 +8,23 @@ get_header(); ?>
 <div class="wrap">
     <article class="uk-padding">
         
-        <h2><?php _e( 'Kelestarian', 'ukmtheme' ); ?></h2>
+        <h2><?php single_cat_title(); ?></h2>
         
         <div class="uk-grid-match uk-child-width-1-3@s" uk-grid>
             <?php
-            $query = new WP_Query( array( 
-                'post_type'      => 'kelestarian', 
-                'posts_per_page' => -1, 
-                'orderby'        => 'menu_order', 
-                'order'          => 'ASC' 
+            $query = new WP_Query( array(
+                'post_type'      => 'kelestarian',
+                'lestariyear'    => get_query_var( 'lestariyear' ),
+                'posts_per_page' => -1,
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
             ) );
 
             if ( $query->have_posts() ) : 
                 while ( $query->have_posts() ) : $query->the_post(); 
                     
-                    // Ambil terma taxonomy lestariyear dan buang tag HTML / link <a>
-                    $terms_list  = get_the_term_list( get_the_ID(), 'lestariyear', '', ', ', '' );
+                    // Ambil terma taxonomy dan buang tag HTML / link <a>
+                    $terms_list = get_the_term_list( get_the_ID(), 'lestariyear', '', ', ', '' );
                     $plain_terms = ! empty( $terms_list ) ? wp_strip_all_tags( $terms_list ) : '';
             ?>
 
@@ -38,7 +39,7 @@ get_header(); ?>
                             </p>
                             
                             <?php if ( $plain_terms ) : ?>
-                                <!-- Badge Label Tahun daripada taksonomi lestariyear (tanpa pautan <a>) -->
+                                <!-- Baris 34: Output sebagai teks biasa tanpa pautan <a> -->
                                 <div class="uk-card-badge uk-label"><?php echo esc_html( $plain_terms ); ?></div>
                             <?php endif; ?>
                         </div>

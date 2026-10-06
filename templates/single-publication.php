@@ -4,56 +4,6 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 get_header(); ?>
-<!-- Stylesheet & Script bxSlider (Sekiranya belum dimuatkan di functions.php) -->
-<style>
-    /* Styling bxSlider & Pager */
-    .book-slider-container {
-        margin-bottom: 20px;
-    }
-    
-    .bxslider-book {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .bxslider-book img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 4px;
-    }
-
-    /* Thumbnail Pager (Method 1) */
-    #bx-pager {
-        display: flex;
-        gap: 8px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-    }
-
-    #bx-pager a {
-        display: inline-block;
-        border: 2px solid transparent;
-        opacity: 0.6;
-        border-radius: 4px;
-        overflow: hidden;
-        transition: all 0.2s ease-in-out;
-    }
-
-    #bx-pager a.active,
-    #bx-pager a:hover {
-        border-color: #0073aa;
-        opacity: 1;
-    }
-
-    #bx-pager img {
-        width: 30px;
-        height: 30px;
-        object-fit: cover;
-        display: block;
-    }
-</style>
 
 <div class="wrap">
     <article class="article uk-width-1-1">

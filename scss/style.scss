@@ -379,6 +379,54 @@ h1.conference-site-name {
     margin: 10px 0 10px 0;
 }
 
+/* Styling bxSlider & Pager */
+    .book-slider-container {
+        margin-bottom: 20px;
+    }
+    
+    .bxslider-book {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .bxslider-book img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+    }
+
+    /* Thumbnail Pager (Method 1) */
+    #bx-pager {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    #bx-pager a {
+        display: inline-block;
+        border: 2px solid transparent;
+        opacity: 0.6;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+    }
+
+    #bx-pager a.active,
+    #bx-pager a:hover {
+        border-color: #0073aa;
+        opacity: 1;
+    }
+
+    #bx-pager img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        display: block;
+    }
+
 // Mobile config
 
 @media only screen and (min-width: 641px) and (max-width: 1140px) {

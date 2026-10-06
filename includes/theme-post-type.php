@@ -1264,6 +1264,44 @@ function ut_taxonomy_kelestarian_category() {
 }
 add_action( 'init', 'ut_taxonomy_kelestarian_category', 0 );
 
+
+// Register Custom Taxonomy
+function ut_taxonomy_kelestarian_tahun() {
+    $labels = array(
+        'name'                       => _x( 'Tahun', 'Taxonomy General Name', 'ukmtheme' ),
+        'singular_name'              => _x( 'Tahun', 'Taxonomy Singular Name', 'ukmtheme' ),
+        'menu_name'                  => __( 'Tahun', 'ukmtheme' ),
+        'all_items'                  => __( 'Semua', 'ukmtheme' ),
+        'parent_item'                => __( 'Tahun', 'ukmtheme' ),
+        'parent_item_colon'          => __( 'Tahun:', 'ukmtheme' ),
+        'new_item_name'              => __( 'Tahun Baharu', 'ukmtheme' ),
+        'add_new_item'               => __( 'Tambah Kategori Tahun', 'ukmtheme' ),
+        'edit_item'                  => __( 'Edit Tahun', 'ukmtheme' ),
+        'update_item'                => __( 'Update Tahun', 'ukmtheme' ),
+        'view_item'                  => __( 'View Tahun', 'ukmtheme' ),
+        'separate_items_with_commas' => __( 'Separate Tahun with commas', 'ukmtheme' ),
+        'add_or_remove_items'        => __( 'Add or remove Tahun', 'ukmtheme' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'ukmtheme' ),
+        'popular_items'              => __( 'Popular Tahun', 'ukmtheme' ),
+        'search_items'               => __( 'Search Tahun', 'ukmtheme' ),
+        'not_found'                  => __( 'Not Found', 'ukmtheme' ),
+        'no_terms'                   => __( 'No Tahun', 'ukmtheme' ),
+        'items_list'                 => __( 'Categories list', 'ukmtheme' ),
+        'items_list_navigation'      => __( 'Categories list navigation', 'ukmtheme' ),
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'lestariyear', array( 'kelestarian' ), $args );
+}
+add_action( 'init', 'ut_taxonomy_kelestarian_tahun', 0 );
+
 // POST TYPE: CONFERENCE
 
 function title_conference_input ( $title ) {

@@ -301,6 +301,17 @@ function taxonomy_lestaricat_page_template( $template_lestaricat ) {
 }
 add_filter( 'template_include', 'taxonomy_lestaricat_page_template', 99 );
 
+function taxonomy_lestariyear_page_template( $template_lestariyear ) {
+    if ( is_tax( 'lestariyear' )  ) {
+        $new_template_lestariyear = get_template_directory() . '/templates/taxonomy-lestariyear.php';
+        if ( '' != $new_template_lestariyear ) {
+            return $new_template_lestariyear ;
+        }
+    }
+    return $template_lestariyear;
+}
+add_filter( 'template_include', 'taxonomy_lestariyear_page_template', 99 );
+
 function archive_kelestarian_page_template( $template_kelestarian ) {
     if ( is_post_type_archive( 'kelestarian' )  ) {
         $new_template_kelestarian = get_template_directory() . '/templates/archive-kelestarian.php';

@@ -58,8 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navigation-menu {
-    background: #0075eb;
-    background: linear-gradient(45deg, rgb(0, 117, 235) 0%, rgb(0, 72, 255) 100%);
+    background: #263b97;
 }
 
 #ptj-name h1, #ptj-name h2, #ptj-name h3, #ptj-name h4, #ptj-name h5, #ptj-name h6 {
@@ -85,8 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 40px;
     padding-bottom: 0;
     color: #fff;
-    background: #0075eb;
-    background: linear-gradient(45deg, rgb(0, 117, 235) 0%, rgb(0, 72, 255) 100%);
+    background: #263b97;
 }
 
 .copyright-with-navigation {

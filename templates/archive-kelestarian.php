@@ -15,8 +15,8 @@ get_header(); ?>
             $query = new WP_Query( array( 
                 'post_type'      => 'kelestarian', 
                 'posts_per_page' => -1, 
-                'orderby'        => 'menu_order', 
-                'order'          => 'ASC' 
+                'orderby'        => 'date', // Disusun mengikut tarikh penerbitan
+                'order'          => 'DESC'  // Post terkini dipaparkan paling atas
             ) );
 
             if ( $query->have_posts() ) : 

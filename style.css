@@ -1,12 +1,16 @@
 /*
 Theme Name: UKM Twenty Seventeen
-Theme URI: https://github.com/mmUKM/ukm-twentyfifteen
-Version: 2026.1007
-Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
+Theme URI: https://github.com/mmUKM/ukm-twentyseventeen
+Version: 2026.1014
+Description: WordPress Hybrid Theme for Official Site of Universiti Kebangsaan Malaysia. Supports Classic PHP templates for CPTs and Block Editor (FSE) for standard pages.
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
+Requires at least: 6.3
+Tested up to: 6.7
+Requires PHP: 8.0
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ukmtheme
 */
 html {
     font: 400 16px/20px "Inter", Helvetica, Arial, sans-serif;
@@ -19,7 +23,12 @@ em {
     color: #444;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0 0 15px 0;
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-weight: 500;
@@ -50,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     position: absolute;
     z-index: 1;
+    pointer-events: none;
 }
 
 #header {
@@ -57,11 +67,142 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-#navigation-menu {
+#navigation-menu,
+#navigation-menu.uk-navbar-container {
     background: #263b97;
+    min-height: 46px;
+    position: relative;
+    z-index: 100;
 }
 
-#ptj-name h1, #ptj-name h2, #ptj-name h3, #ptj-name h4, #ptj-name h5, #ptj-name h6 {
+#navigation-menu .uk-navbar-nav>li>a {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    min-height: 46px;
+    padding: 0 16px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+#navigation-menu .uk-navbar-nav>li:hover>a,
+#navigation-menu .uk-navbar-nav>li>a:focus,
+#navigation-menu .uk-navbar-nav>li.uk-active>a {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+#navigation-menu .uk-navbar-nav>li.uk-active>a {
+    font-weight: 600;
+}
+
+#navigation-menu .uk-navbar-nav>li>a .uk-navbar-parent-icon {
+    margin-left: 6px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#navigation-menu .uk-navbar-nav>li:hover>a .uk-navbar-parent-icon,
+#navigation-menu .uk-navbar-nav>li.uk-active>a .uk-navbar-parent-icon {
+    color: #ffffff;
+}
+
+/* UIkit Dropdown Styling for #navigation-menu */
+#navigation-menu .uk-navbar-dropdown {
+    background: #ffffff;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border-top: 3px solid #c02b27;
+    padding: 16px 20px;
+    min-width: 220px;
+    margin-top: 0;
+}
+
+#navigation-menu .uk-navbar-dropdown-nav>li>a {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #333333;
+    padding: 6px 0;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#navigation-menu .uk-navbar-dropdown-nav>li:hover>a,
+#navigation-menu .uk-navbar-dropdown-nav>li.uk-active>a {
+    color: #263b97;
+    font-weight: 500;
+    transform: translateX(3px);
+}
+
+#navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub {
+    padding-left: 12px;
+    border-left: 2px solid #e2e8f0;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+#navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub a {
+    font-size: 12px;
+    color: #555555;
+    padding: 4px 0;
+}
+
+#navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub a:hover,
+#navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub li.uk-active>a {
+    color: #263b97;
+}
+
+/* UIkit Off-canvas Navigation for Mobile */
+#offcanvas-nav .uk-offcanvas-bar {
+    background: #1e293b;
+    padding: 30px 24px;
+}
+
+#offcanvas-nav .uk-nav-default>li>a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#offcanvas-nav .uk-nav-default>li.uk-active>a,
+#offcanvas-nav .uk-nav-default>li>a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#offcanvas-nav .uk-nav-default .uk-nav-parent-icon {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#offcanvas-nav .uk-nav-sub {
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: 12px;
+}
+
+#offcanvas-nav .uk-nav-sub a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+#offcanvas-nav .uk-nav-sub a:hover,
+#offcanvas-nav .uk-nav-sub li.uk-active>a {
+    color: #ffffff;
+}
+
+#ptj-name h1,
+#ptj-name h2,
+#ptj-name h3,
+#ptj-name h4,
+#ptj-name h5,
+#ptj-name h6 {
     color: #171717;
 }
 
@@ -80,77 +221,154 @@ h1, h2, h3, h4, h5, h6 {
 
 #footer {
     position: relative;
-    margin-top: 40px;
-    padding-top: 40px;
-    padding-bottom: 0;
-    color: #fff;
-    background: #263b97;
+    margin-top: 50px;
+    padding-top: 45px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    background: #1d2c73;
 }
 
-.copyright-with-navigation {
-    height: 80px;
-    width: 100%;
-    margin-top: 40px;
-    padding: 40px 0 0 0;
+#footer h4,
+#footer h4.uk-h4 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.copyright-with-navigation p {
-    margin: 0 0 0 0;
-    text-align: center;
-    font-size: 12px;
+#footer .uk-heading-bullet::before {
+    border-left-color: #f7b731;
+    border-left-width: 4px;
+}
+
+.ukm-icon-accent {
+    color: #f7b731 !important;
+}
+
+.ukm-text-light {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.ukm-footer-item {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.ukm-footer-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ukm-footer-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Footer List (Pautan Pantas & Senarai Pautan) */
+.ukm-footer-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ukm-footer-list li {
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ukm-footer-list li:last-child {
+    border-bottom: none;
+}
+
+.ukm-footer-list a {
+    color: rgba(255, 255, 255, 0.82) !important;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.ukm-footer-list a:hover {
+    color: #ffffff !important;
+    transform: translateX(4px);
+}
+
+.ukm-footer-list a .ukm-icon-accent {
+    color: #f7b731 !important;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ukm-footer-list a:hover .ukm-icon-accent {
+    transform: translateX(3px);
+}
+
+/* Media Sosial (Mendatar) */
+.ukm-social-icons-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ukm-social-btn {
+    width: 36px !important;
+    height: 36px !important;
+    line-height: 36px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50% !important;
+    transition: all 0.25s ease-in-out;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.ukm-social-btn:hover {
+    background: #ffffff !important;
+    color: #1d2c73 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Divider & Sub-Footer */
+#footer .uk-grid-divider> :not(.uk-first-column)::before {
+    border-left-color: rgba(255, 255, 255, 0.12);
+}
+
+.ukm-footer-bottom {
+    margin-top: 25px;
 }
 
 .footer-nav {
-    display: table;
-    margin: 0 auto;
+    display: flex;
     list-style-type: none;
     padding-left: 0;
 }
 
-.footer-nav ul {
-    padding: 0;
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
 }
 
-.footer-nav li {
-    display: inline-block;
+.footer-nav a:hover {
+    color: #ffffff !important;
 }
 
-.footer-nav li a {
-    display: block;
-    padding: 0 5px 0 5px;
-    font-size: 12px;
-}
-
-.footer-nav li a:link,
-.footer-nav li a:visited {
-    color: #fff;
-}
-
-.footer-nav li a:hover {
-    color: #ccc;
-    text-decoration: none;
-}
-
-.footer-social-icon {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.footer-social-icon li {
-    display: inline-block;
-}
-
-.footer-social-icon li a {
-    color: #fff;
-    font-size: 24px;
-    padding: 3px;
+.footer-nav .uk-subnav-divider> :nth-child(n+2):not(.uk-first-column)::before {
+    border-left-color: rgba(255, 255, 255, 0.25);
 }
 
 * {
     margin: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -164,7 +382,8 @@ html, body {
     display: block;
 }
 
-.footer, .page-wrap:after {
+.footer,
+.page-wrap:after {
     min-height: 142px;
 }
 
@@ -202,7 +421,8 @@ html, body {
     color: #fff;
 }
 
-.offcanvas-tools h3, .offcanvas-tools h4 {
+.offcanvas-tools h3,
+.offcanvas-tools h4 {
     color: #fff;
 }
 
@@ -211,7 +431,8 @@ html, body {
     list-style-type: none;
 }
 
-.offcanvas-tools ul li a, .offcanvas-tools ul li a:visited {
+.offcanvas-tools ul li a,
+.offcanvas-tools ul li a:visited {
     color: #fff;
 }
 
@@ -354,11 +575,25 @@ h1.conference-site-name {
     text-decoration: none;
 }
 
-.ukmtheme-slide-card h1, .ukmtheme-slide-card h2, .ukmtheme-slide-card h3, .ukmtheme-slide-card h4, .ukmtheme-slide-card h5, .ukmtheme-slide-card h6, .ukmtheme-slide-card p, .ukmtheme-slide-card span {
+.ukmtheme-slide-card h1,
+.ukmtheme-slide-card h2,
+.ukmtheme-slide-card h3,
+.ukmtheme-slide-card h4,
+.ukmtheme-slide-card h5,
+.ukmtheme-slide-card h6,
+.ukmtheme-slide-card p,
+.ukmtheme-slide-card span {
     color: #000000 !important;
 }
 
-.ukmtheme-slide-card h1 em, .ukmtheme-slide-card h2 em, .ukmtheme-slide-card h3 em, .ukmtheme-slide-card h4 em, .ukmtheme-slide-card h5 em, .ukmtheme-slide-card h6 em, .ukmtheme-slide-card p em, .ukmtheme-slide-card span em {
+.ukmtheme-slide-card h1 em,
+.ukmtheme-slide-card h2 em,
+.ukmtheme-slide-card h3 em,
+.ukmtheme-slide-card h4 em,
+.ukmtheme-slide-card h5 em,
+.ukmtheme-slide-card h6 em,
+.ukmtheme-slide-card p em,
+.ukmtheme-slide-card span em {
     color: #000000 !important;
 }
 
@@ -482,7 +717,7 @@ h1.conference-site-name {
     line-height: 1;
 }
 
-#cssmenu > ul {
+#cssmenu>ul {
     position: relative;
     display: block;
     background: transparent;
@@ -491,7 +726,7 @@ h1.conference-site-name {
 }
 
 #cssmenu:after,
-#cssmenu > ul:after {
+#cssmenu>ul:after {
     content: ".";
     display: block;
     clear: both;
@@ -500,7 +735,7 @@ h1.conference-site-name {
     height: 0;
 }
 
-#cssmenu.align-right > ul > li {
+#cssmenu.align-right>ul>li {
     float: right;
 }
 
@@ -512,14 +747,14 @@ h1.conference-site-name {
     text-align: left;
 }
 
-#cssmenu > ul > li {
+#cssmenu>ul>li {
     display: inline-block;
     position: relative;
     margin: 0;
     padding: 0;
 }
 
-#cssmenu > ul > #menu-button {
+#cssmenu>ul>#menu-button {
     display: none;
     height: 40px;
 }
@@ -530,7 +765,7 @@ h1.conference-site-name {
     text-decoration: none;
 }
 
-#cssmenu > ul > li > a {
+#cssmenu>ul>li>a {
     font: 400 12px/18px "Poppins", Helvetica, Arial, sans-serif;
     padding: 10px 10px;
     color: #ffffff;
@@ -542,18 +777,18 @@ h1.conference-site-name {
     transition: color 0.25s ease-out;
 }
 
-#cssmenu > ul > li:hover > a {
+#cssmenu>ul>li:hover>a {
     color: #8c9195;
 }
 
-#cssmenu > ul > li.has-sub::after {
+#cssmenu>ul>li.has-sub::after {
     right: 10px;
     top: 20px;
     border: 5px solid transparent;
     border-top-color: #ffffff;
 }
 
-#cssmenu > ul > li:hover::after {
+#cssmenu>ul>li:hover::after {
     border-top-color: #ffffff;
 }
 
@@ -613,25 +848,25 @@ h1.conference-site-name {
     position: relative;
 }
 
-#cssmenu > ul > li:hover > ul {
+#cssmenu>ul>li:hover>ul {
     left: auto;
     top: 40px;
     opacity: 1;
 }
 
-#cssmenu.align-right > ul > li:hover > ul {
+#cssmenu.align-right>ul>li:hover>ul {
     left: auto;
     right: 0;
     opacity: 1;
 }
 
-#cssmenu ul ul li:hover > ul {
+#cssmenu ul ul li:hover>ul {
     left: 170px;
     top: 0;
     opacity: 1;
 }
 
-#cssmenu.align-right ul ul li:hover > ul {
+#cssmenu.align-right ul ul li:hover>ul {
     left: auto;
     right: 170px;
     top: 0;
@@ -657,17 +892,17 @@ h1.conference-site-name {
     text-align: right;
 }
 
-#cssmenu ul ul li:hover > a {
+#cssmenu ul ul li:hover>a {
     background: #c3c3c3;
     color: #000;
 }
 
-#cssmenu ul ul li:last-child > a,
-#cssmenu ul ul li.last > a {
+#cssmenu ul ul li:last-child>a,
+#cssmenu ul ul li.last>a {
     border-bottom: 0;
 }
 
-#cssmenu > ul > li > ul::after {
+#cssmenu>ul>li>ul::after {
     content: "";
     border: 6px solid transparent;
     width: 0;
@@ -678,7 +913,7 @@ h1.conference-site-name {
     left: 30px;
 }
 
-#cssmenu.align-right > ul > li > ul::after {
+#cssmenu.align-right>ul>li>ul::after {
     left: auto;
     right: 30px;
 }
@@ -723,7 +958,13 @@ h1.conference-site-name {
     transform: rotateY(180deg);
 }
 
-@media all and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 640px),
+only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px),
+only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
+only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px),
+only screen and (min-resolution: 192dpi) and (max-width: 1024px),
+only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     #cssmenu {
         width: auto;
     }
@@ -732,7 +973,7 @@ h1.conference-site-name {
         text-align: left;
     }
 
-    #cssmenu.align-right > ul > li {
+    #cssmenu.align-right>ul>li {
         float: none;
     }
 
@@ -742,36 +983,36 @@ h1.conference-site-name {
     }
 
     #cssmenu .submenuArrow,
-  #cssmenu #indicatorContainer {
+    #cssmenu #indicatorContainer {
         display: none;
     }
 
-    #cssmenu > ul {
+    #cssmenu>ul {
         height: auto;
         display: block;
     }
 
-    #cssmenu > ul > li {
+    #cssmenu>ul>li {
         float: none;
     }
 
     #cssmenu li,
-  #cssmenu > ul > li {
+    #cssmenu>ul>li {
         display: none;
     }
 
-    #cssmenu > ul > li > a {
+    #cssmenu>ul>li>a {
         color: #fff;
     }
 
     #cssmenu ul ul,
-  #cssmenu ul ul ul,
-  #cssmenu ul > li:hover > ul,
-  #cssmenu ul ul > li:hover > ul,
-  #cssmenu.align-right ul ul,
-  #cssmenu.align-right ul ul ul,
-  #cssmenu.align-right ul > li:hover > ul,
-  #cssmenu.align-right ul ul > li:hover > ul {
+    #cssmenu ul ul ul,
+    #cssmenu ul>li:hover>ul,
+    #cssmenu ul ul>li:hover>ul,
+    #cssmenu.align-right ul ul,
+    #cssmenu.align-right ul ul ul,
+    #cssmenu.align-right ul>li:hover>ul,
+    #cssmenu.align-right ul ul>li:hover>ul {
         position: relative;
         left: auto;
         top: auto;
@@ -801,7 +1042,7 @@ h1.conference-site-name {
         text-align: left;
     }
 
-    #cssmenu ul ul li:hover > a {
+    #cssmenu ul ul li:hover>a {
         background: none;
         color: #8c9195;
     }
@@ -822,22 +1063,22 @@ h1.conference-site-name {
         padding: 8px 95px;
     }
 
-    #cssmenu > ul > #menu-button {
+    #cssmenu>ul>#menu-button {
         display: block;
         cursor: pointer;
     }
 
-    #cssmenu #menu-button > a {
+    #cssmenu #menu-button>a {
         padding: 10px 20px;
         color: #fff;
     }
 
     #cssmenu ul.open li,
-  #cssmenu > ul.open > li {
+    #cssmenu>ul.open>li {
         display: block;
     }
 
-    #cssmenu > ul.open > li#menu-button > a {
+    #cssmenu>ul.open>li#menu-button>a {
         color: #fff;
         border-bottom: 1px solid rgba(150, 150, 150, 0.1);
     }
@@ -870,7 +1111,7 @@ h1.conference-site-name {
     }
 
     #cssmenu ul.open #menu-button::after,
-  #cssmenu ul.open #menu-button::before {
+    #cssmenu ul.open #menu-button::before {
         border-color: #fff;
     }
 }
@@ -919,7 +1160,7 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #f0f0f0;
     max-width: 96%;
- /* Image does not overflow the content area */
+    /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
 }
@@ -979,5 +1220,5 @@ a img.aligncenter {
     top: 5px;
     width: auto;
     z-index: 100000;
- /* Above WP toolbar. */
+    /* Above WP toolbar. */
 }

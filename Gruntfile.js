@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 
         clean: {
             dist: {
-                src: ['packages/cmb2/languages/*']
+                src: ['libs/cmb2/languages/*']
             }
         },
     

@@ -42,7 +42,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
                         'label' => esc_html__( 'Image', 'ukmtheme' ),
                         'type' => \Elementor\Controls_Manager::MEDIA,
                         'default' => [
-                            'url' => get_template_directory_uri() . '/images/dummy-960x640.svg',
+                            'url' => get_template_directory_uri() . '/assets/images/dummy-960x640.svg',
                         ],
                     ],
 					[
@@ -151,7 +151,7 @@ class Elementor_UKMTheme_Card_Slides extends \Elementor\Widget_Base {
 										if ( $item['image']['url'] ) { ?>
 											<img src="<?php echo esc_url( $item['image']['url'] ); ?>" width="960" height="640" alt="">
 										<?php } else { ?>
-											<img src="<?php echo get_template_directory_uri() . '/images/dummy-960x640.svg'; ?>" width="960" height="640" alt="">
+											<img src="<?php echo get_template_directory_uri() . '/assets/images/dummy-960x640.svg'; ?>" width="960" height="640" alt="">
 										<?php } ?>
 								</div>
 								<div class="uk-card-body ukmtheme-slide-card">

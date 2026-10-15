@@ -519,6 +519,25 @@ function ukmtheme_customizer( $wp_customize ) {
         'type'      => 'checkbox'
     ) );
 
+    // PENERBITAN (PUBLICATION)
+    $wp_customize->add_section( 'ukmtheme_publication_settings', array(
+        'title'    => __( 'Penerbitan', 'ukmtheme' ),
+        'priority' => 105,
+    ) );
+
+    $wp_customize->add_setting( 'ukmtheme_publication_btn_label', array(
+        'default'           => __( 'Dapatkan', 'ukmtheme' ),
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_publication_btn_label', array(
+        'label'       => __( 'Label Butang Arkib & Kategori', 'ukmtheme' ),
+        'description' => __( 'Teks lalai untuk butang kad buku di halaman arkib/kategori penerbitan (Lalai: Dapatkan). Boleh diubah juga secara khusus bagi setiap buku di bahagian Penerbitan.', 'ukmtheme' ),
+        'section'     => 'ukmtheme_publication_settings',
+        'type'        => 'text',
+        'priority'    => 10,
+    ) );
+
     /**
      * Remove default customize setting
      * Title, Frontpage, navigation, header image.

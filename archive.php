@@ -35,7 +35,7 @@ get_header(); ?>
                                             </a>
                                         <?php else : ?>
                                             <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                                <img class="uk-border-rounded" src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_thumbnail.svg' ); ?>" alt="<?php the_title_attribute(); ?>">
+                                                <img class="uk-border-rounded" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_thumbnail.svg' ); ?>" alt="<?php the_title_attribute(); ?>">
                                             </a>
                                         <?php endif; ?>
                                     </div>

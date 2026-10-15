@@ -227,7 +227,7 @@ function ut_staff_custom_columns( $column ) {
         <?php }
 
         else { ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder_staff.svg" width="50">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder_staff.svg" width="50">
         <?php } break;
         case 'ut_staff_position' : echo get_the_term_list( $post->ID, 'position', '', ', ',''); break;
         case 'ut_staff_department' : echo get_the_term_list( $post->ID, 'department', '', ', ',''); break;

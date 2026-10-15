@@ -88,7 +88,7 @@ class Elementor_UKMTheme_News_Slider extends \Elementor\Widget_Base {
                                         <div class="uk-card-media-top">
                                             <?php
                                                 if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" width="800" height="450"> <?php }
-                                                else { echo '<img src="' . get_template_directory_uri() . '/images/placeholder_news.svg" height="450" width="800"/>'; }
+                                                else { echo '<img src="' . get_template_directory_uri() . '/assets/images/placeholder_news.svg" height="450" width="800"/>'; }
                                             ?>
                                         </div>
                                         <div class="uk-card-body">

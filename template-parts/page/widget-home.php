@@ -37,10 +37,10 @@ if ( get_theme_mod( 'ukmtheme_frontpage_slideset' ) == 1 ) : ?>
                 </li>
             <?php endwhile; wp_reset_postdata();
             else : ?>
-                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_a.svg' ); ?>" alt=""></li>
-                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_b.svg' ); ?>" alt=""></li>
-                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_c.svg' ); ?>" alt=""></li>
-                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_d.svg' ); ?>" alt=""></li>
+                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_a.svg' ); ?>" alt=""></li>
+                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_b.svg' ); ?>" alt=""></li>
+                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_c.svg' ); ?>" alt=""></li>
+                <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_d.svg' ); ?>" alt=""></li>
             <?php endif; ?>
         </ul>
         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
@@ -74,7 +74,7 @@ if ( get_theme_mod( 'ukmtheme_frontpage_pengumuman' ) == 1 ) : ?>
                     <li>
                         <div class="uk-card uk-card-small uk-card-default uk-card-body uk-flex uk-flex-middle">
                             <div class="uk-margin-small-right">
-                                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icon-announcement.svg' ); ?>" alt="" width="40">
+                                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/icon-announcement.svg' ); ?>" alt="" width="40">
                             </div>
                             <div>
                                 <a class="uk-link-reset" href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
@@ -125,7 +125,7 @@ if ( get_theme_mod( 'ukmtheme_frontpage_basic' ) == 1 ) :
                                 <?php if ( has_post_thumbnail() ) : ?>
                                     <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail( 'news_thumbnail', array( 'class' => 'uk-width-1-1' ) ); ?></a>
                                 <?php else : ?>
-                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_news.svg' ); ?>" alt="" class="uk-width-1-1">
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_news.svg' ); ?>" alt="" class="uk-width-1-1">
                                 <?php endif; ?>
                             </div>
                             <div class="uk-card-body uk-padding-small">

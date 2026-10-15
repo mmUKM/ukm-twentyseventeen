@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // -------------------------------------------------------
 // Auto-update checker (PUC)
 // -------------------------------------------------------
-require get_template_directory() . '/libs/puc/plugin-update-checker.php';
+require get_template_directory() . '/assets/libs/puc/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(

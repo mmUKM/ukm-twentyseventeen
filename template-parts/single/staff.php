@@ -17,7 +17,7 @@ get_header(); ?>
                             if ( $staff_photo ) { ?>
                                 <img src="<?php echo get_post_meta( get_the_ID(),'ut_staff_photo',true ); ?>" alt="">
                             <?php } else { ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder_staff.svg">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder_staff.svg">
                             <?php }
                         ?>
                     </div>

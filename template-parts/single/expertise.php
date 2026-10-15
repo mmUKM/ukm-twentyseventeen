@@ -16,7 +16,7 @@ get_header(); ?>
                         echo '<img src="'.$photo.'">';
                     }
                     else {
-                        echo '<img src="'. get_template_directory_uri() .'/images/placeholder_staff.svg">';
+                        echo '<img src="'. get_template_directory_uri() .'/assets/images/placeholder_staff.svg">';
                     }
                     ?>
                 </div>

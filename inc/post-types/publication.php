@@ -116,7 +116,7 @@ function ut_publication_custom_columns( $column ){
             <img src="<?php echo $pub_cover; ?>" alt="" width="50">
         <?php }
         else { ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder_publication.svg" width="50">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder_publication.svg" width="50">
         <?php } break;
         case 'pubcat' : echo get_the_term_list( $post->ID, 'pubcat', '', ', ',''); break;
         case 'ut_publication_author' : echo get_post_meta( $post->ID,'ut_publication_author',true ); break;

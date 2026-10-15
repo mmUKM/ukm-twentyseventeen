@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </a>
             <?php else : ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-single-black.svg' ); ?>" height="60" width="110" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-single-black.svg' ); ?>" height="60" width="110" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                 </a>
             <?php endif; ?>
         </div>
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="uk-width-1-1 uk-hidden@s">
             <div class="uk-flex uk-flex-between uk-flex-middle uk-padding-small">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-single-black.svg' ); ?>" height="45" width="85" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"/>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-single-black.svg' ); ?>" height="45" width="85" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"/>
                 </a>
                 <div class="uk-flex uk-flex-middle">
                     <a href="#offcanvas-nav" uk-toggle class="uk-button uk-button-default uk-button-small uk-margin-small-left" aria-label="<?php esc_attr_e( 'Menu', 'ukmtheme' ); ?>">
@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close aria-label="<?php esc_attr_e( 'Close menu', 'ukmtheme' ); ?>"></button>
         <div class="uk-margin-bottom uk-text-center">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-single-white.svg' ); ?>" height="50" width="90" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-single-white.svg' ); ?>" height="50" width="90" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
             <h5 class="uk-margin-small-top"><?php bloginfo( 'name' ); ?></h5>
         </div>
         <?php

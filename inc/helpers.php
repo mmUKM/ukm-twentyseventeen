@@ -115,6 +115,9 @@ function ukmtheme_option_posts_per_taxonomy( $value ) {
     if ( is_tax( array( 'newscat', 'galcat' ) ) ) {
         return 10;
     }
+    if ( is_tax( 'pubcat' ) ) {
+        return 12;
+    }
     return $option_posts_per_page;
 }
 
@@ -128,5 +131,28 @@ function ukmtheme_option_posts_per_archive( $value ) {
     if ( is_post_type_archive( array( 'news', 'gallery', 'video' ) ) ) {
         return 10;
     }
+    if ( is_post_type_archive( 'publication' ) ) {
+        return 12;
+    }
     return $option_posts_per_page;
+}
+
+/**
+ * Dapatkan label butang bagi kad penerbitan (arkib / taksonomi).
+ *
+ * @param int|null $post_id ID pos penerbitan.
+ * @return string Label butang.
+ */
+function ukmtheme_get_publication_btn_label( $post_id = null ) {
+    if ( ! $post_id ) {
+        $post_id = get_the_ID();
+    }
+    $label = get_post_meta( $post_id, 'ut_publication_btn_label', true );
+    if ( empty( $label ) ) {
+        $label = get_theme_mod( 'ukmtheme_publication_btn_label' );
+    }
+    if ( empty( $label ) ) {
+        $label = __( 'Dapatkan', 'ukmtheme' );
+    }
+    return apply_filters( 'ukmtheme_publication_button_label', $label, $post_id );
 }

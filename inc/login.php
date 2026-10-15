@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function ukmtheme_login_logo() { ?>
   <style type="text/css">
   body.login div#login h1 a {
-    background-image: url("<?php echo esc_url( get_template_directory_uri() . '/images/logo-login.svg' ); ?>");
+    background-image: url("<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-login.svg' ); ?>");
     background-size: 320px 80px;
     background-position: center top;
     background-repeat: no-repeat;

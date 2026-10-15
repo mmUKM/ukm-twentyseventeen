@@ -93,7 +93,7 @@ class Elementor_UKMTheme_Publications extends \Elementor\Widget_Base {
                                 if ( get_post_meta( get_the_ID(), 'ut_publication_cover', true ) ) { ?>
                                     <img src="<?php echo get_post_meta( get_the_ID(), 'ut_publication_cover', true ); ?>" width="130" height="165" alt="<?php the_title(); ?>">
                                 <?php } else { ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder_publication.svg" width="130" height="165">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder_publication.svg" width="130" height="165">
                                 <?php }
                             ?>
                         </div>

@@ -1,8 +1,8 @@
 /*
 Theme Name: UKM Twenty Seventeen
 Theme URI: https://github.com/mmUKM/ukm-twentyseventeen
-Version: 2026.1014
-Description: WordPress Hybrid Theme for Official Site of Universiti Kebangsaan Malaysia. Supports Classic PHP templates for CPTs and Block Editor (FSE) for standard pages.
+Version: 2026.1015
+Description: WordPress Theme for Official Site of Universiti Kebangsaan Malaysia
 Author: Jamaludin Rajalu
 Author URI: https://www.facebook.com/jrajalu
 Requires at least: 6.3
@@ -50,7 +50,7 @@ h6 {
 }
 
 #header-wrap-overlay {
-    background-image: url("images/dotted-pattern.png");
+    background-image: url("assets/images/dotted-pattern.png");
     opacity: 0.2;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
@@ -75,7 +75,7 @@ h6 {
     z-index: 100;
 }
 
-#navigation-menu .uk-navbar-nav>li>a {
+#navigation-menu .uk-navbar-nav > li > a {
     color: rgba(255, 255, 255, 0.9);
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -87,24 +87,24 @@ h6 {
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-#navigation-menu .uk-navbar-nav>li:hover>a,
-#navigation-menu .uk-navbar-nav>li>a:focus,
-#navigation-menu .uk-navbar-nav>li.uk-active>a {
+#navigation-menu .uk-navbar-nav > li:hover > a,
+#navigation-menu .uk-navbar-nav > li > a:focus,
+#navigation-menu .uk-navbar-nav > li.uk-active > a {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-#navigation-menu .uk-navbar-nav>li.uk-active>a {
+#navigation-menu .uk-navbar-nav > li.uk-active > a {
     font-weight: 600;
 }
 
-#navigation-menu .uk-navbar-nav>li>a .uk-navbar-parent-icon {
+#navigation-menu .uk-navbar-nav > li > a .uk-navbar-parent-icon {
     margin-left: 6px;
     color: rgba(255, 255, 255, 0.7);
 }
 
-#navigation-menu .uk-navbar-nav>li:hover>a .uk-navbar-parent-icon,
-#navigation-menu .uk-navbar-nav>li.uk-active>a .uk-navbar-parent-icon {
+#navigation-menu .uk-navbar-nav > li:hover > a .uk-navbar-parent-icon,
+#navigation-menu .uk-navbar-nav > li.uk-active > a .uk-navbar-parent-icon {
     color: #ffffff;
 }
 
@@ -119,7 +119,7 @@ h6 {
     margin-top: 0;
 }
 
-#navigation-menu .uk-navbar-dropdown-nav>li>a {
+#navigation-menu .uk-navbar-dropdown-nav > li > a {
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 13px;
     color: #333333;
@@ -130,8 +130,8 @@ h6 {
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-#navigation-menu .uk-navbar-dropdown-nav>li:hover>a,
-#navigation-menu .uk-navbar-dropdown-nav>li.uk-active>a {
+#navigation-menu .uk-navbar-dropdown-nav > li:hover > a,
+#navigation-menu .uk-navbar-dropdown-nav > li.uk-active > a {
     color: #263b97;
     font-weight: 500;
     transform: translateX(3px);
@@ -151,7 +151,7 @@ h6 {
 }
 
 #navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub a:hover,
-#navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub li.uk-active>a {
+#navigation-menu .uk-navbar-dropdown-nav .uk-nav-sub li.uk-active > a {
     color: #263b97;
 }
 
@@ -161,7 +161,7 @@ h6 {
     padding: 30px 24px;
 }
 
-#offcanvas-nav .uk-nav-default>li>a {
+#offcanvas-nav .uk-nav-default > li > a {
     color: rgba(255, 255, 255, 0.85);
     font-size: 14px;
     padding: 9px 12px;
@@ -170,8 +170,8 @@ h6 {
     transition: background 0.2s ease, color 0.2s ease;
 }
 
-#offcanvas-nav .uk-nav-default>li.uk-active>a,
-#offcanvas-nav .uk-nav-default>li>a:hover {
+#offcanvas-nav .uk-nav-default > li.uk-active > a,
+#offcanvas-nav .uk-nav-default > li > a:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.08);
 }
@@ -193,7 +193,7 @@ h6 {
 }
 
 #offcanvas-nav .uk-nav-sub a:hover,
-#offcanvas-nav .uk-nav-sub li.uk-active>a {
+#offcanvas-nav .uk-nav-sub li.uk-active > a {
     color: #ffffff;
 }
 
@@ -335,7 +335,7 @@ h6 {
 }
 
 /* Divider & Sub-Footer */
-#footer .uk-grid-divider> :not(.uk-first-column)::before {
+#footer .uk-grid-divider > :not(.uk-first-column)::before {
     border-left-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -359,7 +359,7 @@ h6 {
     color: #ffffff !important;
 }
 
-.footer-nav .uk-subnav-divider> :nth-child(n+2):not(.uk-first-column)::before {
+.footer-nav .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before {
     border-left-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -503,7 +503,7 @@ h1.conference-site-name {
 }
 
 #pengumuman-wrap {
-    background: url("images/grey-pattern-1029577b.png") repeat;
+    background: url("assets/images/grey-pattern-1029577b.png") repeat;
     padding: 20px 0 20px 0;
 }
 
@@ -717,7 +717,7 @@ h1.conference-site-name {
     line-height: 1;
 }
 
-#cssmenu>ul {
+#cssmenu > ul {
     position: relative;
     display: block;
     background: transparent;
@@ -726,7 +726,7 @@ h1.conference-site-name {
 }
 
 #cssmenu:after,
-#cssmenu>ul:after {
+#cssmenu > ul:after {
     content: ".";
     display: block;
     clear: both;
@@ -735,7 +735,7 @@ h1.conference-site-name {
     height: 0;
 }
 
-#cssmenu.align-right>ul>li {
+#cssmenu.align-right > ul > li {
     float: right;
 }
 
@@ -747,14 +747,14 @@ h1.conference-site-name {
     text-align: left;
 }
 
-#cssmenu>ul>li {
+#cssmenu > ul > li {
     display: inline-block;
     position: relative;
     margin: 0;
     padding: 0;
 }
 
-#cssmenu>ul>#menu-button {
+#cssmenu > ul > #menu-button {
     display: none;
     height: 40px;
 }
@@ -765,7 +765,7 @@ h1.conference-site-name {
     text-decoration: none;
 }
 
-#cssmenu>ul>li>a {
+#cssmenu > ul > li > a {
     font: 400 12px/18px "Poppins", Helvetica, Arial, sans-serif;
     padding: 10px 10px;
     color: #ffffff;
@@ -777,18 +777,18 @@ h1.conference-site-name {
     transition: color 0.25s ease-out;
 }
 
-#cssmenu>ul>li:hover>a {
+#cssmenu > ul > li:hover > a {
     color: #8c9195;
 }
 
-#cssmenu>ul>li.has-sub::after {
+#cssmenu > ul > li.has-sub::after {
     right: 10px;
     top: 20px;
     border: 5px solid transparent;
     border-top-color: #ffffff;
 }
 
-#cssmenu>ul>li:hover::after {
+#cssmenu > ul > li:hover::after {
     border-top-color: #ffffff;
 }
 
@@ -848,25 +848,25 @@ h1.conference-site-name {
     position: relative;
 }
 
-#cssmenu>ul>li:hover>ul {
+#cssmenu > ul > li:hover > ul {
     left: auto;
     top: 40px;
     opacity: 1;
 }
 
-#cssmenu.align-right>ul>li:hover>ul {
+#cssmenu.align-right > ul > li:hover > ul {
     left: auto;
     right: 0;
     opacity: 1;
 }
 
-#cssmenu ul ul li:hover>ul {
+#cssmenu ul ul li:hover > ul {
     left: 170px;
     top: 0;
     opacity: 1;
 }
 
-#cssmenu.align-right ul ul li:hover>ul {
+#cssmenu.align-right ul ul li:hover > ul {
     left: auto;
     right: 170px;
     top: 0;
@@ -892,17 +892,17 @@ h1.conference-site-name {
     text-align: right;
 }
 
-#cssmenu ul ul li:hover>a {
+#cssmenu ul ul li:hover > a {
     background: #c3c3c3;
     color: #000;
 }
 
-#cssmenu ul ul li:last-child>a,
-#cssmenu ul ul li.last>a {
+#cssmenu ul ul li:last-child > a,
+#cssmenu ul ul li.last > a {
     border-bottom: 0;
 }
 
-#cssmenu>ul>li>ul::after {
+#cssmenu > ul > li > ul::after {
     content: "";
     border: 6px solid transparent;
     width: 0;
@@ -913,7 +913,7 @@ h1.conference-site-name {
     left: 30px;
 }
 
-#cssmenu.align-right>ul>li>ul::after {
+#cssmenu.align-right > ul > li > ul::after {
     left: auto;
     right: 30px;
 }
@@ -958,13 +958,7 @@ h1.conference-site-name {
     transform: rotateY(180deg);
 }
 
-@media all and (max-width: 640px),
-only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px),
-only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px),
-only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
-only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px),
-only screen and (min-resolution: 192dpi) and (max-width: 1024px),
-only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 640px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     #cssmenu {
         width: auto;
     }
@@ -973,7 +967,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
         text-align: left;
     }
 
-    #cssmenu.align-right>ul>li {
+    #cssmenu.align-right > ul > li {
         float: none;
     }
 
@@ -983,36 +977,36 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     }
 
     #cssmenu .submenuArrow,
-    #cssmenu #indicatorContainer {
+  #cssmenu #indicatorContainer {
         display: none;
     }
 
-    #cssmenu>ul {
+    #cssmenu > ul {
         height: auto;
         display: block;
     }
 
-    #cssmenu>ul>li {
+    #cssmenu > ul > li {
         float: none;
     }
 
     #cssmenu li,
-    #cssmenu>ul>li {
+  #cssmenu > ul > li {
         display: none;
     }
 
-    #cssmenu>ul>li>a {
+    #cssmenu > ul > li > a {
         color: #fff;
     }
 
     #cssmenu ul ul,
-    #cssmenu ul ul ul,
-    #cssmenu ul>li:hover>ul,
-    #cssmenu ul ul>li:hover>ul,
-    #cssmenu.align-right ul ul,
-    #cssmenu.align-right ul ul ul,
-    #cssmenu.align-right ul>li:hover>ul,
-    #cssmenu.align-right ul ul>li:hover>ul {
+  #cssmenu ul ul ul,
+  #cssmenu ul > li:hover > ul,
+  #cssmenu ul ul > li:hover > ul,
+  #cssmenu.align-right ul ul,
+  #cssmenu.align-right ul ul ul,
+  #cssmenu.align-right ul > li:hover > ul,
+  #cssmenu.align-right ul ul > li:hover > ul {
         position: relative;
         left: auto;
         top: auto;
@@ -1042,7 +1036,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
         text-align: left;
     }
 
-    #cssmenu ul ul li:hover>a {
+    #cssmenu ul ul li:hover > a {
         background: none;
         color: #8c9195;
     }
@@ -1063,22 +1057,22 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
         padding: 8px 95px;
     }
 
-    #cssmenu>ul>#menu-button {
+    #cssmenu > ul > #menu-button {
         display: block;
         cursor: pointer;
     }
 
-    #cssmenu #menu-button>a {
+    #cssmenu #menu-button > a {
         padding: 10px 20px;
         color: #fff;
     }
 
     #cssmenu ul.open li,
-    #cssmenu>ul.open>li {
+  #cssmenu > ul.open > li {
         display: block;
     }
 
-    #cssmenu>ul.open>li#menu-button>a {
+    #cssmenu > ul.open > li#menu-button > a {
         color: #fff;
         border-bottom: 1px solid rgba(150, 150, 150, 0.1);
     }
@@ -1111,7 +1105,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     }
 
     #cssmenu ul.open #menu-button::after,
-    #cssmenu ul.open #menu-button::before {
+  #cssmenu ul.open #menu-button::before {
         border-color: #fff;
     }
 }
@@ -1160,7 +1154,7 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #f0f0f0;
     max-width: 96%;
-    /* Image does not overflow the content area */
+  /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
 }
@@ -1220,5 +1214,90 @@ a img.aligncenter {
     top: 5px;
     width: auto;
     z-index: 100000;
-    /* Above WP toolbar. */
+  /* Above WP toolbar. */
+}
+
+/* ==========================================================================
+   CPT: Publication Card & Archive Styles
+   ========================================================================== */
+.publication-card {
+    border: 1px solid #e2e8f0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #ffffff;
+}
+
+.publication-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.05);
+}
+
+.publication-card .publication-card-media {
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 24px 16px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.publication-card .publication-cover-box {
+    height: 270px;
+    width: 100%;
+}
+
+.publication-card .publication-cover-img {
+    max-height: 260px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.publication-card:hover .publication-cover-img {
+    transform: scale(1.03);
+}
+
+.publication-card .publication-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin: 0 0 8px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.9em;
+}
+
+.publication-card .publication-card-title a {
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.publication-card .publication-card-title a:hover {
+    color: #2563eb;
+}
+
+.publication-card .publication-card-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #d9381e;
+    line-height: 1.2;
+}
+
+.publication-card .publication-card-action {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.publication-card .publication-card-action .publication-btn-get {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: none;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 38px;
+    transition: all 0.2s ease;
 }

@@ -88,12 +88,12 @@ class Elementor_UKMTheme_Slideset extends \Elementor\Widget_Base {
 
                     <?php endwhile; else: ?>
 
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
-                    <li><a><img src="<?php echo get_template_directory_uri() . '/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/assets/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/assets/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/assets/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/assets/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/assets/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
+                    <li><a><img src="<?php echo get_template_directory_uri() . '/assets/images/placeholder_slideset.svg'; ?>" alt=""></a></li>
 
                     <?php endif; ?>
                 </ul>

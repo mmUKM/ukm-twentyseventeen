@@ -35,7 +35,7 @@ get_header(); ?>
                                 <?php elseif ( has_post_thumbnail() ) : ?>
                                     <img src="<?php the_post_thumbnail_url( 'medium_large' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
                                 <?php else : ?>
-                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_thumbnail.svg' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_thumbnail.svg' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
                                 <?php endif; ?>
                             </div>
                             <div class="uk-card-body">

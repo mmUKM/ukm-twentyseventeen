@@ -60,7 +60,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                     endwhile;
                     wp_reset_postdata();
                 else : ?>
-                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/ukm-dectar-1.avif' ); ?>" alt="UKM" uk-cover></li>
+                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ukm-dectar-1.avif' ); ?>" alt="UKM" uk-cover></li>
                 <?php endif; ?>
             </ul>
             <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>

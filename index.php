@@ -47,7 +47,7 @@ get_header(); ?>
                         $slide_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
                     }
                     if ( empty( $slide_image ) ) {
-                        $slide_image = get_template_directory_uri() . '/images/ukm-dectar-1.avif';
+                        $slide_image = get_template_directory_uri() . '/assets/images/ukm-dectar-1.avif';
                     }
                     ?>
                     <li>
@@ -93,7 +93,7 @@ get_header(); ?>
                 wp_reset_postdata();
             else : // Default Fallback Slides ?>
                 <li>
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/ukm-dectar-1.avif' ); ?>" alt="Universiti Kebangsaan Malaysia" uk-cover>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ukm-dectar-1.avif' ); ?>" alt="Universiti Kebangsaan Malaysia" uk-cover>
                     <div class="uk-position-cover" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.75) 100%);"></div>
                     <div class="uk-position-cover uk-flex uk-flex-left uk-flex-middle">
                         <div class="wrap uk-container uk-width-1-1">
@@ -116,7 +116,7 @@ get_header(); ?>
                     </div>
                 </li>
                 <li>
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/Slide-A.jpg' ); ?>" alt="Pendidikan & Akademik" uk-cover>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Slide-A.jpg' ); ?>" alt="Pendidikan & Akademik" uk-cover>
                     <div class="uk-position-cover" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.75) 100%);"></div>
                     <div class="uk-position-cover uk-flex uk-flex-left uk-flex-middle">
                         <div class="wrap uk-container uk-width-1-1">
@@ -134,7 +134,7 @@ get_header(); ?>
                     </div>
                 </li>
                 <li>
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/Slide-B.jpg' ); ?>" alt="Penyelidikan & Inovasi" uk-cover>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Slide-B.jpg' ); ?>" alt="Penyelidikan & Inovasi" uk-cover>
                     <div class="uk-position-cover" style="background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.75) 100%);"></div>
                     <div class="uk-position-cover uk-flex uk-flex-left uk-flex-middle">
                         <div class="wrap uk-container uk-width-1-1">
@@ -185,7 +185,7 @@ get_header(); ?>
                         <?php while ( $preset_cards_query->have_posts() ) : $preset_cards_query->the_post();
                             $card_thumb = has_post_thumbnail() 
                                 ? get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ) 
-                                : get_template_directory_uri() . '/images/dummy-960x640.svg';
+                                : get_template_directory_uri() . '/assets/images/dummy-960x640.svg';
                         ?>
                             <div>
                                 <div class="uk-card uk-card-default uk-card-hover uk-border-rounded uk-box-shadow-small uk-overflow-hidden uk-transition-toggle">
@@ -221,7 +221,7 @@ get_header(); ?>
                         <div>
                             <div class="uk-card uk-card-default uk-card-hover uk-border-rounded uk-box-shadow-small uk-overflow-hidden uk-transition-toggle">
                                 <div class="uk-card-media-top uk-cover-container" style="height: 220px;">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/Slide-A.jpg' ); ?>" alt="Program Akademik" uk-cover class="uk-transition-scale-up uk-transition-opaque">
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Slide-A.jpg' ); ?>" alt="Program Akademik" uk-cover class="uk-transition-scale-up uk-transition-opaque">
                                 </div>
                                 <div class="uk-card-body uk-padding uk-flex uk-flex-column">
                                     <span class="uk-label uk-label-warning uk-width-auto uk-margin-small-bottom" style="align-self: flex-start;"><?php esc_html_e( 'Akademik', 'ukmtheme' ); ?></span>
@@ -244,7 +244,7 @@ get_header(); ?>
                         <div>
                             <div class="uk-card uk-card-default uk-card-hover uk-border-rounded uk-box-shadow-small uk-overflow-hidden uk-transition-toggle">
                                 <div class="uk-card-media-top uk-cover-container" style="height: 220px;">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/Slide-B.jpg' ); ?>" alt="Penyelidikan & Inovasi" uk-cover class="uk-transition-scale-up uk-transition-opaque">
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Slide-B.jpg' ); ?>" alt="Penyelidikan & Inovasi" uk-cover class="uk-transition-scale-up uk-transition-opaque">
                                 </div>
                                 <div class="uk-card-body uk-padding uk-flex uk-flex-column">
                                     <span class="uk-label uk-label-danger uk-width-auto uk-margin-small-bottom" style="align-self: flex-start;"><?php esc_html_e( 'Penyelidikan', 'ukmtheme' ); ?></span>
@@ -267,7 +267,7 @@ get_header(); ?>
                         <div>
                             <div class="uk-card uk-card-default uk-card-hover uk-border-rounded uk-box-shadow-small uk-overflow-hidden uk-transition-toggle">
                                 <div class="uk-card-media-top uk-cover-container" style="height: 220px;">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/Slide-C.jpg' ); ?>" alt="Kehidupan Kampus" uk-cover class="uk-transition-scale-up uk-transition-opaque">
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Slide-C.jpg' ); ?>" alt="Kehidupan Kampus" uk-cover class="uk-transition-scale-up uk-transition-opaque">
                                 </div>
                                 <div class="uk-card-body uk-padding uk-flex uk-flex-column">
                                     <span class="uk-label uk-label-success uk-width-auto uk-margin-small-bottom" style="align-self: flex-start;"><?php esc_html_e( 'Kampus', 'ukmtheme' ); ?></span>
@@ -322,10 +322,10 @@ get_header(); ?>
                     endwhile;
                     wp_reset_postdata();
                 else : ?>
-                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_a.svg' ); ?>" alt=""></li>
-                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_b.svg' ); ?>" alt=""></li>
-                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_c.svg' ); ?>" alt=""></li>
-                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_slider_d.svg' ); ?>" alt=""></li>
+                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_a.svg' ); ?>" alt=""></li>
+                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_b.svg' ); ?>" alt=""></li>
+                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_c.svg' ); ?>" alt=""></li>
+                    <li><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_slider_d.svg' ); ?>" alt=""></li>
                 <?php endif; ?>
             </ul>
             <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
@@ -363,7 +363,7 @@ get_header(); ?>
                                     <?php if ( has_post_thumbnail() ) : ?>
                                         <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
                                     <?php else : ?>
-                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_news.svg' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_news.svg' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
                                     <?php endif; ?>
                                 </div>
                                 <div class="uk-card-body">
@@ -422,7 +422,7 @@ get_header(); ?>
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <img src="<?php the_post_thumbnail_url( 'news_thumbnail' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
                             <?php else : ?>
-                                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/placeholder_news.svg' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
+                                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder_news.svg' ); ?>" alt="<?php the_title_attribute(); ?>" uk-cover>
                             <?php endif; ?>
                         </div>
                         <div class="uk-card-body">

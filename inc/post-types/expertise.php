@@ -78,7 +78,7 @@ function ut_expertise_custom_columns( $column ) {
             echo '<img src="'.$expertPhoto.'" width="60">'; break;
         }
         else {
-            echo '<img src="'. get_template_directory_uri() .'/images/placeholder_staff.svg" width="60">'; break;
+            echo '<img src="'. get_template_directory_uri() .'/assets/images/placeholder_staff.svg" width="60">'; break;
         }
         case 'ut_expertise_position' : echo get_post_meta( $post->ID,'ut_expertise_position',true ); break;
         case 'ut_expertise_email' : echo get_post_meta( $post->ID,'ut_expertise_email',true ); break;

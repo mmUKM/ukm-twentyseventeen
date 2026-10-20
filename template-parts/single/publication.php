@@ -67,7 +67,7 @@ get_header(); ?>
                 $ref       = get_post_meta( get_the_ID(), 'ut_publication_reference', true );
                 $ref_title = get_post_meta( get_the_ID(), 'ut_publication_renamedownload', true );
                 if ( empty( $ref_title ) ) {
-                    $ref_title = __( 'Klik di sini', 'ukmtheme' );
+                    $ref_title = __( 'Click here', 'ukmtheme' );
                 }
 
                 // ------------------------------------------------------------------
@@ -128,7 +128,7 @@ get_header(); ?>
                 $pdf_url    = get_post_meta( get_the_ID(), 'ut_publication_pdf', true );
                 if ( ( $pdf_enable === 'on' || ( empty( $pdf_enable ) && ! empty( $pdf_url ) ) ) && ! empty( $pdf_url ) ) {
                     $buy_links[] = array(
-                        'name'  => __( 'Muat Turun PDF', 'ukmtheme' ),
+                        'name'  => __( 'Download PDF', 'ukmtheme' ),
                         'url'   => $pdf_url,
                         'image' => '',
                         'icon'  => 'download',
@@ -147,7 +147,9 @@ get_header(); ?>
                 if ( empty( $t1_desc ) ) {
                     $t1_desc = get_the_content();
                 }
-                $t1_title = ! empty( $t1_title ) ? $t1_title : __( 'Keterangan', 'ukmtheme' );
+                if ( empty( $t1_title ) || 'Keterangan' === $t1_title ) {
+                    $t1_title = __( 'Description', 'ukmtheme' );
+                }
                 if ( ( $t1_active === 'on' || ( $t1_active !== 'off' && ! empty( $t1_desc ) ) ) && ! empty( $t1_desc ) ) {
                     $tabs[] = array( 'title' => $t1_title, 'content' => $t1_desc );
                 }
@@ -156,7 +158,9 @@ get_header(); ?>
                 $t2_active = get_post_meta( get_the_ID(), 'ut_publication_tab2_active', true );
                 $t2_title  = get_post_meta( get_the_ID(), 'ut_publication_tab2_title', true );
                 $t2_desc   = get_post_meta( get_the_ID(), 'ut_publication_biography', true );
-                $t2_title  = ! empty( $t2_title ) ? $t2_title : __( 'Biografi', 'ukmtheme' );
+                if ( empty( $t2_title ) || 'Biografi' === $t2_title ) {
+                    $t2_title = __( 'Biography', 'ukmtheme' );
+                }
                 if ( ( $t2_active === 'on' || ( $t2_active !== 'off' && ! empty( $t2_desc ) ) ) && ! empty( $t2_desc ) ) {
                     $tabs[] = array( 'title' => $t2_title, 'content' => $t2_desc );
                 }
@@ -165,8 +169,8 @@ get_header(); ?>
                 $t3_active = get_post_meta( get_the_ID(), 'ut_publication_tab3_active', true );
                 $t3_title  = get_post_meta( get_the_ID(), 'ut_publication_tab3_title', true );
                 $t3_desc   = get_post_meta( get_the_ID(), 'ut_publication_review', true );
-                if ( empty( $t3_title ) || 'Review' === $t3_title ) {
-                    $t3_title = __( 'Ulasan', 'ukmtheme' );
+                if ( empty( $t3_title ) || 'Review' === $t3_title || 'Ulasan' === $t3_title ) {
+                    $t3_title = __( 'Reviews', 'ukmtheme' );
                 }
                 if ( ( $t3_active === 'on' || ( $t3_active !== 'off' && ! empty( $t3_desc ) ) ) && ! empty( $t3_desc ) ) {
                     $tabs[] = array( 'title' => $t3_title, 'content' => $t3_desc );
@@ -176,7 +180,9 @@ get_header(); ?>
                 $t4_active = get_post_meta( get_the_ID(), 'ut_publication_tab4_active', true );
                 $t4_title  = get_post_meta( get_the_ID(), 'ut_publication_tab4_title', true );
                 $t4_desc   = get_post_meta( get_the_ID(), 'ut_publication_tab4_content', true );
-                $t4_title  = ! empty( $t4_title ) ? $t4_title : __( 'Kandungan', 'ukmtheme' );
+                if ( empty( $t4_title ) || 'Kandungan' === $t4_title ) {
+                    $t4_title = __( 'Table of Contents', 'ukmtheme' );
+                }
                 if ( $t4_active === 'on' && ! empty( $t4_desc ) ) {
                     $tabs[] = array( 'title' => $t4_title, 'content' => $t4_desc );
                 }
@@ -212,7 +218,7 @@ get_header(); ?>
                     <div class="uk-width-3-5@m uk-width-2-3@l uk-width-1-1">
                         <div class="publication-meta-wrapper">
                             <h3 class="uk-heading-bullet uk-margin-small-bottom">
-                                <?php _e( 'Maklumat Buku', 'ukmtheme' ); ?>
+                                <?php _e( 'Book Details', 'ukmtheme' ); ?>
                             </h3>
 
                             <table class="uk-table uk-table-divider uk-table-small uk-margin-small-top publication-info-table">
@@ -220,7 +226,7 @@ get_header(); ?>
                                     <?php if ( $author ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Penulis', 'ukmtheme' ); ?>
+                                                <?php _e( 'Author', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <?php echo esc_html( $author ); ?>
@@ -231,7 +237,7 @@ get_header(); ?>
                                     <?php if ( $editor ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Penyunting', 'ukmtheme' ); ?>
+                                                <?php _e( 'Editor', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <?php echo esc_html( $editor ); ?>
@@ -242,7 +248,7 @@ get_header(); ?>
                                     <?php if ( $publisher ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Penerbit', 'ukmtheme' ); ?>
+                                                <?php _e( 'Publisher', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <?php echo esc_html( $publisher ); ?>
@@ -253,7 +259,7 @@ get_header(); ?>
                                     <?php if ( $year ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Tahun Terbitan', 'ukmtheme' ); ?>
+                                                <?php _e( 'Publication Year', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <?php echo esc_html( $year ); ?>
@@ -275,7 +281,7 @@ get_header(); ?>
                                     <?php if ( $price ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Harga', 'ukmtheme' ); ?>
+                                                <?php _e( 'Price', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <strong class="uk-text-primary"><?php echo esc_html( $price ); ?></strong>
@@ -286,7 +292,7 @@ get_header(); ?>
                                     <?php if ( $pages ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Bilangan Muka Surat', 'ukmtheme' ); ?>
+                                                <?php _e( 'Number of Pages', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <?php echo esc_html( $pages ); ?>
@@ -297,7 +303,7 @@ get_header(); ?>
                                     <?php if ( $ref ) : ?>
                                         <tr>
                                             <td class="uk-table-shrink uk-text-bold uk-text-muted uk-text-nowrap">
-                                                <?php _e( 'Pautan Rujukan', 'ukmtheme' ); ?>
+                                                <?php _e( 'Reference Link', 'ukmtheme' ); ?>
                                             </td>
                                             <td class="uk-table-expand">
                                                 : <a href="<?php echo esc_url( $ref ); ?>" target="_blank" rel="noopener noreferrer" class="uk-link-reset uk-text-primary">
@@ -313,7 +319,7 @@ get_header(); ?>
                             <?php if ( ! empty( $buy_links ) ) : ?>
                                 <div class="uk-margin-medium-top publication-buy-section">
                                     <h4 class="uk-margin-small-bottom">
-                                        <strong><?php _e( 'Pautan Pembelian &amp; Muat Turun:', 'ukmtheme' ); ?></strong>
+                                        <strong><?php _e( 'Purchase &amp; Download Links:', 'ukmtheme' ); ?></strong>
                                     </h4>
                                     <div class="uk-flex uk-flex-middle uk-flex-wrap" style="gap: 10px;">
                                         <?php foreach ( $buy_links as $item ) : ?>

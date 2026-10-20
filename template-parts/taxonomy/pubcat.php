@@ -29,9 +29,32 @@ get_header(); ?>
             ?>
         </header>
 
-        <?php if ( have_posts() ) : ?>
+        <?php
+        $current_term = get_queried_object();
+        $paged        = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+        $args         = array(
+            'post_type'      => 'publication',
+            'posts_per_page' => get_option( 'posts_per_page' ),
+            'paged'          => $paged,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        );
+
+        if ( ! empty( $current_term ) && ! empty( $current_term->slug ) ) {
+            $args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'pubcat',
+                    'field'    => 'slug',
+                    'terms'    => $current_term->slug,
+                ),
+            );
+        }
+
+        $publication_query = new WP_Query( $args );
+
+        if ( $publication_query->have_posts() ) : ?>
             <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-match uk-grid-medium" uk-grid>
-                <?php while ( have_posts() ) : the_post();
+                <?php while ( $publication_query->have_posts() ) : $publication_query->the_post();
                     $pub_cover = get_post_meta( get_the_ID(), 'ut_publication_cover', true );
                     if ( empty( $pub_cover ) && has_post_thumbnail() ) {
                         $pub_cover = get_the_post_thumbnail_url( get_the_ID(), 'large' );
@@ -44,7 +67,7 @@ get_header(); ?>
                     $price     = get_post_meta( get_the_ID(), 'ut_publication_price', true );
                     $btn_label = function_exists( 'ukmtheme_get_publication_btn_label' )
                         ? ukmtheme_get_publication_btn_label( get_the_ID() )
-                        : __( 'Dapatkan', 'ukmtheme' );
+                        : __( 'Get Copy', 'ukmtheme' );
                 ?>
                     <div>
                         <article id="post-<?php the_ID(); ?>" <?php post_class( 'uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-border-rounded uk-overflow-hidden uk-flex uk-flex-column publication-card' ); ?>>
@@ -89,16 +112,27 @@ get_header(); ?>
 
                         </article>
                     </div>
-                <?php endwhile; ?>
+                <?php endwhile;
+                wp_reset_postdata();
+                ?>
             </div>
 
             <div class="uk-margin-top">
-                <?php get_template_part( 'template-parts/global/content', 'paginate' ); ?>
+                <?php
+                if ( function_exists( 'ukmtheme_pagination' ) ) {
+                    ukmtheme_pagination( $publication_query );
+                } else {
+                    $orig_wp_query = $GLOBALS['wp_query'];
+                    $GLOBALS['wp_query'] = $publication_query;
+                    get_template_part( 'template-parts/global/content', 'paginate' );
+                    $GLOBALS['wp_query'] = $orig_wp_query;
+                }
+                ?>
             </div>
 
         <?php else : ?>
             <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                <p><?php esc_html_e( 'Tiada penerbitan dijumpai dalam kategori ini.', 'ukmtheme' ); ?></p>
+                <p><?php esc_html_e( 'No publications found in this category.', 'ukmtheme' ); ?></p>
                 <?php get_search_form(); ?>
             </div>
         <?php endif; ?>

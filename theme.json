@@ -187,8 +187,8 @@
         }
     },
     "templateParts": [
-        { "name": "header", "title": "Header", "area": "header" },
-        { "name": "footer", "title": "Footer", "area": "footer" }
+        { "name": "header-top-bar", "title": "Header Top Bar", "area": "header" },
+        { "name": "footer-blocks", "title": "Footer Blocks", "area": "footer" }
     ],
     "templates": [
         { "name": "index",    "title": "Laman Utama / Blog",  "postTypes": [ "post" ] },

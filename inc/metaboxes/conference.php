@@ -6,7 +6,9 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;function ukmtheme_conference_metaboxes() {
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+function ukmtheme_conference_metaboxes() {
 
     $conference_basic = new_cmb2_box( array(
         'id'            => 'conference_metabox_basic',
@@ -366,3 +368,4 @@ if ( ! defined( 'ABSPATH' ) ) exit;function ukmtheme_conference_metaboxes() {
     ) );
 
 }
+add_action( 'cmb2_init', 'ukmtheme_conference_metaboxes' );

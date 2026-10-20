@@ -37,6 +37,7 @@ function ukmtheme_setup() {
     add_theme_support( 'editor-styles' );              // Load editor-style.css in block editor
     add_theme_support( 'align-wide' );                 // Enable wide/full alignment in editor
     add_theme_support( 'responsive-embeds' );          // Responsive embeds (YouTube, etc.)
+    add_theme_support( 'block-template-parts' );       // Enable Block Template Parts (Hybrid FSE)
     add_editor_style( 'assets/css/editor-style.css' ); // Custom styles in block editor
 
     // -------------------------------------------------------

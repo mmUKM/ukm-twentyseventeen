@@ -6,8 +6,8 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;// SLIDESHOW
-
+if ( ! defined( 'ABSPATH' ) ) exit;
+ 
 function ukmtheme_slideshow_metaboxes() {
 
     $cmb = new_cmb2_box( array(
@@ -57,6 +57,3 @@ function ukmtheme_slideshow_metaboxes() {
     ) );   
 }
 add_action( 'cmb2_init', 'ukmtheme_slideshow_metaboxes' );
-
-// STAFF DIRECTORY
-

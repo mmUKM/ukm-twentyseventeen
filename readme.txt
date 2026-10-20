@@ -4,7 +4,7 @@ Tags: ukm, hybrid-theme, block-editor, full-site-editing, custom-post-types, uik
 Requires at least: 6.3
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 2026.1015
+Stable tag: 2026.1020
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,10 @@ Tema menyediakan beberapa kawasan widget dinamik:
 * **Footer (Kolum 1, 2, 3)**: Alamat, pautan pantas, dan senarai pautan rujukan.
 
 == Changelog ==
+
+= 2026.1020 =
+* Penyelarasan label teks antarabangsa (i18n) bagi fail templat dan metabox.
+* Kemas kini konfigurasi tema dan pembersihan templat.
 
 = 2026.1015 =
 * Penstrukturan dan penambahbaikan templat arkib serta paparan tunggal buku/penerbitan (Publication).

@@ -6,9 +6,11 @@
  * @subpackage UKM_Twenty_Seventeen
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;function ukmtheme_staff_metaboxes() {
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-    $cmb = new_cmb2_box(  array(
+function ukmtheme_staff_metaboxes() {
+
+    $cmb = new_cmb2_box( array(
         'id'            => 'staff_metabox',
         'title'         => esc_html__('Maklumat Kakitangan', 'ukmtheme' ),
         'object_types'  => array( 'staff', ),
@@ -76,8 +78,4 @@ if ( ! defined( 'ABSPATH' ) ) exit;function ukmtheme_staff_metaboxes() {
     ) );
 }
 add_action( 'cmb2_init', 'ukmtheme_staff_metaboxes' );
-
-// Post Type: Gallery
-
-add_action( 'cmb2_init', 'ukmtheme_gallery_metaboxes' );
 

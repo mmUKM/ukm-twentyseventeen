@@ -20,6 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+if ( function_exists( 'block_template_part' ) ) {
+    block_template_part( 'header-top-bar' );
+}
+?>
 <div class="page-wrap">
 <div id="header-wrap">
     <div id="header-wrap-overlay"></div>

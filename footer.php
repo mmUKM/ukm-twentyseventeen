@@ -12,6 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 </div><?php // END page-wrap / STICKY FOOTER ?>
 
+<?php
+if ( function_exists( 'block_template_part' ) ) {
+    block_template_part( 'footer-blocks' );
+}
+?>
+
 <footer id="footer" class="uk-background-secondary uk-light">
     <?php if ( get_theme_mod( 'ukmtheme_footer_widget_basic', 1 ) == 1 ) : ?>
         <!-- 3 COLUMN WIDGET & PRESET SECTION -->

@@ -160,6 +160,18 @@ function ukmtheme_publication_metaboxes() {
     ) );
 
     $publication->add_field( array(
+        'name'             => esc_html__( 'Layout Position (Gallery & Details)', 'ukmtheme' ),
+        'desc'             => esc_html__( 'Pilih kedudukan galeri imej dan maklumat buku.', 'ukmtheme' ),
+        'id'               => 'ut_publication_layout_position',
+        'type'             => 'radio_inline',
+        'default'          => 'right',
+        'options'          => array(
+            'right' => esc_html__( 'Galeri Kanan / Maklumat Kiri (Default)', 'ukmtheme' ),
+            'left'  => esc_html__( 'Galeri Kiri / Maklumat Kanan', 'ukmtheme' ),
+        ),
+    ) );
+
+    $publication->add_field( array(
         'name'  => esc_html__( 'Book Cover Image', 'ukmtheme' ),
         'desc'  => esc_html__( 'Upload book cover image or enter URL. Recommended size: 300x380 pixels.', 'ukmtheme' ),
         'id'    => 'ut_publication_cover',

@@ -55,8 +55,13 @@ get_header(); ?>
                 }
 
                 // ------------------------------------------------------------------
-                // 2. DATA MAKLUMAT BUKU
+                // 2. DATA MAKLUMAT BUKU & SUSUN ATUR
                 // ------------------------------------------------------------------
+                $layout_pos = get_post_meta( get_the_ID(), 'ut_publication_layout_position', true );
+                if ( empty( $layout_pos ) ) {
+                    $layout_pos = 'right';
+                }
+
                 $author    = get_post_meta( get_the_ID(), 'ut_publication_author', true );
                 $editor    = get_post_meta( get_the_ID(), 'ut_publication_editor', true );
                 $publisher = get_post_meta( get_the_ID(), 'ut_publication_publisher', true );
@@ -191,6 +196,31 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class( 'uk-article uk-card uk-card-default uk-card-body publication-single-article' ); ?>>
 
                 <!-- =======================================================
+                     BREADCRUMB
+                     ======================================================= -->
+                <ul class="uk-breadcrumb uk-margin-small-bottom">
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span uk-icon="icon: home; ratio: 0.8"></span> <?php _e( 'Home', 'ukmtheme' ); ?></a></li>
+                    <?php
+                    $pub_archive_link = get_post_type_archive_link( 'publication' );
+                    $pub_obj          = get_post_type_object( 'publication' );
+                    $pub_name         = $pub_obj ? $pub_obj->labels->name : __( 'Publications', 'ukmtheme' );
+                    if ( $pub_archive_link ) : ?>
+                        <li><a href="<?php echo esc_url( $pub_archive_link ); ?>"><?php echo esc_html( $pub_name ); ?></a></li>
+                    <?php endif; ?>
+                    <?php
+                    $pub_terms = get_the_terms( get_the_ID(), 'pubcat' );
+                    if ( ! empty( $pub_terms ) && ! is_wp_error( $pub_terms ) ) :
+                        $pub_term = array_shift( $pub_terms );
+                        $pub_term_link = get_term_link( $pub_term );
+                        if ( ! is_wp_error( $pub_term_link ) ) : ?>
+                            <li><a href="<?php echo esc_url( $pub_term_link ); ?>"><?php echo esc_html( $pub_term->name ); ?></a></li>
+                        <?php endif;
+                    endif;
+                    ?>
+                    <li><span><?php the_title(); ?></span></li>
+                </ul>
+
+                <!-- =======================================================
                      ROW 1: TAJUK BUKU
                      ======================================================= -->
                 <header class="publication-header uk-margin-bottom">
@@ -209,13 +239,23 @@ get_header(); ?>
 
                 <!-- =======================================================
                      ROW 2: GRID 2 COLUMN
-                     Column Kiri : Maklumat Buku & Pautan Beli/Download
-                     Column Kanan: Cover + Switch Thumbnail
+                     Kedudukan Galeri & Butiran Buku (Kiri / Kanan)
                      ======================================================= -->
+                <?php
+                // Jika layout 'left': Galeri di kiri, Butiran di kanan
+                // UIkit grid: class uk-flex-first@m / uk-flex-last@m boleh disusun, atau susunan order
+                $details_col_class = ( 'left' === $layout_pos )
+                    ? 'uk-width-3-5@m uk-width-2-3@l uk-width-1-1 uk-flex-last@m'
+                    : 'uk-width-3-5@m uk-width-2-3@l uk-width-1-1';
+
+                $gallery_col_class = ( 'left' === $layout_pos )
+                    ? 'uk-width-2-5@m uk-width-1-3@l uk-width-1-1 uk-flex-first@m'
+                    : 'uk-width-2-5@m uk-width-1-3@l uk-width-1-1';
+                ?>
                 <div uk-grid class="uk-grid-large uk-flex-middle@m">
 
-                    <!-- COLUMN KIRI: MAKLUMAT BUKU -->
-                    <div class="uk-width-3-5@m uk-width-2-3@l uk-width-1-1">
+                    <!-- COLUMN MAKLUMAT BUKU -->
+                    <div class="<?php echo esc_attr( $details_col_class ); ?>">
                         <div class="publication-meta-wrapper">
                             <h3 class="uk-heading-bullet uk-margin-small-bottom">
                                 <?php _e( 'Book Details', 'ukmtheme' ); ?>
@@ -338,8 +378,8 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <!-- COLUMN KANAN: COVER + SWITCH THUMBNAIL -->
-                    <div class="uk-width-2-5@m uk-width-1-3@l uk-width-1-1">
+                    <!-- COLUMN GALERI / COVER + SWITCH THUMBNAIL -->
+                    <div class="<?php echo esc_attr( $gallery_col_class ); ?>">
                         <div class="publication-cover-wrapper uk-text-center">
                             <?php if ( ! empty( $gallery_images ) ) : ?>
                                 
@@ -396,7 +436,7 @@ get_header(); ?>
                             <?php endforeach; ?>
                         </ul>
 
-                        <div class="uk-switcher uk-margin-medium-top uk-card uk-card-default uk-card-body uk-border-rounded publication-tabs-content" style="border: 1px solid #e2e8f0; background: #fafbfc; border-radius: 6px;">
+                        <div class="uk-switcher uk-margin-medium-top publication-tabs-content">
                             <?php foreach ( $tabs as $tab ) : ?>
                                 <div class="entry-content">
                                     <?php echo wpautop( $tab['content'] ); ?>

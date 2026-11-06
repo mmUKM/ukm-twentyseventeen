@@ -103,7 +103,7 @@ if ( function_exists( 'block_template_part' ) ) {
 
 <!-- Off-Canvas Mobile Navigation -->
 <div id="offcanvas-nav" uk-offcanvas="overlay: true">
-    <div class="uk-offcanvas-bar">
+    <div class="uk-offcanvas-bar" style="background: #000034;">
         <button class="uk-offcanvas-close" type="button" uk-close aria-label="<?php esc_attr_e( 'Close menu', 'ukmtheme' ); ?>"></button>
         <div class="uk-margin-bottom uk-text-center">
             <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-single-white.svg' ); ?>" height="50" width="90" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">

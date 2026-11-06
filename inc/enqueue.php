@@ -20,6 +20,11 @@ function ukmtheme_scripts() {
     wp_register_script( 'bxslider', $uri . '/assets/libs/bxslider/jquery.bxslider.min.js', array( 'jquery' ), '4.2.17', true );
     wp_register_style(  'bxslider', $uri . '/assets/libs/bxslider/jquery.bxslider.min.css', array(), '4.2.17' );
 
+    if ( is_front_page() || is_home() ) {
+        wp_enqueue_script( 'bxslider' );
+        wp_enqueue_style( 'bxslider' );
+    }
+
     // Scripts
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'uikit',       $uri . '/assets/libs/uikit3/js/uikit.min.js',       array(),          $version, true );

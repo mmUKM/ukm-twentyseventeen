@@ -4,7 +4,7 @@ Tags: ukm, hybrid-theme, block-editor, full-site-editing, custom-post-types, uik
 Requires at least: 6.3
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 2026.1022
+Stable tag: 2026.1106
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,12 @@ Tema menyediakan beberapa kawasan widget dinamik:
 * **Footer (Kolum 1, 2, 3)**: Alamat, pautan pantas, dan senarai pautan rujukan.
 
 == Changelog ==
+
+= 2026.1106 =
+* Integrasi paparan bxSlider pada hero slider laman hadapan (index.php) berserta kawalan penyesuai tema (customizer) untuk paparan caption.
+* Naik taraf widget Elementor UKM Penerbitan dengan sokongan pemilihan kategori, lajur grid, susunan paparan, dan butang tindakan.
+* Penambahbaikan reka bentuk menu navigasi off-canvas mudah alih, warna latar (#000034) dan indikator submenu.
+* Penyesuaian tema warna korporat UKM (#263B97) pada kawalan dan petunjuk widget bxSlider Slideshow.
 
 = 2026.1022 =
 * Integrasi pustaka bxSlider pada widget Elementor Slideshow untuk peralihan slaid yang lebih lancar dan stabil.

@@ -207,7 +207,7 @@ class UKM_UIkit_Offcanvas_Walker extends Walker_Nav_Menu {
 
     public function start_lvl( &$output, $depth = 0, $args = null ) {
         $indent  = str_repeat( "\t", $depth );
-        $output .= "\n$indent<ul class=\"uk-nav-sub\">\n";
+        $output .= "\n$indent<ul class=\"uk-nav-sub\" uk-nav>\n";
     }
 
     public function end_lvl( &$output, $depth = 0, $args = null ) {
@@ -258,9 +258,15 @@ class UKM_UIkit_Offcanvas_Walker extends Walker_Nav_Menu {
         $title = apply_filters( 'the_title', $item->title, $item->ID );
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
+        // Add dropdown indicator icon for parent items
+        $icon = '';
+        if ( $has_children ) {
+            $icon = ' <span uk-nav-parent-icon></span>';
+        }
+
         $item_output  = isset( $args->before ) ? $args->before : '';
         $item_output .= '<a' . $attributes . '>';
-        $item_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . $title . ( isset( $args->link_after ) ? $args->link_after : '' );
+        $item_output .= ( isset( $args->link_before ) ? $args->link_before : '' ) . $title . ( isset( $args->link_after ) ? $args->link_after : '' ) . $icon;
         $item_output .= '</a>';
         $item_output .= isset( $args->after ) ? $args->after : '';
 

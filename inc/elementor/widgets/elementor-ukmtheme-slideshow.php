@@ -1,6 +1,6 @@
 <?php
 /**
- * Elementor Widget: UKM Slideshow (BX Slider)
+ * Elementor Widget: UKM Slideshow (bxSlider)
  *
  * Displays the 'slideshow' CPT using bxSlider.
  * Fully compatible with Elementor Editor Mode and Frontend.
@@ -32,7 +32,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'UKM: Slideshow (BX Slider)', 'ukmtheme' );
+        return esc_html__( 'UKM: Slideshow (bxSlider)', 'ukmtheme' );
     }
 
     public function get_icon() {
@@ -111,7 +111,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_slideshow_settings',
             [
-                'label' => esc_html__( 'Tetapan BX Slider', 'ukmtheme' ),
+                'label' => esc_html__( 'Tetapan bxSlider', 'ukmtheme' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -532,7 +532,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 padding: 0 !important;
                 list-style: none !important;
             }
-            /* Prevent FOUC before BX Slider initialization */
+            /* Prevent FOUC before bxSlider initialization */
             #<?php echo esc_attr( $widget_id ); ?>:not(.bx-slider-ready) .ukmtheme-bxslider > li:not(:first-child) {
                 display: none;
             }
@@ -572,14 +572,14 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 margin: 0 auto;
             }
             #<?php echo esc_attr( $widget_id ); ?> .ukmtheme-slide-caption-box {
-                background: rgba(15, 23, 42, 0.85);
+                background: transparent;
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 max-width: 620px;
                 padding: 24px 28px;
                 border-radius: 8px;
-                border-left: 5px solid #cc0000;
-                box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+                border: 2px solid #263B97;
+                box-shadow: 0 12px 32px rgba(0,0,0,0.25);
                 pointer-events: auto;
             }
             #<?php echo esc_attr( $widget_id ); ?> .ukmtheme-slide-title {
@@ -590,6 +590,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 line-height: 1.25;
                 letter-spacing: -0.5px;
                 margin: 0 0 10px 0;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.4);
             }
             #<?php echo esc_attr( $widget_id ); ?> .ukmtheme-slide-desc {
                 color: #e2e8f0;
@@ -597,12 +598,13 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 font-size: 15px;
                 line-height: 1.6;
                 margin: 0 0 14px 0;
+                text-shadow: 0 1px 3px rgba(0,0,0,0.4);
             }
             #<?php echo esc_attr( $widget_id ); ?> .ukmtheme-slide-btn {
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                background-color: #cc0000;
+                background-color: #263B97;
                 color: #ffffff !important;
                 text-decoration: none !important;
                 font-weight: 600;
@@ -613,7 +615,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 transition: all 0.2s ease;
             }
             #<?php echo esc_attr( $widget_id ); ?> .ukmtheme-slide-btn:hover {
-                background-color: #b30000;
+                background-color: #1d2d75;
                 transform: translateY(-1px);
                 color: #ffffff !important;
             }
@@ -624,7 +626,7 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 text-indent: -9999px;
             }
 
-            /* BX Slider Controls (Arrows) Styling */
+            /* bxSlider Controls (Arrows) Styling */
             #<?php echo esc_attr( $widget_id ); ?> .bx-wrapper .bx-controls-direction a {
                 position: absolute;
                 top: 50%;
@@ -665,8 +667,8 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 border: 1px solid rgba(255, 255, 255, 0.2);
             }
             #<?php echo esc_attr( $widget_id ); ?>.nav-light .bx-wrapper .bx-controls-direction a:hover {
-                background: #cc0000;
-                border-color: #cc0000;
+                background: #263B97;
+                border-color: #263B97;
                 color: #ffffff;
                 transform: translateY(-50%) scale(1.08);
             }
@@ -678,13 +680,13 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
                 border: 1px solid rgba(0, 0, 0, 0.1);
             }
             #<?php echo esc_attr( $widget_id ); ?>.nav-dark .bx-wrapper .bx-controls-direction a:hover {
-                background: #cc0000;
-                border-color: #cc0000;
+                background: #263B97;
+                border-color: #263B97;
                 color: #ffffff;
                 transform: translateY(-50%) scale(1.08);
             }
 
-            /* BX Slider Pager (Dots) Styling */
+            /* bxSlider Pager (Dots) Styling */
             #<?php echo esc_attr( $widget_id ); ?> .bx-wrapper .bx-pager {
                 position: absolute;
                 bottom: 20px;
@@ -709,9 +711,9 @@ class Elementor_UKMTheme_Slideshow extends \Elementor\Widget_Base {
             }
             #<?php echo esc_attr( $widget_id ); ?> .bx-wrapper .bx-pager.bx-default-pager a.active,
             #<?php echo esc_attr( $widget_id ); ?> .bx-wrapper .bx-pager.bx-default-pager a:hover {
-                background: #cc0000;
+                background: #263B97;
                 width: 26px;
-                border-color: #cc0000;
+                border-color: #263B97;
             }
 
             @media (max-width: 767px) {

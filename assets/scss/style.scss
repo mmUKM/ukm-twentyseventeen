@@ -272,7 +272,7 @@ h6 {
 
 /* UIkit Off-canvas Navigation for Mobile */
 #offcanvas-nav .uk-offcanvas-bar {
-    background: #1e293b;
+    background: #000034;
     padding: 30px 24px;
 }
 
@@ -292,7 +292,19 @@ h6 {
 }
 
 #offcanvas-nav .uk-nav-default .uk-nav-parent-icon {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.65);
+    margin-left: auto;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#offcanvas-nav .uk-nav-default li.uk-open>a .uk-nav-parent-icon {
+    transform: rotateX(180deg);
+    color: #ffffff;
+}
+
+#offcanvas-nav .uk-nav-default li>a:hover .uk-nav-parent-icon,
+#offcanvas-nav .uk-nav-default li.uk-active>a .uk-nav-parent-icon {
+    color: #ffffff;
 }
 
 #offcanvas-nav .uk-nav-sub {

@@ -124,6 +124,19 @@ function ukmtheme_customizer( $wp_customize ) {
         'type'        => 'checkbox'
     ) );
 
+    // PAPAR CAPTION SLIDESHOW
+    $wp_customize->add_setting( 'ukmtheme_slideshow_caption', array( 
+        'default' => 1 
+    ) );
+
+    $wp_customize->add_control( 'ukmtheme_slideshow_caption', array(
+        'label'       => __( 'PAPAR CAPTION SLIDESHOW', 'ukmtheme' ),
+        'description' => __( 'Papar tajuk & caption pada bahagian bawah slideshow', 'ukmtheme' ),
+        'section'     => 'ukmtheme_frontpage_layout',
+        'priority'    => 11,
+        'type'        => 'checkbox'
+    ) );
+
     // BERITA VERSI THUMBNAIL
     $wp_customize->add_setting( 'ukmtheme_frontpage_news_thumbnail', array( 
         'default' => 0 

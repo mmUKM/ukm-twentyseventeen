@@ -29,8 +29,8 @@ function ukmtheme_recommended_plugins() {
             'required' => false,
             'reason'   => __( 'Untuk membina halaman dengan visual builder.', 'ukmtheme' ),
         ),
-        'header-footer-elementor/main.php' => array(
-            'name'     => 'Header Footer Elementor',
+        'header-footer-elementor/header-footer-elementor.php' => array(
+            'name'     => 'Ultimate Addons for Elementor',
             'slug'     => 'header-footer-elementor',
             'required' => false,
             'reason'   => __( 'Untuk kustomisasi header & footer dengan Elementor.', 'ukmtheme' ),

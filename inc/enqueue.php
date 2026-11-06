@@ -16,6 +16,10 @@ function ukmtheme_scripts() {
     $version = wp_get_theme()->get( 'Version' );
     $uri     = get_template_directory_uri();
 
+    // BX Slider
+    wp_register_script( 'bxslider', $uri . '/assets/libs/bxslider/jquery.bxslider.min.js', array( 'jquery' ), '4.2.17', true );
+    wp_register_style(  'bxslider', $uri . '/assets/libs/bxslider/jquery.bxslider.min.css', array(), '4.2.17' );
+
     // Scripts
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'uikit',       $uri . '/assets/libs/uikit3/js/uikit.min.js',       array(),          $version, true );

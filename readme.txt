@@ -4,7 +4,7 @@ Tags: ukm, hybrid-theme, block-editor, full-site-editing, custom-post-types, uik
 Requires at least: 6.3
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 2026.1021
+Stable tag: 2026.1022
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,11 @@ Tema menyediakan beberapa kawasan widget dinamik:
 * **Footer (Kolum 1, 2, 3)**: Alamat, pautan pantas, dan senarai pautan rujukan.
 
 == Changelog ==
+
+= 2026.1022 =
+* Integrasi pustaka bxSlider pada widget Elementor Slideshow untuk peralihan slaid yang lebih lancar dan stabil.
+* Penambahbaikan semakan pertahanan (defensive check) pada skrip navigasi menu CSS.
+* Kemas kini pengesanan pemalam Header Footer Elementor dalam senarai pemalam disyorkan.
 
 = 2026.1021 =
 * Penambahbaikan reka bentuk kepala (header) desktop dan mudah alih dengan logo UKM baharu serta warna rasmi.
